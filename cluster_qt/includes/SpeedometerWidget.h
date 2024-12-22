@@ -27,4 +27,4 @@ class SpeedometerWidget : public QWidget {
         void updateSpeed();
 };
 
-#endif // SPEEDOMETERWIDGET_H
+#endif

@@ -20,14 +20,18 @@ int main(int argc, char* argv[])
     TopBar*             topBar = new TopBar(mainPage);
     Blinkers*           leftB = new Blinkers(mainPage, "left", "off");
     Blinkers*           rightB = new Blinkers(mainPage, "right", "off");
-    SpeedometerWidget*  speedometer1 = new SpeedometerWidget(mainPage);
+    SpeedometerWidget*  speedometer = new SpeedometerWidget(mainPage);
     FanSpeedWidget*     fanspeed = new FanSpeedWidget(mainPage);
     CPUTempWidget*      cputemp = new CPUTempWidget(mainPage);
-    BatteryWidget*      battery2 = new BatteryWidget(mainPage);
+    //BatteryWidget*      battery2 = new BatteryWidget(mainPage);
     ArrowSymbolWidget*  arrowSymbol = new ArrowSymbolWidget(mainPage, "zero");
+    // CameraWidget        *cameraWidget = new CameraWidget(secondPage);
+    BatteryAndSpeedWidget*      bas = new BatteryAndSpeedWidget(mainPage);
+
+    //setCentralWidget(cameraWidget);
 
     // Set a manager to handle keyboard events
-    EventManager        eventManager(arrowSymbol, speedometer1, leftB, rightB, stackedWidget);
+    EventManager        eventManager(arrowSymbol, speedometer, leftB, rightB, stackedWidget);
     app.installEventFilter(&eventManager);
 
     // Create layouts
@@ -38,12 +42,11 @@ int main(int argc, char* argv[])
     QVBoxLayout*        secondPageLayout = new QVBoxLayout(); // Main vertical layout
 
     arrowSymbol->setFixedSize(400, 400);
-    app.installEventFilter(&eventManager);
 
-    speedometer1->resize(900, 900);
-    speedometer1->setFixedSize(400, 400);
-    battery2->resize(900, 900);
-    battery2->setFixedSize(400, 400);
+    bas->resize(900, 900);
+    bas->setFixedSize(400, 400);
+    //battery2->resize(900, 900);
+    //battery2->setFixedSize(400, 400);
 
 
     mainPageLayout->addWidget(topBar, 0, Qt::AlignCenter); // Add the TopBar widget at the top
@@ -55,9 +58,9 @@ int main(int argc, char* argv[])
 
     // Add the horizontal layout to the main vertical layout
     mainContentLayout->addWidget(leftB, 1);
-    mainContentLayout->addWidget(speedometer1, 1);
+    mainContentLayout->addWidget(bas, 1);
     mainContentLayout->addWidget(arrowSymbol, 1);
-    mainContentLayout->addWidget(battery2, 1);
+    //mainContentLayout->addWidget(battery2, 1);
     mainContentLayout->addWidget(rightB, 1);
     // Add Layout to the main Page
     mainPageLayout->addLayout(mainContentLayout, 1);

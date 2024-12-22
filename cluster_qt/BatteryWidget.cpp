@@ -147,7 +147,8 @@ void BatteryWidget::updateLevel() {
     result.erase(result.find_last_not_of(" \t\n\r") + 1);
 
     // Convert the result to a float or integer if needed
-    currentLevel = std::stof(result); // or std::stoi(result) if it's an integer
+    //currentLevel = std::stof(result); // or std::stoi(result) if it's an integer
+    currentLevel = 35; // or std::stoi(result) if it's an integer
 
     update(); // Trigger a repaint
 }

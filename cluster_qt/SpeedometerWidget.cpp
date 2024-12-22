@@ -62,7 +62,7 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY, i
 
 void SpeedometerWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int radius) {
     double startAngle = -45; // Start angle for 0 speed (bottom left)
-    double endAngle = 225;     // End angle for max speed (bottom right)
+    double endAngle = 225;   // End angle for max speed (bottom right)
     // Calculate the angle based on current speed in clockwise direction
     double angle = startAngle + (endAngle - startAngle) * (double(currentSpeed) / 160);
     double rad = qDegreesToRadians(angle);
