@@ -1,0 +1,71 @@
+[INFO] [launch]: All log files can be found below /home/jetpack/.ros/log/2024-12-19-12-23-44-635861-jetpack-desktop-11222
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [i2c_interface_node-1]: process started with pid [11225]
+[INFO] [can_interface_node-2]: process started with pid [11226]
+[INFO] [speed_sensor_node-3]: process started with pid [11227]
+[INFO] [blinkers_node-4]: process started with pid [11228]
+[INFO] [oled_display_node-5]: process started with pid [11229]
+[INFO] [dc_motors_node-6]: process started with pid [11230]
+[INFO] [servo_motor_node-7]: process started with pid [11231]
+[INFO] [battery_node-8]: process started with pid [11232]
+[INFO] [joy_node-9]: process started with pid [11233]
+[INFO] [teleop_node-10]: process started with pid [11234]
+[INFO] [camera_node-11]: process started with pid [11235]
+[INFO] [display_routine_node-12]: process started with pid [11236]
+[servo_motor_node-7] [INFO] [1734611026.083075851] [servo_motor]: PCA9685 succefully initiated at address: 0x40
+[oled_display_node-5] [INFO] [1734611026.309121851] [oled_display]: SSD1306 succefully initiated at address: 0x3C
+[can_interface_node-2] [INFO] [1734611026.334934746] [can_interface]: Starting CAN bus interface
+[can_interface_node-2] [WARN] [1734611026.341202397] [rcl.logging_rosout]: Publisher already registered for node name: 'can_interface'. If this is due to multiple nodes with the same name then all logs for the logger named 'can_interface' will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[battery_node-8] [INFO] [1734611026.536608565] [battery]: INA219 succefully initiated at address: 0x41
+[can_interface_node-2] [INFO] [1734611026.584921874] [can_interface]: Starting CAN bus interface
+[dc_motors_node-6] [INFO] [1734611026.616664311] [dc_motors]: PCA9685 succefully initiated at address: 0x60
+[camera_node-11] [0:38:55.288746212] [11235] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:325 [0mlibcamera v0.3.2
+[can_interface_node-2] [ERROR] [1734611026.645291116] [can_interface]: Fail reading can bus, request timed out
+[speed_sensor_node-3] [ERROR] [1734611026.646966163] [speed_sensor]: request timedout
+[camera_node-11] [0:38:55.347766777] [11404] [1;33m WARN [1;37mCameraSensorProperties [1;34mcamera_sensor_properties.cpp:293 [0mNo static properties available for 'imx708_wide_noir'
+[camera_node-11] [0:38:55.347818591] [11404] [1;33m WARN [1;37mCameraSensorProperties [1;34mcamera_sensor_properties.cpp:295 [0mPlease consider updating the camera sensor properties database
+[camera_node-11] [0:38:55.445870535] [11404] [1;33m WARN [1;37mRPiSdn [1;34msdn.cpp:40 [0mUsing legacy SDN tuning - please consider moving SDN inside rpi.denoise
+[camera_node-11] [0:38:55.449834846] [11404] [1;32m INFO [1;37mRPI [1;34mvc4.cpp:400 [0mRegistered camera /base/soc/i2c0mux/i2c@1/imx708@1a to Unicam device /dev/media0 and ISP device /dev/media1
+[camera_node-11] [INFO] [1734611026.799408882] [camera_node]: 
+[camera_node-11] >> cameras:
+[camera_node-11]    0: imx708_wide_noir (/base/soc/i2c0mux/i2c@1/imx708@1a)
+[camera_node-11] [WARN] [1734611026.799678121] [camera_node]: no camera selected, using default: "/base/soc/i2c0mux/i2c@1/imx708@1a"
+[camera_node-11] [WARN] [1734611026.799734084] [camera_node]: set parameter 'camera' to silence this warning
+[camera_node-11] [WARN] [1734611026.800894040] [camera_node]: stream configuration adjusted from "1920x1080-RGB888" to "1920x1080-RGB888"
+[camera_node-11] [0:38:55.451853928] [11235] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1197 [0mconfiguring streams: (0) 1920x1080-RGB888
+[camera_node-11] [0:38:55.452579479] [11404] [1;32m INFO [1;37mRPI [1;34mvc4.cpp:569 [0mSensor: /base/soc/i2c0mux/i2c@1/imx708@1a - Selected sensor format: 2304x1296-SBGGR10_1X10 - Selected unicam format: 2304x1296-pBAA
+[camera_node-11] [INFO] [1734611026.805339442] [camera_node]: camera "/base/soc/i2c0mux/i2c@1/imx708@1a" configured with 1920x1080-RGB888 stream
+[camera_node-11] [WARN] [1734611026.834169135] [camera_node]: unsupported control 'AfWindows'
+[camera_node-11] [WARN] [1734611026.840249732] [camera_node]: control NoiseReductionMode (10002) not handled
+[camera_node-11] [0:38:55.510038534] [11411] [1;33m WARN [1;37mIPARPI [1;34mipa_base.cpp:1167 [0mCould not set AF_TRIGGER - no AF algorithm or not Auto
+[camera_node-11] [0:38:55.510251107] [11411] [1;33m WARN [1;37mIPARPI [1;34mipa_base.cpp:1150 [0mCould not set AF_PAUSE - no AF algorithm or not Continuous
+[camera_node-11] [INFO] [1734611027.444651284] [camera_node]: using default calibration URL
+[camera_node-11] [INFO] [1734611027.444863820] [camera_node]: camera calibration URL: file:///home/jetpack/.ros/camera_info/imx708_wide_noir__base_soc_i2c0mux_i2c_1_imx708_1a_1920x1080.yaml
+[camera_node-11] [ERROR] [1734611027.445095245] [camera_calibration_parsers]: Unable to open camera calibration file [/home/jetpack/.ros/camera_info/imx708_wide_noir__base_soc_i2c0mux_i2c_1_imx708_1a_1920x1080.yaml]
+[camera_node-11] [WARN] [1734611027.445375521] [camera_node]: Camera calibration file /home/jetpack/.ros/camera_info/imx708_wide_noir__base_soc_i2c0mux_i2c_1_imx708_1a_1920x1080.yaml not found
+[camera_node-11] [0:38:56.154535348] [11411] [1;33m WARN [1;37mIPARPI [1;34mipa_base.cpp:1167 [0mCould not set AF_TRIGGER - no AF algorithm or not Auto
+[camera_node-11] [0:38:56.154704199] [11411] [1;33m WARN [1;37mIPARPI [1;34mipa_base.cpp:1150 [0mCould not set AF_PAUSE - no AF algorithm or not Continuous
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[camera_node-11] [INFO] [1734611035.149646540] [rclcpp]: signal_handler(signum=2)
+[display_routine_node-12] [INFO] [1734611035.149650170] [rclcpp]: signal_handler(signum=2)
+[joy_node-9] [INFO] [1734611035.149716040] [rclcpp]: signal_handler(signum=2)
+[battery_node-8] [INFO] [1734611035.150128482] [rclcpp]: signal_handler(signum=2)
+[can_interface_node-2] [INFO] [1734611035.150545442] [rclcpp]: signal_handler(signum=2)
+[speed_sensor_node-3] [INFO] [1734611035.150624757] [rclcpp]: signal_handler(signum=2)
+[dc_motors_node-6] [INFO] [1734611035.153370779] [rclcpp]: signal_handler(signum=2)
+[blinkers_node-4] [INFO] [1734611035.154505643] [rclcpp]: signal_handler(signum=2)
+[teleop_node-10] [INFO] [1734611035.155988079] [rclcpp]: signal_handler(signum=2)
+[servo_motor_node-7] [INFO] [1734611035.156577224] [rclcpp]: signal_handler(signum=2)
+[oled_display_node-5] [INFO] [1734611035.154215385] [rclcpp]: signal_handler(signum=2)
+[INFO] [servo_motor_node-7]: process has finished cleanly [pid 11231]
+[INFO] [display_routine_node-12]: process has finished cleanly [pid 11236]
+[INFO] [dc_motors_node-6]: process has finished cleanly [pid 11230]
+[INFO] [battery_node-8]: process has finished cleanly [pid 11232]
+[INFO] [oled_display_node-5]: process has finished cleanly [pid 11229]
+[INFO] [i2c_interface_node-1]: process has finished cleanly [pid 11225]
+[INFO] [teleop_node-10]: process has finished cleanly [pid 11234]
+[INFO] [joy_node-9]: process has finished cleanly [pid 11233]
+[INFO] [speed_sensor_node-3]: process has finished cleanly [pid 11227]
+[INFO] [blinkers_node-4]: process has finished cleanly [pid 11228]
+[INFO] [camera_node-11]: process has finished cleanly [pid 11235]
+[INFO] [can_interface_node-2]: process has finished cleanly [pid 11226]

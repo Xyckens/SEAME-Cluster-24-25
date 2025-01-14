@@ -1,1 +1,5 @@
 CMakeLists.txt.user*
+log/
+install/
+build/
+JetRacer/launch/__pycache__/

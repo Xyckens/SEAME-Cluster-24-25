@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>cluster</name>
+  <version>0.0.0</version>
+  <description>test all peripheral at the same time</description>
+  <maintainer email="axel.chabrerie@gmail.com">pi</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Add ROS2 dependencies -->
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  <depend>custom_msgs</depend>
+
+  <!-- Adding Qt6 dependencies -->
+  <depend>qt6</depend>
+  <depend>qt6_widgets</depend>
+  <depend>qt6_multimedia</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+

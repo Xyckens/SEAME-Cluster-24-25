@@ -1,0 +1,7 @@
+#[apt] Installation commands:
+  sudo -H apt-get install ros-jazzy-libcamera
+  sudo -H apt-get install ros-jazzy-camera-info-manager
+  sudo -H apt-get install ros-jazzy-image-view
+  sudo -H apt-get install ros-jazzy-ament-cmake-clang-format
+  sudo -H apt-get install ros-jazzy-ament-cmake-mypy
+  sudo -H apt-get install ros-jazzy-ament-cmake-pyflakes

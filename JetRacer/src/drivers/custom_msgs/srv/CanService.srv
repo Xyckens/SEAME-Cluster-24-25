@@ -1,0 +1,9 @@
+# Request:
+uint32 can_id         # ID
+uint8[] write_data    # Data to write to the device
+bool read_request     # Whether a read operation is requested
+---
+# Response
+bool success          # True if the operation was successful
+uint8[] read_data     # Data read from the device (if read_request is true)
+string message        # For error messages or success confirmation
