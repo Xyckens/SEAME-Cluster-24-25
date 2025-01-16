@@ -3,6 +3,10 @@
 CPUTempWidget::CPUTempWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)
 {
+    color1 = Color();
+    main_color = color1.main_color;
+    accent_color = color1.accent_color;
+    alphabet_color = color1.alphabet_color;
     setFocusPolicy(Qt::StrongFocus); 
 }
 
@@ -23,7 +27,7 @@ void CPUTempWidget::paintEvent(QPaintEvent* event)
 
 void CPUTempWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
 
-    painter.setPen(QPen(Qt::black, 8));
+    painter.setPen(QPen(main_color, 8));
     painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
 
 }
@@ -48,7 +52,7 @@ void CPUTempWidget::drawCentralNumber(QPainter& painter, int centerX, int center
 
     QFont font("Arial", 20, QFont::Bold); 
     painter.setFont(font);
-    painter.setPen(QPen(Qt::white));
+    painter.setPen(QPen(alphabet_color));
     QString speedText = QString::number(currentSpeed);
 
     QFontMetrics metrics(font);

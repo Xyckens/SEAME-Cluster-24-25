@@ -7,7 +7,7 @@ using namespace std::chrono_literals;
 SpeedSensorNode::SpeedSensorNode() : rclcpp::Node("speed_sensor")
 {
     client_ = this->create_client<custom_msgs::srv::CanService>("can_service");
-    timer_ = this->create_timer(100ms, [this]() { readSpeed(); });
+    timer_ = this->create_timer(50ms, [this]() { readSpeed(); });
     speed_publisher_ = this->create_publisher<std_msgs::msg::UInt8>(
         "speed_sensor_readings", 10);
 }

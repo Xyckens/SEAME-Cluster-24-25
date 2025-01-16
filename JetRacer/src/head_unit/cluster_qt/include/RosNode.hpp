@@ -8,7 +8,9 @@ class RosNode : public rclcpp::Node
 {
     public:
         RosNode();
-        ~RosNode();
+        ~RosNode() = default;
+
+        int getSpeed() const;
 
     private:
         rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr battery_sub_;

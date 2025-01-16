@@ -4,17 +4,22 @@
 #include <QWidget>
 #include <QPainter>
 #include <QTimer>
+#include "Colors.h"
 
 class BatteryWidget : public QWidget {
 
     public:
         BatteryWidget(QWidget* parent = nullptr);
         ~BatteryWidget();
+        QColor  main_color;
+        QColor  accent_color;
+        QColor  alphabet_color;
     protected:
         void paintEvent(QPaintEvent* event) override;
 
     private:
         int currentLevel;
+        Color color1;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawNeedle(QPainter& painter, int centerX, int centerY, int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);

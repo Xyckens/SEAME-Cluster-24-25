@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QKeyEvent>  // Include for key events
+#include "Colors.h"
 
 class ArrowSymbolWidget : public QWidget
 {
@@ -16,6 +17,9 @@ class ArrowSymbolWidget : public QWidget
         void setDrawLeftCurve(bool enabled);
         void setDrawRightCurve(bool enabled);
         void changeDirection(int movement_key);
+        QColor  main_color;
+        QColor  accent_color;
+        QColor  alphabet_color;
 
     protected:
         ArrowSymbolWidget();
@@ -33,6 +37,7 @@ class ArrowSymbolWidget : public QWidget
         bool m_greenL;
         bool m_greenR;
         bool m_greenV;
+        Color color1;
 };
 
 #endif // ARROWSYMBOLWIDGET_H

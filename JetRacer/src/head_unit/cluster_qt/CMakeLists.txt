@@ -23,6 +23,7 @@ find_package(custom_msgs REQUIRED)
 
 # Define source and header files separately
 set(HEADERS
+    include/Colors.h
     include/mainwindow.h
     include/ArrowSymbolWidget.h
     include/SpeedometerWidget.h
@@ -34,6 +35,7 @@ set(HEADERS
     include/Blinkers.h
     include/EventManager.h
     include/CameraWidget.h
+	include/RosNode.hpp
 )
 
 set(SOURCES
@@ -49,6 +51,7 @@ set(SOURCES
     src/Blinkers.cpp
     src/EventManager.cpp
     src/CameraWidget.cpp
+	src/RosNode.cpp
 )
 
 set(UI_FILES
@@ -95,7 +98,7 @@ install(TARGETS ${exec_name}
 )
 
 # Export package dependencies
-ament_package()
+#ament_package()
 
 # Finalize Qt6 executable
 if(QT_VERSION_MAJOR EQUAL 6)

@@ -3,9 +3,12 @@
 SpeedometerWidget::SpeedometerWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)
 {
-    setFocusPolicy(Qt::StrongFocus);  // Ensure the widget can receive key events
+    color1 = Color();
+    main_color = color1.main_color;
+    accent_color = color1.accent_color;
+    alphabet_color = color1.alphabet_color;
+    setFocusPolicy(Qt::StrongFocus); // Ensure the widget can receive key events
 }
-
 
 void SpeedometerWidget::paintEvent(QPaintEvent* event)
 {
@@ -21,25 +24,33 @@ void SpeedometerWidget::paintEvent(QPaintEvent* event)
     drawCentralNumber(painter, centerX, centerY);
 }
 
-void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
+void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY,
+                                  int radius)
+{
     // Draw outer circle
-    painter.setPen(QPen(Qt::black, 15));
-    painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
-    painter.setPen(QPen(QColor("#2A4C5C"), 15));
+    painter.setPen(QPen(main_color, 15));
+    painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius,
+                        2 * radius);
+    // painter.setPen(QPen(QColor("#2A4C5C"), 15));
+    painter.setPen(QPen(accent_color, 15));
     int smaller_r = radius - 10;
-    painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
-    painter.setPen(QPen(Qt::black, 15));
-    smaller_r -=  80;
-    painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
+    painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r,
+                        2 * smaller_r);
+    painter.setPen(QPen(main_color, 15));
+    smaller_r -= 80;
+    painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r,
+                        2 * smaller_r);
     // Draw tick marks and labels
     int minSpeed = 0, maxSpeed = 160, step = 20;
     double startAngle = -45; // Start angle for 0 speed (bottom left)
-    double endAngle = 225;     // End angle for max speed (bottom right)
-    QFont font("Arial", 20, QFont::Bold);  // Example: Arial, size 10, bold
-    painter.setPen(QPen(Qt::white, 6));
+    double endAngle = 225;   // End angle for max speed (bottom right)
+    QFont font("Arial", 20, QFont::Bold); // Example: Arial, size 10, bold
+    painter.setPen(QPen(alphabet_color, 6));
     painter.setFont(font);
-    for (int speed = minSpeed; speed <= maxSpeed; speed += step / 2) {
-        double angle = startAngle + (endAngle - startAngle) * (double(speed) / maxSpeed);
+    for (int speed = minSpeed; speed <= maxSpeed; speed += step / 2)
+    {
+        double angle =
+            startAngle + (endAngle - startAngle) * (double(speed) / maxSpeed);
         double rad = qDegreesToRadians(angle);
         int xOuter = centerX - std::cos(rad) * radius;
         int yOuter = centerY - std::sin(rad) * radius;
@@ -51,7 +62,7 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY, i
         else if (speed / 10 % 2 != 0)
             painter.setPen(QPen(Qt::gray, 6));
         painter.drawLine(xOuter, yOuter, xInner, yInner);
-        painter.setPen(QPen(Qt::white, 6));
+        painter.setPen(QPen(alphabet_color, 6));
         // Draw label
         int xLabel = centerX - std::cos(rad) * (radius - 55) - 8;
         int yLabel = centerY - std::sin(rad) * (radius - 55);
@@ -60,11 +71,14 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY, i
     }
 }
 
-void SpeedometerWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int radius) {
+void SpeedometerWidget::drawNeedle(QPainter& painter, int centerX, int centerY,
+                                   int radius)
+{
     double startAngle = -45; // Start angle for 0 speed (bottom left)
-    double endAngle = 225;     // End angle for max speed (bottom right)
+    double endAngle = 225;   // End angle for max speed (bottom right)
     // Calculate the angle based on current speed in clockwise direction
-    double angle = startAngle + (endAngle - startAngle) * (double(currentSpeed) / 160);
+    double angle =
+        startAngle + (endAngle - startAngle) * (double(currentSpeed) / 160);
     double rad = qDegreesToRadians(angle);
     int xStart = centerX - std::cos(rad) * (radius - 80);
     int yStart = centerY - std::sin(rad) * (radius - 80);
@@ -76,11 +90,13 @@ void SpeedometerWidget::drawNeedle(QPainter& painter, int centerX, int centerY, 
     painter.drawLine(xStart, yStart, xEnd, yEnd);
 }
 
-void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY) {
+void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX,
+                                          int centerY)
+{
     // Set font and color for the speed number
-    QFont font("Arial", 40, QFont::Bold);  // Large font for the speed
+    QFont font("Arial", 40, QFont::Bold); // Large font for the speed
     painter.setFont(font);
-    painter.setPen(QPen(Qt::white));
+    painter.setPen(QPen(alphabet_color));
     QString speedText = QString::number(currentSpeed);
     // Calculate the bounding box for the speed text
     QFontMetrics metrics(font);
@@ -90,13 +106,14 @@ void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX, int ce
     int y = centerY + textRect.height() / 2 - 20;
     painter.drawText(x, y, speedText);
     // Set a smaller font and adjust position for "KPH"
-    QFont smallFont("Arial", 14, QFont::Bold);  // Smaller font for the unit
+    QFont smallFont("Arial", 14, QFont::Bold); // Smaller font for the unit
     painter.setFont(smallFont);
     // Adjust the position to render "KPH" just below the speed number
     QFontMetrics smallMetrics(smallFont);
     int kphWidth = smallMetrics.horizontalAdvance("KPH");
     int kphX = centerX - kphWidth / 2; // Center-align "KPH"
-    int kphY = y + textRect.height() - 30;  // Position "KPH" below the speed text
+    int kphY =
+        y + textRect.height() - 30; // Position "KPH" below the speed text
     // Draw "KPH"
     painter.drawText(kphX, kphY, "KPH");
 }
@@ -106,8 +123,11 @@ void SpeedometerWidget::accelerate(int forward_key)
     // FUTURE ROS2
 }
 
-void SpeedometerWidget::updateSpeed() {
+void SpeedometerWidget::updateSpeed()
+{
     update(); // Trigger a repaint
 }
+
+void SpeedometerWidget::setCurrentSpeed(int speed) { currentSpeed = speed; }
 
 SpeedometerWidget::~SpeedometerWidget() {}

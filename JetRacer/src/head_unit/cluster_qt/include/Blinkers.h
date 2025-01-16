@@ -14,7 +14,8 @@ public:
     explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left", std::string mode = "off");
     virtual ~Blinkers();
 
-    void    turnOnBlinkers(int blinker_key);
+    void    turnOnBlinkers(bool  on_off);
+    bool    get_blinking(void);
 
 private slots:
     void toggleImage(); // Slot to toggle the image

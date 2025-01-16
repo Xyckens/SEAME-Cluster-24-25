@@ -5,6 +5,10 @@
 BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)
 {
+    color1 = Color();
+    main_color = color1.main_color;
+    accent_color = color1.accent_color;
+    alphabet_color = color1.alphabet_color;
     updateLevel();
     setFocusPolicy(Qt::StrongFocus); 
     QTimer* timer = new QTimer(this);
@@ -38,10 +42,10 @@ void BatteryAndSpeedWidget::drawScale(QPainter& painter, int centerX, int center
     double startAngle = -40;
     double endAngle = 40;
     QFont font("Arial", 20, QFont::Bold); 
-    painter.setPen(QPen(Qt::white, 6));
+    painter.setPen(QPen(alphabet_color, 6));
     painter.setFont(font);
     drawBars(painter, centerX + 150, centerY + 30, radius * 1.2, startAngle, endAngle, 100);
-    painter.setPen(QPen(Qt::black, 15));
+    painter.setPen(QPen(main_color, 15));
 
     QRect rect(centerX, centerY - 80, radius, radius * 1.3);
 
@@ -124,7 +128,7 @@ void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, in
 {
     QFont font("Arial", 80, QFont::Bold); 
     painter.setFont(font);
-    painter.setPen(QPen(Qt::white));
+    painter.setPen(QPen(alphabet_color));
     QString speedText = QString::number(currentSpeed);
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(speedText);
@@ -148,7 +152,7 @@ void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter, int centerX, in
 {
     QFont font("Arial", 10, QFont::Bold); 
     painter.setFont(font);
-    painter.setPen(QPen(Qt::white));
+    painter.setPen(QPen(alphabet_color));
     QString speedText = QString::number(currentLevel) + " %";
 
     QFontMetrics metrics(font);

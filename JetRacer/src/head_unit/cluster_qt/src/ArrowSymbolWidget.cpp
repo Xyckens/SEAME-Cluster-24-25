@@ -3,6 +3,11 @@
 ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input)
     : QWidget(parent)
 {
+    color1 = Color();
+    main_color = color1.main_color;
+    accent_color = color1.accent_color;
+    alphabet_color = color1.alphabet_color;
+
     m_greenL = false;
     m_greenR = false;
     m_greenV = false;
@@ -76,9 +81,9 @@ void ArrowSymbolWidget::drawVerticalArrows(QPainter& painter, std::string color)
 
     // Draw the central vertical arrow
     if (color == "black")
-        painter.setPen(QPen(Qt::black,10));
+        painter.setPen(QPen(main_color,10));
     else
-        painter.setPen(QPen(Qt::green,10));
+        painter.setPen(QPen(accent_color,10));
 
     painter.drawLine(centerX, centerY, centerX, centerY - stemLength);
     drawArrowhead(painter, centerX, centerY - stemLength, 90, arrowSize, color);
@@ -94,9 +99,9 @@ void ArrowSymbolWidget::drawLeftCurve(QPainter& painter, std::string color)
     int arrowSize = 10;
 
     if (color == "black")
-        painter.setPen(QPen(Qt::black,10));
+        painter.setPen(QPen(main_color,10));
     else
-        painter.setPen(QPen(Qt::green,10));
+        painter.setPen(QPen(accent_color,10));
 
     QPainterPath leftCurve;
     leftCurve.moveTo(centerX, centerY + 40);
@@ -112,9 +117,9 @@ void ArrowSymbolWidget::drawRightCurve(QPainter& painter, std::string color)
     int arrowSize = 10;
 
     if (color == "black")
-        painter.setPen(QPen(Qt::black,10));
+        painter.setPen(QPen(main_color,10));
     else
-        painter.setPen(QPen(Qt::green,10));
+        painter.setPen(QPen(accent_color,10));
 
     QPainterPath rightCurve;
     rightCurve.moveTo(centerX, centerY + 40);
@@ -131,9 +136,9 @@ void ArrowSymbolWidget::drawArrowhead(QPainter& painter, int x, int y, double an
     double radRight = qDegreesToRadians(angle - 150);
 
     if (color == "black")
-        painter.setPen(QPen(Qt::black,10));
+        painter.setPen(QPen(main_color,10));
     else
-        painter.setPen(QPen(Qt::green,10));
+        painter.setPen(QPen(accent_color,10));
 
     size += 20;
     arrowHead << QPoint(x + std::cos(radRight) * size, y + std::sin(radRight) * size);

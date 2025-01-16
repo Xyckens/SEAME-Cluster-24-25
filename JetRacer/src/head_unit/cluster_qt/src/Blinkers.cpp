@@ -7,6 +7,7 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     // Create a label to display the image
     imageLabel = new QLabel(this);
     imageLabel->setAlignment(Qt::AlignCenter);
+    blinking = false;
 
     // Load two images to toggle
     if (dir == "left")
@@ -63,15 +64,22 @@ void Blinkers::toggleImage()
     isImage1Visible = !isImage1Visible;
 }
 
-void    Blinkers::turnOnBlinkers(int  blinker_key)
+void    Blinkers::turnOnBlinkers(bool  on_off)
 {
-    if (!blinking) {
-        toggleTimer = new QTimer(this);
-        connect(toggleTimer, &QTimer::timeout, this, &Blinkers::toggleImage);
-        toggleTimer->start(500);
-        blinking = true;
-    } else {
-        toggleTimer->stop();
+    if (on_off == true)
+    {
+        if (!blinking)
+        {
+            toggleTimer = new QTimer(this);
+            connect(toggleTimer, &QTimer::timeout, this, &Blinkers::toggleImage);
+            toggleTimer->start(500);
+            blinking = true;
+        }
+    }
+    else
+    {
+        if (toggleTimer)
+            toggleTimer->stop();
         if (isImage1Visible)
             isImage1Visible = false;
         imageLabel->setPixmap(image1);
@@ -79,6 +87,10 @@ void    Blinkers::turnOnBlinkers(int  blinker_key)
     }
 }
 
+bool    Blinkers::get_blinking()
+{
+    return blinking;
+}
 
 
 
