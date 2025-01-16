@@ -49,7 +49,9 @@ void EventManager::processKeyStates()
     executor.spin_some(
         std::chrono::milliseconds(10)); // after this line, values are updated.
     py_speed->setCurrentSpeed(node->getSpeed());
+    py_batspeed->setCurrentLevel(node->getBattery());
     py_speed->update();
+    py_batspeed->update();
 
     for (int key : pressedKeys)
     {

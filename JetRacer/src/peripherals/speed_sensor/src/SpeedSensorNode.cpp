@@ -2,14 +2,15 @@
 #include "std_msgs/msg/u_int8.hpp"
 #include <rclcpp/logging.hpp>
 
-using namespace std::chrono_literals;
-
 SpeedSensorNode::SpeedSensorNode() : rclcpp::Node("speed_sensor")
 {
     client_ = this->create_client<custom_msgs::srv::CanService>("can_service");
-    timer_ = this->create_timer(50ms, [this]() { readSpeed(); });
-    speed_publisher_ = this->create_publisher<std_msgs::msg::UInt8>(
-        "speed_sensor_readings", 10);
+    timer_ = this->create_timer(std::chrono::milliseconds(POLL_FREQ_MS),
+                                [this]() { readSpeed(); });
+    speed_publisher_ =
+        this->create_publisher<std_msgs::msg::UInt8>("speed_readings", 10);
+    rpm_publisher_ =
+        this->create_publisher<std_msgs::msg::Int32>("rpm_readings", 10);
 }
 
 SpeedSensorNode::~SpeedSensorNode() {}

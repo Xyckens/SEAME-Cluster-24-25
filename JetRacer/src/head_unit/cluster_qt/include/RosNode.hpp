@@ -11,11 +11,19 @@ class RosNode : public rclcpp::Node
         ~RosNode() = default;
 
         int getSpeed() const;
+        int getBattery() const;
 
     private:
         rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr battery_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr speed_sub_;
+        // TODO: add subscriber for cmd_vel (see the definition of Twist to
+        // see what field to refer to)
+        // definition:
+        // Vector3  linear
+        // Vector3  angular
+        // only the field x is used in linear (forward movement)
+        // only the field z i used in angular (turning)
 
-        float_t battery_level_;
-        uint8_t speed_;
+        int battery_level_;
+        int speed_;
 };

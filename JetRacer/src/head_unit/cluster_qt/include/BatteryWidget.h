@@ -1,19 +1,21 @@
 #ifndef BATTERYWIDGET_H
 #define BATTERYWIDGET_H
 
-#include <QWidget>
+#include "Colors.h"
 #include <QPainter>
 #include <QTimer>
-#include "Colors.h"
+#include <QWidget>
 
-class BatteryWidget : public QWidget {
+class BatteryWidget : public QWidget
+{
 
     public:
         BatteryWidget(QWidget* parent = nullptr);
         ~BatteryWidget();
-        QColor  main_color;
-        QColor  accent_color;
-        QColor  alphabet_color;
+        QColor main_color;
+        QColor accent_color;
+        QColor alphabet_color;
+
     protected:
         void paintEvent(QPaintEvent* event) override;
 
@@ -21,12 +23,12 @@ class BatteryWidget : public QWidget {
         int currentLevel;
         Color color1;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
-        void drawNeedle(QPainter& painter, int centerX, int centerY, int radius);
+        void drawNeedle(QPainter& painter, int centerX, int centerY,
+                        int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);
         QColor calculateBarColor(int value);
-        void drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level);
-
-
+        void drawBars(QPainter& painter, int centerX, int centerY, int radius,
+                      double startAngle, double endAngle, int Level);
 
     private slots:
         void updateLevel();
