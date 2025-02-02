@@ -92,7 +92,6 @@ void    StatsWidget::setObstacles(int obs)
 
 void    StatsWidget::changeUnits(void)
 {
-    qDebug() << "Called";
     if (unit == "Km"){
         unit = "Mi";
         distance_int *= 0.6214;

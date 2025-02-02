@@ -20,7 +20,6 @@
 #include <QWidget>
 #include <rclcpp/rclcpp.hpp>
 
-#define REFRESH_RATE_MS 50
 
 class EventManager : public QWidget
 {
@@ -43,13 +42,21 @@ class EventManager : public QWidget
         TopBar* top;
         TopBar* top2;
 
-        QPointF                                     mousePosition;
-        QSet<int>                                   pressedKeys;
-        QTimer*                                     updateTimer; // Used to check if a key is still being called
-        QStackedWidget*                             stackedWidget;
-        QWidget*                                    mainWindow;
+        QPointF                                     mouse_position;
+        QTimer*                                     update_timer; // Used to check if a key is still being called
+        QStackedWidget*                             stacked_widget;
+        QWidget*                                    main_window;
         std::shared_ptr<RosNode>                    node;
         rclcpp::executors::SingleThreadedExecutor   executor;
+
+        static constexpr int    REFRESH_RATE_MS = 50;
+        static constexpr int    SCREEN_UPDATE_RATE = 10;
+        static constexpr int    STATS_DISTANCE = 4533;
+        static constexpr int    STATS_AVERAGE = 56;
+        static constexpr int    STATS_CONSUMED = 78;
+        static constexpr int    STATS_OBSTACLES = 2;
+        static constexpr int    MIN_SWIPE_WIDTH = 100;
+        static constexpr int    MAX_SWIPE_HEIGHT = 200;
 
     public:
         EventManager(ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
@@ -59,9 +66,9 @@ class EventManager : public QWidget
                      Blinkers* right_blinker2, StatsWidget* stats,
                      FanSpeedWidget* fan, FanSpeedWidget* fan2,
                      CPUTempWidget* cpu, CPUTempWidget* cpu2, TopBar* top,
-                     TopBar* top2, QStackedWidget* stackedWidget,
-                     QWidget* mainWindow, std::shared_ptr<RosNode> ros_node);
-        virtual ~EventManager();
+                     TopBar* top2, QStackedWidget* stacked_widget,
+                     QWidget* main_window, std::shared_ptr<RosNode> ros_node);
+        ~EventManager() override;
         QStackedWidget* getStackedWidget();
         Color color1;
         void changeUnits();
@@ -69,7 +76,9 @@ class EventManager : public QWidget
 
     protected:
         bool eventFilter(QObject* obj, QEvent* event) override;
-        bool    swipe(QPointF releasePosition);
+        bool    swipe(QPointF release_position);
+        void    activateButton(int key);  
+
 
     private slots:
         void updateScreen();
