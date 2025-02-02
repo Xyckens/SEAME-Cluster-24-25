@@ -5,6 +5,7 @@
 #include <std_msgs/msg/float64.hpp>
 #include <std_msgs/msg/string.hpp>
 
+constexpr int NODE_QOS = 10;
 /**
  * @class DisplayRoutineNode
  * @brief Update the oled display.
@@ -16,7 +17,7 @@ class DisplayRoutineNode : public rclcpp::Node
 {
     public:
         DisplayRoutineNode();
-        ~DisplayRoutineNode() = default;
+        ~DisplayRoutineNode() override = default;
 
     private:
         rclcpp::Publisher<custom_msgs::msg::Display>::SharedPtr publisher_;

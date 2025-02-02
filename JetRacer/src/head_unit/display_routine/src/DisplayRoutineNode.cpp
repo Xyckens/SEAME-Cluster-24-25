@@ -11,10 +11,10 @@ DisplayRoutineNode::DisplayRoutineNode() : rclcpp::Node("display_routine_node")
 {
     timer_ = this->create_timer(
         60s, std::bind(&DisplayRoutineNode::updateDisplay, this));
-    publisher_ =
-        this->create_publisher<custom_msgs::msg::Display>("cmd_display", 10);
+    publisher_ = this->create_publisher<custom_msgs::msg::Display>(
+        "cmd_display", NODE_QOS);
     battery_subscriber_ = this->create_subscription<std_msgs::msg::Float64>(
-        "battery_percentage", 10,
+        "battery_percentage", NODE_QOS,
         [this](std_msgs::msg::Float64 battery_level) {
             battery_level_ =
                 std::to_string(static_cast<int>(battery_level.data));
@@ -48,7 +48,7 @@ void DisplayRoutineNode::updateDisplay() const
  */
 std::vector<std::string> DisplayRoutineNode::getIPv4Addresses() const
 {
-    std::vector<std::string> ipAddresses;
+    std::vector<std::string> ip_addresses;
 
     struct ifaddrs* ifaddr;
     if (getifaddrs(&ifaddr) == -1)
@@ -72,15 +72,14 @@ std::vector<std::string> DisplayRoutineNode::getIPv4Addresses() const
         // Only consider IPv4 addresses
         if (ifa->ifa_addr->sa_family == AF_INET)
         {
-            struct sockaddr_in* ipv4 =
-                reinterpret_cast<struct sockaddr_in*>(ifa->ifa_addr);
+            auto ipv4 = reinterpret_cast<struct sockaddr_in*>(ifa->ifa_addr);
             char ip[INET_ADDRSTRLEN];
             inet_ntop(AF_INET, &ipv4->sin_addr, ip, INET_ADDRSTRLEN);
 
             if (std::string(ip) != "127.0.0.1")
-                ipAddresses.emplace_back(ip);
+                ip_addresses.emplace_back(ip);
         }
     }
 
-    return ipAddresses;
+    return ip_addresses;
 }

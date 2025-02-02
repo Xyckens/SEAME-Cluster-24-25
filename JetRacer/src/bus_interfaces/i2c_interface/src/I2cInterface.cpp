@@ -19,7 +19,8 @@ I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> mock_driver,
         i2c_driver_ = mock_driver;
     else
         i2c_driver_ = std::make_shared<I2cDriver>(1);
-    rclcpp::QoS qos(rclcpp::KeepLast(60));
+
+    rclcpp::QoS qos((rclcpp::KeepLast(QUEUE_SIZE)));
     qos.reliable();
     qos.durability_volatile();
 
@@ -28,7 +29,7 @@ I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> mock_driver,
         std::bind(&I2cInterface::handleI2cRequest, this, std::placeholders::_1,
                   std::placeholders::_2),
         qos);
-    init_();
+    init();
 
     RCLCPP_INFO(this->get_logger(), "Starting i2c interface");
 }
@@ -39,7 +40,7 @@ I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> mock_driver,
  * this operation will fail if the user is not in the i2c group ("sudo usermod
  * -aG i2c $USER")
  */
-void I2cInterface::init_()
+void I2cInterface::init()
 {
     int res;
 

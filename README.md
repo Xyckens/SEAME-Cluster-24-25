@@ -5,6 +5,8 @@ The JetRacer Instrument Cluster Qt Application project aims to create a real-tim
 
 The successful completion of this project demonstrates the ability to design and implement real-world software solutions and effectively communicate results.
 
+Code documentation can be found here:  [JetRacer Documentation](https://xyckens.github.io/SEAME-Cluster-24-25/)
+
 ---
 
 ## **Background Information**

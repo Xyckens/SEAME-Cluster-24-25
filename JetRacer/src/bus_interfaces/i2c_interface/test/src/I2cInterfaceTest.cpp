@@ -4,6 +4,9 @@
 using namespace std::chrono_literals;
 using namespace testing;
 
+constexpr uint8_t DEVICE_ADDR = 0x40;
+constexpr uint8_t DATA[3] = {0x10, 0x11, 0x10};
+
 void I2cInterfaceTest::SetUp()
 {
     rclcpp::init(0, nullptr);
@@ -34,12 +37,12 @@ TEST_F(I2cInterfaceTest, read1byte)
             [](std::vector<uint8_t>& buff)
             {
                 EXPECT_EQ(buff.size(), 1);
-                buff.at(0) = 0x10;
+                buff.at(0) = 0x10; // NOLINT
                 return 1;
             });
 
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
-    request->device_address = 0x40;
+    request->device_address = DEVICE_ADDR;
     request->read_request = true;
     request->read_length = 1;
 
@@ -55,7 +58,7 @@ TEST_F(I2cInterfaceTest, readFailure)
     EXPECT_CALL(*mock_device_, read).WillOnce(testing::Return(-1));
 
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
-    request->device_address = 0x40;
+    request->device_address = DEVICE_ADDR;
     request->read_request = true;
     request->read_length = 1;
 
@@ -71,7 +74,7 @@ TEST_F(I2cInterfaceTest, readIncomplete)
         .WillOnce([](std::vector<uint8_t>& buff) { return 1; });
 
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
-    request->device_address = 0x40;
+    request->device_address = DEVICE_ADDR;
     request->read_request = true;
     request->read_length = 3;
 
@@ -93,9 +96,9 @@ TEST_F(I2cInterfaceTest, write1byte)
             });
 
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
-    request->device_address = 0x40;
+    request->device_address = DEVICE_ADDR;
     request->read_request = false;
-    request->write_data.push_back(0x10);
+    request->write_data.push_back(DATA[0]);
 
     auto future = i2c_client_->async_send_request(request);
     auto response = future.get();
@@ -108,9 +111,9 @@ TEST_F(I2cInterfaceTest, writeFailure)
     EXPECT_CALL(*mock_device_, write).WillOnce(Return(-1));
 
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
-    request->device_address = 0x40;
+    request->device_address = DEVICE_ADDR;
     request->read_request = false;
-    request->write_data.push_back(0x10);
+    request->write_data.push_back(DATA[0]);
 
     auto future = i2c_client_->async_send_request(request);
     auto response = future.get();
@@ -124,9 +127,10 @@ TEST_F(I2cInterfaceTest, writeIncomplete)
     EXPECT_CALL(*mock_device_, write).WillOnce(Return(1));
 
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
-    request->device_address = 0x40;
+    request->device_address = DEVICE_ADDR;
     request->read_request = false;
-    request->write_data.insert(request->write_data.end(), {0x10, 0x11, 0x12});
+    request->write_data.insert(request->write_data.end(),
+                               {DATA[0], DATA[1], DATA[2]});
 
     auto future = i2c_client_->async_send_request(request);
     auto response = future.get();
@@ -141,7 +145,7 @@ TEST_F(I2cInterfaceTest, setAddressFailure)
     EXPECT_CALL(*mock_device_, setAddress).WillOnce(testing::Return(-1));
 
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
-    request->device_address = 0x40;
+    request->device_address = DEVICE_ADDR;
 
     auto future = i2c_client_->async_send_request(request);
     auto response = future.get();

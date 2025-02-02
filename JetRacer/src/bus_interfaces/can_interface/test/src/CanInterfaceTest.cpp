@@ -2,6 +2,9 @@
 
 using namespace testing;
 
+constexpr uint8_t CAN_ID = 0x10;
+constexpr char DATA[3] = {'h', 'e', 'y'};
+
 void CanInterfaceTest::SetUp()
 {
     rclcpp::init(0, nullptr);
@@ -32,8 +35,8 @@ TEST_F(CanInterfaceTest, readSuccess)
         .WillOnce(
             []()
             {
-                const sockcanpp::CanId id(0x10);
-                sockcanpp::CanMessage msg(id, "hey");
+                const sockcanpp::CanId id(CAN_ID);
+                sockcanpp::CanMessage msg(id, {DATA[0]});
 
                 return msg;
             });
@@ -45,7 +48,7 @@ TEST_F(CanInterfaceTest, readSuccess)
     auto response = future.get();
 
     EXPECT_EQ(response->success, true);
-    EXPECT_EQ(response->read_data.at(0), 'h');
+    EXPECT_EQ(response->read_data.at(0), DATA[0]);
 }
 
 TEST_F(CanInterfaceTest, readFailure)
@@ -78,8 +81,9 @@ TEST_F(CanInterfaceTest, writeSuccess)
 
     auto request = std::make_shared<custom_msgs::srv::CanService::Request>();
     request->read_request = false;
-    request->can_id = 0x10;
-    request->write_data.insert(request->write_data.end(), {'h', 'e', 'y'});
+    request->can_id = CAN_ID;
+    request->write_data.insert(request->write_data.end(), std::begin(DATA),
+                               std::end(DATA));
 
     auto future = can_client_->async_send_request(request);
     auto response = future.get();
@@ -98,8 +102,8 @@ TEST_F(CanInterfaceTest, writeFailure)
             });
 
     auto request = std::make_shared<custom_msgs::srv::CanService::Request>();
-    request->can_id = 0x10;
-    request->write_data.push_back(0x30);
+    request->can_id = CAN_ID;
+    request->write_data.push_back(DATA[0]);
 
     auto future = can_client_->async_send_request(request);
     auto response = future.get();

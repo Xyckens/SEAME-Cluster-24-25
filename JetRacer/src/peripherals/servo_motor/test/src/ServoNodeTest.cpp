@@ -1,8 +1,11 @@
 #include "ServoNodeTest.hpp"
 #include "PCA9685Driver.hpp"
 
-#define ANGLE_TO_PW(x)                                                         \
-    MIN_COUNT + (static_cast<float>(x) * (MAX_COUNT - MIN_COUNT)) / 180;
+constexpr float angleToPWM(int x)
+{
+    return MIN_COUNT +
+           (static_cast<float>(x) * (MAX_COUNT - MIN_COUNT)) / 180; // NOLINT
+}
 
 void ServoNodeTest::SetUp()
 {
@@ -11,8 +14,8 @@ void ServoNodeTest::SetUp()
     mock_driver_ = std::make_shared<MockPCA9685Driver>();
     test_node_ = std::make_shared<ServoNode>();
     test_node_->initPCA9685(mock_driver_);
-    cmd_vel_pub_ =
-        test_node_->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
+    cmd_vel_pub_ = test_node_->create_publisher<geometry_msgs::msg::Twist>(
+        "cmd_vel", NODE_QOS);
     executor_ = std::make_unique<rclcpp::executors::SingleThreadedExecutor>();
     executor_->add_node(test_node_);
 
@@ -33,7 +36,7 @@ void ServoNodeTest::TearDown()
 TEST_P(ServoNodeTest, velocityToAngleConversion)
 {
     const auto [cmd_vel, expected_angle] = GetParam();
-    const uint16_t expected_pw = ANGLE_TO_PW(expected_angle);
+    const uint16_t expected_pw = angleToPWM(expected_angle);
 
     EXPECT_CALL(*mock_driver_, setPWMDutyCycle)
         .WillOnce(
@@ -50,7 +53,8 @@ TEST_P(ServoNodeTest, velocityToAngleConversion)
     std::this_thread::sleep_for(std::chrono::seconds(1));
 }
 
-// Define test cases: {cmd_vel, expected_angle}
+// NOLINTBEGIN
+//  Define test cases: {cmd_vel, expected_angle}
 INSTANTIATE_TEST_CASE_P(
     VelocityMappings, ServoNodeTest,
     ::testing::Values(std::make_tuple(-1.0, 170), // Full left
@@ -69,3 +73,4 @@ INSTANTIATE_TEST_CASE_P(
            << static_cast<int>(angle);
         return ss.str();
     });
+// NOLINTEND

@@ -47,14 +47,14 @@ void PCA9685Driver::setRegister(uint8_t reg, uint8_t value)
  *
  * @param freq_Hz The desired PWM frequency in hertz.
  */
-void PCA9685Driver::setPWMFrequency(float freq_Hz)
+void PCA9685Driver::setPWMFrequency(float freq_hz)
 {
-    uint8_t prescale =
-        static_cast<uint8_t>((25000000.0 / (4096 * freq_Hz)) - 1.0);
+    auto prescale =
+        static_cast<uint8_t>((CRISTAL_FREQUENCY / (NB_STEPS * freq_hz)) - 1.0);
 
-    setRegister(MODE1_REGISTER, 0x10); // sleep mode
+    setRegister(MODE1_REGISTER, SLEEP_MODE); // sleep mode
     setRegister(PRESCALE_REGISTER, prescale);
-    setRegister(MODE1_REGISTER, 0x80); // Wake-up + auto increment
+    setRegister(MODE1_REGISTER, AUTO_INCREMENT); // Wake-up + auto increment
     std::this_thread::sleep_for(5ms);
 }
 
@@ -78,21 +78,21 @@ void PCA9685Driver::setPWMFrequency(float freq_Hz)
  */
 void PCA9685Driver::setPWMDutyCycle(uint8_t channel, uint16_t on, uint16_t off)
 {
-    if (channel > 15)
+    if (channel > MAX_CHANNEL)
     {
         RCLCPP_ERROR(node_->get_logger(), "Invalid chanel number: %d", channel);
         return;
     }
 
-    auto lowON = (uint8_t)(on & 0xFF);
-    auto highON = (uint8_t)((on >> 8) & 0xFF);
-    auto lowOFF = (uint8_t)(off & 0xFF);
-    auto highOFF = (uint8_t)((off >> 8) & 0xFF);
+    auto low_on = (uint8_t)(on & LSB_MASK);
+    auto high_on = (uint8_t)((on >> 8) & LSB_MASK); // NOLINT
+    auto low_off = (uint8_t)(off & LSB_MASK);
+    auto high_off = (uint8_t)((off >> 8) & LSB_MASK); // NOLINT
 
-    setRegister((uint8_t)(CHANNEL_REGISTER + (channel * 4)), lowON);
-    setRegister((uint8_t)(CHANNEL_REGISTER + (channel * 4) + 1), highON);
-    setRegister((uint8_t)(CHANNEL_REGISTER + (channel * 4) + 2), lowOFF);
-    setRegister((uint8_t)(CHANNEL_REGISTER + (channel * 4) + 3), highOFF);
+    setRegister((uint8_t)(CHANNEL_REGISTER + (channel * 4)), low_on);
+    setRegister((uint8_t)(CHANNEL_REGISTER + (channel * 4) + 1), high_on);
+    setRegister((uint8_t)(CHANNEL_REGISTER + (channel * 4) + 2), low_off);
+    setRegister((uint8_t)(CHANNEL_REGISTER + (channel * 4) + 3), high_off);
 }
 
 /**
@@ -106,5 +106,5 @@ void PCA9685Driver::setPWMDutyCycle(uint8_t channel, uint16_t on, uint16_t off)
  */
 void PCA9685Driver::setGPIO(uint8_t channel, bool on)
 {
-    setPWMDutyCycle(channel, on * 0x1000, !on * 0x1000);
+    setPWMDutyCycle(channel, on * 0x1000, !on * 0x1000); // NOLINT
 }

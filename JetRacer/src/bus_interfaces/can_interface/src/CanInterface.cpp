@@ -19,8 +19,9 @@ using namespace std::chrono_literals;
 CanInterface::CanInterface(std::shared_ptr<ICanDriver> mock_driver)
     : Node("can_interface")
 {
-    rclcpp::QoS qos(60);
+    rclcpp::QoS qos((rclcpp::KeepLast(QUEUE_SIZE)));
     qos.reliable();
+    qos.durability_volatile();
 
     if (mock_driver)
         can_driver_ = mock_driver;
@@ -86,10 +87,11 @@ void CanInterface::handleCanRequest(
         {
             response->set__success(false);
             response->set__message(e.what());
-            RCLCPP_ERROR(this->get_logger(), "Fail writing data: %s", e.what());
+            RCLCPP_ERROR_THROTTLE(this->get_logger(), *this->get_clock(),
+                                  ERROR_OUTPUT_FREQ, "Fail writing data: %s",
+                                  e.what());
             return;
         }
-        // TODO: Incomplete writes
     }
 
     if (request->read_request)

@@ -5,7 +5,7 @@ using namespace std::chrono_literals;
 OledDisplayNode::OledDisplayNode() : rclcpp::Node("oled_display")
 {
     display_subscriber_ = this->create_subscription<custom_msgs::msg::Display>(
-        "cmd_display", 10,
+        "cmd_display", NODE_QOS,
         std::bind(&OledDisplayNode::writeToI2c, this, std::placeholders::_1));
 }
 

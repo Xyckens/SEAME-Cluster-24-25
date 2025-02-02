@@ -3,6 +3,8 @@
 
 using ::testing::InSequence;
 
+constexpr uint8_t DEVICE_ADDR = 0x60;
+
 void PCA9685DriverTest::SetUp()
 {
     rclcpp::init(0, nullptr);
@@ -30,12 +32,12 @@ TEST_F(PCA9685DriverTest, TestInstantiationSuccess)
         .WillOnce(
             [](const auto& request, auto& response)
             {
-                EXPECT_EQ(request.device_address, 0x60);
+                EXPECT_EQ(request.device_address, DEVICE_ADDR);
                 EXPECT_EQ(request.write_data[0], 0x00);
                 response.success = true;
             });
 
-    PCA9685Driver driver(test_node_, 0x60);
+    PCA9685Driver driver(test_node_, DEVICE_ADDR);
 }
 
 TEST_F(PCA9685DriverTest, TestInstantiationFailure)
@@ -44,20 +46,21 @@ TEST_F(PCA9685DriverTest, TestInstantiationFailure)
         .WillOnce([](const auto& request, auto& response)
                   { response.success = false; });
 
-    EXPECT_THROW({ PCA9685Driver driver(test_node_, 0x60); }, DriverException);
+    EXPECT_THROW(
+        { PCA9685Driver driver(test_node_, DEVICE_ADDR); }, DriverException);
 }
 
 TEST_F(PCA9685DriverTest, TestSetPWMFrequency)
 {
     InSequence seq;
-    float frequency = 50.0;
+    float frequency = 50.0; // NOLINT
 
     // First expect the ping() call from constructor
     EXPECT_CALL(mock_i2c_node_->getMockService(), HandleRequest)
         .WillOnce(
             [](const auto& req, auto& resp)
             {
-                EXPECT_EQ(req.device_address, 0x60);
+                EXPECT_EQ(req.device_address, DEVICE_ADDR);
                 EXPECT_EQ(req.write_data[0], 0x00);
                 resp.success = true;
             });
@@ -67,7 +70,7 @@ TEST_F(PCA9685DriverTest, TestSetPWMFrequency)
         .WillOnce(
             [](const auto& req, auto& resp)
             {
-                EXPECT_EQ(req.device_address, 0x60);
+                EXPECT_EQ(req.device_address, DEVICE_ADDR);
                 EXPECT_EQ(req.write_data[0], MODE1_REGISTER);
                 EXPECT_EQ(req.write_data[1], 0x10); // Sleep mode
                 resp.success = true;
@@ -77,11 +80,11 @@ TEST_F(PCA9685DriverTest, TestSetPWMFrequency)
         .WillOnce(
             [frequency](const auto& req, auto& resp)
             {
-                EXPECT_EQ(req.device_address, 0x60);
+                EXPECT_EQ(req.device_address, DEVICE_ADDR);
                 EXPECT_EQ(req.write_data[0], PRESCALE_REGISTER);
                 // Calculate expected prescale for 50Hz
-                uint8_t expected_prescale = static_cast<uint8_t>(
-                    (25000000.0 / (4096 * frequency)) - 1.0);
+                auto expected_prescale = static_cast<uint8_t>(
+                    (CRISTAL_FREQUENCY / (NB_STEPS * frequency)) - 1.0);
                 EXPECT_EQ(req.write_data[1], expected_prescale);
                 resp.success = true;
             });
@@ -90,12 +93,12 @@ TEST_F(PCA9685DriverTest, TestSetPWMFrequency)
         .WillOnce(
             [](const auto& req, auto& resp)
             {
-                EXPECT_EQ(req.device_address, 0x60);
+                EXPECT_EQ(req.device_address, DEVICE_ADDR);
                 EXPECT_EQ(req.write_data[0], MODE1_REGISTER);
                 EXPECT_EQ(req.write_data[1], 0x80); // Wake-up + auto
                 resp.success = true;
             });
 
-    PCA9685Driver driver(test_node_, 0x60);
+    PCA9685Driver driver(test_node_, DEVICE_ADDR);
     driver.setPWMFrequency(frequency);
 }

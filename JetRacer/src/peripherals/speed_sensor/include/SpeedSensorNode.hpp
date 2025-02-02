@@ -11,7 +11,19 @@
 #include <std_msgs/msg/u_int32.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 
-#define SPEED_SENSOR_ID 0x300
+// NODE
+constexpr int SPEED_SENSOR_ID = 0x300;
+constexpr int NODE_QOS = 10;
+constexpr int ERROR_OUTPUT_FREQ = 3000;
+constexpr int POLL_FREQ_MS = 100;
+constexpr int NB_HOLES = 36;
+constexpr float WHEELS_DIAM_M = 0.065;
+constexpr float WHEELS_PERIMETER_M = M_PI * (WHEELS_DIAM_M);
+
+// CONVERSIONS
+constexpr int MS_TO_S = 1000;
+constexpr int M_TO_DM = 10;
+constexpr int SEC_TO_MIN = 60;
 
 /**
  * @class SpeedSensorNode
@@ -22,7 +34,7 @@ class SpeedSensorNode : public rclcpp::Node
 {
     public:
         SpeedSensorNode();
-        ~SpeedSensorNode();
+        ~SpeedSensorNode() override;
 
     private:
         rclcpp::Subscription<custom_msgs::msg::CanFrame>::SharedPtr
@@ -35,10 +47,4 @@ class SpeedSensorNode : public rclcpp::Node
         void writeSpeed(
             rclcpp::Client<custom_msgs::srv::CanService>::SharedFuture future);
         void readSpeed();
-
-        const int POLL_FREQ_MS =
-            100; // How frequent we get counts from the sensor
-        const uint8_t NB_HOLES = 36; // Number of holes in the sensor wheel
-        const float WHEELS_DIAM_M = 0.065;
-        const float WHEELS_PERIMETER_M = M_PI * (WHEELS_DIAM_M);
 };

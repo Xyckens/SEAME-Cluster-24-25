@@ -7,9 +7,7 @@ on:
       - main
   push:
     branches:
-      - main
-      - workflow
-      - clang_tidy
+      - '*'
 
 env:
   QT_BUILD_DIR: JetRacer/src/head_unit/cluster_qt/build
@@ -73,7 +71,7 @@ jobs:
         colcon test --ctest-args tests --packages-skip camera_ros cluster --executor sequential
         colcon test-result --all --verbose
 
-    # - name: Run clang-tidy
-    #   run: |
-    #     cd $ROS_BUILD_DIR
-    #     run-clang-tidy-rust tidy.json
+    - name: Run clang-tidy
+      run: |
+        cd $ROS_BUILD_DIR
+        run-clang-tidy-rust tidy.json -j 4 --suppress-warnings

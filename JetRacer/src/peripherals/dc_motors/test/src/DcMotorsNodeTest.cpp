@@ -1,7 +1,7 @@
 #include "DcMotorsNodeTest.hpp"
 #include "PCA9685Driver.hpp"
 
-#define VEL_TO_PW(x) static_cast<float>(x) * (MAX_COUNT - MIN_COUNT);
+#define VEL_TO_PW(x) static_cast<float>(x) * (MAX_COUNT - MIN_COUNT); // NOLINT
 
 using namespace testing;
 
@@ -12,8 +12,8 @@ void DcMotorsNodeTest::SetUp()
     test_node_ = std::make_shared<DcMotorsNode>();
     test_node_->initPCA9685(mock_driver_);
 
-    cmd_vel_pub_ =
-        test_node_->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
+    cmd_vel_pub_ = test_node_->create_publisher<geometry_msgs::msg::Twist>(
+        "cmd_vel", NODE_QOS);
     executor_ = std::make_unique<rclcpp::executors::SingleThreadedExecutor>();
     executor_->add_node(test_node_);
     executor_thread_ = std::thread([this]() { executor_->spin(); });
@@ -28,7 +28,7 @@ void DcMotorsNodeTest::TearDown()
 }
 
 INSTANTIATE_TEST_CASE_P(linearVelocities, DcMotorsNodeTest,
-                        Values(1, -1, 0.5, -0.5, 0.25, -0.25));
+                        Values(1, -1, 0.5, -0.5, 0.25, -0.25)); // NOLINT
 
 TEST_P(DcMotorsNodeTest, ValidSpeed)
 {

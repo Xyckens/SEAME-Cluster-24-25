@@ -15,7 +15,7 @@ Checks: >
   performance-for-range-copy,
   cppcoreguidelines-macro-usage,
 WarningsAsErrors: modernize-use-override
-HeaderFilterRegex: '.*'
+HeaderFilterRegex: '^(?!.*sockcanpp).*'
 FormatStyle: file
 
 CheckOptions:

@@ -4,7 +4,7 @@
 #include <ssd1306.hpp>
 
 using namespace std::chrono_literals;
-
+// NOLINTBEGIN
 SSD1306Driver::SSD1306Driver(std::shared_ptr<rclcpp::Node> node)
     : ADriver(node, SSD1306_I2C_ADDR)
 {
@@ -194,7 +194,7 @@ void SSD1306Driver::clearScreen()
 
 void SSD1306Driver::writeString(uint8_t size, const std::string& msg)
 {
-    uint8_t* font_table = 0;
+    uint8_t* font_table = nullptr;
     uint8_t font_table_width = 0;
 
     if (size == SSD1306_FONT_SMALL)
@@ -234,3 +234,4 @@ void SSD1306Driver::writeString(uint8_t size, const std::string& msg)
                                std::placeholders::_1));
     }
 }
+// NOLINTEND

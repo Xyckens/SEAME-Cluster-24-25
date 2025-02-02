@@ -1,4 +1,5 @@
 #include "ADriver.hpp"
+#include "DriverException.hpp"
 #include "fmt/core.h"
 
 using namespace std::chrono_literals;
@@ -9,7 +10,7 @@ ADriver::ADriver(rclcpp::Node::SharedPtr node, uint8_t device_address)
     i2c_client_ =
         node_->create_client<custom_msgs::srv::I2cService>("i2c_service");
 
-    while (!i2c_client_->wait_for_service(1s))
+    while (!i2c_client_->wait_for_service(5s))
         RCLCPP_INFO(node->get_logger(), "Waiting for i2c service to start");
 }
 

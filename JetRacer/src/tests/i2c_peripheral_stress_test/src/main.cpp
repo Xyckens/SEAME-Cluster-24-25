@@ -5,15 +5,17 @@
 
 using namespace std::chrono_literals;
 
+constexpr float MOTOR_STEP = 0.1;
+constexpr int QUEUE_DEPTH = 10;
+
 class TesterNode : public rclcpp::Node
 {
     public:
         TesterNode() : Node("tester_node")
         {
             // Custom QoS profile for low latency and reliable delivery
-            rclcpp::QoS qos_profile = rclcpp::QoS(rclcpp::KeepLast(10))
-                                          .reliable()
-                                          .durability_volatile();
+            rclcpp::QoS qos_profile =
+                rclcpp::QoS(QUEUE_DEPTH).reliable().durability_volatile();
 
             timer_servo = this->create_timer(
                 1s, std::bind(&TesterNode::twistCallback, this));
@@ -60,8 +62,8 @@ class TesterNode : public rclcpp::Node
             msg.linear.x = curr_linear_x;
             msg.angular.z = curr_angular_z;
 
-            curr_angular_z += 0.1;
-            curr_linear_x += 0.1;
+            curr_angular_z += MOTOR_STEP;
+            curr_linear_x += MOTOR_STEP;
 
             if (curr_linear_x > 1 && curr_angular_z > 1)
             {

@@ -5,6 +5,9 @@
 #include <memory>
 #include <rclcpp/rclcpp.hpp>
 
+constexpr int QUEUE_SIZE = 60;
+constexpr int ERROR_OUTPUT_FREQ = 5000;
+
 using sockcanpp::CanDriver;
 
 /**
@@ -16,7 +19,7 @@ class CanInterface : public rclcpp::Node
 {
     public:
         CanInterface(std::shared_ptr<ICanDriver> mock_driver = nullptr);
-        ~CanInterface();
+        ~CanInterface() override;
 
         void pollCanBus();
 
@@ -25,7 +28,6 @@ class CanInterface : public rclcpp::Node
         rclcpp::Service<custom_msgs::srv::CanService>::SharedPtr can_service_;
 
         void handleCanRequest(
-            const std::shared_ptr<custom_msgs::srv::CanService::Request>
-                request,
+            std::shared_ptr<custom_msgs::srv::CanService::Request> request,
             std::shared_ptr<custom_msgs::srv::CanService::Response> response);
 };

@@ -7,10 +7,10 @@ SpeedSensorNode::SpeedSensorNode() : rclcpp::Node("speed_sensor")
     client_ = this->create_client<custom_msgs::srv::CanService>("can_service");
     timer_ = this->create_timer(std::chrono::milliseconds(POLL_FREQ_MS),
                                 [this]() { readSpeed(); });
-    speed_publisher_ =
-        this->create_publisher<std_msgs::msg::UInt8>("speed_readings", 10);
+    speed_publisher_ = this->create_publisher<std_msgs::msg::UInt8>(
+        "speed_readings", NODE_QOS);
     rpm_publisher_ =
-        this->create_publisher<std_msgs::msg::UInt32>("rpm_readings", 10);
+        this->create_publisher<std_msgs::msg::UInt32>("rpm_readings", NODE_QOS);
 }
 
 SpeedSensorNode::~SpeedSensorNode() {}
@@ -26,18 +26,20 @@ void SpeedSensorNode::writeSpeed(
 {
     auto response = future.get();
     if (!response->success)
-        RCLCPP_ERROR(this->get_logger(), "%s", response->message.c_str());
+        RCLCPP_ERROR_THROTTLE(this->get_logger(), *this->get_clock(),
+                              ERROR_OUTPUT_FREQ, "%s",
+                              response->message.c_str());
     else
     {
         std_msgs::msg::UInt8 speed_msg;
         std_msgs::msg::UInt32 rpm_msg;
-        float rot_per_sec =
-            (static_cast<float>(response->read_data.at(0)) / NB_HOLES) *
-            (1000.0 / POLL_FREQ_MS);
-        float calculated_speed =
-            (rot_per_sec * WHEELS_PERIMETER_M) * 10.0; // calculated speed dm/s
+        auto rot_per_sec =
+            (response->read_data.at(0) / static_cast<float>(NB_HOLES)) *
+            (MS_TO_S / static_cast<float>(POLL_FREQ_MS));
+        float calculated_speed = (rot_per_sec * WHEELS_PERIMETER_M) *
+                                 M_TO_DM; // calculated speed dm/s
 
-        rpm_msg.set__data(rot_per_sec * 60.0);
+        rpm_msg.set__data(rot_per_sec * SEC_TO_MIN);
         speed_msg.set__data(calculated_speed);
 
         speed_publisher_->publish(speed_msg);

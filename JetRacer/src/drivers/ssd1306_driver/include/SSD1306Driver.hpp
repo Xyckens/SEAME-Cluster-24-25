@@ -16,7 +16,7 @@ class SSD1306Driver : public ADriver
 {
     public:
         SSD1306Driver(std::shared_ptr<rclcpp::Node> node);
-        ~SSD1306Driver();
+        ~SSD1306Driver() override;
 
         // display interface
         void initDisplay();

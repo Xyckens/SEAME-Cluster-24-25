@@ -4,9 +4,12 @@
 #include <geometry_msgs/msg/twist.hpp>
 #include <rclcpp/rclcpp.hpp>
 
-#define MIN_COUNT 410  // 10% duty cycle
-#define MAX_COUNT 3680 // 90% duty cycle
-#define PCA_MOTORS_ADDRESS 0x60
+constexpr int MIN_COUNT = 410;  // 10% duty cycle
+constexpr int MAX_COUNT = 3680; // 90% duty cycle
+constexpr int PCA_MOTORS_ADDRESS = 0x60;
+
+constexpr int NODE_QOS = 10;
+constexpr int MOTOR_FREQ = 1600;
 
 /**
  * @class DcMotorsNode
@@ -17,7 +20,7 @@ class DcMotorsNode : public rclcpp::Node
 {
     public:
         DcMotorsNode();
-        ~DcMotorsNode();
+        ~DcMotorsNode() override;
 
         uint8_t
         initPCA9685(std::shared_ptr<APCA9685Driver> mock_driver = nullptr);
@@ -27,5 +30,5 @@ class DcMotorsNode : public rclcpp::Node
             twist_subscriber_;
         std::shared_ptr<APCA9685Driver> pca_driver_;
 
-        void writeSpeed(const geometry_msgs::msg::Twist::SharedPtr twist_msg);
+        void writeSpeed(geometry_msgs::msg::Twist::SharedPtr twist_msg);
 };

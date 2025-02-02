@@ -1,3 +1,4 @@
+// NOLINTBEGIN
 #ifndef __SSD1306_H__
 #define __SSD1306_H__
 
@@ -59,3 +60,5 @@
 #include <stdint.h>
 
 #endif
+
+// NOLINTEND

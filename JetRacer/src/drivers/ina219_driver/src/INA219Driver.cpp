@@ -6,16 +6,12 @@ using namespace std::chrono_literals;
 
 INA219Driver::INA219Driver(std::shared_ptr<rclcpp::Node> node,
                            uint8_t device_address)
-    : ADriver(node, device_address), current_divider_mA_(0),
-      power_multiplier_mW_(0), calibration_value_(0)
+    : ADriver(node, device_address)
 {
-    publisher_voltage_ =
-        node_->create_publisher<std_msgs::msg::Float64>("battery_voltage", 10);
+    publisher_voltage_ = node_->create_publisher<std_msgs::msg::Float64>(
+        "battery_voltage", NODE_QOS);
     publisher_perc_ = node_->create_publisher<std_msgs::msg::Float64>(
-        "battery_percentage", 10);
-
-    while (!i2c_client_->wait_for_service(2s))
-        RCLCPP_INFO(node_->get_logger(), "Waiting for i2c service to start");
+        "battery_percentage", NODE_QOS);
 
     this->ping();
 
@@ -30,13 +26,13 @@ INA219Driver::INA219Driver(std::shared_ptr<rclcpp::Node> node,
  * To see more about how the value is obtained, refer to:
  * https://github.com/adafruit/Adafruit_INA219/blob/master/Adafruit_INA219.cpp
  */
-void INA219Driver::setCalibration_32V_1A()
+void INA219Driver::setCalibration32V1A()
 {
-    calibration_value_ = 10240;
+    calibration_value_ = CALIB_VAL_32V_1A;
 
     // Set multipliers to convert raw current / power
-    current_divider_mA_ = 25;
-    power_multiplier_mW_ = 0.8f;
+    current_divider_mA_ = CURR_DIVIDER_MA_32V_1A;
+    power_multiplier_mW_ = POWER_MULT_32V_1A;
 
     // Set calibration register
     writeRegister(INA219_REG_CALIBRATION, calibration_value_);
@@ -66,8 +62,8 @@ void INA219Driver::writeRegister(uint8_t reg, uint16_t value)
     request->set__device_address(device_address_);
     request->set__read_request(false);
     request->write_data.push_back(reg);
-    request->write_data.push_back((value >> 4) & 0xFF);
-    request->write_data.push_back(value & 0xFF);
+    request->write_data.push_back((value >> 4) & LSB_MASK);
+    request->write_data.push_back(value & LSB_MASK);
 
     i2c_client_->async_send_request(request,
                                     std::bind(&INA219Driver::handleI2cResponse,
@@ -154,9 +150,10 @@ void INA219Driver::publishBusVoltage()
                  {
                      if (data.size() >= 2)
                      {
-                         uint16_t raw_value = (data[0] << 8) | data[1];
-                         float bus_voltage =
-                             (raw_value >> 3) * 0.004; // Convert to volts
+                         uint16_t raw_value =
+                             (data[0] << 8) | data[1]; // NOLINT
+                         float bus_voltage = (raw_value >> 3) *
+                                             COEF_TO_VOLT; // Convert to volts
                          RCLCPP_DEBUG(rclcpp::get_logger("INA219"),
                                       "Bus Voltage: %.2f V", bus_voltage);
 
@@ -164,8 +161,9 @@ void INA219Driver::publishBusVoltage()
                          msg.set__data(bus_voltage);
                          this->publisher_voltage_->publish(msg);
 
-                         uint8_t battery_level =
-                             (bus_voltage - 10.8) / (12.6 - 10.8) * 100;
+                         uint8_t battery_level = (bus_voltage - MAX_BATTERY) /
+                                                 (MAX_BATTERY - MIN_BATTERY) *
+                                                 100; // NOLINT
                          auto msg_perc = std_msgs::msg::Float64();
                          msg_perc.set__data(battery_level);
                          this->publisher_perc_->publish(msg_perc);

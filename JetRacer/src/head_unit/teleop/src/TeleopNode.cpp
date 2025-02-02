@@ -2,7 +2,7 @@
 
 TeleopNode::TeleopNode() : rclcpp::Node("teleop_node")
 {
-    rclcpp::QoS qos(20);
+    rclcpp::QoS qos(QUEUE_DEPTH);
     qos.reliable();
 
     joy_subscriber_ = this->create_subscription<sensor_msgs::msg::Joy>(
@@ -10,9 +10,9 @@ TeleopNode::TeleopNode() : rclcpp::Node("teleop_node")
         std::bind(&TeleopNode::joyCallback, this, std::placeholders::_1));
 
     vel_publisher_ =
-        this->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
+        this->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", NODE_QOS);
     blinkers_publisher_ =
-        this->create_publisher<std_msgs::msg::UInt8>("cmd_blinkers", 10);
+        this->create_publisher<std_msgs::msg::UInt8>("cmd_blinkers", NODE_QOS);
 }
 
 TeleopNode::~TeleopNode() {}
@@ -45,11 +45,15 @@ void TeleopNode::publishBlinkerState(sensor_msgs::msg::Joy::SharedPtr joy_msg)
     auto msg = std_msgs::msg::UInt8();
 
     if (buttons[0] == 1)
-        blinkers_publisher_->publish(msg.set__data(IDLE));
+        blinkers_publisher_->publish(
+            msg.set__data(static_cast<uint8_t>(BlinkerState::IDLE)));
     if (buttons[1] == 1)
-        blinkers_publisher_->publish(msg.set__data(TURN_RIGHT));
+        blinkers_publisher_->publish(
+            msg.set__data(static_cast<uint8_t>(BlinkerState::TURN_RIGHT)));
     if (buttons[2] == 1)
-        blinkers_publisher_->publish(msg.set__data(WARNINGS));
+        blinkers_publisher_->publish(
+            msg.set__data(static_cast<uint8_t>(BlinkerState::WARNINGS)));
     if (buttons[3] == 1)
-        blinkers_publisher_->publish(msg.set__data(TURN_LEFT));
+        blinkers_publisher_->publish(
+            msg.set__data(static_cast<uint8_t>(BlinkerState::TURN_LEFT)));
 }

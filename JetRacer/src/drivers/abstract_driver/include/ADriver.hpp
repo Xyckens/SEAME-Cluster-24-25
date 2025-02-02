@@ -1,6 +1,5 @@
 #pragma once
 
-#include "DriverException.hpp"
 #include <custom_msgs/srv/i2c_service.hpp>
 #include <rclcpp/rclcpp.hpp>
 

@@ -10,7 +10,7 @@ using namespace std::chrono_literals;
 DcMotorsNode::DcMotorsNode() : Node("dc_motors_node")
 {
     twist_subscriber_ = this->create_subscription<geometry_msgs::msg::Twist>(
-        "cmd_vel", 10,
+        "cmd_vel", NODE_QOS,
         std::bind(&DcMotorsNode::writeSpeed, this, std::placeholders::_1));
 }
 
@@ -41,7 +41,7 @@ uint8_t DcMotorsNode::initPCA9685(std::shared_ptr<APCA9685Driver> mock_driver)
         }
     }
 
-    pca_driver_->setPWMFrequency(1600);
+    pca_driver_->setPWMFrequency(MOTOR_FREQ);
     return EXIT_SUCCESS;
 }
 
@@ -75,11 +75,12 @@ void DcMotorsNode::writeSpeed(
     linear_x = std::abs(linear_x);
 
     //  Map the linear velocity to PCA9685 pulse width
-    uint16_t pulseWidth =
+    auto pulse_width =
         static_cast<uint16_t>(linear_x * (MAX_COUNT - MIN_COUNT));
 
-    pca_driver_->setPWMDutyCycle(DEFAULT_CHANNEL, true, pulseWidth);
-    pca_driver_->setPWMDutyCycle(7, true, pulseWidth);
+    // NOLINTBEGIN
+    pca_driver_->setPWMDutyCycle(DEFAULT_CHANNEL, true, pulse_width);
+    pca_driver_->setPWMDutyCycle(DEFAULT_CHANNEL + 7, true, pulse_width);
 
     if (direction > 0) // Forward
     {
@@ -102,4 +103,5 @@ void DcMotorsNode::writeSpeed(
         pca_driver_->setGPIO(6, false);
         pca_driver_->setGPIO(5, false);
     }
+    // NOLINTEND
 }

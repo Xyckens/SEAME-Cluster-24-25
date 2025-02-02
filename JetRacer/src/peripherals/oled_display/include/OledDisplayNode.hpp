@@ -6,7 +6,8 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
-#define SSD1306_FONT_NORMAL 0x01
+constexpr uint8_t SSD1306_FONT_NORMAL = 0x01;
+constexpr int NODE_QOS = 10;
 
 /**
  * @class OledDisplayNode
@@ -16,7 +17,7 @@ class OledDisplayNode : public rclcpp::Node
 {
     public:
         OledDisplayNode();
-        ~OledDisplayNode();
+        ~OledDisplayNode() override;
 
         uint8_t initSSD1306();
 
@@ -25,5 +26,5 @@ class OledDisplayNode : public rclcpp::Node
             display_subscriber_;
         std::unique_ptr<SSD1306Driver> ssd1306_;
 
-        void writeToI2c(const custom_msgs::msg::Display::SharedPtr msg);
+        void writeToI2c(custom_msgs::msg::Display::SharedPtr msg);
 };

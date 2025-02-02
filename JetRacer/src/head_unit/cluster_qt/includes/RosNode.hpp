@@ -22,7 +22,7 @@ class RosNode : public rclcpp::Node
 {
     public:
         RosNode();
-        ~RosNode() = default;
+        ~RosNode() override = default;
 
         int getSpeed() const;
         int getBattery() const;
@@ -37,7 +37,7 @@ class RosNode : public rclcpp::Node
 
         void setBlinkerState(std_msgs::msg::UInt8 msg);
 
-        int battery_level_{100};
+        int battery_level_{0};
         int speed_{0};
         int rpm_{0};
         blinkerState blinker_state_{blinkerState::IDLE};

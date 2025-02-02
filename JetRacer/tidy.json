@@ -1,8 +1,11 @@
 {
   "paths": [
     "src/*/*/include/*.hpp",
-    "src/*/*/src/*.cpp"
+    "src/*/*/src/*.cpp",
+	"src/*/*/test/src/*.cpp",
+	"src/*/*/test/inlude/*.hpp"
   ],
+  "filterPre": [".*", "**/cluster"],
   "tidyRoot": ".",
   "buildRoot": "build/",
   "compilationDatabase": "build/compile_commands.json",

@@ -1,3 +1,4 @@
+// NOLINTBEGIN
 #pragma once
 
 /** default I2C address **/
@@ -112,3 +113,5 @@ enum
 #define INA219_REG_CURRENT (0x04)
 /** calibration register **/
 #define INA219_REG_CALIBRATION (0x05)
+
+// NOLINTEND
