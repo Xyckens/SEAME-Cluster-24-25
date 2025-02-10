@@ -1,0 +1,56 @@
+\doxysection{Jet\+Racer/src/peripherals/dc\+\_\+motors/include/\+Dc\+Motors\+Node.hpp File Reference}
+\hypertarget{DcMotorsNode_8hpp}{}\label{DcMotorsNode_8hpp}\index{JetRacer/src/peripherals/dc\_motors/include/DcMotorsNode.hpp@{JetRacer/src/peripherals/dc\_motors/include/DcMotorsNode.hpp}}
+{\ttfamily \#include "{}APCA9685\+Driver.\+hpp"{}}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/msg/twist.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/rclcpp.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDcMotorsNode}{Dc\+Motors\+Node}}
+\begin{DoxyCompactList}\small\item\em Listens to twist message and translate them into PWM signal values that the PCA9685 driver understands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{DcMotorsNode_8hpp_ae27ee7fa6a939b824e099a54115a70d3}{MIN\+\_\+\+COUNT}} = 410
+\item 
+constexpr int \mbox{\hyperlink{DcMotorsNode_8hpp_af5ad4584f72e1c30bc4495c2f0d37824}{MAX\+\_\+\+COUNT}} = 3680
+\item 
+constexpr int \mbox{\hyperlink{DcMotorsNode_8hpp_a0ecff695457b033a4ee6ffb333687e55}{PCA\+\_\+\+MOTORS\+\_\+\+ADDRESS}} = 0x60
+\item 
+constexpr int \mbox{\hyperlink{DcMotorsNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\+\_\+\+QOS}} = 10
+\item 
+constexpr int \mbox{\hyperlink{DcMotorsNode_8hpp_a4872dc287557538263c1ea911f06f3ee}{MOTOR\+\_\+\+FREQ}} = 1600
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{DcMotorsNode_8hpp_af5ad4584f72e1c30bc4495c2f0d37824}\label{DcMotorsNode_8hpp_af5ad4584f72e1c30bc4495c2f0d37824} 
+\index{DcMotorsNode.hpp@{DcMotorsNode.hpp}!MAX\_COUNT@{MAX\_COUNT}}
+\index{MAX\_COUNT@{MAX\_COUNT}!DcMotorsNode.hpp@{DcMotorsNode.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_COUNT}{MAX\_COUNT}}
+{\footnotesize\ttfamily constexpr int MAX\+\_\+\+COUNT = 3680\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{DcMotorsNode_8hpp_ae27ee7fa6a939b824e099a54115a70d3}\label{DcMotorsNode_8hpp_ae27ee7fa6a939b824e099a54115a70d3} 
+\index{DcMotorsNode.hpp@{DcMotorsNode.hpp}!MIN\_COUNT@{MIN\_COUNT}}
+\index{MIN\_COUNT@{MIN\_COUNT}!DcMotorsNode.hpp@{DcMotorsNode.hpp}}
+\doxysubsubsection{\texorpdfstring{MIN\_COUNT}{MIN\_COUNT}}
+{\footnotesize\ttfamily constexpr int MIN\+\_\+\+COUNT = 410\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{DcMotorsNode_8hpp_a4872dc287557538263c1ea911f06f3ee}\label{DcMotorsNode_8hpp_a4872dc287557538263c1ea911f06f3ee} 
+\index{DcMotorsNode.hpp@{DcMotorsNode.hpp}!MOTOR\_FREQ@{MOTOR\_FREQ}}
+\index{MOTOR\_FREQ@{MOTOR\_FREQ}!DcMotorsNode.hpp@{DcMotorsNode.hpp}}
+\doxysubsubsection{\texorpdfstring{MOTOR\_FREQ}{MOTOR\_FREQ}}
+{\footnotesize\ttfamily constexpr int MOTOR\+\_\+\+FREQ = 1600\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{DcMotorsNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}\label{DcMotorsNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d} 
+\index{DcMotorsNode.hpp@{DcMotorsNode.hpp}!NODE\_QOS@{NODE\_QOS}}
+\index{NODE\_QOS@{NODE\_QOS}!DcMotorsNode.hpp@{DcMotorsNode.hpp}}
+\doxysubsubsection{\texorpdfstring{NODE\_QOS}{NODE\_QOS}}
+{\footnotesize\ttfamily constexpr int NODE\+\_\+\+QOS = 10\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{DcMotorsNode_8hpp_a0ecff695457b033a4ee6ffb333687e55}\label{DcMotorsNode_8hpp_a0ecff695457b033a4ee6ffb333687e55} 
+\index{DcMotorsNode.hpp@{DcMotorsNode.hpp}!PCA\_MOTORS\_ADDRESS@{PCA\_MOTORS\_ADDRESS}}
+\index{PCA\_MOTORS\_ADDRESS@{PCA\_MOTORS\_ADDRESS}!DcMotorsNode.hpp@{DcMotorsNode.hpp}}
+\doxysubsubsection{\texorpdfstring{PCA\_MOTORS\_ADDRESS}{PCA\_MOTORS\_ADDRESS}}
+{\footnotesize\ttfamily constexpr int PCA\+\_\+\+MOTORS\+\_\+\+ADDRESS = 0x60\hspace{0.3cm}{\ttfamily [constexpr]}}
+

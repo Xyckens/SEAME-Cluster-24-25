@@ -1,0 +1,19 @@
+\doxysection{ICan\+Driver.\+hpp}
+\hypertarget{ICanDriver_8hpp_source}{}\label{ICanDriver_8hpp_source}\index{JetRacer/src/bus\_interfaces/can\_interface/include/ICanDriver.hpp@{JetRacer/src/bus\_interfaces/can\_interface/include/ICanDriver.hpp}}
+\mbox{\hyperlink{ICanDriver_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <CanDriver.hpp>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classICanDriver}{ICanDriver}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classICanDriver_a5f5fb1015e91648ba7d35e7da8deeb3d}{\string~ICanDriver}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ ssize\_t\ \mbox{\hyperlink{classICanDriver_a8fa52d96259d941f192f405efb978f0b}{sendMessage}}(\textcolor{keyword}{const}\ sockcanpp::CanMessage\&\ msg,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ force\_extended\ =\ \textcolor{keyword}{false})\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ sockcanpp::CanMessage\ \mbox{\hyperlink{classICanDriver_a00c0e9b2c3b24393c0e470c9f1726723}{readMessage}}()\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classICanDriver_a6f9fb9952df8f281b8f4792bbe46cc1d}{waitForMessages}}(sockcanpp::milliseconds\ timeout)\ =\ 0;}
+\DoxyCodeLine{00026\ \};}
+
+\end{DoxyCode}

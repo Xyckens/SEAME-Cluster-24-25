@@ -1,0 +1,223 @@
+\doxysection{Settings\+Widget Class Reference}
+\hypertarget{classSettingsWidget}{}\label{classSettingsWidget}\index{SettingsWidget@{SettingsWidget}}
+
+
+The \doxylink{classSettingsWidget}{Settings\+Widget} class provides a customizable settings interface.  
+
+
+
+
+{\ttfamily \#include $<$Settings\+Widget.\+h$>$}
+
+Inheritance diagram for Settings\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSettingsWidget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSettingsWidget_aec607865a4c2fd7ca8cf59696a640c92}{Settings\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent, \mbox{\hyperlink{classEventManager}{Event\+Manager}} \&\mbox{\hyperlink{classSettingsWidget_a34d734e87b0dee23f38878504c08466b}{event}}, int x=0, int y=0, int width=0, int height=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSettingsWidget}{Settings\+Widget} with the specified parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSettingsWidget_a797d26492101e2e5882501ca71772790}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classSettingsWidget_a34d734e87b0dee23f38878504c08466b}{event}}) override
+\begin{DoxyCompactList}\small\item\em Handles mouse press events to detect clicks outside the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSettingsWidget_a043aae05ab80912f11c277b873909657}{toggle\+Expand}} ()
+\begin{DoxyCompactList}\small\item\em Toggles the widget between collapsed and expanded states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSettingsWidget_aa7e213059fcc4c950aab7bef88a60228}{set\+Expanded}} (bool expand)
+\begin{DoxyCompactList}\small\item\em Expands or collapses the settings menu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSettingsWidget_a52975fe338fcc0aeb3e5dcc141e7a904}{is\+Click\+Outside}} (const QPoint \&pos) const
+\begin{DoxyCompactList}\small\item\em Checks if a click occurred outside the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classSettingsWidget_a689bac5a5c5609f443401adc08f09299}{expanded}}
+\item 
+QStacked\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSettingsWidget_a8e2ad787a15af78f648a924c829c734a}{stacked\+Widget}}
+\item 
+QWidget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSettingsWidget_acd62a46b7338e2b22aed2aaf450eda2a}{collapsed\+Widget}}
+\item 
+QWidget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSettingsWidget_aa9255c3f846636d6b6654ccced5a3e29}{expanded\+Widget}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSettingsWidget_af2a0b603b6eb75571b67f04d05ea6283}{main\+Icon}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSettingsWidget_a08518b953074541f5ccb229ba37a9a85}{close\+Icon}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSettingsWidget_a804c9d5b13fe886db925a6208643cd8e}{themes\+Icon}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSettingsWidget_a1d5a3d64627d6b58c505644a3353c6a8}{change\+Unit\+Icon}}
+\item 
+\mbox{\hyperlink{classEventManager}{Event\+Manager}} \& \mbox{\hyperlink{classSettingsWidget_a34d734e87b0dee23f38878504c08466b}{event}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classSettingsWidget}{Settings\+Widget} class provides a customizable settings interface. 
+
+This widget allows users to toggle between a collapsed and expanded view, change themes, and switch units. It interacts with an {\ttfamily \doxylink{classEventManager}{Event\+Manager}} to handle user actions and updates. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSettingsWidget_aec607865a4c2fd7ca8cf59696a640c92}\label{classSettingsWidget_aec607865a4c2fd7ca8cf59696a640c92} 
+\index{SettingsWidget@{SettingsWidget}!SettingsWidget@{SettingsWidget}}
+\index{SettingsWidget@{SettingsWidget}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{SettingsWidget()}{SettingsWidget()}}
+{\footnotesize\ttfamily Settings\+Widget\+::\+Settings\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent,  }\item[{\mbox{\hyperlink{classEventManager}{Event\+Manager}} \&}]{event,  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classSettingsWidget}{Settings\+Widget} with the specified parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+{\em event} & Reference to the \doxylink{classEventManager}{Event\+Manager} for handling user actions. \\
+\hline
+{\em x} & The x-\/coordinate of the widget\textquotesingle{}s position (default is 0). \\
+\hline
+{\em y} & The y-\/coordinate of the widget\textquotesingle{}s position (default is 0). \\
+\hline
+{\em width} & The width of the widget (default is 0). \\
+\hline
+{\em height} & The height of the widget (default is 0). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSettingsWidget_a52975fe338fcc0aeb3e5dcc141e7a904}\label{classSettingsWidget_a52975fe338fcc0aeb3e5dcc141e7a904} 
+\index{SettingsWidget@{SettingsWidget}!isClickOutside@{isClickOutside}}
+\index{isClickOutside@{isClickOutside}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{isClickOutside()}{isClickOutside()}}
+{\footnotesize\ttfamily bool Settings\+Widget\+::is\+Click\+Outside (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if a click occurred outside the widget. 
+
+This method determines whether a mouse click occurred outside the bounds of the widget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position of the mouse click. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the click was outside the widget, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classSettingsWidget_a797d26492101e2e5882501ca71772790}\label{classSettingsWidget_a797d26492101e2e5882501ca71772790} 
+\index{SettingsWidget@{SettingsWidget}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void Settings\+Widget\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles mouse press events to detect clicks outside the widget. 
+
+This method is overridden from QWidget to detect clicks outside the widget and collapse the settings menu if it is expanded.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The mouse event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSettingsWidget_aa7e213059fcc4c950aab7bef88a60228}\label{classSettingsWidget_aa7e213059fcc4c950aab7bef88a60228} 
+\index{SettingsWidget@{SettingsWidget}!setExpanded@{setExpanded}}
+\index{setExpanded@{setExpanded}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{setExpanded()}{setExpanded()}}
+{\footnotesize\ttfamily void Settings\+Widget\+::set\+Expanded (\begin{DoxyParamCaption}\item[{bool}]{expand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Expands or collapses the settings menu. 
+
+This method updates the widget\textquotesingle{}s state and UI to reflect the expanded or collapsed state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em expand} & If true, the widget is expanded; if false, it is collapsed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSettingsWidget_a043aae05ab80912f11c277b873909657}\label{classSettingsWidget_a043aae05ab80912f11c277b873909657} 
+\index{SettingsWidget@{SettingsWidget}!toggleExpand@{toggleExpand}}
+\index{toggleExpand@{toggleExpand}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{toggleExpand}{toggleExpand}}
+{\footnotesize\ttfamily void Settings\+Widget\+::toggle\+Expand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Toggles the widget between collapsed and expanded states. 
+
+This slot is triggered when the user clicks the main icon to expand or collapse the settings menu. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSettingsWidget_a1d5a3d64627d6b58c505644a3353c6a8}\label{classSettingsWidget_a1d5a3d64627d6b58c505644a3353c6a8} 
+\index{SettingsWidget@{SettingsWidget}!changeUnitIcon@{changeUnitIcon}}
+\index{changeUnitIcon@{changeUnitIcon}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{changeUnitIcon}{changeUnitIcon}}
+{\footnotesize\ttfamily QPush\+Button\texorpdfstring{$\ast$}{*} Settings\+Widget\+::change\+Unit\+Icon\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSettingsWidget_a08518b953074541f5ccb229ba37a9a85}\label{classSettingsWidget_a08518b953074541f5ccb229ba37a9a85} 
+\index{SettingsWidget@{SettingsWidget}!closeIcon@{closeIcon}}
+\index{closeIcon@{closeIcon}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{closeIcon}{closeIcon}}
+{\footnotesize\ttfamily QPush\+Button\texorpdfstring{$\ast$}{*} Settings\+Widget\+::close\+Icon\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSettingsWidget_acd62a46b7338e2b22aed2aaf450eda2a}\label{classSettingsWidget_acd62a46b7338e2b22aed2aaf450eda2a} 
+\index{SettingsWidget@{SettingsWidget}!collapsedWidget@{collapsedWidget}}
+\index{collapsedWidget@{collapsedWidget}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{collapsedWidget}{collapsedWidget}}
+{\footnotesize\ttfamily QWidget\texorpdfstring{$\ast$}{*} Settings\+Widget\+::collapsed\+Widget\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSettingsWidget_a34d734e87b0dee23f38878504c08466b}\label{classSettingsWidget_a34d734e87b0dee23f38878504c08466b} 
+\index{SettingsWidget@{SettingsWidget}!event@{event}}
+\index{event@{event}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEventManager}{Event\+Manager}}\& Settings\+Widget\+::event\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSettingsWidget_a689bac5a5c5609f443401adc08f09299}\label{classSettingsWidget_a689bac5a5c5609f443401adc08f09299} 
+\index{SettingsWidget@{SettingsWidget}!expanded@{expanded}}
+\index{expanded@{expanded}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{expanded}{expanded}}
+{\footnotesize\ttfamily bool Settings\+Widget\+::expanded\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSettingsWidget_aa9255c3f846636d6b6654ccced5a3e29}\label{classSettingsWidget_aa9255c3f846636d6b6654ccced5a3e29} 
+\index{SettingsWidget@{SettingsWidget}!expandedWidget@{expandedWidget}}
+\index{expandedWidget@{expandedWidget}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{expandedWidget}{expandedWidget}}
+{\footnotesize\ttfamily QWidget\texorpdfstring{$\ast$}{*} Settings\+Widget\+::expanded\+Widget\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSettingsWidget_af2a0b603b6eb75571b67f04d05ea6283}\label{classSettingsWidget_af2a0b603b6eb75571b67f04d05ea6283} 
+\index{SettingsWidget@{SettingsWidget}!mainIcon@{mainIcon}}
+\index{mainIcon@{mainIcon}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{mainIcon}{mainIcon}}
+{\footnotesize\ttfamily QPush\+Button\texorpdfstring{$\ast$}{*} Settings\+Widget\+::main\+Icon\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSettingsWidget_a8e2ad787a15af78f648a924c829c734a}\label{classSettingsWidget_a8e2ad787a15af78f648a924c829c734a} 
+\index{SettingsWidget@{SettingsWidget}!stackedWidget@{stackedWidget}}
+\index{stackedWidget@{stackedWidget}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{stackedWidget}{stackedWidget}}
+{\footnotesize\ttfamily QStacked\+Widget\texorpdfstring{$\ast$}{*} Settings\+Widget\+::stacked\+Widget\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSettingsWidget_a804c9d5b13fe886db925a6208643cd8e}\label{classSettingsWidget_a804c9d5b13fe886db925a6208643cd8e} 
+\index{SettingsWidget@{SettingsWidget}!themesIcon@{themesIcon}}
+\index{themesIcon@{themesIcon}!SettingsWidget@{SettingsWidget}}
+\doxysubsubsection{\texorpdfstring{themesIcon}{themesIcon}}
+{\footnotesize\ttfamily QPush\+Button\texorpdfstring{$\ast$}{*} Settings\+Widget\+::themes\+Icon\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{SettingsWidget_8h}{Settings\+Widget.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{SettingsWidget_8cpp}{Settings\+Widget.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,189 @@
+\doxysection{Top\+Bar Class Reference}
+\hypertarget{classTopBar}{}\label{classTopBar}\index{TopBar@{TopBar}}
+
+
+This class sets a Bar of icons in the Widget.  
+
+
+
+
+{\ttfamily \#include $<$Top\+Bar.\+h$>$}
+
+Inheritance diagram for Top\+Bar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTopBar}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTopBar_a1bec06cd5afd4d727d24f4ae9d48cf04}{Top\+Bar}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, int x=0, int y=0, int width=0, int height=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classTopBar}{Top\+Bar} widget with the specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTopBar_ad2831081aa8aaa7a4a45523c550d6677}{\texorpdfstring{$\sim$}{\string~}\+Top\+Bar}} () override
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classTopBar}{Top\+Bar} widget. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTopBar_ab0de6847612d90e3f54414d9101fd95d}{set\+Image\+State}} (int index, bool state)
+\begin{DoxyCompactList}\small\item\em Sets the state of an image in the top bar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTopBar_aca1a09fdee25c7320daeecf81cebba7f}{change\+Color}} (int array\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Changes the color scheme of the top bar icons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QHBox\+Layout \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTopBar_a0b05430bfdc43f9ab17eca54ffb9214a}{layout}}
+\item 
+QVector$<$ QLabel \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classTopBar_a17e26fad483cf7f222ce3618033b1443}{image\+Labels}}
+\item 
+QVector$<$ QPixmap $>$ \mbox{\hyperlink{classTopBar_aba758ef7c33c7a6e290625db59eac6d2}{default\+Images}}
+\item 
+QVector$<$ QPixmap $>$ \mbox{\hyperlink{classTopBar_a2041deaa2f0c43aab36b82a04bfa8208}{default\+Images\+\_\+array}} \mbox{[}4\mbox{]}
+\item 
+QVector$<$ QPixmap $>$ \mbox{\hyperlink{classTopBar_a20aa9ebc8d6c110227243f1dd72bb851}{alt\+Images}}
+\item 
+QString\+List \mbox{\hyperlink{classTopBar_a20280fdcb105e730f0086dad11893de6}{default\+Image\+Paths}}
+\item 
+QString\+List \mbox{\hyperlink{classTopBar_ac890f78efdefa36460ec618e964c4dc8}{default\+Image\+Paths\+\_\+array}} \mbox{[}4\mbox{]}
+\item 
+QString\+List \mbox{\hyperlink{classTopBar_aa76f0b060038cd441033481e9a0d21ef}{alt\+Image\+Paths}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class sets a Bar of icons in the Widget. 
+
+It updates the icons state and changes its colour. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTopBar_a1bec06cd5afd4d727d24f4ae9d48cf04}\label{classTopBar_a1bec06cd5afd4d727d24f4ae9d48cf04} 
+\index{TopBar@{TopBar}!TopBar@{TopBar}}
+\index{TopBar@{TopBar}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{TopBar()}{TopBar()}}
+{\footnotesize\ttfamily Top\+Bar\+::\+Top\+Bar (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr},  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classTopBar}{Top\+Bar} widget with the specified parameters. 
+
+This constructor initializes the top bar widget, sets its geometry, and loads default and alternate images for the icons. The widget displays a horizontal layout of icons, which can be toggled between default and alternate states.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+{\em x} & The x-\/coordinate of the widget\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the widget\textquotesingle{}s position. \\
+\hline
+{\em width} & The width of the widget. \\
+\hline
+{\em height} & The height of the widget. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTopBar_ad2831081aa8aaa7a4a45523c550d6677}\label{classTopBar_ad2831081aa8aaa7a4a45523c550d6677} 
+\index{TopBar@{TopBar}!````~TopBar@{\texorpdfstring{$\sim$}{\string~}TopBar}}
+\index{````~TopBar@{\texorpdfstring{$\sim$}{\string~}TopBar}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TopBar()}{\string~TopBar()}}
+{\footnotesize\ttfamily Top\+Bar\+::\texorpdfstring{$\sim$}{\string~}\+Top\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destroys the \doxylink{classTopBar}{Top\+Bar} widget. 
+
+This destructor cleans up any resources used by the widget. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTopBar_aca1a09fdee25c7320daeecf81cebba7f}\label{classTopBar_aca1a09fdee25c7320daeecf81cebba7f} 
+\index{TopBar@{TopBar}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Top\+Bar\+::change\+Color (\begin{DoxyParamCaption}\item[{int}]{array\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Changes the color scheme of the top bar icons. 
+
+This method updates the default images based on the provided array index, allowing the icons to reflect a new color scheme.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+\_\+index} & The index of the color scheme. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTopBar_ab0de6847612d90e3f54414d9101fd95d}\label{classTopBar_ab0de6847612d90e3f54414d9101fd95d} 
+\index{TopBar@{TopBar}!setImageState@{setImageState}}
+\index{setImageState@{setImageState}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{setImageState()}{setImageState()}}
+{\footnotesize\ttfamily bool Top\+Bar\+::set\+Image\+State (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the state of an image in the top bar. 
+
+This method toggles the image at the specified index between its default and alternate states.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the image to update. \\
+\hline
+{\em state} & If true, the alternate image is displayed; if false, the default image is displayed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the image was updated successfully, false if the index is invalid. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTopBar_aa76f0b060038cd441033481e9a0d21ef}\label{classTopBar_aa76f0b060038cd441033481e9a0d21ef} 
+\index{TopBar@{TopBar}!altImagePaths@{altImagePaths}}
+\index{altImagePaths@{altImagePaths}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{altImagePaths}{altImagePaths}}
+{\footnotesize\ttfamily QString\+List Top\+Bar\+::alt\+Image\+Paths\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTopBar_a20aa9ebc8d6c110227243f1dd72bb851}\label{classTopBar_a20aa9ebc8d6c110227243f1dd72bb851} 
+\index{TopBar@{TopBar}!altImages@{altImages}}
+\index{altImages@{altImages}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{altImages}{altImages}}
+{\footnotesize\ttfamily QVector$<$QPixmap$>$ Top\+Bar\+::alt\+Images\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTopBar_a20280fdcb105e730f0086dad11893de6}\label{classTopBar_a20280fdcb105e730f0086dad11893de6} 
+\index{TopBar@{TopBar}!defaultImagePaths@{defaultImagePaths}}
+\index{defaultImagePaths@{defaultImagePaths}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{defaultImagePaths}{defaultImagePaths}}
+{\footnotesize\ttfamily QString\+List Top\+Bar\+::default\+Image\+Paths\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTopBar_ac890f78efdefa36460ec618e964c4dc8}\label{classTopBar_ac890f78efdefa36460ec618e964c4dc8} 
+\index{TopBar@{TopBar}!defaultImagePaths\_array@{defaultImagePaths\_array}}
+\index{defaultImagePaths\_array@{defaultImagePaths\_array}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{defaultImagePaths\_array}{defaultImagePaths\_array}}
+{\footnotesize\ttfamily QString\+List Top\+Bar\+::default\+Image\+Paths\+\_\+array\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTopBar_aba758ef7c33c7a6e290625db59eac6d2}\label{classTopBar_aba758ef7c33c7a6e290625db59eac6d2} 
+\index{TopBar@{TopBar}!defaultImages@{defaultImages}}
+\index{defaultImages@{defaultImages}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{defaultImages}{defaultImages}}
+{\footnotesize\ttfamily QVector$<$QPixmap$>$ Top\+Bar\+::default\+Images\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTopBar_a2041deaa2f0c43aab36b82a04bfa8208}\label{classTopBar_a2041deaa2f0c43aab36b82a04bfa8208} 
+\index{TopBar@{TopBar}!defaultImages\_array@{defaultImages\_array}}
+\index{defaultImages\_array@{defaultImages\_array}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{defaultImages\_array}{defaultImages\_array}}
+{\footnotesize\ttfamily QVector$<$QPixmap$>$ Top\+Bar\+::default\+Images\+\_\+array\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTopBar_a17e26fad483cf7f222ce3618033b1443}\label{classTopBar_a17e26fad483cf7f222ce3618033b1443} 
+\index{TopBar@{TopBar}!imageLabels@{imageLabels}}
+\index{imageLabels@{imageLabels}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{imageLabels}{imageLabels}}
+{\footnotesize\ttfamily QVector$<$QLabel\texorpdfstring{$\ast$}{*}$>$ Top\+Bar\+::image\+Labels\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTopBar_a0b05430bfdc43f9ab17eca54ffb9214a}\label{classTopBar_a0b05430bfdc43f9ab17eca54ffb9214a} 
+\index{TopBar@{TopBar}!layout@{layout}}
+\index{layout@{layout}!TopBar@{TopBar}}
+\doxysubsubsection{\texorpdfstring{layout}{layout}}
+{\footnotesize\ttfamily QHBox\+Layout\texorpdfstring{$\ast$}{*} Top\+Bar\+::layout\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{TopBar_8h}{Top\+Bar.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{TopBar_8cpp}{Top\+Bar.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\doxysection{Top\+Bar.\+h}
+\hypertarget{TopBar_8h_source}{}\label{TopBar_8h_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/TopBar.h@{JetRacer/src/head\_unit/cluster\_qt/includes/TopBar.h}}
+\mbox{\hyperlink{TopBar_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TOPBAR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TOPBAR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QHBoxLayout>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QPixmap>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Colors_8h}{Colors.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTopBar}{TopBar}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classTopBar}{TopBar}}(QWidget*\ parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ x\ =\ 0,\ \textcolor{keywordtype}{int}\ y\ =\ 0,\ \textcolor{keywordtype}{int}\ width\ =\ 0,\ \textcolor{keywordtype}{int}\ height\ =\ 0);}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classTopBar_ad2831081aa8aaa7a4a45523c550d6677}{\string~TopBar}}()\ \textcolor{keyword}{override}\ ;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ update\ the\ image\ at\ a\ specific\ index\ based\ on\ a\ condition}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{classTopBar_ab0de6847612d90e3f54414d9101fd95d}{setImageState}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{bool}\ state);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classTopBar_aca1a09fdee25c7320daeecf81cebba7f}{changeColor}}(\textcolor{keywordtype}{int}\ \ array\_index);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ QHBoxLayout*\ \ \ \ \ \ \ \ \mbox{\hyperlink{classTopBar_a0b05430bfdc43f9ab17eca54ffb9214a}{layout}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Layout\ to\ hold\ the\ images}}
+\DoxyCodeLine{00030\ \ \ \ \ QVector<QLabel*>\ \ \ \ \mbox{\hyperlink{classTopBar_a17e26fad483cf7f222ce3618033b1443}{imageLabels}};\ \ \ \ \ \textcolor{comment}{//\ Vector\ to\ hold\ QLabel\ pointers\ for\ the\ images}}
+\DoxyCodeLine{00031\ \ \ \ \ QVector<QPixmap>\ \ \ \ \mbox{\hyperlink{classTopBar_aba758ef7c33c7a6e290625db59eac6d2}{defaultImages}};\ \ \textcolor{comment}{//\ Vector\ to\ hold\ the\ default\ images}}
+\DoxyCodeLine{00032\ \ \ \ \ QVector<QPixmap>\ \ \ \ \mbox{\hyperlink{classTopBar_a2041deaa2f0c43aab36b82a04bfa8208}{defaultImages\_array}}[4];}
+\DoxyCodeLine{00033\ \ \ \ \ QVector<QPixmap>\ \ \ \ \mbox{\hyperlink{classTopBar_a20aa9ebc8d6c110227243f1dd72bb851}{altImages}};\ \ \ \ \ \ \textcolor{comment}{//\ Vector\ to\ hold\ the\ alternate\ images}}
+\DoxyCodeLine{00034\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTopBar_a20280fdcb105e730f0086dad11893de6}{defaultImagePaths}};}
+\DoxyCodeLine{00035\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTopBar_ac890f78efdefa36460ec618e964c4dc8}{defaultImagePaths\_array}}[4];}
+\DoxyCodeLine{00036\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTopBar_aa76f0b060038cd441033481e9a0d21ef}{altImagePaths}};}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOPBAR\_H}}
+
+\end{DoxyCode}

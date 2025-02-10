@@ -1,0 +1,45 @@
+\doxysection{Ros\+Node.\+hpp}
+\hypertarget{RosNode_8hpp_source}{}\label{RosNode_8hpp_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/RosNode.hpp@{JetRacer/src/head\_unit/cluster\_qt/includes/RosNode.hpp}}
+\mbox{\hyperlink{RosNode_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <std\_msgs/msg/float64.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <std\_msgs/msg/u\_int32.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <std\_msgs/msg/u\_int8.hpp>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8df}{blinkerState}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8dfaa5daf7f2ebbba4975d61dab1c40188c7}{IDLE}},}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8dfac5167dbd523b326749655acd6d216239}{TURN\_RIGHT}},}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8dfa6ac21d67c035e028134e3bab5f49f777}{TURN\_LEFT}},}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8dfa96ba7465a912ca5da455230eac6e8e27}{WARNINGS}},}
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRosNode}{RosNode}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRosNode_af54772b0689f19a12477bddf088dbdf1}{RosNode}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRosNode_aef9ea91cc1811c3fab0ac342c8a01a1b}{\string~RosNode}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRosNode_a8df33d583d5e240e065057f9949d9592}{getSpeed}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRosNode_ac7e15cd2721f02d1f4a8d2d061dd3372}{getBattery}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRosNode_a1c699f1d596a5805d9ae1dc877f8705c}{getRpm}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8df}{blinkerState}}\ \ \ \ \mbox{\hyperlink{classRosNode_ab1a178f18991c961e970a11973511bc9}{getBlinkerState}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ rclcpp::Subscription<std\_msgs::msg::Float64>::SharedPtr\ \mbox{\hyperlink{classRosNode_a391efbde18c5661c150bd51d10af5dc8}{battery\_sub\_}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ rclcpp::Subscription<std\_msgs::msg::UInt8>::SharedPtr\ \ \ \mbox{\hyperlink{classRosNode_a3e8de2e98104124c7ae5c1792cb76261}{speed\_sub\_}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ rclcpp::Subscription<std\_msgs::msg::UInt32>::SharedPtr\ \ \mbox{\hyperlink{classRosNode_abc3f258b9d546a76a7280fb88bfd3e86}{rpm\_sub\_}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ rclcpp::Subscription<std\_msgs::msg::UInt8>::SharedPtr\ \ \ \mbox{\hyperlink{classRosNode_a023dee3ccd887dee102c6a8d6b14fc33}{blinker\_sub\_}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classRosNode_a5527770047fd6fa603552f10ca6d5950}{setBlinkerState}}(std\_msgs::msg::UInt8\ msg);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRosNode_aa9b65e394dc42fc76da59dfee991f4b5}{battery\_level\_}}\{0\};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRosNode_ae449bd54071c75b847cd8e40aacda8a3}{speed\_}}\{0\};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRosNode_ae94f1953524607a1e032b3506637ee41}{rpm\_}}\{0\};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8df}{blinkerState}}\ \ \ \ \mbox{\hyperlink{classRosNode_aeb103b2177fc2b116dbef226a94222a3}{blinker\_state\_}}\{\mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8dfaa5daf7f2ebbba4975d61dab1c40188c7}{blinkerState::IDLE}}\};}
+\DoxyCodeLine{00046\ \};}
+
+\end{DoxyCode}

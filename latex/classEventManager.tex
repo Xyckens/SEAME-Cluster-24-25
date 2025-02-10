@@ -1,0 +1,488 @@
+\doxysection{Event\+Manager Class Reference}
+\hypertarget{classEventManager}{}\label{classEventManager}\index{EventManager@{EventManager}}
+
+
+The \doxylink{classEventManager}{Event\+Manager} handles the events sent by the car and the command.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Manager.\+h$>$}
+
+Inheritance diagram for Event\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEventManager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventManager_ad13e285fc0e58a37faa98da7cb17ae1d}{Event\+Manager}} (\mbox{\hyperlink{classArrowSymbolWidget}{Arrow\+Symbol\+Widget}} \texorpdfstring{$\ast$}{*}arrow, \mbox{\hyperlink{classSpeedometerWidget}{Speedometer\+Widget}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_a020dc91aad9feeaa1b3f6e68248e32fb}{py\+\_\+speed}}, \mbox{\hyperlink{classBatteryWidget}{Battery\+Widget}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_ac82cd7f8df8f7e2085752c89bf723777}{py\+\_\+battery}}, \mbox{\hyperlink{classBatteryAndSpeedWidget}{Battery\+And\+Speed\+Widget}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_adb602490af82b176b1c80909676efa6d}{py\+\_\+batspeed}}, \mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_a315e5abaf8582a60b8cca2feba8ec2b9}{left\+\_\+blinker}}, \mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_ac423fb82b41f717c9bbe0245b9a61be3}{right\+\_\+blinker}}, \mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_a9554253cb72023913ad460fd14edea41}{left\+\_\+blinker2}}, \mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_a15a1beb40beb9a83014ce6d0c82cdadf}{right\+\_\+blinker2}}, \mbox{\hyperlink{classStatsWidget}{Stats\+Widget}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_af52f34d374b2aafa6d79aa286682a8d1}{stats}}, \mbox{\hyperlink{classFanSpeedWidget}{Fan\+Speed\+Widget}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_a211913a7d82ce9eba8a4d1d69366a3df}{fan}}, \mbox{\hyperlink{classFanSpeedWidget}{Fan\+Speed\+Widget}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_ad29de9b2d7e1bdd1590a63ae93fde6b6}{fan2}}, \mbox{\hyperlink{classCPUTempWidget}{CPUTemp\+Widget}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_afdee815d31d821a9ed499d29ff835c79}{cpu}}, \mbox{\hyperlink{classCPUTempWidget}{CPUTemp\+Widget}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_af70e7715292f117d98344f2dc60a8e23}{cpu2}}, \mbox{\hyperlink{classTopBar}{Top\+Bar}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_af2d6ffaa216026f0ce52313e2f73cd9c}{top}}, \mbox{\hyperlink{classTopBar}{Top\+Bar}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_aa0f7b964113bc61cd565383112733ae6}{top2}}, QStacked\+Widget \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_a6830c5075146db285ac6ad2f9ee27b60}{stacked\+\_\+widget}}, QWidget \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventManager_ac8cf1fa8ea04fa59eeaa581a1820bf4b}{main\+\_\+window}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRosNode}{Ros\+Node}} $>$ ros\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classEventManager}{Event\+Manager} with the specified widgets and ROS node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEventManager_a410e81f43d30e45011c1b6c0fad0de63}{\texorpdfstring{$\sim$}{\string~}\+Event\+Manager}} () override
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classEventManager}{Event\+Manager}. \end{DoxyCompactList}\item 
+QStacked\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_ac72cee66d68276a0c460992cf3b29dc4}{get\+Stacked\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em A Getter that returns the QStacked\+Widget used for managing multiple screens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventManager_ae9483888b266533814ea4e68d38252b3}{change\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Changes the color scheme of all connected widgets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventManager_a4e48251378273d68e5f3064e73a28a1f}{change\+Units}} ()
+\begin{DoxyCompactList}\small\item\em Changes the units of measurement for speed and temperature widgets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classEventManager_ad837b341c5413dde1cd840d4f842c69b}{color1}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classEventManager_a0b603a609fb3a31423f2d2166636238e}{event\+Filter}} (QObject \texorpdfstring{$\ast$}{*}obj, QEvent \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Filters and handles events for the \doxylink{classEventManager}{Event\+Manager}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEventManager_a66e1c19ecb2939e1def68271596bcb1c}{swipe}} (QPointF release\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Handles swipe gestures to switch between screens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventManager_a007925da797864066b7f9cceb4a21e53}{activate\+Button}} (int key)
+\begin{DoxyCompactList}\small\item\em Activates functionality based on the key pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEventManager_a8cb911e3e0c0381683d7a96665b08e64}{update\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Updates the screen with the latest data from the ROS node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventManager_ad9816b83a98eaad80e0c71d2078ef2b5}{update\+Blinkers}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the blinker widgets based on the ROS node\textquotesingle{}s blinker state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArrowSymbolWidget}{Arrow\+Symbol\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_afa97e3e1132d0fdf07918d1a146ad1d7}{arrows}}
+\item 
+\mbox{\hyperlink{classSpeedometerWidget}{Speedometer\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_a020dc91aad9feeaa1b3f6e68248e32fb}{py\+\_\+speed}}
+\item 
+\mbox{\hyperlink{classBatteryWidget}{Battery\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_ac82cd7f8df8f7e2085752c89bf723777}{py\+\_\+battery}}
+\item 
+\mbox{\hyperlink{classBatteryAndSpeedWidget}{Battery\+And\+Speed\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_adb602490af82b176b1c80909676efa6d}{py\+\_\+batspeed}}
+\item 
+\mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_a315e5abaf8582a60b8cca2feba8ec2b9}{left\+\_\+blinker}}
+\item 
+\mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_ac423fb82b41f717c9bbe0245b9a61be3}{right\+\_\+blinker}}
+\item 
+\mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_a9554253cb72023913ad460fd14edea41}{left\+\_\+blinker2}}
+\item 
+\mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_a15a1beb40beb9a83014ce6d0c82cdadf}{right\+\_\+blinker2}}
+\item 
+\mbox{\hyperlink{classStatsWidget}{Stats\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_af52f34d374b2aafa6d79aa286682a8d1}{stats}}
+\item 
+\mbox{\hyperlink{classFanSpeedWidget}{Fan\+Speed\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_a211913a7d82ce9eba8a4d1d69366a3df}{fan}}
+\item 
+\mbox{\hyperlink{classFanSpeedWidget}{Fan\+Speed\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_ad29de9b2d7e1bdd1590a63ae93fde6b6}{fan2}}
+\item 
+\mbox{\hyperlink{classCPUTempWidget}{CPUTemp\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_afdee815d31d821a9ed499d29ff835c79}{cpu}}
+\item 
+\mbox{\hyperlink{classCPUTempWidget}{CPUTemp\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_af70e7715292f117d98344f2dc60a8e23}{cpu2}}
+\item 
+\mbox{\hyperlink{classTopBar}{Top\+Bar}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_af2d6ffaa216026f0ce52313e2f73cd9c}{top}}
+\item 
+\mbox{\hyperlink{classTopBar}{Top\+Bar}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_aa0f7b964113bc61cd565383112733ae6}{top2}}
+\item 
+QPointF \mbox{\hyperlink{classEventManager_a1aa9eb9734116ed7573ee09b820f555f}{mouse\+\_\+position}}
+\item 
+QTimer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_a905292797271431ff681d67fb0a9adde}{update\+\_\+timer}}
+\item 
+QStacked\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_a6830c5075146db285ac6ad2f9ee27b60}{stacked\+\_\+widget}}
+\item 
+QWidget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventManager_ac8cf1fa8ea04fa59eeaa581a1820bf4b}{main\+\_\+window}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRosNode}{Ros\+Node}} $>$ \mbox{\hyperlink{classEventManager_a28854d2c1bfb32bbe58f161633fc610e}{node}}
+\item 
+rclcpp\+::executors\+::\+Single\+Threaded\+Executor \mbox{\hyperlink{classEventManager_af98fb3196cda4172c05e2cfedcf084aa}{executor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{classEventManager_a7b923aa36e105600d734864ba6577966}{REFRESH\+\_\+\+RATE\+\_\+\+MS}} = 50
+\item 
+static constexpr int \mbox{\hyperlink{classEventManager_a82e9302d9b67f06ffbcdf914b2a66140}{SCREEN\+\_\+\+UPDATE\+\_\+\+RATE}} = 10
+\item 
+static constexpr int \mbox{\hyperlink{classEventManager_af15fa152af116fda4e959a40e5cfd2f4}{STATS\+\_\+\+DISTANCE}} = 4533
+\item 
+static constexpr int \mbox{\hyperlink{classEventManager_a7c9acf5371a49c5770a1641002f705d4}{STATS\+\_\+\+AVERAGE}} = 56
+\item 
+static constexpr int \mbox{\hyperlink{classEventManager_abbc3ccc462a2bdf55f41c51bb15313e3}{STATS\+\_\+\+CONSUMED}} = 78
+\item 
+static constexpr int \mbox{\hyperlink{classEventManager_ae002c5e76aed206dd8ec58ec1274bf0d}{STATS\+\_\+\+OBSTACLES}} = 2
+\item 
+static constexpr int \mbox{\hyperlink{classEventManager_ab187fa708e19563fd002b01970bea191}{MIN\+\_\+\+SWIPE\+\_\+\+WIDTH}} = 100
+\item 
+static constexpr int \mbox{\hyperlink{classEventManager_a305c861d4ea9bc12aac722b284accbbc}{MAX\+\_\+\+SWIPE\+\_\+\+HEIGHT}} = 200
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classEventManager}{Event\+Manager} handles the events sent by the car and the command. 
+
+It performs a swipe movement based on mouse events, filter key events to change the cluster color and its units (KH/\+Mh). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEventManager_ad13e285fc0e58a37faa98da7cb17ae1d}\label{classEventManager_ad13e285fc0e58a37faa98da7cb17ae1d} 
+\index{EventManager@{EventManager}!EventManager@{EventManager}}
+\index{EventManager@{EventManager}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{EventManager()}{EventManager()}}
+{\footnotesize\ttfamily Event\+Manager\+::\+Event\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArrowSymbolWidget}{Arrow\+Symbol\+Widget}} \texorpdfstring{$\ast$}{*}}]{arrow,  }\item[{\mbox{\hyperlink{classSpeedometerWidget}{Speedometer\+Widget}} \texorpdfstring{$\ast$}{*}}]{py\+\_\+speed,  }\item[{\mbox{\hyperlink{classBatteryWidget}{Battery\+Widget}} \texorpdfstring{$\ast$}{*}}]{py\+\_\+battery,  }\item[{\mbox{\hyperlink{classBatteryAndSpeedWidget}{Battery\+And\+Speed\+Widget}} \texorpdfstring{$\ast$}{*}}]{py\+\_\+batspeed,  }\item[{\mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*}}]{left\+\_\+blinker,  }\item[{\mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*}}]{right\+\_\+blinker,  }\item[{\mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*}}]{left\+\_\+blinker2,  }\item[{\mbox{\hyperlink{classBlinkers}{Blinkers}} \texorpdfstring{$\ast$}{*}}]{right\+\_\+blinker2,  }\item[{\mbox{\hyperlink{classStatsWidget}{Stats\+Widget}} \texorpdfstring{$\ast$}{*}}]{stats,  }\item[{\mbox{\hyperlink{classFanSpeedWidget}{Fan\+Speed\+Widget}} \texorpdfstring{$\ast$}{*}}]{fan,  }\item[{\mbox{\hyperlink{classFanSpeedWidget}{Fan\+Speed\+Widget}} \texorpdfstring{$\ast$}{*}}]{fan2,  }\item[{\mbox{\hyperlink{classCPUTempWidget}{CPUTemp\+Widget}} \texorpdfstring{$\ast$}{*}}]{cpu,  }\item[{\mbox{\hyperlink{classCPUTempWidget}{CPUTemp\+Widget}} \texorpdfstring{$\ast$}{*}}]{cpu2,  }\item[{\mbox{\hyperlink{classTopBar}{Top\+Bar}} \texorpdfstring{$\ast$}{*}}]{top,  }\item[{\mbox{\hyperlink{classTopBar}{Top\+Bar}} \texorpdfstring{$\ast$}{*}}]{top2,  }\item[{QStacked\+Widget \texorpdfstring{$\ast$}{*}}]{stacked\+\_\+widget,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{main\+\_\+window,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRosNode}{Ros\+Node}} $>$}]{ros\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{classEventManager}{Event\+Manager} with the specified widgets and ROS node. 
+
+This constructor initializes the \doxylink{classEventManager}{Event\+Manager}, connects it to various widgets and sets up a timer to periodically update the screen. It also initializes the ROS node and starts the update timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arrow} & Pointer to the \doxylink{classArrowSymbolWidget}{Arrow\+Symbol\+Widget}. \\
+\hline
+{\em py\+\_\+speed} & Pointer to the \doxylink{classSpeedometerWidget}{Speedometer\+Widget}. \\
+\hline
+{\em py\+\_\+battery} & Pointer to the \doxylink{classBatteryWidget}{Battery\+Widget}. \\
+\hline
+{\em py\+\_\+batspeed} & Pointer to the \doxylink{classBatteryAndSpeedWidget}{Battery\+And\+Speed\+Widget}. \\
+\hline
+{\em left\+\_\+blinker} & Pointer to the left \doxylink{classBlinkers}{Blinkers} widget. \\
+\hline
+{\em right\+\_\+blinker} & Pointer to the right \doxylink{classBlinkers}{Blinkers} widget. \\
+\hline
+{\em left\+\_\+blinker2} & Pointer to the secondary left \doxylink{classBlinkers}{Blinkers} widget. \\
+\hline
+{\em right\+\_\+blinker2} & Pointer to the secondary right \doxylink{classBlinkers}{Blinkers} widget. \\
+\hline
+{\em stats} & Pointer to the \doxylink{classStatsWidget}{Stats\+Widget}. \\
+\hline
+{\em fan} & Pointer to the \doxylink{classFanSpeedWidget}{Fan\+Speed\+Widget}. \\
+\hline
+{\em fan2} & Pointer to the secondary \doxylink{classFanSpeedWidget}{Fan\+Speed\+Widget}. \\
+\hline
+{\em cpu} & Pointer to the \doxylink{classCPUTempWidget}{CPUTemp\+Widget}. \\
+\hline
+{\em cpu2} & Pointer to the secondary \doxylink{classCPUTempWidget}{CPUTemp\+Widget}. \\
+\hline
+{\em top} & Pointer to the \doxylink{classTopBar}{Top\+Bar} widget. \\
+\hline
+{\em top2} & Pointer to the secondary \doxylink{classTopBar}{Top\+Bar} widget. \\
+\hline
+{\em stacked\+\_\+widget} & Pointer to the QStacked\+Widget for managing multiple screens. \\
+\hline
+{\em main\+\_\+window} & Pointer to the main QWidget window. \\
+\hline
+{\em ros\+\_\+node} & Shared pointer to the ROS node for communication. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classEventManager_a410e81f43d30e45011c1b6c0fad0de63}\label{classEventManager_a410e81f43d30e45011c1b6c0fad0de63} 
+\index{EventManager@{EventManager}!````~EventManager@{\texorpdfstring{$\sim$}{\string~}EventManager}}
+\index{````~EventManager@{\texorpdfstring{$\sim$}{\string~}EventManager}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EventManager()}{\string~EventManager()}}
+{\footnotesize\ttfamily Event\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Event\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destroys the \doxylink{classEventManager}{Event\+Manager}. 
+
+This destructor cleans up any resources used by the \doxylink{classEventManager}{Event\+Manager}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEventManager_a007925da797864066b7f9cceb4a21e53}\label{classEventManager_a007925da797864066b7f9cceb4a21e53} 
+\index{EventManager@{EventManager}!activateButton@{activateButton}}
+\index{activateButton@{activateButton}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{activateButton()}{activateButton()}}
+{\footnotesize\ttfamily void Event\+Manager\+::activate\+Button (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Activates functionality based on the key pressed. 
+
+This method handles key press events and performs actions such as changing colors or units.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key code of the pressed key. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classEventManager_ae9483888b266533814ea4e68d38252b3}\label{classEventManager_ae9483888b266533814ea4e68d38252b3} 
+\index{EventManager@{EventManager}!changeColors@{changeColors}}
+\index{changeColors@{changeColors}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{changeColors()}{changeColors()}}
+{\footnotesize\ttfamily void Event\+Manager\+::change\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Changes the color scheme of all connected widgets. 
+
+This method updates the color scheme of all widgets and the main window\textquotesingle{}s background based on the current color index. \Hypertarget{classEventManager_a4e48251378273d68e5f3064e73a28a1f}\label{classEventManager_a4e48251378273d68e5f3064e73a28a1f} 
+\index{EventManager@{EventManager}!changeUnits@{changeUnits}}
+\index{changeUnits@{changeUnits}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{changeUnits()}{changeUnits()}}
+{\footnotesize\ttfamily void Event\+Manager\+::change\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Changes the units of measurement for speed and temperature widgets. 
+
+This method toggles between different units for the speedometer and CPU temperature widgets. \Hypertarget{classEventManager_a0b603a609fb3a31423f2d2166636238e}\label{classEventManager_a0b603a609fb3a31423f2d2166636238e} 
+\index{EventManager@{EventManager}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool Event\+Manager\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{obj,  }\item[{QEvent \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Filters and handles events for the \doxylink{classEventManager}{Event\+Manager}. 
+
+This method processes mouse events, and key events. It tracks mouse positions for swipe gestures and handles key presses to activate buttons.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The object that generated the event. \\
+\hline
+{\em event} & The event to be filtered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the event was handled, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classEventManager_ac72cee66d68276a0c460992cf3b29dc4}\label{classEventManager_ac72cee66d68276a0c460992cf3b29dc4} 
+\index{EventManager@{EventManager}!getStackedWidget@{getStackedWidget}}
+\index{getStackedWidget@{getStackedWidget}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{getStackedWidget()}{getStackedWidget()}}
+{\footnotesize\ttfamily QStacked\+Widget \texorpdfstring{$\ast$}{*} Event\+Manager\+::get\+Stacked\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A Getter that returns the QStacked\+Widget used for managing multiple screens. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the QStacked\+Widget. 
+\end{DoxyReturn}
+\Hypertarget{classEventManager_a66e1c19ecb2939e1def68271596bcb1c}\label{classEventManager_a66e1c19ecb2939e1def68271596bcb1c} 
+\index{EventManager@{EventManager}!swipe@{swipe}}
+\index{swipe@{swipe}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{swipe()}{swipe()}}
+{\footnotesize\ttfamily bool Event\+Manager\+::swipe (\begin{DoxyParamCaption}\item[{QPointF}]{release\+\_\+position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles swipe gestures to switch between screens. 
+
+This method detects horizontal swipe gestures and updates the QStacked\+Widget to show the previous or next screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em release\+\_\+position} & The position where the mouse button was released. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a swipe gesture was detected, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classEventManager_ad9816b83a98eaad80e0c71d2078ef2b5}\label{classEventManager_ad9816b83a98eaad80e0c71d2078ef2b5} 
+\index{EventManager@{EventManager}!updateBlinkers@{updateBlinkers}}
+\index{updateBlinkers@{updateBlinkers}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{updateBlinkers}{updateBlinkers}}
+{\footnotesize\ttfamily void Event\+Manager\+::update\+Blinkers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Updates the state of the blinker widgets based on the ROS node\textquotesingle{}s blinker state. 
+
+This method turns the blinkers on or off depending on the current blinker state. \Hypertarget{classEventManager_a8cb911e3e0c0381683d7a96665b08e64}\label{classEventManager_a8cb911e3e0c0381683d7a96665b08e64} 
+\index{EventManager@{EventManager}!updateScreen@{updateScreen}}
+\index{updateScreen@{updateScreen}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{updateScreen}{updateScreen}}
+{\footnotesize\ttfamily void Event\+Manager\+::update\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Updates the screen with the latest data from the ROS node. 
+
+This method is called periodically by the update timer. It retrieves the latest speed, battery level, and blinker state from the ROS node and updates the corresponding widgets. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classEventManager_afa97e3e1132d0fdf07918d1a146ad1d7}\label{classEventManager_afa97e3e1132d0fdf07918d1a146ad1d7} 
+\index{EventManager@{EventManager}!arrows@{arrows}}
+\index{arrows@{arrows}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{arrows}{arrows}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArrowSymbolWidget}{Arrow\+Symbol\+Widget}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::arrows\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_ad837b341c5413dde1cd840d4f842c69b}\label{classEventManager_ad837b341c5413dde1cd840d4f842c69b} 
+\index{EventManager@{EventManager}!color1@{color1}}
+\index{color1@{color1}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{color1}{color1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Event\+Manager\+::color1}
+
+\Hypertarget{classEventManager_afdee815d31d821a9ed499d29ff835c79}\label{classEventManager_afdee815d31d821a9ed499d29ff835c79} 
+\index{EventManager@{EventManager}!cpu@{cpu}}
+\index{cpu@{cpu}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{cpu}{cpu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCPUTempWidget}{CPUTemp\+Widget}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::cpu\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_af70e7715292f117d98344f2dc60a8e23}\label{classEventManager_af70e7715292f117d98344f2dc60a8e23} 
+\index{EventManager@{EventManager}!cpu2@{cpu2}}
+\index{cpu2@{cpu2}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{cpu2}{cpu2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCPUTempWidget}{CPUTemp\+Widget}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::cpu2\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_af98fb3196cda4172c05e2cfedcf084aa}\label{classEventManager_af98fb3196cda4172c05e2cfedcf084aa} 
+\index{EventManager@{EventManager}!executor@{executor}}
+\index{executor@{executor}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{executor}{executor}}
+{\footnotesize\ttfamily rclcpp\+::executors\+::\+Single\+Threaded\+Executor Event\+Manager\+::executor\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a211913a7d82ce9eba8a4d1d69366a3df}\label{classEventManager_a211913a7d82ce9eba8a4d1d69366a3df} 
+\index{EventManager@{EventManager}!fan@{fan}}
+\index{fan@{fan}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{fan}{fan}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFanSpeedWidget}{Fan\+Speed\+Widget}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::fan\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_ad29de9b2d7e1bdd1590a63ae93fde6b6}\label{classEventManager_ad29de9b2d7e1bdd1590a63ae93fde6b6} 
+\index{EventManager@{EventManager}!fan2@{fan2}}
+\index{fan2@{fan2}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{fan2}{fan2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFanSpeedWidget}{Fan\+Speed\+Widget}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::fan2\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a315e5abaf8582a60b8cca2feba8ec2b9}\label{classEventManager_a315e5abaf8582a60b8cca2feba8ec2b9} 
+\index{EventManager@{EventManager}!left\_blinker@{left\_blinker}}
+\index{left\_blinker@{left\_blinker}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{left\_blinker}{left\_blinker}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlinkers}{Blinkers}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::left\+\_\+blinker\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a9554253cb72023913ad460fd14edea41}\label{classEventManager_a9554253cb72023913ad460fd14edea41} 
+\index{EventManager@{EventManager}!left\_blinker2@{left\_blinker2}}
+\index{left\_blinker2@{left\_blinker2}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{left\_blinker2}{left\_blinker2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlinkers}{Blinkers}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::left\+\_\+blinker2\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_ac8cf1fa8ea04fa59eeaa581a1820bf4b}\label{classEventManager_ac8cf1fa8ea04fa59eeaa581a1820bf4b} 
+\index{EventManager@{EventManager}!main\_window@{main\_window}}
+\index{main\_window@{main\_window}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{main\_window}{main\_window}}
+{\footnotesize\ttfamily QWidget\texorpdfstring{$\ast$}{*} Event\+Manager\+::main\+\_\+window\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a305c861d4ea9bc12aac722b284accbbc}\label{classEventManager_a305c861d4ea9bc12aac722b284accbbc} 
+\index{EventManager@{EventManager}!MAX\_SWIPE\_HEIGHT@{MAX\_SWIPE\_HEIGHT}}
+\index{MAX\_SWIPE\_HEIGHT@{MAX\_SWIPE\_HEIGHT}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{MAX\_SWIPE\_HEIGHT}{MAX\_SWIPE\_HEIGHT}}
+{\footnotesize\ttfamily constexpr int Event\+Manager\+::\+MAX\+\_\+\+SWIPE\+\_\+\+HEIGHT = 200\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{classEventManager_ab187fa708e19563fd002b01970bea191}\label{classEventManager_ab187fa708e19563fd002b01970bea191} 
+\index{EventManager@{EventManager}!MIN\_SWIPE\_WIDTH@{MIN\_SWIPE\_WIDTH}}
+\index{MIN\_SWIPE\_WIDTH@{MIN\_SWIPE\_WIDTH}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{MIN\_SWIPE\_WIDTH}{MIN\_SWIPE\_WIDTH}}
+{\footnotesize\ttfamily constexpr int Event\+Manager\+::\+MIN\+\_\+\+SWIPE\+\_\+\+WIDTH = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a1aa9eb9734116ed7573ee09b820f555f}\label{classEventManager_a1aa9eb9734116ed7573ee09b820f555f} 
+\index{EventManager@{EventManager}!mouse\_position@{mouse\_position}}
+\index{mouse\_position@{mouse\_position}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{mouse\_position}{mouse\_position}}
+{\footnotesize\ttfamily QPointF Event\+Manager\+::mouse\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a28854d2c1bfb32bbe58f161633fc610e}\label{classEventManager_a28854d2c1bfb32bbe58f161633fc610e} 
+\index{EventManager@{EventManager}!node@{node}}
+\index{node@{node}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classRosNode}{Ros\+Node}}$>$ Event\+Manager\+::node\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_adb602490af82b176b1c80909676efa6d}\label{classEventManager_adb602490af82b176b1c80909676efa6d} 
+\index{EventManager@{EventManager}!py\_batspeed@{py\_batspeed}}
+\index{py\_batspeed@{py\_batspeed}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{py\_batspeed}{py\_batspeed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBatteryAndSpeedWidget}{Battery\+And\+Speed\+Widget}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::py\+\_\+batspeed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_ac82cd7f8df8f7e2085752c89bf723777}\label{classEventManager_ac82cd7f8df8f7e2085752c89bf723777} 
+\index{EventManager@{EventManager}!py\_battery@{py\_battery}}
+\index{py\_battery@{py\_battery}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{py\_battery}{py\_battery}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBatteryWidget}{Battery\+Widget}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::py\+\_\+battery\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a020dc91aad9feeaa1b3f6e68248e32fb}\label{classEventManager_a020dc91aad9feeaa1b3f6e68248e32fb} 
+\index{EventManager@{EventManager}!py\_speed@{py\_speed}}
+\index{py\_speed@{py\_speed}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{py\_speed}{py\_speed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSpeedometerWidget}{Speedometer\+Widget}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::py\+\_\+speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a7b923aa36e105600d734864ba6577966}\label{classEventManager_a7b923aa36e105600d734864ba6577966} 
+\index{EventManager@{EventManager}!REFRESH\_RATE\_MS@{REFRESH\_RATE\_MS}}
+\index{REFRESH\_RATE\_MS@{REFRESH\_RATE\_MS}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{REFRESH\_RATE\_MS}{REFRESH\_RATE\_MS}}
+{\footnotesize\ttfamily constexpr int Event\+Manager\+::\+REFRESH\+\_\+\+RATE\+\_\+\+MS = 50\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{classEventManager_ac423fb82b41f717c9bbe0245b9a61be3}\label{classEventManager_ac423fb82b41f717c9bbe0245b9a61be3} 
+\index{EventManager@{EventManager}!right\_blinker@{right\_blinker}}
+\index{right\_blinker@{right\_blinker}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{right\_blinker}{right\_blinker}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlinkers}{Blinkers}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::right\+\_\+blinker\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a15a1beb40beb9a83014ce6d0c82cdadf}\label{classEventManager_a15a1beb40beb9a83014ce6d0c82cdadf} 
+\index{EventManager@{EventManager}!right\_blinker2@{right\_blinker2}}
+\index{right\_blinker2@{right\_blinker2}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{right\_blinker2}{right\_blinker2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlinkers}{Blinkers}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::right\+\_\+blinker2\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a82e9302d9b67f06ffbcdf914b2a66140}\label{classEventManager_a82e9302d9b67f06ffbcdf914b2a66140} 
+\index{EventManager@{EventManager}!SCREEN\_UPDATE\_RATE@{SCREEN\_UPDATE\_RATE}}
+\index{SCREEN\_UPDATE\_RATE@{SCREEN\_UPDATE\_RATE}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_UPDATE\_RATE}{SCREEN\_UPDATE\_RATE}}
+{\footnotesize\ttfamily constexpr int Event\+Manager\+::\+SCREEN\+\_\+\+UPDATE\+\_\+\+RATE = 10\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a6830c5075146db285ac6ad2f9ee27b60}\label{classEventManager_a6830c5075146db285ac6ad2f9ee27b60} 
+\index{EventManager@{EventManager}!stacked\_widget@{stacked\_widget}}
+\index{stacked\_widget@{stacked\_widget}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{stacked\_widget}{stacked\_widget}}
+{\footnotesize\ttfamily QStacked\+Widget\texorpdfstring{$\ast$}{*} Event\+Manager\+::stacked\+\_\+widget\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_af52f34d374b2aafa6d79aa286682a8d1}\label{classEventManager_af52f34d374b2aafa6d79aa286682a8d1} 
+\index{EventManager@{EventManager}!stats@{stats}}
+\index{stats@{stats}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{stats}{stats}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStatsWidget}{Stats\+Widget}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::stats\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a7c9acf5371a49c5770a1641002f705d4}\label{classEventManager_a7c9acf5371a49c5770a1641002f705d4} 
+\index{EventManager@{EventManager}!STATS\_AVERAGE@{STATS\_AVERAGE}}
+\index{STATS\_AVERAGE@{STATS\_AVERAGE}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{STATS\_AVERAGE}{STATS\_AVERAGE}}
+{\footnotesize\ttfamily constexpr int Event\+Manager\+::\+STATS\+\_\+\+AVERAGE = 56\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{classEventManager_abbc3ccc462a2bdf55f41c51bb15313e3}\label{classEventManager_abbc3ccc462a2bdf55f41c51bb15313e3} 
+\index{EventManager@{EventManager}!STATS\_CONSUMED@{STATS\_CONSUMED}}
+\index{STATS\_CONSUMED@{STATS\_CONSUMED}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{STATS\_CONSUMED}{STATS\_CONSUMED}}
+{\footnotesize\ttfamily constexpr int Event\+Manager\+::\+STATS\+\_\+\+CONSUMED = 78\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{classEventManager_af15fa152af116fda4e959a40e5cfd2f4}\label{classEventManager_af15fa152af116fda4e959a40e5cfd2f4} 
+\index{EventManager@{EventManager}!STATS\_DISTANCE@{STATS\_DISTANCE}}
+\index{STATS\_DISTANCE@{STATS\_DISTANCE}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{STATS\_DISTANCE}{STATS\_DISTANCE}}
+{\footnotesize\ttfamily constexpr int Event\+Manager\+::\+STATS\+\_\+\+DISTANCE = 4533\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{classEventManager_ae002c5e76aed206dd8ec58ec1274bf0d}\label{classEventManager_ae002c5e76aed206dd8ec58ec1274bf0d} 
+\index{EventManager@{EventManager}!STATS\_OBSTACLES@{STATS\_OBSTACLES}}
+\index{STATS\_OBSTACLES@{STATS\_OBSTACLES}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{STATS\_OBSTACLES}{STATS\_OBSTACLES}}
+{\footnotesize\ttfamily constexpr int Event\+Manager\+::\+STATS\+\_\+\+OBSTACLES = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{classEventManager_af2d6ffaa216026f0ce52313e2f73cd9c}\label{classEventManager_af2d6ffaa216026f0ce52313e2f73cd9c} 
+\index{EventManager@{EventManager}!top@{top}}
+\index{top@{top}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTopBar}{Top\+Bar}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::top\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_aa0f7b964113bc61cd565383112733ae6}\label{classEventManager_aa0f7b964113bc61cd565383112733ae6} 
+\index{EventManager@{EventManager}!top2@{top2}}
+\index{top2@{top2}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{top2}{top2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTopBar}{Top\+Bar}}\texorpdfstring{$\ast$}{*} Event\+Manager\+::top2\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEventManager_a905292797271431ff681d67fb0a9adde}\label{classEventManager_a905292797271431ff681d67fb0a9adde} 
+\index{EventManager@{EventManager}!update\_timer@{update\_timer}}
+\index{update\_timer@{update\_timer}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{update\_timer}{update\_timer}}
+{\footnotesize\ttfamily QTimer\texorpdfstring{$\ast$}{*} Event\+Manager\+::update\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{EventManager_8h}{Event\+Manager.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{EventManager_8cpp}{Event\+Manager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,34 @@
+\doxysection{Jet\+Racer/src/peripherals/oled\+\_\+display/include/\+Oled\+Display\+Node.hpp File Reference}
+\hypertarget{OledDisplayNode_8hpp}{}\label{OledDisplayNode_8hpp}\index{JetRacer/src/peripherals/oled\_display/include/OledDisplayNode.hpp@{JetRacer/src/peripherals/oled\_display/include/OledDisplayNode.hpp}}
+{\ttfamily \#include "{}SSD1306\+Driver.\+hpp"{}}\newline
+{\ttfamily \#include $<$custom\+\_\+msgs/msg/display.\+hpp$>$}\newline
+{\ttfamily \#include $<$custom\+\_\+msgs/srv/i2c\+\_\+service.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/rclcpp.\+hpp$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/msg/string.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classOledDisplayNode}{Oled\+Display\+Node}}
+\begin{DoxyCompactList}\small\item\em Listens for messages to display via cmd\+\_\+display topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr uint8\+\_\+t \mbox{\hyperlink{OledDisplayNode_8hpp_ac6bf1f2488a123e2d3d91f9bde1253ca}{SSD1306\+\_\+\+FONT\+\_\+\+NORMAL}} = 0x01
+\item 
+constexpr int \mbox{\hyperlink{OledDisplayNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\+\_\+\+QOS}} = 10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{OledDisplayNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}\label{OledDisplayNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d} 
+\index{OledDisplayNode.hpp@{OledDisplayNode.hpp}!NODE\_QOS@{NODE\_QOS}}
+\index{NODE\_QOS@{NODE\_QOS}!OledDisplayNode.hpp@{OledDisplayNode.hpp}}
+\doxysubsubsection{\texorpdfstring{NODE\_QOS}{NODE\_QOS}}
+{\footnotesize\ttfamily constexpr int NODE\+\_\+\+QOS = 10\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{OledDisplayNode_8hpp_ac6bf1f2488a123e2d3d91f9bde1253ca}\label{OledDisplayNode_8hpp_ac6bf1f2488a123e2d3d91f9bde1253ca} 
+\index{OledDisplayNode.hpp@{OledDisplayNode.hpp}!SSD1306\_FONT\_NORMAL@{SSD1306\_FONT\_NORMAL}}
+\index{SSD1306\_FONT\_NORMAL@{SSD1306\_FONT\_NORMAL}!OledDisplayNode.hpp@{OledDisplayNode.hpp}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_FONT\_NORMAL}{SSD1306\_FONT\_NORMAL}}
+{\footnotesize\ttfamily constexpr uint8\+\_\+t SSD1306\+\_\+\+FONT\+\_\+\+NORMAL = 0x01\hspace{0.3cm}{\ttfamily [constexpr]}}
+

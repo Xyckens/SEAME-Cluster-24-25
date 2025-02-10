@@ -1,0 +1,326 @@
+\doxysection{Stats\+Widget Class Reference}
+\hypertarget{classStatsWidget}{}\label{classStatsWidget}\index{StatsWidget@{StatsWidget}}
+
+
+The \doxylink{classStatsWidget}{Stats\+Widget} class represents a custom widget for displaying statistics.  
+
+
+
+
+{\ttfamily \#include $<$Stats\+Widget.\+h$>$}
+
+Inheritance diagram for Stats\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classStatsWidget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStatsWidget_a89dc842bf909074fb4e76051a5d2419f}{Stats\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, int x=0, int y=0, int \mbox{\hyperlink{classStatsWidget_a34bad46756b5c56d7478e08bb6f2fbce}{width}}=0, int \mbox{\hyperlink{classStatsWidget_a52e350cd507de98567ff16b623dcf0d3}{height}}=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classStatsWidget}{Stats\+Widget} with the specified parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatsWidget_aabd90eef7bf3394782395439bb19471f}{change\+Color}} (int array\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Changes the color scheme of the statistics widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatsWidget_a5c2084da62c01eadf43c91a7569c8005}{change\+Units}} (void)
+\begin{DoxyCompactList}\small\item\em Toggles between units. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatsWidget_ad235ac30fdf21cb3264abcf6d5c08baa}{set\+Distance}} (int dist)
+\begin{DoxyCompactList}\small\item\em A Setter that updates the distance traveled statistic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatsWidget_a5367098c07290b8bd6282c4d3c58310b}{set\+Average}} (int avg)
+\begin{DoxyCompactList}\small\item\em A Setter that updates the average speed statistic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatsWidget_ac2b0857742075a780dd763b2cedd7d7e}{set\+Consumed}} (int con)
+\begin{DoxyCompactList}\small\item\em A Setter that updates the battery consumed statistic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatsWidget_a2d355374b57932093421e32968a6edd8}{set\+Obstacles}} (int obs)
+\begin{DoxyCompactList}\small\item\em A Setter that updates the obstacles detected statistic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{classStatsWidget_ab5dedc5f19ad7ad82ea6bdf8902a1609}{main\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classStatsWidget_ab650b4543f4bb8e64b2f6268fd12c719}{accent\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classStatsWidget_afc6a0ded09bdeab2ca5831ef1f9587f0}{alphabet\+\_\+color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classStatsWidget_a1bfa4e5783b35c26c2b6889ee4ca4674}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles the painting of the statistics widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classStatsWidget_a34bad46756b5c56d7478e08bb6f2fbce}{width}}
+\item 
+int \mbox{\hyperlink{classStatsWidget_a52e350cd507de98567ff16b623dcf0d3}{height}}
+\item 
+QString\+List \mbox{\hyperlink{classStatsWidget_ae1c81b0029c0e6a0075baf467ec4d751}{names}}
+\item 
+QString\+List \mbox{\hyperlink{classStatsWidget_a8198b8c23dc5b61bd7f1358f5a34c9d5}{values}}
+\item 
+QString \mbox{\hyperlink{classStatsWidget_a4c4193ec30a8bd6d4417ae0a1e95c84e}{distance}}
+\item 
+QString \mbox{\hyperlink{classStatsWidget_af205d07d63d9910d3e8ae4236b5154ef}{average}}
+\item 
+QString \mbox{\hyperlink{classStatsWidget_ac61c95a8475837ad5170a2bd608ea45a}{consumed}}
+\item 
+QString \mbox{\hyperlink{classStatsWidget_a3e5ea029cc22afa41cae4d8e158f99c2}{obstacles}}
+\item 
+int \mbox{\hyperlink{classStatsWidget_a352dcf817f0b31241e059a12927b8715}{distance\+\_\+int}}
+\item 
+int \mbox{\hyperlink{classStatsWidget_a6f453051f9847984e33b9a01e05f08bf}{average\+\_\+int}}
+\item 
+QString \mbox{\hyperlink{classStatsWidget_a92b1be6015898dec0444ef7290250198}{unit}}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classStatsWidget_a5b07e38ffec59c73baf52da9effc292e}{color1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classStatsWidget}{Stats\+Widget} class represents a custom widget for displaying statistics. 
+
+This widget provides a graphical representation of four key statistics\+:
+\begin{DoxyItemize}
+\item Distance Traveled
+\item Average Speed
+\item Battery Consumed
+\item Obstacles Detected 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classStatsWidget_a89dc842bf909074fb4e76051a5d2419f}\label{classStatsWidget_a89dc842bf909074fb4e76051a5d2419f} 
+\index{StatsWidget@{StatsWidget}!StatsWidget@{StatsWidget}}
+\index{StatsWidget@{StatsWidget}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{StatsWidget()}{StatsWidget()}}
+{\footnotesize\ttfamily Stats\+Widget\+::\+Stats\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr},  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classStatsWidget}{Stats\+Widget} with the specified parameters. 
+
+This constructor initializes the statistics widget, sets its geometry, and configures its colors and default values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+{\em x} & The x-\/coordinate of the widget\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the widget\textquotesingle{}s position. \\
+\hline
+{\em width} & The width of the widget. \\
+\hline
+{\em height} & The height of the widget. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classStatsWidget_aabd90eef7bf3394782395439bb19471f}\label{classStatsWidget_aabd90eef7bf3394782395439bb19471f} 
+\index{StatsWidget@{StatsWidget}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Stats\+Widget\+::change\+Color (\begin{DoxyParamCaption}\item[{int}]{array\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Changes the color scheme of the statistics widget. 
+
+This method updates the colors of the widget based on the provided array index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+\_\+index} & The index of the color scheme in the array. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStatsWidget_a5c2084da62c01eadf43c91a7569c8005}\label{classStatsWidget_a5c2084da62c01eadf43c91a7569c8005} 
+\index{StatsWidget@{StatsWidget}!changeUnits@{changeUnits}}
+\index{changeUnits@{changeUnits}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{changeUnits()}{changeUnits()}}
+{\footnotesize\ttfamily void Stats\+Widget\+::change\+Units (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Toggles between units. 
+
+This method switches the unit of measurement for distance and average speed and updates the displayed values accordingly. \Hypertarget{classStatsWidget_a1bfa4e5783b35c26c2b6889ee4ca4674}\label{classStatsWidget_a1bfa4e5783b35c26c2b6889ee4ca4674} 
+\index{StatsWidget@{StatsWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void Stats\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}}
+
+
+
+Handles the painting of the statistics widget. 
+
+This method is overridden from QWidget and is called whenever the widget needs to be redrawn. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The paint event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStatsWidget_a5367098c07290b8bd6282c4d3c58310b}\label{classStatsWidget_a5367098c07290b8bd6282c4d3c58310b} 
+\index{StatsWidget@{StatsWidget}!setAverage@{setAverage}}
+\index{setAverage@{setAverage}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{setAverage()}{setAverage()}}
+{\footnotesize\ttfamily void Stats\+Widget\+::set\+Average (\begin{DoxyParamCaption}\item[{int}]{avg }\end{DoxyParamCaption})}
+
+
+
+A Setter that updates the average speed statistic. 
+
+This method updates the average speed value and converts it to the current unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em avg} & The average speed value to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStatsWidget_ac2b0857742075a780dd763b2cedd7d7e}\label{classStatsWidget_ac2b0857742075a780dd763b2cedd7d7e} 
+\index{StatsWidget@{StatsWidget}!setConsumed@{setConsumed}}
+\index{setConsumed@{setConsumed}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{setConsumed()}{setConsumed()}}
+{\footnotesize\ttfamily void Stats\+Widget\+::set\+Consumed (\begin{DoxyParamCaption}\item[{int}]{con }\end{DoxyParamCaption})}
+
+
+
+A Setter that updates the battery consumed statistic. 
+
+This method updates the battery consumed value as a percentage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em con} & The battery consumed value to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStatsWidget_ad235ac30fdf21cb3264abcf6d5c08baa}\label{classStatsWidget_ad235ac30fdf21cb3264abcf6d5c08baa} 
+\index{StatsWidget@{StatsWidget}!setDistance@{setDistance}}
+\index{setDistance@{setDistance}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{setDistance()}{setDistance()}}
+{\footnotesize\ttfamily void Stats\+Widget\+::set\+Distance (\begin{DoxyParamCaption}\item[{int}]{dist }\end{DoxyParamCaption})}
+
+
+
+A Setter that updates the distance traveled statistic. 
+
+This method updates the distance value and converts it to the current unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dist} & The distance value to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStatsWidget_a2d355374b57932093421e32968a6edd8}\label{classStatsWidget_a2d355374b57932093421e32968a6edd8} 
+\index{StatsWidget@{StatsWidget}!setObstacles@{setObstacles}}
+\index{setObstacles@{setObstacles}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{setObstacles()}{setObstacles()}}
+{\footnotesize\ttfamily void Stats\+Widget\+::set\+Obstacles (\begin{DoxyParamCaption}\item[{int}]{obs }\end{DoxyParamCaption})}
+
+
+
+A Setter that updates the obstacles detected statistic. 
+
+This method updates the number of obstacles detected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obs} & The number of obstacles detected. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classStatsWidget_ab650b4543f4bb8e64b2f6268fd12c719}\label{classStatsWidget_ab650b4543f4bb8e64b2f6268fd12c719} 
+\index{StatsWidget@{StatsWidget}!accent\_color@{accent\_color}}
+\index{accent\_color@{accent\_color}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{accent\_color}{accent\_color}}
+{\footnotesize\ttfamily QColor Stats\+Widget\+::accent\+\_\+color}
+
+\Hypertarget{classStatsWidget_afc6a0ded09bdeab2ca5831ef1f9587f0}\label{classStatsWidget_afc6a0ded09bdeab2ca5831ef1f9587f0} 
+\index{StatsWidget@{StatsWidget}!alphabet\_color@{alphabet\_color}}
+\index{alphabet\_color@{alphabet\_color}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{alphabet\_color}{alphabet\_color}}
+{\footnotesize\ttfamily QColor Stats\+Widget\+::alphabet\+\_\+color}
+
+\Hypertarget{classStatsWidget_af205d07d63d9910d3e8ae4236b5154ef}\label{classStatsWidget_af205d07d63d9910d3e8ae4236b5154ef} 
+\index{StatsWidget@{StatsWidget}!average@{average}}
+\index{average@{average}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{average}{average}}
+{\footnotesize\ttfamily QString Stats\+Widget\+::average\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_a6f453051f9847984e33b9a01e05f08bf}\label{classStatsWidget_a6f453051f9847984e33b9a01e05f08bf} 
+\index{StatsWidget@{StatsWidget}!average\_int@{average\_int}}
+\index{average\_int@{average\_int}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{average\_int}{average\_int}}
+{\footnotesize\ttfamily int Stats\+Widget\+::average\+\_\+int\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_a5b07e38ffec59c73baf52da9effc292e}\label{classStatsWidget_a5b07e38ffec59c73baf52da9effc292e} 
+\index{StatsWidget@{StatsWidget}!color1@{color1}}
+\index{color1@{color1}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{color1}{color1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Stats\+Widget\+::color1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_ac61c95a8475837ad5170a2bd608ea45a}\label{classStatsWidget_ac61c95a8475837ad5170a2bd608ea45a} 
+\index{StatsWidget@{StatsWidget}!consumed@{consumed}}
+\index{consumed@{consumed}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{consumed}{consumed}}
+{\footnotesize\ttfamily QString Stats\+Widget\+::consumed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_a4c4193ec30a8bd6d4417ae0a1e95c84e}\label{classStatsWidget_a4c4193ec30a8bd6d4417ae0a1e95c84e} 
+\index{StatsWidget@{StatsWidget}!distance@{distance}}
+\index{distance@{distance}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{distance}{distance}}
+{\footnotesize\ttfamily QString Stats\+Widget\+::distance\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_a352dcf817f0b31241e059a12927b8715}\label{classStatsWidget_a352dcf817f0b31241e059a12927b8715} 
+\index{StatsWidget@{StatsWidget}!distance\_int@{distance\_int}}
+\index{distance\_int@{distance\_int}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{distance\_int}{distance\_int}}
+{\footnotesize\ttfamily int Stats\+Widget\+::distance\+\_\+int\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_a52e350cd507de98567ff16b623dcf0d3}\label{classStatsWidget_a52e350cd507de98567ff16b623dcf0d3} 
+\index{StatsWidget@{StatsWidget}!height@{height}}
+\index{height@{height}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Stats\+Widget\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_ab5dedc5f19ad7ad82ea6bdf8902a1609}\label{classStatsWidget_ab5dedc5f19ad7ad82ea6bdf8902a1609} 
+\index{StatsWidget@{StatsWidget}!main\_color@{main\_color}}
+\index{main\_color@{main\_color}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{main\_color}{main\_color}}
+{\footnotesize\ttfamily QColor Stats\+Widget\+::main\+\_\+color}
+
+\Hypertarget{classStatsWidget_ae1c81b0029c0e6a0075baf467ec4d751}\label{classStatsWidget_ae1c81b0029c0e6a0075baf467ec4d751} 
+\index{StatsWidget@{StatsWidget}!names@{names}}
+\index{names@{names}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{names}{names}}
+{\footnotesize\ttfamily QString\+List Stats\+Widget\+::names\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_a3e5ea029cc22afa41cae4d8e158f99c2}\label{classStatsWidget_a3e5ea029cc22afa41cae4d8e158f99c2} 
+\index{StatsWidget@{StatsWidget}!obstacles@{obstacles}}
+\index{obstacles@{obstacles}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{obstacles}{obstacles}}
+{\footnotesize\ttfamily QString Stats\+Widget\+::obstacles\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_a92b1be6015898dec0444ef7290250198}\label{classStatsWidget_a92b1be6015898dec0444ef7290250198} 
+\index{StatsWidget@{StatsWidget}!unit@{unit}}
+\index{unit@{unit}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{unit}{unit}}
+{\footnotesize\ttfamily QString Stats\+Widget\+::unit\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_a8198b8c23dc5b61bd7f1358f5a34c9d5}\label{classStatsWidget_a8198b8c23dc5b61bd7f1358f5a34c9d5} 
+\index{StatsWidget@{StatsWidget}!values@{values}}
+\index{values@{values}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{values}{values}}
+{\footnotesize\ttfamily QString\+List Stats\+Widget\+::values\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classStatsWidget_a34bad46756b5c56d7478e08bb6f2fbce}\label{classStatsWidget_a34bad46756b5c56d7478e08bb6f2fbce} 
+\index{StatsWidget@{StatsWidget}!width@{width}}
+\index{width@{width}!StatsWidget@{StatsWidget}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Stats\+Widget\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{StatsWidget_8h}{Stats\+Widget.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{StatsWidget_8cpp}{Stats\+Widget.\+cpp}}\end{DoxyCompactItemize}

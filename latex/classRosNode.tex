@@ -1,0 +1,209 @@
+\doxysection{Ros\+Node Class Reference}
+\hypertarget{classRosNode}{}\label{classRosNode}\index{RosNode@{RosNode}}
+
+
+The \doxylink{classRosNode}{Ros\+Node} class represents a ROS 2 node for managing vehicle data.  
+
+
+
+
+{\ttfamily \#include $<$Ros\+Node.\+hpp$>$}
+
+Inheritance diagram for Ros\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRosNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRosNode_af54772b0689f19a12477bddf088dbdf1}{Ros\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classRosNode}{Ros\+Node}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRosNode_aef9ea91cc1811c3fab0ac342c8a01a1b}{\texorpdfstring{$\sim$}{\string~}\+Ros\+Node}} () override=default
+\item 
+int \mbox{\hyperlink{classRosNode_a8df33d583d5e240e065057f9949d9592}{get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em A Getter that returns the current speed of the vehicle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRosNode_ac7e15cd2721f02d1f4a8d2d061dd3372}{get\+Battery}} () const
+\begin{DoxyCompactList}\small\item\em A Getter that returns the current battery level of the vehicle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRosNode_a1c699f1d596a5805d9ae1dc877f8705c}{get\+Rpm}} () const
+\begin{DoxyCompactList}\small\item\em A Getter that returns the current RPM of the vehicle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8df}{blinker\+State}} \mbox{\hyperlink{classRosNode_ab1a178f18991c961e970a11973511bc9}{get\+Blinker\+State}} () const
+\begin{DoxyCompactList}\small\item\em A Getter that returns the current state of the blinkers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRosNode_a5527770047fd6fa603552f10ca6d5950}{set\+Blinker\+State}} (std\+\_\+msgs\+::msg\+::\+UInt8 msg)
+\begin{DoxyCompactList}\small\item\em A Setter that updates the blinker state based on the received message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ std\+\_\+msgs\+::msg\+::\+Float64 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classRosNode_a391efbde18c5661c150bd51d10af5dc8}{battery\+\_\+sub\+\_\+}}
+\item 
+rclcpp\+::\+Subscription$<$ std\+\_\+msgs\+::msg\+::\+UInt8 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classRosNode_a3e8de2e98104124c7ae5c1792cb76261}{speed\+\_\+sub\+\_\+}}
+\item 
+rclcpp\+::\+Subscription$<$ std\+\_\+msgs\+::msg\+::\+UInt32 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classRosNode_abc3f258b9d546a76a7280fb88bfd3e86}{rpm\+\_\+sub\+\_\+}}
+\item 
+rclcpp\+::\+Subscription$<$ std\+\_\+msgs\+::msg\+::\+UInt8 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classRosNode_a023dee3ccd887dee102c6a8d6b14fc33}{blinker\+\_\+sub\+\_\+}}
+\item 
+int \mbox{\hyperlink{classRosNode_aa9b65e394dc42fc76da59dfee991f4b5}{battery\+\_\+level\+\_\+}} \{0\}
+\item 
+int \mbox{\hyperlink{classRosNode_ae449bd54071c75b847cd8e40aacda8a3}{speed\+\_\+}} \{0\}
+\item 
+int \mbox{\hyperlink{classRosNode_ae94f1953524607a1e032b3506637ee41}{rpm\+\_\+}} \{0\}
+\item 
+\mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8df}{blinker\+State}} \mbox{\hyperlink{classRosNode_aeb103b2177fc2b116dbef226a94222a3}{blinker\+\_\+state\+\_\+}} \{\mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8dfaa5daf7f2ebbba4975d61dab1c40188c7}{blinker\+State\+::\+IDLE}}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classRosNode}{Ros\+Node} class represents a ROS 2 node for managing vehicle data. 
+
+This class inherits from rclcpp\+::\+Node and subscribes to topics such as battery level and speed. It also includes methods to retrieve the latest values of these parameters. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRosNode_af54772b0689f19a12477bddf088dbdf1}\label{classRosNode_af54772b0689f19a12477bddf088dbdf1} 
+\index{RosNode@{RosNode}!RosNode@{RosNode}}
+\index{RosNode@{RosNode}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{RosNode()}{RosNode()}}
+{\footnotesize\ttfamily Ros\+Node\+::\+Ros\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classRosNode}{Ros\+Node}. 
+
+This constructor initializes the ROS 2 node and sets up subscriptions for battery level, speed, RPM, and blinker state. \Hypertarget{classRosNode_aef9ea91cc1811c3fab0ac342c8a01a1b}\label{classRosNode_aef9ea91cc1811c3fab0ac342c8a01a1b} 
+\index{RosNode@{RosNode}!````~RosNode@{\texorpdfstring{$\sim$}{\string~}RosNode}}
+\index{````~RosNode@{\texorpdfstring{$\sim$}{\string~}RosNode}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RosNode()}{\string~RosNode()}}
+{\footnotesize\ttfamily Ros\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Ros\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRosNode_ac7e15cd2721f02d1f4a8d2d061dd3372}\label{classRosNode_ac7e15cd2721f02d1f4a8d2d061dd3372} 
+\index{RosNode@{RosNode}!getBattery@{getBattery}}
+\index{getBattery@{getBattery}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{getBattery()}{getBattery()}}
+{\footnotesize\ttfamily int Ros\+Node\+::get\+Battery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+A Getter that returns the current battery level of the vehicle. 
+
+\begin{DoxyReturn}{Returns}
+The current battery level as an integer (0-\/100). 
+\end{DoxyReturn}
+\Hypertarget{classRosNode_ab1a178f18991c961e970a11973511bc9}\label{classRosNode_ab1a178f18991c961e970a11973511bc9} 
+\index{RosNode@{RosNode}!getBlinkerState@{getBlinkerState}}
+\index{getBlinkerState@{getBlinkerState}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{getBlinkerState()}{getBlinkerState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8df}{blinker\+State}} Ros\+Node\+::get\+Blinker\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+A Getter that returns the current state of the blinkers. 
+
+\begin{DoxyReturn}{Returns}
+The current blinker state as a {\ttfamily blinker\+State} enum value. 
+\end{DoxyReturn}
+\Hypertarget{classRosNode_a1c699f1d596a5805d9ae1dc877f8705c}\label{classRosNode_a1c699f1d596a5805d9ae1dc877f8705c} 
+\index{RosNode@{RosNode}!getRpm@{getRpm}}
+\index{getRpm@{getRpm}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{getRpm()}{getRpm()}}
+{\footnotesize\ttfamily int Ros\+Node\+::get\+Rpm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+A Getter that returns the current RPM of the vehicle. 
+
+\begin{DoxyReturn}{Returns}
+The current RPM as an integer. 
+\end{DoxyReturn}
+\Hypertarget{classRosNode_a8df33d583d5e240e065057f9949d9592}\label{classRosNode_a8df33d583d5e240e065057f9949d9592} 
+\index{RosNode@{RosNode}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily int Ros\+Node\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+A Getter that returns the current speed of the vehicle. 
+
+\begin{DoxyReturn}{Returns}
+The current speed as an integer. 
+\end{DoxyReturn}
+\Hypertarget{classRosNode_a5527770047fd6fa603552f10ca6d5950}\label{classRosNode_a5527770047fd6fa603552f10ca6d5950} 
+\index{RosNode@{RosNode}!setBlinkerState@{setBlinkerState}}
+\index{setBlinkerState@{setBlinkerState}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{setBlinkerState()}{setBlinkerState()}}
+{\footnotesize\ttfamily void Ros\+Node\+::set\+Blinker\+State (\begin{DoxyParamCaption}\item[{std\+\_\+msgs\+::msg\+::\+UInt8}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A Setter that updates the blinker state based on the received message. 
+
+This callback function is triggered whenever a new blinker state message is received.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message containing the new blinker state. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classRosNode_aa9b65e394dc42fc76da59dfee991f4b5}\label{classRosNode_aa9b65e394dc42fc76da59dfee991f4b5} 
+\index{RosNode@{RosNode}!battery\_level\_@{battery\_level\_}}
+\index{battery\_level\_@{battery\_level\_}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{battery\_level\_}{battery\_level\_}}
+{\footnotesize\ttfamily int Ros\+Node\+::battery\+\_\+level\+\_\+ \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classRosNode_a391efbde18c5661c150bd51d10af5dc8}\label{classRosNode_a391efbde18c5661c150bd51d10af5dc8} 
+\index{RosNode@{RosNode}!battery\_sub\_@{battery\_sub\_}}
+\index{battery\_sub\_@{battery\_sub\_}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{battery\_sub\_}{battery\_sub\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$std\+\_\+msgs\+::msg\+::\+Float64$>$\+::\+Shared\+Ptr Ros\+Node\+::battery\+\_\+sub\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classRosNode_aeb103b2177fc2b116dbef226a94222a3}\label{classRosNode_aeb103b2177fc2b116dbef226a94222a3} 
+\index{RosNode@{RosNode}!blinker\_state\_@{blinker\_state\_}}
+\index{blinker\_state\_@{blinker\_state\_}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{blinker\_state\_}{blinker\_state\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8df}{blinker\+State}} Ros\+Node\+::blinker\+\_\+state\+\_\+ \{\mbox{\hyperlink{RosNode_8hpp_a3af77212121e5e8415b1856a937bb8dfaa5daf7f2ebbba4975d61dab1c40188c7}{blinker\+State\+::\+IDLE}}\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classRosNode_a023dee3ccd887dee102c6a8d6b14fc33}\label{classRosNode_a023dee3ccd887dee102c6a8d6b14fc33} 
+\index{RosNode@{RosNode}!blinker\_sub\_@{blinker\_sub\_}}
+\index{blinker\_sub\_@{blinker\_sub\_}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{blinker\_sub\_}{blinker\_sub\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$std\+\_\+msgs\+::msg\+::\+UInt8$>$\+::\+Shared\+Ptr Ros\+Node\+::blinker\+\_\+sub\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classRosNode_ae94f1953524607a1e032b3506637ee41}\label{classRosNode_ae94f1953524607a1e032b3506637ee41} 
+\index{RosNode@{RosNode}!rpm\_@{rpm\_}}
+\index{rpm\_@{rpm\_}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{rpm\_}{rpm\_}}
+{\footnotesize\ttfamily int Ros\+Node\+::rpm\+\_\+ \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classRosNode_abc3f258b9d546a76a7280fb88bfd3e86}\label{classRosNode_abc3f258b9d546a76a7280fb88bfd3e86} 
+\index{RosNode@{RosNode}!rpm\_sub\_@{rpm\_sub\_}}
+\index{rpm\_sub\_@{rpm\_sub\_}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{rpm\_sub\_}{rpm\_sub\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$std\+\_\+msgs\+::msg\+::\+UInt32$>$\+::\+Shared\+Ptr Ros\+Node\+::rpm\+\_\+sub\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classRosNode_ae449bd54071c75b847cd8e40aacda8a3}\label{classRosNode_ae449bd54071c75b847cd8e40aacda8a3} 
+\index{RosNode@{RosNode}!speed\_@{speed\_}}
+\index{speed\_@{speed\_}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{speed\_}{speed\_}}
+{\footnotesize\ttfamily int Ros\+Node\+::speed\+\_\+ \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classRosNode_a3e8de2e98104124c7ae5c1792cb76261}\label{classRosNode_a3e8de2e98104124c7ae5c1792cb76261} 
+\index{RosNode@{RosNode}!speed\_sub\_@{speed\_sub\_}}
+\index{speed\_sub\_@{speed\_sub\_}!RosNode@{RosNode}}
+\doxysubsubsection{\texorpdfstring{speed\_sub\_}{speed\_sub\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$std\+\_\+msgs\+::msg\+::\+UInt8$>$\+::\+Shared\+Ptr Ros\+Node\+::speed\+\_\+sub\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{RosNode_8hpp}{Ros\+Node.\+hpp}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{RosNode_8cpp}{Ros\+Node.\+cpp}}\end{DoxyCompactItemize}

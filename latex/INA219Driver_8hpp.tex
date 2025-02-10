@@ -1,0 +1,81 @@
+\doxysection{Jet\+Racer/src/drivers/ina219\+\_\+driver/include/\+INA219\+Driver.hpp File Reference}
+\hypertarget{INA219Driver_8hpp}{}\label{INA219Driver_8hpp}\index{JetRacer/src/drivers/ina219\_driver/include/INA219Driver.hpp@{JetRacer/src/drivers/ina219\_driver/include/INA219Driver.hpp}}
+{\ttfamily \#include "{}ADriver.\+hpp"{}}\newline
+{\ttfamily \#include "{}std\+\_\+msgs/msg/float64.\+hpp"{}}\newline
+{\ttfamily \#include $<$custom\+\_\+msgs/srv/i2c\+\_\+service.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/rclcpp.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classINA219Driver}{INA219\+Driver}}
+\begin{DoxyCompactList}\small\item\em Driver to interact with the INA219 (Battery voltage) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{INA219Driver_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\+\_\+\+QOS}} = 10
+\item 
+constexpr float \mbox{\hyperlink{INA219Driver_8hpp_a204fd02ce1d89cac1283bbac93e64ab4}{MAX\+\_\+\+BATTERY}} = 12.\+6
+\item 
+constexpr float \mbox{\hyperlink{INA219Driver_8hpp_a27f0c81794d7541e3a06b9900857c69d}{MIN\+\_\+\+BATTERY}} = 10.\+8
+\item 
+constexpr float \mbox{\hyperlink{INA219Driver_8hpp_af5069efbcea6e25b2ff09454e3e6942a}{COEF\+\_\+\+TO\+\_\+\+VOLT}} = 0.\+004
+\item 
+constexpr uint8\+\_\+t \mbox{\hyperlink{INA219Driver_8hpp_a3fbad015069821a5482248277eed3365}{LSB\+\_\+\+MASK}} = 0x\+FF
+\item 
+constexpr int \mbox{\hyperlink{INA219Driver_8hpp_af12635f35771cde9355b67a6dc1839cf}{CALIB\+\_\+\+VAL\+\_\+32\+V\+\_\+1A}} = 10240
+\item 
+constexpr int \mbox{\hyperlink{INA219Driver_8hpp_a395d3e272e9aad95e16cf1ed666d4d80}{CURR\+\_\+\+DIVIDER\+\_\+\+MA\+\_\+32\+V\+\_\+1A}} = 25
+\item 
+constexpr float \mbox{\hyperlink{INA219Driver_8hpp_ad2d7f06a970995f4d9b5d85c1eaf16dc}{POWER\+\_\+\+MULT\+\_\+32\+V\+\_\+1A}} = 0.\+8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{INA219Driver_8hpp_af12635f35771cde9355b67a6dc1839cf}\label{INA219Driver_8hpp_af12635f35771cde9355b67a6dc1839cf} 
+\index{INA219Driver.hpp@{INA219Driver.hpp}!CALIB\_VAL\_32V\_1A@{CALIB\_VAL\_32V\_1A}}
+\index{CALIB\_VAL\_32V\_1A@{CALIB\_VAL\_32V\_1A}!INA219Driver.hpp@{INA219Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{CALIB\_VAL\_32V\_1A}{CALIB\_VAL\_32V\_1A}}
+{\footnotesize\ttfamily constexpr int CALIB\+\_\+\+VAL\+\_\+32\+V\+\_\+1A = 10240\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{INA219Driver_8hpp_af5069efbcea6e25b2ff09454e3e6942a}\label{INA219Driver_8hpp_af5069efbcea6e25b2ff09454e3e6942a} 
+\index{INA219Driver.hpp@{INA219Driver.hpp}!COEF\_TO\_VOLT@{COEF\_TO\_VOLT}}
+\index{COEF\_TO\_VOLT@{COEF\_TO\_VOLT}!INA219Driver.hpp@{INA219Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{COEF\_TO\_VOLT}{COEF\_TO\_VOLT}}
+{\footnotesize\ttfamily constexpr float COEF\+\_\+\+TO\+\_\+\+VOLT = 0.\+004\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{INA219Driver_8hpp_a395d3e272e9aad95e16cf1ed666d4d80}\label{INA219Driver_8hpp_a395d3e272e9aad95e16cf1ed666d4d80} 
+\index{INA219Driver.hpp@{INA219Driver.hpp}!CURR\_DIVIDER\_MA\_32V\_1A@{CURR\_DIVIDER\_MA\_32V\_1A}}
+\index{CURR\_DIVIDER\_MA\_32V\_1A@{CURR\_DIVIDER\_MA\_32V\_1A}!INA219Driver.hpp@{INA219Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{CURR\_DIVIDER\_MA\_32V\_1A}{CURR\_DIVIDER\_MA\_32V\_1A}}
+{\footnotesize\ttfamily constexpr int CURR\+\_\+\+DIVIDER\+\_\+\+MA\+\_\+32\+V\+\_\+1A = 25\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{INA219Driver_8hpp_a3fbad015069821a5482248277eed3365}\label{INA219Driver_8hpp_a3fbad015069821a5482248277eed3365} 
+\index{INA219Driver.hpp@{INA219Driver.hpp}!LSB\_MASK@{LSB\_MASK}}
+\index{LSB\_MASK@{LSB\_MASK}!INA219Driver.hpp@{INA219Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{LSB\_MASK}{LSB\_MASK}}
+{\footnotesize\ttfamily constexpr uint8\+\_\+t LSB\+\_\+\+MASK = 0x\+FF\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{INA219Driver_8hpp_a204fd02ce1d89cac1283bbac93e64ab4}\label{INA219Driver_8hpp_a204fd02ce1d89cac1283bbac93e64ab4} 
+\index{INA219Driver.hpp@{INA219Driver.hpp}!MAX\_BATTERY@{MAX\_BATTERY}}
+\index{MAX\_BATTERY@{MAX\_BATTERY}!INA219Driver.hpp@{INA219Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_BATTERY}{MAX\_BATTERY}}
+{\footnotesize\ttfamily constexpr float MAX\+\_\+\+BATTERY = 12.\+6\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{INA219Driver_8hpp_a27f0c81794d7541e3a06b9900857c69d}\label{INA219Driver_8hpp_a27f0c81794d7541e3a06b9900857c69d} 
+\index{INA219Driver.hpp@{INA219Driver.hpp}!MIN\_BATTERY@{MIN\_BATTERY}}
+\index{MIN\_BATTERY@{MIN\_BATTERY}!INA219Driver.hpp@{INA219Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{MIN\_BATTERY}{MIN\_BATTERY}}
+{\footnotesize\ttfamily constexpr float MIN\+\_\+\+BATTERY = 10.\+8\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{INA219Driver_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}\label{INA219Driver_8hpp_a9a492a8e24ac899ab0b1a41dc014803d} 
+\index{INA219Driver.hpp@{INA219Driver.hpp}!NODE\_QOS@{NODE\_QOS}}
+\index{NODE\_QOS@{NODE\_QOS}!INA219Driver.hpp@{INA219Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{NODE\_QOS}{NODE\_QOS}}
+{\footnotesize\ttfamily constexpr int NODE\+\_\+\+QOS = 10\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{INA219Driver_8hpp_ad2d7f06a970995f4d9b5d85c1eaf16dc}\label{INA219Driver_8hpp_ad2d7f06a970995f4d9b5d85c1eaf16dc} 
+\index{INA219Driver.hpp@{INA219Driver.hpp}!POWER\_MULT\_32V\_1A@{POWER\_MULT\_32V\_1A}}
+\index{POWER\_MULT\_32V\_1A@{POWER\_MULT\_32V\_1A}!INA219Driver.hpp@{INA219Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{POWER\_MULT\_32V\_1A}{POWER\_MULT\_32V\_1A}}
+{\footnotesize\ttfamily constexpr float POWER\+\_\+\+MULT\+\_\+32\+V\+\_\+1A = 0.\+8\hspace{0.3cm}{\ttfamily [constexpr]}}
+

@@ -1,0 +1,44 @@
+\doxysection{Blinkers.\+h}
+\hypertarget{Blinkers_8h_source}{}\label{Blinkers_8h_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/Blinkers.h@{JetRacer/src/head\_unit/cluster\_qt/includes/Blinkers.h}}
+\mbox{\hyperlink{Blinkers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BLINKERS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BLINKERS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Colors_8h}{Colors.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QPixmap>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBlinkers}{Blinkers}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classBlinkers}{Blinkers}}(QWidget*\ parent\ =\ \textcolor{keyword}{nullptr},\ std::string\ dir\ =\ \textcolor{stringliteral}{"{}left"{}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ mode\ =\ \textcolor{stringliteral}{"{}off"{}},\ \textcolor{keywordtype}{int}\ x\ =\ 0,\ \textcolor{keywordtype}{int}\ y\ =\ 0,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ 0,\ \textcolor{keywordtype}{int}\ height\ =\ 0);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBlinkers_a241ae0e761f2cd1df5a920568f0162cf}{\string~Blinkers}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBlinkers_a76a45cbee7f357479cf29a1f80401a71}{turnOnBlinkers}}(\textcolor{keywordtype}{bool}\ on\_off);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBlinkers_ade0115bfa30b61d24096d29091d1b774}{getBlinking}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBlinkers_a42b6613a3e2c553440706159622ffef3}{changeColor}}(\textcolor{keywordtype}{int}\ array\_index);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ QTimer*\ \mbox{\hyperlink{classBlinkers_aaa0c9450fc511733d10474b916517771}{getToggleTimer}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBlinkers_aeaaff48f7beafba0a338999f9d5a1deb}{toggleImage}}();\ \textcolor{comment}{//\ Slot\ to\ toggle\ the\ image}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ QLabel*\ \mbox{\hyperlink{classBlinkers_a28ac46d79cf7d4cb23224ff94b9ef081}{imageLabel}};\ \textcolor{comment}{//\ QLabel\ to\ display\ the\ image}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ QPixmap\ \mbox{\hyperlink{classBlinkers_a7979abbe25c4bb7025034f38ac3ce917}{image1}};\ \ \ \ \ \textcolor{comment}{//\ First\ image}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ QPixmap\ \mbox{\hyperlink{classBlinkers_a3b407c23a5d8c869580e785cd4938c18}{image1\_array}}[4];}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ QPixmap\ \mbox{\hyperlink{classBlinkers_ac9dc1605d341736ea56a352b38329159}{image2}};\ \ \ \ \ \ \ \textcolor{comment}{//\ Second\ image}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ QTimer*\ \mbox{\hyperlink{classBlinkers_a3ffa95076459238594963f0c108c7f28}{toggleTimer}};\ \ \textcolor{comment}{//\ Timer\ for\ toggling}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBlinkers_ac3adb83fbaab064fc2b1dc865d92e8fd}{isImage1Visible}};\ \textcolor{comment}{//\ Boolean\ to\ track\ the\ current\ image}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBlinkers_a845de51833067208e7bbfc9048657670}{blinking}};}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,319 @@
+\doxysection{Speedometer\+Widget Class Reference}
+\hypertarget{classSpeedometerWidget}{}\label{classSpeedometerWidget}\index{SpeedometerWidget@{SpeedometerWidget}}
+
+
+The \doxylink{classSpeedometerWidget}{Speedometer\+Widget} class represents a custom widget for displaying speed.  
+
+
+
+
+{\ttfamily \#include $<$Speedometer\+Widget.\+h$>$}
+
+Inheritance diagram for Speedometer\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSpeedometerWidget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSpeedometerWidget_ad1fc2d5091c567ebdfc264c628ddbbe8}{Speedometer\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, int x=0, int y=0, int width=0, int height=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSpeedometerWidget}{Speedometer\+Widget} with the specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSpeedometerWidget_a2321e71498f63469073490ba7cea94b6}{\texorpdfstring{$\sim$}{\string~}\+Speedometer\+Widget}} () override
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classSpeedometerWidget}{Speedometer\+Widget}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpeedometerWidget_a216391747b443f5105cd2556e81ca728}{set\+Current\+Speed}} (int speed)
+\begin{DoxyCompactList}\small\item\em A Setter that updates the current speed of the speedometer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSpeedometerWidget_a2a19492d1fd6927c80225d4927cc20b2}{get\+Current\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em A Getter that returns the current speed of the speedometer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpeedometerWidget_ad782623794e163d3d11afb947d82c4d5}{change\+Color}} (int array\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Changes the color scheme of the speedometer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpeedometerWidget_adf44697e3a7864207b368b8b7cdd29cc}{change\+Units}} (void)
+\begin{DoxyCompactList}\small\item\em Toggles between speed units. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classSpeedometerWidget_a215b063bb6e2de98bb3c817d50cc52f6}{get\+Unit}} ()
+\begin{DoxyCompactList}\small\item\em A Getter that returns the current speed unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{classSpeedometerWidget_aa446e4ee46426c2890687b8c4d66bf84}{main\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classSpeedometerWidget_a44805f55938edac877f0de446a0d7cd5}{accent\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classSpeedometerWidget_a15d8d68e0af800703872ecaa03c9a07a}{alphabet\+\_\+color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSpeedometerWidget_a6d316d682d70d41ffba0fc8d63a62419}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles the painting of the speedometer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSpeedometerWidget_a6926c1f350535309a30734a0c4752bf9}{draw\+Scale}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y, int radius)
+\begin{DoxyCompactList}\small\item\em Draws the circular scale of the speedometer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpeedometerWidget_ab365bb0795c346f5e3cb1f02521864bf}{draw\+Needle}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y, int radius)
+\begin{DoxyCompactList}\small\item\em Draws the needle of the speedometer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpeedometerWidget_a87af95634187759e57def6677460a49c}{draw\+Central\+Number}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Draws the central speed number and unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classSpeedometerWidget_a4bc98f9602513f9e540d37ec17eee18e}{current\+Speed}}
+\item 
+int \mbox{\hyperlink{classSpeedometerWidget_ad0a46516050374144a6bfe5de94b95f4}{max\+Speed}}
+\item 
+QString \mbox{\hyperlink{classSpeedometerWidget_afc0e57e7ac42c56dcdada479c728db55}{unit}}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classSpeedometerWidget_ab081cec72bb246f72043fbcddff6a2dd}{color1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classSpeedometerWidget}{Speedometer\+Widget} class represents a custom widget for displaying speed. 
+
+This widget provides a graphical representation of speed, including a circular scale, a needle, and a central display for the current speed value. It supports customization of colors, units, and maximum speed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSpeedometerWidget_ad1fc2d5091c567ebdfc264c628ddbbe8}\label{classSpeedometerWidget_ad1fc2d5091c567ebdfc264c628ddbbe8} 
+\index{SpeedometerWidget@{SpeedometerWidget}!SpeedometerWidget@{SpeedometerWidget}}
+\index{SpeedometerWidget@{SpeedometerWidget}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{SpeedometerWidget()}{SpeedometerWidget()}}
+{\footnotesize\ttfamily Speedometer\+Widget\+::\+Speedometer\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr},  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classSpeedometerWidget}{Speedometer\+Widget} with the specified parameters. 
+
+This constructor initializes the speedometer widget, sets its geometry, and configures its colors and focus policy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+{\em x} & The x-\/coordinate of the widget\textquotesingle{}s position (default is 0). \\
+\hline
+{\em y} & The y-\/coordinate of the widget\textquotesingle{}s position (default is 0). \\
+\hline
+{\em width} & The width of the widget (default is 0). \\
+\hline
+{\em height} & The height of the widget (default is 0). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSpeedometerWidget_a2321e71498f63469073490ba7cea94b6}\label{classSpeedometerWidget_a2321e71498f63469073490ba7cea94b6} 
+\index{SpeedometerWidget@{SpeedometerWidget}!````~SpeedometerWidget@{\texorpdfstring{$\sim$}{\string~}SpeedometerWidget}}
+\index{````~SpeedometerWidget@{\texorpdfstring{$\sim$}{\string~}SpeedometerWidget}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SpeedometerWidget()}{\string~SpeedometerWidget()}}
+{\footnotesize\ttfamily Speedometer\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+Speedometer\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destroys the \doxylink{classSpeedometerWidget}{Speedometer\+Widget}. 
+
+This destructor cleans up any resources used by the widget. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSpeedometerWidget_ad782623794e163d3d11afb947d82c4d5}\label{classSpeedometerWidget_ad782623794e163d3d11afb947d82c4d5} 
+\index{SpeedometerWidget@{SpeedometerWidget}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Speedometer\+Widget\+::change\+Color (\begin{DoxyParamCaption}\item[{int}]{array\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Changes the color scheme of the speedometer. 
+
+This method updates the colors of the speedometer based on the provided array index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+\_\+index} & The index of the color scheme in the {\ttfamily color1} arrays. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSpeedometerWidget_adf44697e3a7864207b368b8b7cdd29cc}\label{classSpeedometerWidget_adf44697e3a7864207b368b8b7cdd29cc} 
+\index{SpeedometerWidget@{SpeedometerWidget}!changeUnits@{changeUnits}}
+\index{changeUnits@{changeUnits}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{changeUnits()}{changeUnits()}}
+{\footnotesize\ttfamily void Speedometer\+Widget\+::change\+Units (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Toggles between speed units. 
+
+This method switches the speed unit and adjusts the maximum speed and current speed accordingly. \Hypertarget{classSpeedometerWidget_a87af95634187759e57def6677460a49c}\label{classSpeedometerWidget_a87af95634187759e57def6677460a49c} 
+\index{SpeedometerWidget@{SpeedometerWidget}!drawCentralNumber@{drawCentralNumber}}
+\index{drawCentralNumber@{drawCentralNumber}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{drawCentralNumber()}{drawCentralNumber()}}
+{\footnotesize\ttfamily void Speedometer\+Widget\+::draw\+Central\+Number (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{centerX,  }\item[{int}]{centerY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the central speed number and unit. 
+
+This method draws the current speed value and unit in the center of the speedometer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The QPainter object used for drawing. \\
+\hline
+{\em centerX} & The x-\/coordinate of the center of the number. \\
+\hline
+{\em centerY} & The y-\/coordinate of the center of the number. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSpeedometerWidget_ab365bb0795c346f5e3cb1f02521864bf}\label{classSpeedometerWidget_ab365bb0795c346f5e3cb1f02521864bf} 
+\index{SpeedometerWidget@{SpeedometerWidget}!drawNeedle@{drawNeedle}}
+\index{drawNeedle@{drawNeedle}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{drawNeedle()}{drawNeedle()}}
+{\footnotesize\ttfamily void Speedometer\+Widget\+::draw\+Needle (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{centerX,  }\item[{int}]{centerY,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the needle of the speedometer. 
+
+This method draws the needle that indicates the current speed on the speedometer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The QPainter object used for drawing. \\
+\hline
+{\em centerX} & The x-\/coordinate of the center of the needle. \\
+\hline
+{\em centerY} & The y-\/coordinate of the center of the needle. \\
+\hline
+{\em radius} & The radius of the needle\textquotesingle{}s arc. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSpeedometerWidget_a6926c1f350535309a30734a0c4752bf9}\label{classSpeedometerWidget_a6926c1f350535309a30734a0c4752bf9} 
+\index{SpeedometerWidget@{SpeedometerWidget}!drawScale@{drawScale}}
+\index{drawScale@{drawScale}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{drawScale()}{drawScale()}}
+{\footnotesize\ttfamily void Speedometer\+Widget\+::draw\+Scale (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{centerX,  }\item[{int}]{centerY,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the circular scale of the speedometer. 
+
+This method draws the outer circle, tick marks, and labels for the speedometer scale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The QPainter object used for drawing. \\
+\hline
+{\em centerX} & The x-\/coordinate of the center of the scale. \\
+\hline
+{\em centerY} & The y-\/coordinate of the center of the scale. \\
+\hline
+{\em radius} & The radius of the scale. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSpeedometerWidget_a2a19492d1fd6927c80225d4927cc20b2}\label{classSpeedometerWidget_a2a19492d1fd6927c80225d4927cc20b2} 
+\index{SpeedometerWidget@{SpeedometerWidget}!getCurrentSpeed@{getCurrentSpeed}}
+\index{getCurrentSpeed@{getCurrentSpeed}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{getCurrentSpeed()}{getCurrentSpeed()}}
+{\footnotesize\ttfamily int Speedometer\+Widget\+::get\+Current\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+A Getter that returns the current speed of the speedometer. 
+
+\begin{DoxyReturn}{Returns}
+The current speed as an integer. 
+\end{DoxyReturn}
+\Hypertarget{classSpeedometerWidget_a215b063bb6e2de98bb3c817d50cc52f6}\label{classSpeedometerWidget_a215b063bb6e2de98bb3c817d50cc52f6} 
+\index{SpeedometerWidget@{SpeedometerWidget}!getUnit@{getUnit}}
+\index{getUnit@{getUnit}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{getUnit()}{getUnit()}}
+{\footnotesize\ttfamily QString Speedometer\+Widget\+::get\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A Getter that returns the current speed unit. 
+
+\begin{DoxyReturn}{Returns}
+The current speed unit as a QString (e.\+g., "{}\+DPS"{} or "{}\+FPS"{}). 
+\end{DoxyReturn}
+\Hypertarget{classSpeedometerWidget_a6d316d682d70d41ffba0fc8d63a62419}\label{classSpeedometerWidget_a6d316d682d70d41ffba0fc8d63a62419} 
+\index{SpeedometerWidget@{SpeedometerWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void Speedometer\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles the painting of the speedometer. 
+
+This method is overridden from QWidget and is called whenever the widget needs to be redrawn. It draws the circular scale, needle, and central speed number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The paint event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSpeedometerWidget_a216391747b443f5105cd2556e81ca728}\label{classSpeedometerWidget_a216391747b443f5105cd2556e81ca728} 
+\index{SpeedometerWidget@{SpeedometerWidget}!setCurrentSpeed@{setCurrentSpeed}}
+\index{setCurrentSpeed@{setCurrentSpeed}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{setCurrentSpeed()}{setCurrentSpeed()}}
+{\footnotesize\ttfamily void Speedometer\+Widget\+::set\+Current\+Speed (\begin{DoxyParamCaption}\item[{int}]{speed }\end{DoxyParamCaption})}
+
+
+
+A Setter that updates the current speed of the speedometer. 
+
+This method updates the current speed value and triggers a repaint of the widget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & The new speed value. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSpeedometerWidget_a44805f55938edac877f0de446a0d7cd5}\label{classSpeedometerWidget_a44805f55938edac877f0de446a0d7cd5} 
+\index{SpeedometerWidget@{SpeedometerWidget}!accent\_color@{accent\_color}}
+\index{accent\_color@{accent\_color}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{accent\_color}{accent\_color}}
+{\footnotesize\ttfamily QColor Speedometer\+Widget\+::accent\+\_\+color}
+
+\Hypertarget{classSpeedometerWidget_a15d8d68e0af800703872ecaa03c9a07a}\label{classSpeedometerWidget_a15d8d68e0af800703872ecaa03c9a07a} 
+\index{SpeedometerWidget@{SpeedometerWidget}!alphabet\_color@{alphabet\_color}}
+\index{alphabet\_color@{alphabet\_color}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{alphabet\_color}{alphabet\_color}}
+{\footnotesize\ttfamily QColor Speedometer\+Widget\+::alphabet\+\_\+color}
+
+\Hypertarget{classSpeedometerWidget_ab081cec72bb246f72043fbcddff6a2dd}\label{classSpeedometerWidget_ab081cec72bb246f72043fbcddff6a2dd} 
+\index{SpeedometerWidget@{SpeedometerWidget}!color1@{color1}}
+\index{color1@{color1}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{color1}{color1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Speedometer\+Widget\+::color1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSpeedometerWidget_a4bc98f9602513f9e540d37ec17eee18e}\label{classSpeedometerWidget_a4bc98f9602513f9e540d37ec17eee18e} 
+\index{SpeedometerWidget@{SpeedometerWidget}!currentSpeed@{currentSpeed}}
+\index{currentSpeed@{currentSpeed}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{currentSpeed}{currentSpeed}}
+{\footnotesize\ttfamily int Speedometer\+Widget\+::current\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSpeedometerWidget_aa446e4ee46426c2890687b8c4d66bf84}\label{classSpeedometerWidget_aa446e4ee46426c2890687b8c4d66bf84} 
+\index{SpeedometerWidget@{SpeedometerWidget}!main\_color@{main\_color}}
+\index{main\_color@{main\_color}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{main\_color}{main\_color}}
+{\footnotesize\ttfamily QColor Speedometer\+Widget\+::main\+\_\+color}
+
+\Hypertarget{classSpeedometerWidget_ad0a46516050374144a6bfe5de94b95f4}\label{classSpeedometerWidget_ad0a46516050374144a6bfe5de94b95f4} 
+\index{SpeedometerWidget@{SpeedometerWidget}!maxSpeed@{maxSpeed}}
+\index{maxSpeed@{maxSpeed}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{maxSpeed}{maxSpeed}}
+{\footnotesize\ttfamily int Speedometer\+Widget\+::max\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSpeedometerWidget_afc0e57e7ac42c56dcdada479c728db55}\label{classSpeedometerWidget_afc0e57e7ac42c56dcdada479c728db55} 
+\index{SpeedometerWidget@{SpeedometerWidget}!unit@{unit}}
+\index{unit@{unit}!SpeedometerWidget@{SpeedometerWidget}}
+\doxysubsubsection{\texorpdfstring{unit}{unit}}
+{\footnotesize\ttfamily QString Speedometer\+Widget\+::unit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{SpeedometerWidget_8h}{Speedometer\+Widget.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{SpeedometerWidget_8cpp}{Speedometer\+Widget.\+cpp}}\end{DoxyCompactItemize}

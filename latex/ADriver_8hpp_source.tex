@@ -1,0 +1,27 @@
+\doxysection{ADriver.\+hpp}
+\hypertarget{ADriver_8hpp_source}{}\label{ADriver_8hpp_source}\index{JetRacer/src/drivers/abstract\_driver/include/ADriver.hpp@{JetRacer/src/drivers/abstract\_driver/include/ADriver.hpp}}
+\mbox{\hyperlink{ADriver_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <custom\_msgs/srv/i2c\_service.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classADriver}{ADriver}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classADriver}{ADriver}}(rclcpp::Node::SharedPtr\ node,\ uint8\_t\ device\_address);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classADriver_adbd111235337f52ee4382190eb6ff93f}{\string~ADriver}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ rclcpp::Node::SharedPtr\ \mbox{\hyperlink{classADriver_affbae288b7155acb8a8c9d7ccea899c6}{node\_}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ rclcpp::Client<custom\_msgs::srv::I2cService>::SharedPtr\ \mbox{\hyperlink{classADriver_a69160e2270d20f647de3dfc1c9cc5d5c}{i2c\_client\_}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classADriver_adb73686aba67a783e9fd1e25d4c507b3}{device\_address\_}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classADriver_a7c8b6b179b64b604c29362e0dbdbffd9}{ping}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classADriver_a57d37e3a461292d2fdea1b084f85a40c}{handleI2cResponse}}(}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ rclcpp::Client<custom\_msgs::srv::I2cService>::SharedFuture}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ response);}
+\DoxyCodeLine{00026\ \};}
+
+\end{DoxyCode}
