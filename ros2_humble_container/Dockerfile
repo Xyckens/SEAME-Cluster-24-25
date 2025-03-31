@@ -48,10 +48,12 @@ ENV QT_OPENGL=es2
 WORKDIR /root/ws
 
 # Clone the GitHub repository
-RUN git clone --recurse-submodules -b  https://github.com/Xyckens/SEAME-Cluster-24-25.git /root/ws
+RUN git clone --recurse-submodules -b launch_files https://github.com/Xyckens/SEAME-Cluster-24-25.git /root/ws
 
 # Build the project
 WORKDIR /root/ws/JetRacer
 RUN source /opt/ros/humble/setup.bash && colcon build --symlink-install
 
-CMD ["/bin/bash", "-c", "source /opt/ros/humble/setup.bash  && source /root/ws/JetRacer/install/setup.bash && ros2 launch launch/JetRacer_launch.py"]
+CMD ["/bin/bash", "-c", "source /opt/ros/humble/setup.bash && \
+                         source /root/ws/JetRacer/install/setup.bash && \
+                         ros2 launch launch/${LAUNCH_FILE}"]

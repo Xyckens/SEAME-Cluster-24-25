@@ -17,6 +17,5 @@ docker run -it \
   -v /dev/shm:/dev/shm \
   -v /run/udev:/run/udev:ro \
   --group-add video \
-  ros2_humble_image \
-  /bin/bash -c "source /opt/ros/humble/setup.bash && source /root/ws/JetRacer/install/setup.bash && ros2 launch launch/JetRacer_auto_launch.py"
-
+  -e LAUNCH_FILE="JetRacer_manual_launch.py" \
+  ros2_humble_image
