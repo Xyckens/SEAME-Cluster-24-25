@@ -11,7 +11,7 @@ public:
     CarlaBridgeNode();
 
 private:
-    void twistCallback(const geometry_msgs::msg::Twist::SharedPtr twist_msg);
+    void twistCallback(geometry_msgs::msg::Twist::SharedPtr twist_msg);
 
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr twist_subscriber_;
     rclcpp::Publisher<carla_msgs::msg::CarlaEgoVehicleControl>::SharedPtr carla_control_publisher_;

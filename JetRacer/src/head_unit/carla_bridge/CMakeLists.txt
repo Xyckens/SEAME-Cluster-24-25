@@ -1,28 +1,35 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.8)
+
 project(carla_bridge)
 
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+set(exec_name ${PROJECT_NAME}_node)
+
+set(srcs
+  src/main.cpp
+  src/CarlaBridgeNode.cpp
+)
+
+include_directories(
+  include
+)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(carla_msgs REQUIRED)
 
-add_executable(carla_bridge_node 
-  src/main.cpp
-  src/CarlaBridgeNode.cpp
-)
+add_executable(${exec_name} ${srcs})
 
-ament_target_dependencies(carla_bridge_node
+ament_target_dependencies(${exec_name} 
     rclcpp
     geometry_msgs
     carla_msgs
 )
 
 install(TARGETS
-    carla_bridge_node
+    ${exec_name} 
     DESTINATION lib/${PROJECT_NAME}
 )
 

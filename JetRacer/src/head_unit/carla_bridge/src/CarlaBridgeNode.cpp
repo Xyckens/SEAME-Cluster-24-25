@@ -10,7 +10,7 @@ CarlaBridgeNode::CarlaBridgeNode() : rclcpp::Node("carla_bridge_node")
         "/carla/ego_vehicle/vehicle_control_cmd", 10);
 }
 
-void CarlaBridgeNode::twistCallback(const geometry_msgs::msg::Twist::SharedPtr twist_msg)
+void CarlaBridgeNode::twistCallback(geometry_msgs::msg::Twist::SharedPtr twist_msg)
 {
     auto carla_control_msg = carla_msgs::msg::CarlaEgoVehicleControl();
     
