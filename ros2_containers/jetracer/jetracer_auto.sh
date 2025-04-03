@@ -1,5 +1,5 @@
 #!/bin/bash
-docker run -it \
+docker run \
   --name piracer \
   --rm \
   --net=host \
