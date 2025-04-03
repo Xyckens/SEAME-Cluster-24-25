@@ -73,3 +73,8 @@ ll /usr/local/bin/jetracer_auto.sh
     ```bash
     sudo systemctl start jetracer@manual
     ```
+
+3. WARNING: To be able to have access to the QT UI, you need to launch the script manually and not via systemctl. You can simply call the script the following way since its your path:
+    ```bash
+    jetracer_manual.sh
+    ```
