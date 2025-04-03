@@ -52,7 +52,7 @@ RUN git clone --recurse-submodules -b launch_files https://github.com/Xyckens/SE
 
 # Build the project
 WORKDIR /root/ws/JetRacer
-RUN source /opt/ros/humble/setup.bash && colcon build --symlink-install
+RUN source /opt/ros/humble/setup.bash && colcon build --symlink-install --packages-skip carla_bridge
 
 CMD ["/bin/bash", "-c", "source /opt/ros/humble/setup.bash && \
                          source /root/ws/JetRacer/install/setup.bash && \

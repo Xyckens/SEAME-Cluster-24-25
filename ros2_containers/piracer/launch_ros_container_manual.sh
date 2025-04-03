@@ -1,6 +1,6 @@
 #!/bin/bash
 docker run -it \
-  --name ros2_humble \
+  --name piracer \
   --rm \
   --net=host \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -17,4 +17,5 @@ docker run -it \
   -v /dev/shm:/dev/shm \
   -v /run/udev:/run/udev:ro \
   --group-add video \
-  ros2_humble_image
+  -e LAUNCH_FILE="JetRacer_manual_launch.py" \
+  piracer_image
