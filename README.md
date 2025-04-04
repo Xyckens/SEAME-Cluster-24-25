@@ -10,18 +10,26 @@ Code documentation can be found here:  [JetRacer Documentation](https://xyckens.
 
 ---
 
-## Background Information
+## Repo strucutre
 
-This project involves the following key technologies:
-
-- **Raspberry Pi**: Small low-cost computer ideal for embedded applications and robotics projects.
-- **Jetson Nano**: Small low-cost computer equiped with a GPU, ideal for embedded AI applications
-- **CAN Protocol**: A robust communication standard for vehicle ECUs (Electronic Control Units).
-- **I2c protocol**: synchronous communication protocol used extensively in embedded appications.
-- **ROS2**: middleware facilitating communication between various component of a system.
-- **Qt Framework**: A popular tool for creating cross-platform GUIs, especially in automotive applications.
+- **Jetracer**: ROS2 workspace with the source code running on the raspberryPi
+- **ros2_containers**: Contain the Dockerfile to build the project in a container as well as launch script to put the container up with access rights to essential hardware components.
+- **ECU_code**: code running on the **Arduino uno**
 
 ---
+
+## Technical Requirements
+
+### Hardware
+
+- **Raspberry Pi 4**: Ideal for handling the computational requirements of real-time GUI and CAN data processing.
+- **Jetson nano**: Ideal for handling image processing / machine learning (GPU accelerated computation)
+- **Arduino uno**: Acts as an Electronic control unit collecting speed sensor data and controlling blinker state
+- **CAN Bus Interface**: MCP2515 for interfacing with the Raspberry Pi 4.
+- **Speed Sensor**: LM393 infrared speed sensor.
+- **Display**: LCD/OLED display for GUI visualization.
+
+--- 
 
 ## Goals and Objectives
 
@@ -38,24 +46,3 @@ To develop a functional instrument cluster for the JetRacer car, displaying real
 - Document the project, including system architecture, design, and implementation.
 
 **Bonus Objective:** Display battery level on the instrument cluster.
-
----
-
-## Technical Requirements
-
-### Hardware
-
-- **Raspberry Pi 4**: Ideal for handling the computational requirements of real-time GUI and CAN data processing.
-- **Jetson nano**: Ideal for handling image processing / machine learning (GPU accelerated computation)
-- **Arduino uno**: Acts as an Electronic control unit collecting speed sensor data and controlling blinker state
-- **CAN Bus Interface**: MCP2515 for interfacing with the Raspberry Pi 4.
-- **Speed Sensor**: LM393 infrared speed sensor.
-- **Display**: LCD/OLED display for GUI visualization.
-
----
-
-## Repo strucutre
-
-- **ECU_code**: code running on the **Arduino uno**
-- **Jetracer**: ROS2 workspace with the source code running on the raspberryPi
-- **ros2_containers**: Contain the Dockerfile to build the project in a container as well as launch script to put the container up with access rights to exential hardware components.
