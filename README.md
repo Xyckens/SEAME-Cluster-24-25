@@ -1,10 +1,10 @@
-# JetPackJoyRide - Cluster Implementation
+# JetPackJoyRide - Instrument Cluster
 
 ## Introduction
 
-The JetRacer Instrument Cluster Qt Application project aims to create a real-time speedometer for a JetRacer car. The application will run on a Raspberry Pi 4 and use the Controller Area Network (CAN) protocol to receive speed data from a speed sensor. This project provides hands-on experience in software engineering, including embedded systems, communication protocols, and GUI development with Qt, a framework widely used in the automotive industry.
+The Instrument Cluster project aims to design a viable system for a [Jetracer](https://www.waveshare.com/wiki/JetRacer_AI_Kit) car and create a real-time infotainment system for it. The application(s) will run on a Raspberry Pi 4 and use the Controller Area Network (CAN) protocol to receive speed data from a speed sensor, and the I2c protocol as the communication protocol used to control the motors of the car. This project provides hands-on experience in software engineering, including embedded systems, communication protocols, and GUI development with Qt, a framework widely used in the automotive industry.
 
-The successful completion of this project demonstrates the ability to design and implement real-world software solutions and effectively communicate results.
+The project showcase our ability to design and implement real-world software solutions and effectively communicate results.
 
 Code documentation can be found here:  [JetRacer Documentation](https://xyckens.github.io/SEAME-Cluster-24-25/)
 
@@ -14,9 +14,11 @@ Code documentation can be found here:  [JetRacer Documentation](https://xyckens.
 
 This project involves the following key technologies:
 
-- **Raspberry Pi**: A powerful, low-cost AI computer ideal for embedded applications and robotics projects.
-- **JetRacer**: A small autonomous vehicle platform based on the Jetson Nano, suitable for testing and experimentation.
+- **Raspberry Pi**: Small low-cost computer ideal for embedded applications and robotics projects.
+- **Jetson Nano**: Small low-cost computer equiped with a GPU, ideal for embedded AI applications
 - **CAN Protocol**: A robust communication standard for vehicle ECUs (Electronic Control Units).
+- **I2c protocol**: synchronous communication protocol used extensively in embedded appications.
+- **ROS2**: middleware facilitating communication between various component of a system.
 - **Qt Framework**: A popular tool for creating cross-platform GUIs, especially in automotive applications.
 
 ---
@@ -25,7 +27,7 @@ This project involves the following key technologies:
 
 ### Main Goal
 
-To develop a functional instrument cluster for the JetRacer car, displaying real-time speed data from a speed sensor via the CAN bus.
+To develop a functional instrument cluster for the JetRacer car, displaying real-time speed data from a speed sensor via the CAN bus among other sensor system infos.
 
 ### Specific Objectives
 
@@ -44,31 +46,13 @@ To develop a functional instrument cluster for the JetRacer car, displaying real
 ### Hardware
 
 - **Raspberry Pi 4**: Ideal for handling the computational requirements of real-time GUI and CAN data processing.
-- **CAN Bus Interface**: (e.g., MCP2515 or TJA1050) for interfacing with the Raspberry Pi 4.
-- **Speed Sensor**: A CAN-compatible speed sensor for data acquisition.
-- **OBD-II Cable**: Connects the Raspberry Pi 4 and speed sensor to the vehicle’s CAN bus.
-- **Voltage Regulator**: Converts 12V to 5V for powering the Raspberry Pi 4 from the vehicle's electrical system.
+- **Jetson nano**: Ideal for handling image processing / machine learning (GPU accelerated computation)
+- **Arduino uno**: Acts as an Electronic control unit collecting speed sensor data and controlling blinker state
+- **CAN Bus Interface**: MCP2515 for interfacing with the Raspberry Pi 4.
+- **Speed Sensor**: LM393 infrared speed sensor.
 - **Display**: LCD/OLED display for GUI visualization.
-- **Mounting Hardware**: Brackets or enclosures for securely mounting the display and Raspberry Pi 4 on the JetRacer.
-- **JetRacer Vehicle**: A small-scale autonomous car platform with a CAN bus system.
-
-### Software
-
-- **Qt Framework**: Open-source version for creating GUI applications.
-- **CAN Libraries**: Suitable libraries for CAN communication.
 
 ---
 
-## Software Design
-
-- **Main Application**: Manages GUI, CAN communication, and speed display.
-- **CAN Communication Module**: Interfaces with the speed sensor and processes data.
-- **Display Module**: Displays real-time speed data using customizable formats.
-
----
-
-## Implementation
-
-- **Code Development**: Key components written in C++ using Qt.
-- **Testing**: Verification of real-time speed display.
-- **Deployment**: Application setup and execution on Jetson Nano.
+## Repo strucutre
+**ECU_code**: code running on an **Arduino uno**
