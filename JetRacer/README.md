@@ -71,7 +71,7 @@ ll /usr/local/bin/jetracer_auto.sh
 
 3. To Launch the Jetracer in auto mode:
     ```bash
-    sudo systemctl start jetracer@manual
+    sudo systemctl start jetracer@auto
     ```
 
 3. WARNING: To be able to have access to the QT UI, you need to launch the script manually and not via systemctl. You can simply call the script the following way since its your path:

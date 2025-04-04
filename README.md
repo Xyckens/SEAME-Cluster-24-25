@@ -55,4 +55,7 @@ To develop a functional instrument cluster for the JetRacer car, displaying real
 ---
 
 ## Repo strucutre
-**ECU_code**: code running on an **Arduino uno**
+
+- **ECU_code**: code running on the **Arduino uno**
+- **Jetracer**: ROS2 workspace with the source code running on the raspberryPi
+- **ros2_containers**: Contain the Dockerfile to build the project in a container as well as launch script to put the container up with access rights to exential hardware components.
