@@ -43,9 +43,6 @@ void handleCanFrames(void* pvParameters)
             case 0x100:
                 updateBlinkerState(frame.data[0]);
                 break;
-            case 0x200:
-                updateLedStripeState(frame.data[0]);
-                break;
             case 0x300:
                 sendSpeedReadings();
                 break;
@@ -53,7 +50,7 @@ void handleCanFrames(void* pvParameters)
                 Log.warningln("Unrecognized CAN frame ID: 0x%X", frame.can_id);
             }
         }
-        vTaskDelay(pdMS_TO_TICKS(10));
+        vTaskDelay(pdMS_TO_TICKS(20));
     }
 }
 
@@ -61,41 +58,22 @@ void updateBlinkerState(uint8_t cmd)
 {
     switch (cmd)
     {
-    case 1:
+    case 0:
         STATE.blinker_state = IDLE;
         break;
-    case 2:
+    case 1:
         STATE.blinker_state = TURN_LEFT;
         break;
-    case 3:
+    case 2:
         STATE.blinker_state = TURN_RIGHT;
         break;
-    case 4:
+    case 3:
         STATE.blinker_state = WARNINGS;
         break;
     default:
-        Log.warningln("Urecognised blinker state");
+        Log.warningln("Urecognised blinker state: 0x%X", cmd);
     }
     Log.verboseln("blinkers state updated to: %d", cmd);
-}
-
-void updateLedStripeState(uint8_t cmd)
-{
-    switch (cmd)
-    {
-    case 1:
-        STATE.led_stripe_state = OFF;
-        break;
-    case 2:
-        STATE.led_stripe_state = ORANGE;
-        break;
-    case 3:
-        STATE.led_stripe_state = BLUE;
-        break;
-    default:
-        Log.warningln("Urecognised led stripe state");
-    }
-    Log.verboseln("Led stripe state updated to: %d", cmd);
 }
 
 void blinkBlinkers(void* pvParameters)
