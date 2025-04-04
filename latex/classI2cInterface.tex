@@ -1,0 +1,120 @@
+\doxysection{I2c\+Interface Class Reference}
+\hypertarget{classI2cInterface}{}\label{classI2cInterface}\index{I2cInterface@{I2cInterface}}
+
+
+Handles read/write on the i2c bus via the I2C driver.  
+
+
+
+
+{\ttfamily \#include $<$I2c\+Interface.\+hpp$>$}
+
+Inheritance diagram for I2c\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classI2cInterface}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classI2cInterface_a2d5adb9a243ac6b03e51e09940a2706f}{I2c\+Interface}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classII2cDriver}{II2c\+Driver}} $>$ mock\+\_\+driver=nullptr, const std\+::string \&service\+\_\+name="{}i2c\+\_\+service"{})
+\begin{DoxyCompactList}\small\item\em Construct a new I2c Interface object. throw an exception if the i2c driver fails to initiate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classI2cInterface_adb27a0e9c409a8b61a0b4ff5a78a10c7}{\texorpdfstring{$\sim$}{\string~}\+I2c\+Interface}} () override=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classI2cInterface_ad185f86825a6da230351a47a4e6f23ad}{init}} ()
+\begin{DoxyCompactList}\small\item\em Open the /dev/i2c. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classI2cInterface_ac22b4641bdeb8bf549944d8c555bc1a0}{handle\+I2c\+Request}} (std\+::shared\+\_\+ptr$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service\+::\+Request $>$ request, std\+::shared\+\_\+ptr$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service\+::\+Response $>$ response)
+\begin{DoxyCompactList}\small\item\em Function beeing called upon receiving a request to the i2c service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classII2cDriver}{II2c\+Driver}} $>$ \mbox{\hyperlink{classI2cInterface_a2a001c71eb563228091477a41ddac27a}{i2c\+\_\+driver\+\_\+}}
+\item 
+rclcpp\+::\+Service$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classI2cInterface_a5ce4440f1e1715f00d97b612a3bff206}{i2c\+\_\+service\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles read/write on the i2c bus via the I2C driver. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classI2cInterface_a2d5adb9a243ac6b03e51e09940a2706f}\label{classI2cInterface_a2d5adb9a243ac6b03e51e09940a2706f} 
+\index{I2cInterface@{I2cInterface}!I2cInterface@{I2cInterface}}
+\index{I2cInterface@{I2cInterface}!I2cInterface@{I2cInterface}}
+\doxysubsubsection{\texorpdfstring{I2cInterface()}{I2cInterface()}}
+{\footnotesize\ttfamily I2c\+Interface\+::\+I2c\+Interface (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classII2cDriver}{II2c\+Driver}} $>$}]{mock\+\_\+driver = {\ttfamily nullptr},  }\item[{const std\+::string \&}]{service\+\_\+name = {\ttfamily "{}i2c\+\_\+service"{}} }\end{DoxyParamCaption})}
+
+
+
+Construct a new I2c Interface object. throw an exception if the i2c driver fails to initiate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mock\+\_\+driver} & if not null, the mock object will be used \\
+\hline
+{\em service\+\_\+name} & "{}i2c\+\_\+service"{} by default \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classI2cInterface_adb27a0e9c409a8b61a0b4ff5a78a10c7}\label{classI2cInterface_adb27a0e9c409a8b61a0b4ff5a78a10c7} 
+\index{I2cInterface@{I2cInterface}!````~I2cInterface@{\texorpdfstring{$\sim$}{\string~}I2cInterface}}
+\index{````~I2cInterface@{\texorpdfstring{$\sim$}{\string~}I2cInterface}!I2cInterface@{I2cInterface}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}I2cInterface()}{\string~I2cInterface()}}
+{\footnotesize\ttfamily I2c\+Interface\+::\texorpdfstring{$\sim$}{\string~}\+I2c\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classI2cInterface_ac22b4641bdeb8bf549944d8c555bc1a0}\label{classI2cInterface_ac22b4641bdeb8bf549944d8c555bc1a0} 
+\index{I2cInterface@{I2cInterface}!handleI2cRequest@{handleI2cRequest}}
+\index{handleI2cRequest@{handleI2cRequest}!I2cInterface@{I2cInterface}}
+\doxysubsubsection{\texorpdfstring{handleI2cRequest()}{handleI2cRequest()}}
+{\footnotesize\ttfamily void I2c\+Interface\+::handle\+I2c\+Request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service\+::\+Request $>$}]{request,  }\item[{std\+::shared\+\_\+ptr$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service\+::\+Response $>$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Function beeing called upon receiving a request to the i2c service. 
+
+the struct of the i2c service allows writting and reading operations. To see the service definition do "{}ros2 interface show custom\+\_\+msgs/srv/\+I2c\+Service"{} or see Jet\+Racer/src/bus\+\_\+interfaces/custom\+\_\+msgs/srv/\+I2c\+Service.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & the request object containing read / write / both request \\
+\hline
+{\em response} & the response object to be filled with the data requested and success mesage to communicate to the client \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classI2cInterface_ad185f86825a6da230351a47a4e6f23ad}\label{classI2cInterface_ad185f86825a6da230351a47a4e6f23ad} 
+\index{I2cInterface@{I2cInterface}!init@{init}}
+\index{init@{init}!I2cInterface@{I2cInterface}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void I2c\+Interface\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Open the /dev/i2c. 
+
+this operation will fail if the user is not in the i2c group ("{}sudo usermod -\/a\+G i2c \$\+USER"{}) 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classI2cInterface_a2a001c71eb563228091477a41ddac27a}\label{classI2cInterface_a2a001c71eb563228091477a41ddac27a} 
+\index{I2cInterface@{I2cInterface}!i2c\_driver\_@{i2c\_driver\_}}
+\index{i2c\_driver\_@{i2c\_driver\_}!I2cInterface@{I2cInterface}}
+\doxysubsubsection{\texorpdfstring{i2c\_driver\_}{i2c\_driver\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classII2cDriver}{II2c\+Driver}}$>$ I2c\+Interface\+::i2c\+\_\+driver\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classI2cInterface_a5ce4440f1e1715f00d97b612a3bff206}\label{classI2cInterface_a5ce4440f1e1715f00d97b612a3bff206} 
+\index{I2cInterface@{I2cInterface}!i2c\_service\_@{i2c\_service\_}}
+\index{i2c\_service\_@{i2c\_service\_}!I2cInterface@{I2cInterface}}
+\doxysubsubsection{\texorpdfstring{i2c\_service\_}{i2c\_service\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Service$<$custom\+\_\+msgs\+::srv\+::\+I2c\+Service$>$\+::\+Shared\+Ptr I2c\+Interface\+::i2c\+\_\+service\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/bus\+\_\+interfaces/i2c\+\_\+interface/include/\mbox{\hyperlink{I2cInterface_8hpp}{I2c\+Interface.\+hpp}}\item 
+Jet\+Racer/src/bus\+\_\+interfaces/i2c\+\_\+interface/src/\mbox{\hyperlink{I2cInterface_8cpp}{I2c\+Interface.\+cpp}}\end{DoxyCompactItemize}

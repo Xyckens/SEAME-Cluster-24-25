@@ -1,0 +1,120 @@
+\doxysection{Teleop\+Node Class Reference}
+\hypertarget{classTeleopNode}{}\label{classTeleopNode}\index{TeleopNode@{TeleopNode}}
+
+
+Subscribes to the joystick topic, convert it and publishes it into cmd\+\_\+vel topic.  
+
+
+
+
+{\ttfamily \#include $<$Teleop\+Node.\+hpp$>$}
+
+Inheritance diagram for Teleop\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTeleopNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTeleopNode_a1eee91d4f3a8d2aeed73855011f69380}{Teleop\+Node}} ()
+\item 
+\mbox{\hyperlink{classTeleopNode_ac15acd95bba27193a6c0b18b2b2a2278}{\texorpdfstring{$\sim$}{\string~}\+Teleop\+Node}} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTeleopNode_a2538b04dec3b4f330d7cceb9c5408ef2}{joy\+Callback}} (sensor\+\_\+msgs\+::msg\+::\+Joy\+::\+Shared\+Ptr joy\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Callback function called upon receiving a message from the joystick. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTeleopNode_a2c1d0d511ce0523fa3376d458e466f9e}{publish\+Blinker\+State}} (sensor\+\_\+msgs\+::msg\+::\+Joy\+::\+Shared\+Ptr joy\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Publishes the blinker state based on the joystick buttons state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ sensor\+\_\+msgs\+::msg\+::\+Joy $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classTeleopNode_a5d20f026e310b225144c0fa07b362b44}{joy\+\_\+subscriber\+\_\+}}
+\item 
+rclcpp\+::\+Publisher$<$ geometry\+\_\+msgs\+::msg\+::\+Twist $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classTeleopNode_ab9962c30f0bab5cb57d3d28c489344cb}{vel\+\_\+publisher\+\_\+}}
+\item 
+rclcpp\+::\+Publisher$<$ std\+\_\+msgs\+::msg\+::\+UInt8 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classTeleopNode_a69050d772a72762e80dd3e956500bafb}{blinkers\+\_\+publisher\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Subscribes to the joystick topic, convert it and publishes it into cmd\+\_\+vel topic. 
+
+This class essentialy converts joy\+\_\+msg into twist\+\_\+msg. It also publishes the blinker state based on the joystick buttons state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTeleopNode_a1eee91d4f3a8d2aeed73855011f69380}\label{classTeleopNode_a1eee91d4f3a8d2aeed73855011f69380} 
+\index{TeleopNode@{TeleopNode}!TeleopNode@{TeleopNode}}
+\index{TeleopNode@{TeleopNode}!TeleopNode@{TeleopNode}}
+\doxysubsubsection{\texorpdfstring{TeleopNode()}{TeleopNode()}}
+{\footnotesize\ttfamily Teleop\+Node\+::\+Teleop\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classTeleopNode_ac15acd95bba27193a6c0b18b2b2a2278}\label{classTeleopNode_ac15acd95bba27193a6c0b18b2b2a2278} 
+\index{TeleopNode@{TeleopNode}!````~TeleopNode@{\texorpdfstring{$\sim$}{\string~}TeleopNode}}
+\index{````~TeleopNode@{\texorpdfstring{$\sim$}{\string~}TeleopNode}!TeleopNode@{TeleopNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TeleopNode()}{\string~TeleopNode()}}
+{\footnotesize\ttfamily Teleop\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Teleop\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTeleopNode_a2538b04dec3b4f330d7cceb9c5408ef2}\label{classTeleopNode_a2538b04dec3b4f330d7cceb9c5408ef2} 
+\index{TeleopNode@{TeleopNode}!joyCallback@{joyCallback}}
+\index{joyCallback@{joyCallback}!TeleopNode@{TeleopNode}}
+\doxysubsubsection{\texorpdfstring{joyCallback()}{joyCallback()}}
+{\footnotesize\ttfamily void Teleop\+Node\+::joy\+Callback (\begin{DoxyParamCaption}\item[{sensor\+\_\+msgs\+::msg\+::\+Joy\+::\+Shared\+Ptr}]{joy\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callback function called upon receiving a message from the joystick. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joy\+\_\+msg} & The joystick message \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTeleopNode_a2c1d0d511ce0523fa3376d458e466f9e}\label{classTeleopNode_a2c1d0d511ce0523fa3376d458e466f9e} 
+\index{TeleopNode@{TeleopNode}!publishBlinkerState@{publishBlinkerState}}
+\index{publishBlinkerState@{publishBlinkerState}!TeleopNode@{TeleopNode}}
+\doxysubsubsection{\texorpdfstring{publishBlinkerState()}{publishBlinkerState()}}
+{\footnotesize\ttfamily void Teleop\+Node\+::publish\+Blinker\+State (\begin{DoxyParamCaption}\item[{sensor\+\_\+msgs\+::msg\+::\+Joy\+::\+Shared\+Ptr}]{joy\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Publishes the blinker state based on the joystick buttons state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joy\+\_\+msg} & The joystick message \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTeleopNode_a69050d772a72762e80dd3e956500bafb}\label{classTeleopNode_a69050d772a72762e80dd3e956500bafb} 
+\index{TeleopNode@{TeleopNode}!blinkers\_publisher\_@{blinkers\_publisher\_}}
+\index{blinkers\_publisher\_@{blinkers\_publisher\_}!TeleopNode@{TeleopNode}}
+\doxysubsubsection{\texorpdfstring{blinkers\_publisher\_}{blinkers\_publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$std\+\_\+msgs\+::msg\+::\+UInt8$>$\+::\+Shared\+Ptr Teleop\+Node\+::blinkers\+\_\+publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTeleopNode_a5d20f026e310b225144c0fa07b362b44}\label{classTeleopNode_a5d20f026e310b225144c0fa07b362b44} 
+\index{TeleopNode@{TeleopNode}!joy\_subscriber\_@{joy\_subscriber\_}}
+\index{joy\_subscriber\_@{joy\_subscriber\_}!TeleopNode@{TeleopNode}}
+\doxysubsubsection{\texorpdfstring{joy\_subscriber\_}{joy\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$sensor\+\_\+msgs\+::msg\+::\+Joy$>$\+::\+Shared\+Ptr Teleop\+Node\+::joy\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTeleopNode_ab9962c30f0bab5cb57d3d28c489344cb}\label{classTeleopNode_ab9962c30f0bab5cb57d3d28c489344cb} 
+\index{TeleopNode@{TeleopNode}!vel\_publisher\_@{vel\_publisher\_}}
+\index{vel\_publisher\_@{vel\_publisher\_}!TeleopNode@{TeleopNode}}
+\doxysubsubsection{\texorpdfstring{vel\_publisher\_}{vel\_publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$geometry\+\_\+msgs\+::msg\+::\+Twist$>$\+::\+Shared\+Ptr Teleop\+Node\+::vel\+\_\+publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/teleop/include/\mbox{\hyperlink{TeleopNode_8hpp}{Teleop\+Node.\+hpp}}\item 
+Jet\+Racer/src/head\+\_\+unit/teleop/src/\mbox{\hyperlink{TeleopNode_8cpp}{Teleop\+Node.\+cpp}}\end{DoxyCompactItemize}

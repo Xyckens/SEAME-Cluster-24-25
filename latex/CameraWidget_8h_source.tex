@@ -1,0 +1,32 @@
+\doxysection{Camera\+Widget.\+h}
+\hypertarget{CameraWidget_8h_source}{}\label{CameraWidget_8h_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/CameraWidget.h@{JetRacer/src/head\_unit/cluster\_qt/includes/CameraWidget.h}}
+\mbox{\hyperlink{CameraWidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CAMERAWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CAMERAWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QCamera>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QMediaCaptureSession>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QVideoWidget>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCameraWidget}{CameraWidget}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classCameraWidget}{CameraWidget}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ x\ =\ 0,\ \textcolor{keywordtype}{int}\ y\ =\ 0,\ \textcolor{keywordtype}{int}\ width\ =\ 0,\ \textcolor{keywordtype}{int}\ height\ =\ 0);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classCameraWidget_ae4d0598a82e7675d289186ad2c27bde8}{\string~CameraWidget}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ QCamera\ *\mbox{\hyperlink{classCameraWidget_a01e068c504e4b506f86fa869a1e1b774}{camera}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Camera\ object}}
+\DoxyCodeLine{00027\ \ \ \ \ QMediaCaptureSession\ \mbox{\hyperlink{classCameraWidget_ad01ec406fc6fc175451b5b8bbb478316}{captureSession}};\ \ \ \textcolor{comment}{//\ Capture\ session}}
+\DoxyCodeLine{00028\ \ \ \ \ QVideoWidget\ *\mbox{\hyperlink{classCameraWidget_af178211b17979e4edc041840ad1eeb93}{videoWidget}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Video\ display\ widget}}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CAMERA\_WIDGET\_H}}
+
+\end{DoxyCode}

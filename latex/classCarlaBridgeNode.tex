@@ -1,0 +1,68 @@
+\doxysection{Carla\+Bridge\+Node Class Reference}
+\hypertarget{classCarlaBridgeNode}{}\label{classCarlaBridgeNode}\index{CarlaBridgeNode@{CarlaBridgeNode}}
+
+
+{\ttfamily \#include $<$Carla\+Bridge\+Node.\+hpp$>$}
+
+Inheritance diagram for Carla\+Bridge\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCarlaBridgeNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCarlaBridgeNode_aaec7b3b8ac62f2bd233dddaabc106eeb}{Carla\+Bridge\+Node}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCarlaBridgeNode_ac94c96c4b94f6a5355a2a015ea73c4cd}{twist\+Callback}} (geometry\+\_\+msgs\+::msg\+::\+Twist\+::\+Shared\+Ptr twist\+\_\+msg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ geometry\+\_\+msgs\+::msg\+::\+Twist $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classCarlaBridgeNode_a7b2831752d42d08a7ccf58ac1b1fdba4}{twist\+\_\+subscriber\+\_\+}}
+\item 
+rclcpp\+::\+Publisher$<$ carla\+\_\+msgs\+::msg\+::\+Carla\+Ego\+Vehicle\+Control $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classCarlaBridgeNode_a25a8878adc9a00f2b6a586448a6fac86}{carla\+\_\+control\+\_\+publisher\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCarlaBridgeNode_aaec7b3b8ac62f2bd233dddaabc106eeb}\label{classCarlaBridgeNode_aaec7b3b8ac62f2bd233dddaabc106eeb} 
+\index{CarlaBridgeNode@{CarlaBridgeNode}!CarlaBridgeNode@{CarlaBridgeNode}}
+\index{CarlaBridgeNode@{CarlaBridgeNode}!CarlaBridgeNode@{CarlaBridgeNode}}
+\doxysubsubsection{\texorpdfstring{CarlaBridgeNode()}{CarlaBridgeNode()}}
+{\footnotesize\ttfamily Carla\+Bridge\+Node\+::\+Carla\+Bridge\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCarlaBridgeNode_ac94c96c4b94f6a5355a2a015ea73c4cd}\label{classCarlaBridgeNode_ac94c96c4b94f6a5355a2a015ea73c4cd} 
+\index{CarlaBridgeNode@{CarlaBridgeNode}!twistCallback@{twistCallback}}
+\index{twistCallback@{twistCallback}!CarlaBridgeNode@{CarlaBridgeNode}}
+\doxysubsubsection{\texorpdfstring{twistCallback()}{twistCallback()}}
+{\footnotesize\ttfamily void Carla\+Bridge\+Node\+::twist\+Callback (\begin{DoxyParamCaption}\item[{geometry\+\_\+msgs\+::msg\+::\+Twist\+::\+Shared\+Ptr}]{twist\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCarlaBridgeNode_a25a8878adc9a00f2b6a586448a6fac86}\label{classCarlaBridgeNode_a25a8878adc9a00f2b6a586448a6fac86} 
+\index{CarlaBridgeNode@{CarlaBridgeNode}!carla\_control\_publisher\_@{carla\_control\_publisher\_}}
+\index{carla\_control\_publisher\_@{carla\_control\_publisher\_}!CarlaBridgeNode@{CarlaBridgeNode}}
+\doxysubsubsection{\texorpdfstring{carla\_control\_publisher\_}{carla\_control\_publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$carla\+\_\+msgs\+::msg\+::\+Carla\+Ego\+Vehicle\+Control$>$\+::\+Shared\+Ptr Carla\+Bridge\+Node\+::carla\+\_\+control\+\_\+publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCarlaBridgeNode_a7b2831752d42d08a7ccf58ac1b1fdba4}\label{classCarlaBridgeNode_a7b2831752d42d08a7ccf58ac1b1fdba4} 
+\index{CarlaBridgeNode@{CarlaBridgeNode}!twist\_subscriber\_@{twist\_subscriber\_}}
+\index{twist\_subscriber\_@{twist\_subscriber\_}!CarlaBridgeNode@{CarlaBridgeNode}}
+\doxysubsubsection{\texorpdfstring{twist\_subscriber\_}{twist\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$geometry\+\_\+msgs\+::msg\+::\+Twist$>$\+::\+Shared\+Ptr Carla\+Bridge\+Node\+::twist\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/carla\+\_\+bridge/include/\mbox{\hyperlink{CarlaBridgeNode_8hpp}{Carla\+Bridge\+Node.\+hpp}}\item 
+Jet\+Racer/src/head\+\_\+unit/carla\+\_\+bridge/src/\mbox{\hyperlink{CarlaBridgeNode_8cpp}{Carla\+Bridge\+Node.\+cpp}}\end{DoxyCompactItemize}

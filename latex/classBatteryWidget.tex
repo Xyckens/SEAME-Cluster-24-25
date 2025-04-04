@@ -1,0 +1,290 @@
+\doxysection{Battery\+Widget Class Reference}
+\hypertarget{classBatteryWidget}{}\label{classBatteryWidget}\index{BatteryWidget@{BatteryWidget}}
+
+
+This class is a custom QWidget that displays battery level information.  
+
+
+
+
+{\ttfamily \#include $<$Battery\+Widget.\+h$>$}
+
+Inheritance diagram for Battery\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBatteryWidget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBatteryWidget_a1318d301160b0169463713ed55c76221}{Battery\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, int x=0, int y=0, int width=0, int height=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classBatteryWidget}{Battery\+Widget} with optional position and size parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBatteryWidget_aacbe9f9169e6fafb593b5e0b9b6597e4}{\texorpdfstring{$\sim$}{\string~}\+Battery\+Widget}} () override
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classBatteryWidget}{Battery\+Widget}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryWidget_a5da34ec3a18e82a9927ad9416952257c}{change\+Color}} (int array\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Changes the color scheme of the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryWidget_a43d106da4b96a4952d3ab37b89fc8ed5}{set\+Current\+Level}} (int battery)
+\begin{DoxyCompactList}\small\item\em Sets the current battery level to be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{classBatteryWidget_a49b471bd848d0837793d1f2f6d84aba2}{main\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classBatteryWidget_af8f64611dd3e658583c529da754f3bdf}{accent\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classBatteryWidget_a57a0ed5cbfbb56eac2e8af8aad368a24}{alphabet\+\_\+color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBatteryWidget_a9b28abbdfe102b4962d278c5effc8a57}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles the painting of the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBatteryWidget_a25415e62e07b2f6f55cdecd3c6645485}{update\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Updates the battery level displayed on the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBatteryWidget_a88c0f4e57415fae5b171a7ebc7320203}{draw\+Scale}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y, int radius)
+\begin{DoxyCompactList}\small\item\em Draws the scale on the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryWidget_ad22fae59a2391d3d56221ef47c87b763}{draw\+Central\+Number}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Draws the central number on the widget. \end{DoxyCompactList}\item 
+QColor \mbox{\hyperlink{classBatteryWidget_abc3243a564bc5b5c6ff33719663448bc}{calculate\+Bar\+Color}} (int value)
+\begin{DoxyCompactList}\small\item\em Calculates the color of the battery bars based on the current value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryWidget_ac20081724aac63cc1af15acd7a00668a}{draw\+Bars}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y, int radius, double start\+\_\+angle, double end\+\_\+angle, int level)
+\begin{DoxyCompactList}\small\item\em Draws the battery bars on the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classBatteryWidget_a160523b8943b14347407e43802febc7a}{current\+Level}}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classBatteryWidget_ab62eeb73e03a4817f6f85be11bf2aa79}{color1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is a custom QWidget that displays battery level information. 
+
+This widget provides a graphical representation of the current battery level. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBatteryWidget_a1318d301160b0169463713ed55c76221}\label{classBatteryWidget_a1318d301160b0169463713ed55c76221} 
+\index{BatteryWidget@{BatteryWidget}!BatteryWidget@{BatteryWidget}}
+\index{BatteryWidget@{BatteryWidget}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{BatteryWidget()}{BatteryWidget()}}
+{\footnotesize\ttfamily Battery\+Widget\+::\+Battery\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr},  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classBatteryWidget}{Battery\+Widget} with optional position and size parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+{\em x} & The x-\/coordinate of the widget\textquotesingle{}s position (default is 0). \\
+\hline
+{\em y} & The y-\/coordinate of the widget\textquotesingle{}s position (default is 0). \\
+\hline
+{\em width} & The width of the widget (default is 0). \\
+\hline
+{\em height} & The height of the widget (default is 0). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryWidget_aacbe9f9169e6fafb593b5e0b9b6597e4}\label{classBatteryWidget_aacbe9f9169e6fafb593b5e0b9b6597e4} 
+\index{BatteryWidget@{BatteryWidget}!````~BatteryWidget@{\texorpdfstring{$\sim$}{\string~}BatteryWidget}}
+\index{````~BatteryWidget@{\texorpdfstring{$\sim$}{\string~}BatteryWidget}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BatteryWidget()}{\string~BatteryWidget()}}
+{\footnotesize\ttfamily Battery\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+Battery\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destroys the \doxylink{classBatteryWidget}{Battery\+Widget}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBatteryWidget_abc3243a564bc5b5c6ff33719663448bc}\label{classBatteryWidget_abc3243a564bc5b5c6ff33719663448bc} 
+\index{BatteryWidget@{BatteryWidget}!calculateBarColor@{calculateBarColor}}
+\index{calculateBarColor@{calculateBarColor}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{calculateBarColor()}{calculateBarColor()}}
+{\footnotesize\ttfamily QColor Battery\+Widget\+::calculate\+Bar\+Color (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the color of the battery bars based on the current value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The current battery level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The QColor representing the bar color. 
+\end{DoxyReturn}
+\Hypertarget{classBatteryWidget_a5da34ec3a18e82a9927ad9416952257c}\label{classBatteryWidget_a5da34ec3a18e82a9927ad9416952257c} 
+\index{BatteryWidget@{BatteryWidget}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Battery\+Widget\+::change\+Color (\begin{DoxyParamCaption}\item[{int}]{array\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Changes the color scheme of the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+\_\+index} & The index of the color scheme in the {\ttfamily image\+\_\+array}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryWidget_ac20081724aac63cc1af15acd7a00668a}\label{classBatteryWidget_ac20081724aac63cc1af15acd7a00668a} 
+\index{BatteryWidget@{BatteryWidget}!drawBars@{drawBars}}
+\index{drawBars@{drawBars}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{drawBars()}{drawBars()}}
+{\footnotesize\ttfamily void Battery\+Widget\+::draw\+Bars (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{centerX,  }\item[{int}]{centerY,  }\item[{int}]{radius,  }\item[{double}]{start\+Angle,  }\item[{double}]{end\+Angle,  }\item[{int}]{Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the battery bars on the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The QPainter object used for drawing. \\
+\hline
+{\em centerX} & The x-\/coordinate of the center of the bars. \\
+\hline
+{\em centerY} & The y-\/coordinate of the center of the bars. \\
+\hline
+{\em radius} & The radius of the bars. \\
+\hline
+{\em start\+Angle} & The starting angle of the bars. \\
+\hline
+{\em end\+Angle} & The ending angle of the bars. \\
+\hline
+{\em Level} & The current battery level. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryWidget_ad22fae59a2391d3d56221ef47c87b763}\label{classBatteryWidget_ad22fae59a2391d3d56221ef47c87b763} 
+\index{BatteryWidget@{BatteryWidget}!drawCentralNumber@{drawCentralNumber}}
+\index{drawCentralNumber@{drawCentralNumber}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{drawCentralNumber()}{drawCentralNumber()}}
+{\footnotesize\ttfamily void Battery\+Widget\+::draw\+Central\+Number (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{centerX,  }\item[{int}]{centerY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the central number on the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The QPainter object used for drawing. \\
+\hline
+{\em centerX} & The x-\/coordinate of the center of the number. \\
+\hline
+{\em centerY} & The y-\/coordinate of the center of the number. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryWidget_a88c0f4e57415fae5b171a7ebc7320203}\label{classBatteryWidget_a88c0f4e57415fae5b171a7ebc7320203} 
+\index{BatteryWidget@{BatteryWidget}!drawScale@{drawScale}}
+\index{drawScale@{drawScale}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{drawScale()}{drawScale()}}
+{\footnotesize\ttfamily void Battery\+Widget\+::draw\+Scale (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{centerX,  }\item[{int}]{centerY,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the scale on the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The QPainter object used for drawing. \\
+\hline
+{\em centerX} & The x-\/coordinate of the center of the scale. \\
+\hline
+{\em centerY} & The y-\/coordinate of the center of the scale. \\
+\hline
+{\em radius} & The radius of the scale. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryWidget_a9b28abbdfe102b4962d278c5effc8a57}\label{classBatteryWidget_a9b28abbdfe102b4962d278c5effc8a57} 
+\index{BatteryWidget@{BatteryWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void Battery\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles the painting of the widget. 
+
+This method is overridden from QWidget and is called whenever the widget needs to be redrawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The paint event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryWidget_a43d106da4b96a4952d3ab37b89fc8ed5}\label{classBatteryWidget_a43d106da4b96a4952d3ab37b89fc8ed5} 
+\index{BatteryWidget@{BatteryWidget}!setCurrentLevel@{setCurrentLevel}}
+\index{setCurrentLevel@{setCurrentLevel}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{setCurrentLevel()}{setCurrentLevel()}}
+{\footnotesize\ttfamily void Battery\+Widget\+::set\+Current\+Level (\begin{DoxyParamCaption}\item[{int}]{battery }\end{DoxyParamCaption})}
+
+
+
+Sets the current battery level to be displayed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em battery} & The battery level value to display (typically 0-\/100). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryWidget_a25415e62e07b2f6f55cdecd3c6645485}\label{classBatteryWidget_a25415e62e07b2f6f55cdecd3c6645485} 
+\index{BatteryWidget@{BatteryWidget}!updateLevel@{updateLevel}}
+\index{updateLevel@{updateLevel}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{updateLevel}{updateLevel}}
+{\footnotesize\ttfamily void Battery\+Widget\+::update\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Updates the battery level displayed on the widget. 
+
+This slot is triggered to refresh the battery level display. It can be connected to a signal that provides real-\/time battery level updates. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBatteryWidget_af8f64611dd3e658583c529da754f3bdf}\label{classBatteryWidget_af8f64611dd3e658583c529da754f3bdf} 
+\index{BatteryWidget@{BatteryWidget}!accent\_color@{accent\_color}}
+\index{accent\_color@{accent\_color}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{accent\_color}{accent\_color}}
+{\footnotesize\ttfamily QColor Battery\+Widget\+::accent\+\_\+color}
+
+\Hypertarget{classBatteryWidget_a57a0ed5cbfbb56eac2e8af8aad368a24}\label{classBatteryWidget_a57a0ed5cbfbb56eac2e8af8aad368a24} 
+\index{BatteryWidget@{BatteryWidget}!alphabet\_color@{alphabet\_color}}
+\index{alphabet\_color@{alphabet\_color}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{alphabet\_color}{alphabet\_color}}
+{\footnotesize\ttfamily QColor Battery\+Widget\+::alphabet\+\_\+color}
+
+\Hypertarget{classBatteryWidget_ab62eeb73e03a4817f6f85be11bf2aa79}\label{classBatteryWidget_ab62eeb73e03a4817f6f85be11bf2aa79} 
+\index{BatteryWidget@{BatteryWidget}!color1@{color1}}
+\index{color1@{color1}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{color1}{color1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Battery\+Widget\+::color1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryWidget_a160523b8943b14347407e43802febc7a}\label{classBatteryWidget_a160523b8943b14347407e43802febc7a} 
+\index{BatteryWidget@{BatteryWidget}!currentLevel@{currentLevel}}
+\index{currentLevel@{currentLevel}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{currentLevel}{currentLevel}}
+{\footnotesize\ttfamily int Battery\+Widget\+::current\+Level\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryWidget_a49b471bd848d0837793d1f2f6d84aba2}\label{classBatteryWidget_a49b471bd848d0837793d1f2f6d84aba2} 
+\index{BatteryWidget@{BatteryWidget}!main\_color@{main\_color}}
+\index{main\_color@{main\_color}!BatteryWidget@{BatteryWidget}}
+\doxysubsubsection{\texorpdfstring{main\_color}{main\_color}}
+{\footnotesize\ttfamily QColor Battery\+Widget\+::main\+\_\+color}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{BatteryWidget_8h}{Battery\+Widget.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{BatteryWidget_8cpp}{Battery\+Widget.\+cpp}}\end{DoxyCompactItemize}

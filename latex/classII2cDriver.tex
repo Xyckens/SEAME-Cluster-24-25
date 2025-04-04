@@ -1,0 +1,132 @@
+\doxysection{II2c\+Driver Class Reference}
+\hypertarget{classII2cDriver}{}\label{classII2cDriver}\index{II2cDriver@{II2cDriver}}
+
+
+Abstract interface for I2C operations.  
+
+
+
+
+{\ttfamily \#include $<$II2c\+Driver.\+hpp$>$}
+
+Inheritance diagram for II2c\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classII2cDriver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classII2cDriver_a5ade9cf36d217cded22db18de403e90c}{II2c\+Driver}} (uint8\+\_\+t device)
+\item 
+virtual \mbox{\hyperlink{classII2cDriver_ab7827a64d3c17858d68f96e771d59b2a}{\texorpdfstring{$\sim$}{\string~}\+II2c\+Driver}} ()=default
+\item 
+virtual int \mbox{\hyperlink{classII2cDriver_a413d8f0a5b13a4dccaf106ef60d7cd0c}{open}} ()=0
+\item 
+virtual ssize\+\_\+t \mbox{\hyperlink{classII2cDriver_a1cebc51178a01d5eaeecc3b40ed1e4d7}{read}} (std\+::vector$<$ uint8\+\_\+t $>$ \&buff)=0
+\item 
+virtual ssize\+\_\+t \mbox{\hyperlink{classII2cDriver_a2a3e363deec1d1627c5fdefcf7368d59}{write}} (std\+::vector$<$ uint8\+\_\+t $>$ \&buff)=0
+\item 
+virtual int \mbox{\hyperlink{classII2cDriver_a505e09a803d205168719dc2e35bbf80d}{set\+Address}} (uint8\+\_\+t address)=0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classII2cDriver_afc7a7a17ad1c1dcb68f1b70430eca736}{get\+Device\+Nb}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classII2cDriver_ac48d8f6059d49ea1aa09aaee8c66d1ee}{device\+\_\+}}
+\item 
+int \mbox{\hyperlink{classII2cDriver_a1305853f14024945daefb958b5873ad4}{i2c\+\_\+fd\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface for I2C operations. 
+
+This abstract class provides a hardware abstraction layer for I2C communication, allowing for dependency injection and easier unit testing. By implementing this interface, concrete classes can provide either real hardware communication or mock implementations for testing.
+
+The interface wraps the essential I2C operations (open, read, write, and address setting) into virtual methods that can be overridden by concrete implementations. See \doxylink{classI2cDriver}{I2c\+Driver} for more information about its methods. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classII2cDriver_a5ade9cf36d217cded22db18de403e90c}\label{classII2cDriver_a5ade9cf36d217cded22db18de403e90c} 
+\index{II2cDriver@{II2cDriver}!II2cDriver@{II2cDriver}}
+\index{II2cDriver@{II2cDriver}!II2cDriver@{II2cDriver}}
+\doxysubsubsection{\texorpdfstring{II2cDriver()}{II2cDriver()}}
+{\footnotesize\ttfamily II2c\+Driver\+::\+II2c\+Driver (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classII2cDriver_ab7827a64d3c17858d68f96e771d59b2a}\label{classII2cDriver_ab7827a64d3c17858d68f96e771d59b2a} 
+\index{II2cDriver@{II2cDriver}!````~II2cDriver@{\texorpdfstring{$\sim$}{\string~}II2cDriver}}
+\index{````~II2cDriver@{\texorpdfstring{$\sim$}{\string~}II2cDriver}!II2cDriver@{II2cDriver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}II2cDriver()}{\string~II2cDriver()}}
+{\footnotesize\ttfamily virtual II2c\+Driver\+::\texorpdfstring{$\sim$}{\string~}\+II2c\+Driver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classII2cDriver_afc7a7a17ad1c1dcb68f1b70430eca736}\label{classII2cDriver_afc7a7a17ad1c1dcb68f1b70430eca736} 
+\index{II2cDriver@{II2cDriver}!getDeviceNb@{getDeviceNb}}
+\index{getDeviceNb@{getDeviceNb}!II2cDriver@{II2cDriver}}
+\doxysubsubsection{\texorpdfstring{getDeviceNb()}{getDeviceNb()}}
+{\footnotesize\ttfamily uint8\+\_\+t II2c\+Driver\+::get\+Device\+Nb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classII2cDriver_a413d8f0a5b13a4dccaf106ef60d7cd0c}\label{classII2cDriver_a413d8f0a5b13a4dccaf106ef60d7cd0c} 
+\index{II2cDriver@{II2cDriver}!open@{open}}
+\index{open@{open}!II2cDriver@{II2cDriver}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily virtual int II2c\+Driver\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classI2cDriver_a9d0954b5cbf077b5f93f09dbe15edd98}{I2c\+Driver}}.
+
+\Hypertarget{classII2cDriver_a1cebc51178a01d5eaeecc3b40ed1e4d7}\label{classII2cDriver_a1cebc51178a01d5eaeecc3b40ed1e4d7} 
+\index{II2cDriver@{II2cDriver}!read@{read}}
+\index{read@{read}!II2cDriver@{II2cDriver}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily virtual ssize\+\_\+t II2c\+Driver\+::read (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classI2cDriver_a7769e6fcc8c87bd64f2ea49257de9705}{I2c\+Driver}}.
+
+\Hypertarget{classII2cDriver_a505e09a803d205168719dc2e35bbf80d}\label{classII2cDriver_a505e09a803d205168719dc2e35bbf80d} 
+\index{II2cDriver@{II2cDriver}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!II2cDriver@{II2cDriver}}
+\doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}}
+{\footnotesize\ttfamily virtual int II2c\+Driver\+::set\+Address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classI2cDriver_a9d5c1b9dcba1aa0963bff617575f86b8}{I2c\+Driver}}.
+
+\Hypertarget{classII2cDriver_a2a3e363deec1d1627c5fdefcf7368d59}\label{classII2cDriver_a2a3e363deec1d1627c5fdefcf7368d59} 
+\index{II2cDriver@{II2cDriver}!write@{write}}
+\index{write@{write}!II2cDriver@{II2cDriver}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily virtual ssize\+\_\+t II2c\+Driver\+::write (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classI2cDriver_ac176551d3f7fffa20333d927697b0fb9}{I2c\+Driver}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classII2cDriver_ac48d8f6059d49ea1aa09aaee8c66d1ee}\label{classII2cDriver_ac48d8f6059d49ea1aa09aaee8c66d1ee} 
+\index{II2cDriver@{II2cDriver}!device\_@{device\_}}
+\index{device\_@{device\_}!II2cDriver@{II2cDriver}}
+\doxysubsubsection{\texorpdfstring{device\_}{device\_}}
+{\footnotesize\ttfamily uint8\+\_\+t II2c\+Driver\+::device\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classII2cDriver_a1305853f14024945daefb958b5873ad4}\label{classII2cDriver_a1305853f14024945daefb958b5873ad4} 
+\index{II2cDriver@{II2cDriver}!i2c\_fd\_@{i2c\_fd\_}}
+\index{i2c\_fd\_@{i2c\_fd\_}!II2cDriver@{II2cDriver}}
+\doxysubsubsection{\texorpdfstring{i2c\_fd\_}{i2c\_fd\_}}
+{\footnotesize\ttfamily int II2c\+Driver\+::i2c\+\_\+fd\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/bus\+\_\+interfaces/i2c\+\_\+interface/include/\mbox{\hyperlink{II2cDriver_8hpp}{II2c\+Driver.\+hpp}}\end{DoxyCompactItemize}

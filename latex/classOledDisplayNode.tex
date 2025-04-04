@@ -1,0 +1,108 @@
+\doxysection{Oled\+Display\+Node Class Reference}
+\hypertarget{classOledDisplayNode}{}\label{classOledDisplayNode}\index{OledDisplayNode@{OledDisplayNode}}
+
+
+Listens for messages to display via cmd\+\_\+display topic.  
+
+
+
+
+{\ttfamily \#include $<$Oled\+Display\+Node.\+hpp$>$}
+
+Inheritance diagram for Oled\+Display\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOledDisplayNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOledDisplayNode_a381232389f9a5129d38801b4ad2dcb38}{Oled\+Display\+Node}} ()
+\item 
+\mbox{\hyperlink{classOledDisplayNode_ac0ac9f0291dcffbd9fa7fb56fc7af9d5}{\texorpdfstring{$\sim$}{\string~}\+Oled\+Display\+Node}} () override
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classOledDisplayNode_aeb6b0c2678a5d1cbc5618e8f1a140f59}{init\+SSD1306}} ()
+\begin{DoxyCompactList}\small\item\em Try to initialize the SSD1306 display driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classOledDisplayNode_a908da8edcd09c206378f1f7c7ba94afa}{write\+To\+I2c}} (custom\+\_\+msgs\+::msg\+::\+Display\+::\+Shared\+Ptr msg)
+\begin{DoxyCompactList}\small\item\em request to the i2c service a write operation via the driver upon receiving a message in the display\+\_\+topic \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ custom\+\_\+msgs\+::msg\+::\+Display $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classOledDisplayNode_a549d962af6947d703605280219c190c4}{display\+\_\+subscriber\+\_\+}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classSSD1306Driver}{SSD1306\+Driver}} $>$ \mbox{\hyperlink{classOledDisplayNode_af720d700544ac184aec896857a18282c}{ssd1306\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Listens for messages to display via cmd\+\_\+display topic. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classOledDisplayNode_a381232389f9a5129d38801b4ad2dcb38}\label{classOledDisplayNode_a381232389f9a5129d38801b4ad2dcb38} 
+\index{OledDisplayNode@{OledDisplayNode}!OledDisplayNode@{OledDisplayNode}}
+\index{OledDisplayNode@{OledDisplayNode}!OledDisplayNode@{OledDisplayNode}}
+\doxysubsubsection{\texorpdfstring{OledDisplayNode()}{OledDisplayNode()}}
+{\footnotesize\ttfamily Oled\+Display\+Node\+::\+Oled\+Display\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classOledDisplayNode_ac0ac9f0291dcffbd9fa7fb56fc7af9d5}\label{classOledDisplayNode_ac0ac9f0291dcffbd9fa7fb56fc7af9d5} 
+\index{OledDisplayNode@{OledDisplayNode}!````~OledDisplayNode@{\texorpdfstring{$\sim$}{\string~}OledDisplayNode}}
+\index{````~OledDisplayNode@{\texorpdfstring{$\sim$}{\string~}OledDisplayNode}!OledDisplayNode@{OledDisplayNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}OledDisplayNode()}{\string~OledDisplayNode()}}
+{\footnotesize\ttfamily Oled\+Display\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Oled\+Display\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classOledDisplayNode_aeb6b0c2678a5d1cbc5618e8f1a140f59}\label{classOledDisplayNode_aeb6b0c2678a5d1cbc5618e8f1a140f59} 
+\index{OledDisplayNode@{OledDisplayNode}!initSSD1306@{initSSD1306}}
+\index{initSSD1306@{initSSD1306}!OledDisplayNode@{OledDisplayNode}}
+\doxysubsubsection{\texorpdfstring{initSSD1306()}{initSSD1306()}}
+{\footnotesize\ttfamily uint8\+\_\+t Oled\+Display\+Node\+::init\+SSD1306 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Try to initialize the SSD1306 display driver. 
+
+\begin{DoxyReturn}{Returns}
+EXIT\+\_\+\+FAILURE if the driver fails to initialize, EXIT\+\_\+\+SUCCESS otherwise 
+\end{DoxyReturn}
+\Hypertarget{classOledDisplayNode_a908da8edcd09c206378f1f7c7ba94afa}\label{classOledDisplayNode_a908da8edcd09c206378f1f7c7ba94afa} 
+\index{OledDisplayNode@{OledDisplayNode}!writeToI2c@{writeToI2c}}
+\index{writeToI2c@{writeToI2c}!OledDisplayNode@{OledDisplayNode}}
+\doxysubsubsection{\texorpdfstring{writeToI2c()}{writeToI2c()}}
+{\footnotesize\ttfamily void Oled\+Display\+Node\+::write\+To\+I2c (\begin{DoxyParamCaption}\item[{custom\+\_\+msgs\+::msg\+::\+Display\+::\+Shared\+Ptr}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+request to the i2c service a write operation via the driver upon receiving a message in the display\+\_\+topic 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & the message to be displayed \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classOledDisplayNode_a549d962af6947d703605280219c190c4}\label{classOledDisplayNode_a549d962af6947d703605280219c190c4} 
+\index{OledDisplayNode@{OledDisplayNode}!display\_subscriber\_@{display\_subscriber\_}}
+\index{display\_subscriber\_@{display\_subscriber\_}!OledDisplayNode@{OledDisplayNode}}
+\doxysubsubsection{\texorpdfstring{display\_subscriber\_}{display\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$custom\+\_\+msgs\+::msg\+::\+Display$>$\+::\+Shared\+Ptr Oled\+Display\+Node\+::display\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classOledDisplayNode_af720d700544ac184aec896857a18282c}\label{classOledDisplayNode_af720d700544ac184aec896857a18282c} 
+\index{OledDisplayNode@{OledDisplayNode}!ssd1306\_@{ssd1306\_}}
+\index{ssd1306\_@{ssd1306\_}!OledDisplayNode@{OledDisplayNode}}
+\doxysubsubsection{\texorpdfstring{ssd1306\_}{ssd1306\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classSSD1306Driver}{SSD1306\+Driver}}$>$ Oled\+Display\+Node\+::ssd1306\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/peripherals/oled\+\_\+display/include/\mbox{\hyperlink{OledDisplayNode_8hpp}{Oled\+Display\+Node.\+hpp}}\item 
+Jet\+Racer/src/peripherals/oled\+\_\+display/src/\mbox{\hyperlink{OledDisplayNode_8cpp}{Oled\+Display\+Node.\+cpp}}\end{DoxyCompactItemize}

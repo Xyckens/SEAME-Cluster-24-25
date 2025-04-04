@@ -1,0 +1,18 @@
+\doxysection{Driver\+Exception.\+hpp}
+\hypertarget{DriverException_8hpp_source}{}\label{DriverException_8hpp_source}\index{JetRacer/src/drivers/abstract\_driver/include/DriverException.hpp@{JetRacer/src/drivers/abstract\_driver/include/DriverException.hpp}}
+\mbox{\hyperlink{DriverException_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDriverException}{DriverException}}\ :\ \textcolor{keyword}{public}\ std::exception}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classDriverException_ab8777afe3f5aed2e66f2b2fcb480a651}{msg\_}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDriverException_adffb0f43338bb39ca21aa086471eda49}{DriverException}}(\textcolor{keyword}{const}\ std::string\&\ msg)\ :\ \mbox{\hyperlink{classDriverException_ab8777afe3f5aed2e66f2b2fcb480a651}{msg\_}}(msg)\ \{\}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classDriverException_a1286fa4cfa232c8815bbf4aeaf72f2fb}{what}}()\ const\ noexcept\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDriverException_ab8777afe3f5aed2e66f2b2fcb480a651}{msg\_}}.c\_str();\ \}}
+\DoxyCodeLine{00018\ \};}
+
+\end{DoxyCode}

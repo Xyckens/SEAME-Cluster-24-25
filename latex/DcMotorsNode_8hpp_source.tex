@@ -1,0 +1,35 @@
+\doxysection{Dc\+Motors\+Node.\+hpp}
+\hypertarget{DcMotorsNode_8hpp_source}{}\label{DcMotorsNode_8hpp_source}\index{JetRacer/src/peripherals/dc\_motors/include/DcMotorsNode.hpp@{JetRacer/src/peripherals/dc\_motors/include/DcMotorsNode.hpp}}
+\mbox{\hyperlink{DcMotorsNode_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{APCA9685Driver_8hpp}{APCA9685Driver.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <geometry\_msgs/msg/twist.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{DcMotorsNode_8hpp_ae27ee7fa6a939b824e099a54115a70d3}{MIN\_COUNT}}\ =\ 410;\ \ \textcolor{comment}{//\ 10\%\ duty\ cycle}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{DcMotorsNode_8hpp_af5ad4584f72e1c30bc4495c2f0d37824}{MAX\_COUNT}}\ =\ 3680;\ \textcolor{comment}{//\ 90\%\ duty\ cycle}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{DcMotorsNode_8hpp_a0ecff695457b033a4ee6ffb333687e55}{PCA\_MOTORS\_ADDRESS}}\ =\ 0x60;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{DcMotorsNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\_QOS}}\ =\ 10;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{DcMotorsNode_8hpp_a4872dc287557538263c1ea911f06f3ee}{MOTOR\_FREQ}}\ =\ 1600;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDcMotorsNode}{DcMotorsNode}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDcMotorsNode_ac93436a49fb8848ad97397db724eae02}{DcMotorsNode}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDcMotorsNode_a56d9a738c02cd549ce2a7576373b7d3a}{\string~DcMotorsNode}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ uint8\_t}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDcMotorsNode_a11fac3c9bebdeaf47d23e1b0a5f3c944}{initPCA9685}}(std::shared\_ptr<APCA9685Driver>\ mock\_driver\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ rclcpp::Subscription<geometry\_msgs::msg::Twist>::SharedPtr}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDcMotorsNode_a2103d366fdadf052c183c2a30795a6c0}{twist\_subscriber\_}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::shared\_ptr<APCA9685Driver>\ \mbox{\hyperlink{classDcMotorsNode_aed3f0fff7d0c67d8237c02bd135b633c}{pca\_driver\_}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDcMotorsNode_a85ef73670b0966f06c74d8a5d277ad22}{writeSpeed}}(geometry\_msgs::msg::Twist::SharedPtr\ twist\_msg);}
+\DoxyCodeLine{00034\ \};}
+
+\end{DoxyCode}

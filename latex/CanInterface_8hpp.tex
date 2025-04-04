@@ -1,0 +1,33 @@
+\doxysection{Jet\+Racer/src/bus\+\_\+interfaces/can\+\_\+interface/include/\+Can\+Interface.hpp File Reference}
+\hypertarget{CanInterface_8hpp}{}\label{CanInterface_8hpp}\index{JetRacer/src/bus\_interfaces/can\_interface/include/CanInterface.hpp@{JetRacer/src/bus\_interfaces/can\_interface/include/CanInterface.hpp}}
+{\ttfamily \#include "{}ICan\+Driver.\+hpp"{}}\newline
+{\ttfamily \#include "{}custom\+\_\+msgs/srv/can\+\_\+service.\+hpp"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$rclcpp/rclcpp.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCanInterface}{Can\+Interface}}
+\begin{DoxyCompactList}\small\item\em Handles read and write operation onto the can bus via the can driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{CanInterface_8hpp_a24867dfa60d64f094158774961b09e1e}{QUEUE\+\_\+\+SIZE}} = 60
+\item 
+constexpr int \mbox{\hyperlink{CanInterface_8hpp_aa1fd53ad0014378c1b95c593d19f5b93}{ERROR\+\_\+\+OUTPUT\+\_\+\+FREQ}} = 5000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{CanInterface_8hpp_aa1fd53ad0014378c1b95c593d19f5b93}\label{CanInterface_8hpp_aa1fd53ad0014378c1b95c593d19f5b93} 
+\index{CanInterface.hpp@{CanInterface.hpp}!ERROR\_OUTPUT\_FREQ@{ERROR\_OUTPUT\_FREQ}}
+\index{ERROR\_OUTPUT\_FREQ@{ERROR\_OUTPUT\_FREQ}!CanInterface.hpp@{CanInterface.hpp}}
+\doxysubsubsection{\texorpdfstring{ERROR\_OUTPUT\_FREQ}{ERROR\_OUTPUT\_FREQ}}
+{\footnotesize\ttfamily constexpr int ERROR\+\_\+\+OUTPUT\+\_\+\+FREQ = 5000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{CanInterface_8hpp_a24867dfa60d64f094158774961b09e1e}\label{CanInterface_8hpp_a24867dfa60d64f094158774961b09e1e} 
+\index{CanInterface.hpp@{CanInterface.hpp}!QUEUE\_SIZE@{QUEUE\_SIZE}}
+\index{QUEUE\_SIZE@{QUEUE\_SIZE}!CanInterface.hpp@{CanInterface.hpp}}
+\doxysubsubsection{\texorpdfstring{QUEUE\_SIZE}{QUEUE\_SIZE}}
+{\footnotesize\ttfamily constexpr int QUEUE\+\_\+\+SIZE = 60\hspace{0.3cm}{\ttfamily [constexpr]}}
+

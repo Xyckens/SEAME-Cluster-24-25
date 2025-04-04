@@ -1,0 +1,51 @@
+\doxysection{Speed\+Sensor\+Node.\+hpp}
+\hypertarget{SpeedSensorNode_8hpp_source}{}\label{SpeedSensorNode_8hpp_source}\index{JetRacer/src/peripherals/speed\_sensor/include/SpeedSensorNode.hpp@{JetRacer/src/peripherals/speed\_sensor/include/SpeedSensorNode.hpp}}
+\mbox{\hyperlink{SpeedSensorNode_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}custom\_msgs/msg/can\_frame.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}std\_msgs/msg/u\_int8.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <custom\_msgs/srv/can\_service.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <rclcpp/client.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <rclcpp/publisher.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <rclcpp/subscription.hpp>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <std\_msgs/msg/u\_int32.hpp>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <std\_msgs/msg/u\_int8.hpp>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ NODE}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{SpeedSensorNode_8hpp_a60c13f13dc6cc69494c0552620a53113}{SPEED\_SENSOR\_ID}}\ =\ 0x300;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{SpeedSensorNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\_QOS}}\ =\ 10;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{SpeedSensorNode_8hpp_aa1fd53ad0014378c1b95c593d19f5b93}{ERROR\_OUTPUT\_FREQ}}\ =\ 3000;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{SpeedSensorNode_8hpp_aa27669c98d5781474dbe5b9bc79dff2d}{POLL\_FREQ\_MS}}\ =\ 100;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{SpeedSensorNode_8hpp_a392efccf3fd20ea6f4c1069f5064cf25}{NB\_HOLES}}\ =\ 36;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{SpeedSensorNode_8hpp_ad1a542f49e80835328bcb7df38ca9e52}{WHEELS\_DIAM\_M}}\ =\ 0.065;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{SpeedSensorNode_8hpp_aa8ad054ab303a5d944dbdccf5fd2b68a}{WHEELS\_PERIMETER\_M}}\ =\ M\_PI\ *\ (\mbox{\hyperlink{SpeedSensorNode_8hpp_ad1a542f49e80835328bcb7df38ca9e52}{WHEELS\_DIAM\_M}});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ CONVERSIONS}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{SpeedSensorNode_8hpp_a7b09cddf7797a44a0b9a328351a554e9}{MS\_TO\_S}}\ =\ 1000;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{SpeedSensorNode_8hpp_a7c53ae42165929fd0968e130a706752d}{M\_TO\_DM}}\ =\ 10;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{SpeedSensorNode_8hpp_a27c3e780dfcd58bffb4c3dd8ae1c0b00}{SEC\_TO\_MIN}}\ =\ 60;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSpeedSensorNode}{SpeedSensorNode}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSpeedSensorNode_a425bc28f7413f6b9c447726865f7a7bf}{SpeedSensorNode}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSpeedSensorNode_a5badad7cff5c574fe5e24d95056241e2}{\string~SpeedSensorNode}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ rclcpp::Subscription<custom\_msgs::msg::CanFrame>::SharedPtr}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSpeedSensorNode_a4cf7682c5f2a57d0a516cb165a69f29c}{raw\_can\_subscriber\_}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ rclcpp::Publisher<std\_msgs::msg::UInt8>::SharedPtr\ \mbox{\hyperlink{classSpeedSensorNode_ab5fd0b12a6668bfca10b756a305dc540}{speed\_publisher\_}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ rclcpp::Publisher<std\_msgs::msg::UInt32>::SharedPtr\ \mbox{\hyperlink{classSpeedSensorNode_a8e06430c5e61c6c1530a79a5e08cc8c8}{rpm\_publisher\_}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ rclcpp::Client<custom\_msgs::srv::CanService>::SharedPtr\ \mbox{\hyperlink{classSpeedSensorNode_aae14989b0eda63073209e539f4a5f271}{client\_}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ rclcpp::TimerBase::SharedPtr\ \mbox{\hyperlink{classSpeedSensorNode_aa8cabaff49bcd3b93dbd4297f9977a46}{timer\_}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpeedSensorNode_a4c528996be099377daaea7eb4362535b}{writeSpeed}}(}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ rclcpp::Client<custom\_msgs::srv::CanService>::SharedFuture\ future);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpeedSensorNode_a2a80b22767c767a37a5824a3afd731dc}{readSpeed}}();}
+\DoxyCodeLine{00050\ \};}
+
+\end{DoxyCode}

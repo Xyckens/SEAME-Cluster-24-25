@@ -1,0 +1,83 @@
+\doxysection{Colors.\+h}
+\hypertarget{Colors_8h_source}{}\label{Colors_8h_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/Colors.h@{JetRacer/src/head\_unit/cluster\_qt/includes/Colors.h}}
+\mbox{\hyperlink{Colors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classColor}{Color}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428}{Color}}()\ :\ \mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}(\mbox{\hyperlink{classColor_a506e4cbdd1e1eb6cdf26e776c37a03c5}{getLastValue}}())\ \{\};}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classColor_a3cfce6c6821d3bf489e26074c55378c0}{\string~Color}}()\{\};}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\&\ \ \mbox{\hyperlink{classColor_ac94eaf1e0f9df979877224fe96058afa}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&)\ \{\textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{classColor_aac614cdd787901a279ae994018ee4afb}{INDEX\_LENGTH}}\ =\ 8;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{classColor_a506e4cbdd1e1eb6cdf26e776c37a03c5}{getLastValue}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::ifstream\ f(\textcolor{stringliteral}{"{}color.txt"{}});}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!f.is\_open())\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ the\ file!"{}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::string\ s;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(f,\ s))}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pos\ =\ s.find(\textcolor{stringliteral}{"{}index\ =\ "{}});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ !=\ std::string::npos)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}\ =\ std::stoi(s.substr(pos\ +\ \mbox{\hyperlink{classColor_aac614cdd787901a279ae994018ee4afb}{INDEX\_LENGTH}}));}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}\ =\ 0;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cerr\ <<\ "{}Something\ wrong\ with\ file,\ the\ result\ gotten\ is:\ "{}\ <<\ s.substr(pos\ +\ 8)\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ f.close();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}};}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_affdbadf312940070be783223d7457f8e}{main\_color\_array}}[4]\ =\ \{\textcolor{stringliteral}{"{}\#312244"{}},\ \textcolor{stringliteral}{"{}\#9A031E"{}},\ \textcolor{stringliteral}{"{}\#FF99C8"{}},\ \textcolor{stringliteral}{"{}\#283618"{}}\};}
+\DoxyCodeLine{00048\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_a00b19a0fa8a8fcbd7b9351e0c34afed2}{main\_color}}\ =\ \mbox{\hyperlink{classColor_affdbadf312940070be783223d7457f8e}{main\_color\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_adc99bd4188d5381db98bd9d59dd51bd2}{accent\_color\_array}}[4]\ =\ \{\textcolor{stringliteral}{"{}\#4D194D"{}},\ \textcolor{stringliteral}{"{}\#FB8B24"{}},\ \textcolor{stringliteral}{"{}\#A9DEF9"{}},\ \textcolor{stringliteral}{"{}\#BC6C25"{}}\};}
+\DoxyCodeLine{00051\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_a39e73e04ef1ffef494d70e1448098c58}{accent\_color}}\ =\ \mbox{\hyperlink{classColor_adc99bd4188d5381db98bd9d59dd51bd2}{accent\_color\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_a5a1a0b3796e51e07ed6b92d25d12d757}{alphabet\_color\_array}}[4]\ =\ \{\textcolor{stringliteral}{"{}\#006466"{}},\ \textcolor{stringliteral}{"{}\#E36414"{}},\ \textcolor{stringliteral}{"{}\#E4C1F9"{}},\ \textcolor{stringliteral}{"{}\#FEFAE0"{}}\};}
+\DoxyCodeLine{00054\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_ae4928e1176b4884bed811328b06bf83e}{alphabet\_color}}\ =\ \mbox{\hyperlink{classColor_a5a1a0b3796e51e07ed6b92d25d12d757}{alphabet\_color\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ QString\ \mbox{\hyperlink{classColor_ac73b3176989c3a5e3c77fb15aada2c63}{background\_array}}[4]\ =\ \{\textcolor{stringliteral}{"{}background-\/color:\ \#212F45"{}},\ \textcolor{stringliteral}{"{}background-\/color:\ \#5F0F40"{}},\ \textcolor{stringliteral}{"{}background-\/color:\ \#D0F4DE"{}},\ \textcolor{stringliteral}{"{}background-\/color:\ \#DDA15E"{}}\};}
+\DoxyCodeLine{00057\ \ \ \ \ QString\ \mbox{\hyperlink{classColor_a31591dfc864d631ef9134d538d85cfdd}{background}}\ =\ \mbox{\hyperlink{classColor_ac73b3176989c3a5e3c77fb15aada2c63}{background\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classColor_add59851f3a1381e75a53c0bbed22b8f2}{indent}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ this-\/>counter++;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>counter\ >\ 3)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>counter\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ this-\/>main\_color\ =\ \mbox{\hyperlink{classColor_affdbadf312940070be783223d7457f8e}{main\_color\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ this-\/>accent\_color\ =\ \mbox{\hyperlink{classColor_adc99bd4188d5381db98bd9d59dd51bd2}{accent\_color\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ this-\/>alphabet\_color\ =\ \mbox{\hyperlink{classColor_a5a1a0b3796e51e07ed6b92d25d12d757}{alphabet\_color\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ this-\/>background\ =\ \mbox{\hyperlink{classColor_ac73b3176989c3a5e3c77fb15aada2c63}{background\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ std::ofstream\ f(\textcolor{stringliteral}{"{}color.txt"{}});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ to\ the\ file}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ f\ <<\ \textcolor{stringliteral}{"{}index\ =\ "{}}\ <<\ \mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Close\ the\ file}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ f.close();}
+\DoxyCodeLine{00074\ \ \ \ \ \};}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

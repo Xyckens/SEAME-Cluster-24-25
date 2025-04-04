@@ -1,0 +1,181 @@
+\doxysection{Fan\+Speed\+Widget Class Reference}
+\hypertarget{classFanSpeedWidget}{}\label{classFanSpeedWidget}\index{FanSpeedWidget@{FanSpeedWidget}}
+
+
+{\ttfamily \#include $<$Fan\+Speed\+Widget.\+h$>$}
+
+Inheritance diagram for Fan\+Speed\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFanSpeedWidget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFanSpeedWidget_aee7035b31ed824e993cb40863933e024}{Fan\+Speed\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, int x=0, int y=0, int width=0, int height=0)
+\item 
+\mbox{\hyperlink{classFanSpeedWidget_a4db8028a2dcb14518d43051ea3644953}{\texorpdfstring{$\sim$}{\string~}\+Fan\+Speed\+Widget}} () override
+\item 
+void \mbox{\hyperlink{classFanSpeedWidget_a58e9d90f5e8095c2bb910b08a8853226}{change\+Color}} (int array\+\_\+index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{classFanSpeedWidget_a9e7619e8d0a230e6fda0cdf5473b2887}{main\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classFanSpeedWidget_af291a67971a00843a3e64fb33f8a33f6}{accent\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classFanSpeedWidget_a16498a4403c3d75da15298f49abe9522}{alphabet\+\_\+color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classFanSpeedWidget_a3d4439d79d8c73f63434a19dc3c95b5a}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{classFanSpeedWidget_a9e7e8d29684c5978cf2a1d29f89ebeca}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classFanSpeedWidget_a758705db5afac33aabed9ba19e838c30}{update\+Speed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classFanSpeedWidget_a8161b8be7dc4ffcfc5e200d7262a418b}{draw\+Scale}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y, int radius)
+\item 
+void \mbox{\hyperlink{classFanSpeedWidget_aace519671ed77e22a9ed87bcc4243d24}{draw\+Needle}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y, int radius)
+\item 
+void \mbox{\hyperlink{classFanSpeedWidget_a9d20a86248fc71667595af9e959651bf}{draw\+Central\+Number}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classFanSpeedWidget_ac076242595731364613a4713b8d3eba0}{current\+Speed}}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classFanSpeedWidget_a14d5160e0c47c0c5d68a2ff76ac09dd5}{color1}}
+\item 
+QPixmap \mbox{\hyperlink{classFanSpeedWidget_afa22f84214c9854c3e1c1d3591eea399}{image}}
+\item 
+QPixmap \mbox{\hyperlink{classFanSpeedWidget_a43a34f3ce1c5ce9b728355724f1a0a91}{image\+\_\+array}} \mbox{[}4\mbox{]}
+\item 
+int \mbox{\hyperlink{classFanSpeedWidget_aa60328958064288ceb30893cfcac1b73}{index}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFanSpeedWidget_aee7035b31ed824e993cb40863933e024}\label{classFanSpeedWidget_aee7035b31ed824e993cb40863933e024} 
+\index{FanSpeedWidget@{FanSpeedWidget}!FanSpeedWidget@{FanSpeedWidget}}
+\index{FanSpeedWidget@{FanSpeedWidget}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{FanSpeedWidget()}{FanSpeedWidget()}}
+{\footnotesize\ttfamily Fan\+Speed\+Widget\+::\+Fan\+Speed\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr},  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{classFanSpeedWidget_a4db8028a2dcb14518d43051ea3644953}\label{classFanSpeedWidget_a4db8028a2dcb14518d43051ea3644953} 
+\index{FanSpeedWidget@{FanSpeedWidget}!````~FanSpeedWidget@{\texorpdfstring{$\sim$}{\string~}FanSpeedWidget}}
+\index{````~FanSpeedWidget@{\texorpdfstring{$\sim$}{\string~}FanSpeedWidget}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FanSpeedWidget()}{\string~FanSpeedWidget()}}
+{\footnotesize\ttfamily Fan\+Speed\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+Fan\+Speed\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFanSpeedWidget_a58e9d90f5e8095c2bb910b08a8853226}\label{classFanSpeedWidget_a58e9d90f5e8095c2bb910b08a8853226} 
+\index{FanSpeedWidget@{FanSpeedWidget}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Fan\+Speed\+Widget\+::change\+Color (\begin{DoxyParamCaption}\item[{int}]{array\+\_\+index }\end{DoxyParamCaption})}
+
+\Hypertarget{classFanSpeedWidget_a9d20a86248fc71667595af9e959651bf}\label{classFanSpeedWidget_a9d20a86248fc71667595af9e959651bf} 
+\index{FanSpeedWidget@{FanSpeedWidget}!drawCentralNumber@{drawCentralNumber}}
+\index{drawCentralNumber@{drawCentralNumber}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawCentralNumber()}{drawCentralNumber()}}
+{\footnotesize\ttfamily void Fan\+Speed\+Widget\+::draw\+Central\+Number (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{center\+\_\+x,  }\item[{int}]{center\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFanSpeedWidget_aace519671ed77e22a9ed87bcc4243d24}\label{classFanSpeedWidget_aace519671ed77e22a9ed87bcc4243d24} 
+\index{FanSpeedWidget@{FanSpeedWidget}!drawNeedle@{drawNeedle}}
+\index{drawNeedle@{drawNeedle}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawNeedle()}{drawNeedle()}}
+{\footnotesize\ttfamily void Fan\+Speed\+Widget\+::draw\+Needle (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{center\+\_\+x,  }\item[{int}]{center\+\_\+y,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFanSpeedWidget_a8161b8be7dc4ffcfc5e200d7262a418b}\label{classFanSpeedWidget_a8161b8be7dc4ffcfc5e200d7262a418b} 
+\index{FanSpeedWidget@{FanSpeedWidget}!drawScale@{drawScale}}
+\index{drawScale@{drawScale}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawScale()}{drawScale()}}
+{\footnotesize\ttfamily void Fan\+Speed\+Widget\+::draw\+Scale (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{center\+\_\+x,  }\item[{int}]{center\+\_\+y,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFanSpeedWidget_a9e7e8d29684c5978cf2a1d29f89ebeca}\label{classFanSpeedWidget_a9e7e8d29684c5978cf2a1d29f89ebeca} 
+\index{FanSpeedWidget@{FanSpeedWidget}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Fan\+Speed\+Widget\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{classFanSpeedWidget_a3d4439d79d8c73f63434a19dc3c95b5a}\label{classFanSpeedWidget_a3d4439d79d8c73f63434a19dc3c95b5a} 
+\index{FanSpeedWidget@{FanSpeedWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void Fan\+Speed\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{classFanSpeedWidget_a758705db5afac33aabed9ba19e838c30}\label{classFanSpeedWidget_a758705db5afac33aabed9ba19e838c30} 
+\index{FanSpeedWidget@{FanSpeedWidget}!updateSpeed@{updateSpeed}}
+\index{updateSpeed@{updateSpeed}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{updateSpeed}{updateSpeed}}
+{\footnotesize\ttfamily void Fan\+Speed\+Widget\+::update\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classFanSpeedWidget_af291a67971a00843a3e64fb33f8a33f6}\label{classFanSpeedWidget_af291a67971a00843a3e64fb33f8a33f6} 
+\index{FanSpeedWidget@{FanSpeedWidget}!accent\_color@{accent\_color}}
+\index{accent\_color@{accent\_color}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{accent\_color}{accent\_color}}
+{\footnotesize\ttfamily QColor Fan\+Speed\+Widget\+::accent\+\_\+color}
+
+\Hypertarget{classFanSpeedWidget_a16498a4403c3d75da15298f49abe9522}\label{classFanSpeedWidget_a16498a4403c3d75da15298f49abe9522} 
+\index{FanSpeedWidget@{FanSpeedWidget}!alphabet\_color@{alphabet\_color}}
+\index{alphabet\_color@{alphabet\_color}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{alphabet\_color}{alphabet\_color}}
+{\footnotesize\ttfamily QColor Fan\+Speed\+Widget\+::alphabet\+\_\+color}
+
+\Hypertarget{classFanSpeedWidget_a14d5160e0c47c0c5d68a2ff76ac09dd5}\label{classFanSpeedWidget_a14d5160e0c47c0c5d68a2ff76ac09dd5} 
+\index{FanSpeedWidget@{FanSpeedWidget}!color1@{color1}}
+\index{color1@{color1}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{color1}{color1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Fan\+Speed\+Widget\+::color1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFanSpeedWidget_ac076242595731364613a4713b8d3eba0}\label{classFanSpeedWidget_ac076242595731364613a4713b8d3eba0} 
+\index{FanSpeedWidget@{FanSpeedWidget}!currentSpeed@{currentSpeed}}
+\index{currentSpeed@{currentSpeed}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{currentSpeed}{currentSpeed}}
+{\footnotesize\ttfamily int Fan\+Speed\+Widget\+::current\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFanSpeedWidget_afa22f84214c9854c3e1c1d3591eea399}\label{classFanSpeedWidget_afa22f84214c9854c3e1c1d3591eea399} 
+\index{FanSpeedWidget@{FanSpeedWidget}!image@{image}}
+\index{image@{image}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily QPixmap Fan\+Speed\+Widget\+::image\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFanSpeedWidget_a43a34f3ce1c5ce9b728355724f1a0a91}\label{classFanSpeedWidget_a43a34f3ce1c5ce9b728355724f1a0a91} 
+\index{FanSpeedWidget@{FanSpeedWidget}!image\_array@{image\_array}}
+\index{image\_array@{image\_array}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{image\_array}{image\_array}}
+{\footnotesize\ttfamily QPixmap Fan\+Speed\+Widget\+::image\+\_\+array\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFanSpeedWidget_aa60328958064288ceb30893cfcac1b73}\label{classFanSpeedWidget_aa60328958064288ceb30893cfcac1b73} 
+\index{FanSpeedWidget@{FanSpeedWidget}!index@{index}}
+\index{index@{index}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily int Fan\+Speed\+Widget\+::index\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFanSpeedWidget_a9e7619e8d0a230e6fda0cdf5473b2887}\label{classFanSpeedWidget_a9e7619e8d0a230e6fda0cdf5473b2887} 
+\index{FanSpeedWidget@{FanSpeedWidget}!main\_color@{main\_color}}
+\index{main\_color@{main\_color}!FanSpeedWidget@{FanSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{main\_color}{main\_color}}
+{\footnotesize\ttfamily QColor Fan\+Speed\+Widget\+::main\+\_\+color}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{FanSpeedWidget_8h}{Fan\+Speed\+Widget.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{FanSpeedWidget_8cpp}{Fan\+Speed\+Widget.\+cpp}}\end{DoxyCompactItemize}

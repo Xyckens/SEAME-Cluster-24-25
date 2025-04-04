@@ -1,0 +1,129 @@
+\doxysection{Display\+Routine\+Node Class Reference}
+\hypertarget{classDisplayRoutineNode}{}\label{classDisplayRoutineNode}\index{DisplayRoutineNode@{DisplayRoutineNode}}
+
+
+Update the oled display.  
+
+
+
+
+{\ttfamily \#include $<$Display\+Routine\+Node.\+hpp$>$}
+
+Inheritance diagram for Display\+Routine\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDisplayRoutineNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDisplayRoutineNode_a1360cbc409502508ffd7d48db78d2651}{Display\+Routine\+Node}} ()
+\item 
+\mbox{\hyperlink{classDisplayRoutineNode_a3d2b851bd7e30e62f2f076202e1cf5ef}{\texorpdfstring{$\sim$}{\string~}\+Display\+Routine\+Node}} () override=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDisplayRoutineNode_a0f3faaa83579d811d71429691dd112a7}{update\+Display}} () const
+\begin{DoxyCompactList}\small\item\em Update the display with the current IP address and battery level. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classDisplayRoutineNode_a32c62719a130db0f1c5e5b26c0f202e4}{get\+IPv4\+Addresses}} () const
+\begin{DoxyCompactList}\small\item\em Get the IPv4 addresses of the network interfaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Publisher$<$ custom\+\_\+msgs\+::msg\+::\+Display $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classDisplayRoutineNode_a6e30f2c4211a6dddd3a32bbc12a042c8}{publisher\+\_\+}}
+\item 
+rclcpp\+::\+Subscription$<$ std\+\_\+msgs\+::msg\+::\+Float64 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classDisplayRoutineNode_aba9849c77cf67337ab8f078b77670e26}{battery\+\_\+subscriber\+\_\+}}
+\item 
+rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr \mbox{\hyperlink{classDisplayRoutineNode_a68b936f8a2e759f1678390dc20867c45}{timer\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classDisplayRoutineNode_a54ee697acceae015cd50238511f9cb8e}{ip\+\_\+address\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classDisplayRoutineNode_a1ab9d5c928add77d28efafbbe17af7bc}{battery\+\_\+level\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Update the oled display. 
+
+this node is responsible for updating the oled display with the current IP address and battery with a 60s interval. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDisplayRoutineNode_a1360cbc409502508ffd7d48db78d2651}\label{classDisplayRoutineNode_a1360cbc409502508ffd7d48db78d2651} 
+\index{DisplayRoutineNode@{DisplayRoutineNode}!DisplayRoutineNode@{DisplayRoutineNode}}
+\index{DisplayRoutineNode@{DisplayRoutineNode}!DisplayRoutineNode@{DisplayRoutineNode}}
+\doxysubsubsection{\texorpdfstring{DisplayRoutineNode()}{DisplayRoutineNode()}}
+{\footnotesize\ttfamily Display\+Routine\+Node\+::\+Display\+Routine\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classDisplayRoutineNode_a3d2b851bd7e30e62f2f076202e1cf5ef}\label{classDisplayRoutineNode_a3d2b851bd7e30e62f2f076202e1cf5ef} 
+\index{DisplayRoutineNode@{DisplayRoutineNode}!````~DisplayRoutineNode@{\texorpdfstring{$\sim$}{\string~}DisplayRoutineNode}}
+\index{````~DisplayRoutineNode@{\texorpdfstring{$\sim$}{\string~}DisplayRoutineNode}!DisplayRoutineNode@{DisplayRoutineNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DisplayRoutineNode()}{\string~DisplayRoutineNode()}}
+{\footnotesize\ttfamily Display\+Routine\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Display\+Routine\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDisplayRoutineNode_a32c62719a130db0f1c5e5b26c0f202e4}\label{classDisplayRoutineNode_a32c62719a130db0f1c5e5b26c0f202e4} 
+\index{DisplayRoutineNode@{DisplayRoutineNode}!getIPv4Addresses@{getIPv4Addresses}}
+\index{getIPv4Addresses@{getIPv4Addresses}!DisplayRoutineNode@{DisplayRoutineNode}}
+\doxysubsubsection{\texorpdfstring{getIPv4Addresses()}{getIPv4Addresses()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Display\+Routine\+Node\+::get\+IPv4\+Addresses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the IPv4 addresses of the network interfaces. 
+
+\begin{DoxyReturn}{Returns}
+a vector of strings containing the IPv4 addresses. 
+\end{DoxyReturn}
+\Hypertarget{classDisplayRoutineNode_a0f3faaa83579d811d71429691dd112a7}\label{classDisplayRoutineNode_a0f3faaa83579d811d71429691dd112a7} 
+\index{DisplayRoutineNode@{DisplayRoutineNode}!updateDisplay@{updateDisplay}}
+\index{updateDisplay@{updateDisplay}!DisplayRoutineNode@{DisplayRoutineNode}}
+\doxysubsubsection{\texorpdfstring{updateDisplay()}{updateDisplay()}}
+{\footnotesize\ttfamily void Display\+Routine\+Node\+::update\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the display with the current IP address and battery level. 
+
+this callback is called every 60 seconds. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDisplayRoutineNode_a1ab9d5c928add77d28efafbbe17af7bc}\label{classDisplayRoutineNode_a1ab9d5c928add77d28efafbbe17af7bc} 
+\index{DisplayRoutineNode@{DisplayRoutineNode}!battery\_level\_@{battery\_level\_}}
+\index{battery\_level\_@{battery\_level\_}!DisplayRoutineNode@{DisplayRoutineNode}}
+\doxysubsubsection{\texorpdfstring{battery\_level\_}{battery\_level\_}}
+{\footnotesize\ttfamily std\+::string Display\+Routine\+Node\+::battery\+\_\+level\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDisplayRoutineNode_aba9849c77cf67337ab8f078b77670e26}\label{classDisplayRoutineNode_aba9849c77cf67337ab8f078b77670e26} 
+\index{DisplayRoutineNode@{DisplayRoutineNode}!battery\_subscriber\_@{battery\_subscriber\_}}
+\index{battery\_subscriber\_@{battery\_subscriber\_}!DisplayRoutineNode@{DisplayRoutineNode}}
+\doxysubsubsection{\texorpdfstring{battery\_subscriber\_}{battery\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$std\+\_\+msgs\+::msg\+::\+Float64$>$\+::\+Shared\+Ptr Display\+Routine\+Node\+::battery\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDisplayRoutineNode_a54ee697acceae015cd50238511f9cb8e}\label{classDisplayRoutineNode_a54ee697acceae015cd50238511f9cb8e} 
+\index{DisplayRoutineNode@{DisplayRoutineNode}!ip\_address\_@{ip\_address\_}}
+\index{ip\_address\_@{ip\_address\_}!DisplayRoutineNode@{DisplayRoutineNode}}
+\doxysubsubsection{\texorpdfstring{ip\_address\_}{ip\_address\_}}
+{\footnotesize\ttfamily std\+::string Display\+Routine\+Node\+::ip\+\_\+address\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDisplayRoutineNode_a6e30f2c4211a6dddd3a32bbc12a042c8}\label{classDisplayRoutineNode_a6e30f2c4211a6dddd3a32bbc12a042c8} 
+\index{DisplayRoutineNode@{DisplayRoutineNode}!publisher\_@{publisher\_}}
+\index{publisher\_@{publisher\_}!DisplayRoutineNode@{DisplayRoutineNode}}
+\doxysubsubsection{\texorpdfstring{publisher\_}{publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$custom\+\_\+msgs\+::msg\+::\+Display$>$\+::\+Shared\+Ptr Display\+Routine\+Node\+::publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDisplayRoutineNode_a68b936f8a2e759f1678390dc20867c45}\label{classDisplayRoutineNode_a68b936f8a2e759f1678390dc20867c45} 
+\index{DisplayRoutineNode@{DisplayRoutineNode}!timer\_@{timer\_}}
+\index{timer\_@{timer\_}!DisplayRoutineNode@{DisplayRoutineNode}}
+\doxysubsubsection{\texorpdfstring{timer\_}{timer\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr Display\+Routine\+Node\+::timer\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/display\+\_\+routine/include/\mbox{\hyperlink{DisplayRoutineNode_8hpp}{Display\+Routine\+Node.\+hpp}}\item 
+Jet\+Racer/src/head\+\_\+unit/display\+\_\+routine/src/\mbox{\hyperlink{DisplayRoutineNode_8cpp}{Display\+Routine\+Node.\+cpp}}\end{DoxyCompactItemize}

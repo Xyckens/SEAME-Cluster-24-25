@@ -1,0 +1,23 @@
+\doxysection{I2c\+Driver.\+hpp}
+\hypertarget{I2cDriver_8hpp_source}{}\label{I2cDriver_8hpp_source}\index{JetRacer/src/bus\_interfaces/i2c\_interface/include/I2cDriver.hpp@{JetRacer/src/bus\_interfaces/i2c\_interface/include/I2cDriver.hpp}}
+\mbox{\hyperlink{I2cDriver_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{II2cDriver_8hpp}{II2cDriver.hpp}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{I2cDriver_8hpp_aac8ff4a3989b0fa673e46ff5f9d2f725}{MAX\_RETRY}}\ =\ 5;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classI2cDriver}{I2cDriver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classII2cDriver}{II2cDriver}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classI2cDriver}{I2cDriver}}(uint8\_t\ device);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classI2cDriver_ab29ff192edac670ec73c4217d48bbecf}{\string~I2cDriver}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classI2cDriver_a9d0954b5cbf077b5f93f09dbe15edd98}{open}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ ssize\_t\ \mbox{\hyperlink{classI2cDriver_a7769e6fcc8c87bd64f2ea49257de9705}{read}}(std::vector<uint8\_t>\&\ buff)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ ssize\_t\ \mbox{\hyperlink{classI2cDriver_ac176551d3f7fffa20333d927697b0fb9}{write}}(std::vector<uint8\_t>\&\ buff)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classI2cDriver_a9d5c1b9dcba1aa0963bff617575f86b8}{setAddress}}(uint8\_t\ address)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \};}
+
+\end{DoxyCode}
