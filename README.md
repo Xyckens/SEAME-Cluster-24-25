@@ -13,14 +13,12 @@ Code documentation can be found here:  [JetRacer Documentation](https://xyckens.
 ## Repo strucutre
 
 - **Jetracer**: ROS2 workspace with the source code running on the raspberryPi
-- **ros2_containers**: Contain the Dockerfile to build the project in a container as well as launch script to put the container up with access rights to essential hardware components.
+- **JetRacer_container**: Contain the Dockerfile to build the project in a container as well as launch script to put the container up with access rights to essential hardware components.
 - **ECU_code**: code running on the **Arduino uno**
 
 ---
 
-## Technical Requirements
-
-### Hardware
+## Hardware
 
 - **Raspberry Pi 4**: Ideal for handling the computational requirements of real-time GUI and CAN data processing.
 - **Jetson nano**: Ideal for handling image processing / machine learning (GPU accelerated computation)
