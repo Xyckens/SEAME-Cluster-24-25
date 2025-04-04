@@ -6,12 +6,11 @@ This folder contains the ROS2 workspace and its source code. The codebase is org
 - **Drivers**: Defines device specific operations.
 - **Peripherals**: Communicate with the drivers and manage higher-level device functionality.
 - **Head Unit**: Coordinates the peripherals and handles higher-level logic.
-
-![System Diagram](../.github/images/software_architecture.png)
-
 ---
 
-## Layered Architecture
+## Software Architecture
+
+![System Diagram](../.github/images/software_architecture.png)
 
 The project structure follows a clear layered architecture that helps isolate responsibilities and ensures modularity. The three main layers are:
 
