@@ -47,8 +47,6 @@ ENV QT_OPENGL=es2
 # Set up workspace directory
 WORKDIR /root/ws
 
-# Clone the GitHub repository
-RUN git clone --recurse-submodules -b launch_files https://github.com/Xyckens/SEAME-Cluster-24-25.git /root/ws
 
 # Build the project
 WORKDIR /root/ws/JetRacer
