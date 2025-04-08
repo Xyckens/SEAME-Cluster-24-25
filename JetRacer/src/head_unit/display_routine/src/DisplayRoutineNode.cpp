@@ -9,7 +9,7 @@ using namespace std::chrono_literals;
 
 DisplayRoutineNode::DisplayRoutineNode() : rclcpp::Node("display_routine_node")
 {
-    timer_ = this->create_timer(
+    timer_ = this->create_wall_timer(
         60s, std::bind(&DisplayRoutineNode::updateDisplay, this));
     publisher_ = this->create_publisher<custom_msgs::msg::Display>(
         "cmd_display", NODE_QOS);

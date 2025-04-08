@@ -56,36 +56,25 @@ The head unit represents the higher-level logic of the system, coordinating the 
 - **Responsibility**: Coordinate and manage the operation of peripherals.
 - **ROS2 Mechanism**: Provide high-level functionalities and user interactions through nodes that communicate with peripheral nodes.
 
-## Build Instructions
+## Launch Instructions
 
-To build the JetRacer project, follow these steps:
-
-1. Open a terminal and navigate to the root directory of the project:
+1. Ensure you have all the required files
+```bash 
+ll /etc/systemd/system/jetracer@.service
+ll /usr/local/bin/jetracer_manual.sh
+ll /usr/local/bin/jetracer_auto.sh
+```
+2. To launch the Jetracer in manual mode (with teleop node):
     ```bash
-    cd JetRacer
+    sudo systemctl start jetracer@manual
     ```
 
-2. Build the project using `colcon`:
+3. To Launch the Jetracer in auto mode:
     ```bash
-    colcon build --symlink-install
+    sudo systemctl start jetracer@manual
     ```
 
-    This will compile the source code and set up the appropriate environment for running the nodes.
-
-3. Execute the launch script:
+3. WARNING: To be able to have access to the QT UI, you need to launch the script manually and not via systemctl. You can simply call the script the following way since its your path:
     ```bash
-    ros2 launch launch/JetRacer_launch.py
-    ```
-
-4. Open a terminal to launch the `rqt` console and start interacting with topics, or directly publish into topics:
-
-    To launch the `rqt` console:
-    ```bash
-    rqt
-    ```
-
-    Or directly publish a topic:
-    ```bash
-    ros2 topic list
-    ros2 topic pub cmd_display custom_msgs/Display '{line1: "Hello world"}' --once
+    jetracer_manual.sh
     ```

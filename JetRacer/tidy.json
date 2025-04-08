@@ -11,5 +11,6 @@
   "tidyRoot": ".",
   "buildRoot": "build/",
   "compilationDatabase": "build/compile_commands.json",
-  "tidyFile": ".clang-tidy"
+  "tidyFile": ".clang-tidy",
+  "command": "/usr/bin/clang-tidy-18"
 }

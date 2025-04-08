@@ -50,7 +50,7 @@ void TeleopNode::publishBlinkerState(sensor_msgs::msg::Joy::SharedPtr joy_msg)
     if (buttons[1] == 1)
         blinkers_publisher_->publish(
             msg.set__data(static_cast<uint8_t>(BlinkerState::TURN_RIGHT)));
-    if (buttons[2] == 1)
+    if (buttons[4] == 1)
         blinkers_publisher_->publish(
             msg.set__data(static_cast<uint8_t>(BlinkerState::WARNINGS)));
     if (buttons[3] == 1)

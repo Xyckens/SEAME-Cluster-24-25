@@ -7,7 +7,7 @@ using namespace std::chrono_literals;
 
 BatteryNode::BatteryNode() : Node("battery_node")
 {
-    timer_ = this->create_timer(
+    timer_ = this->create_wall_timer(
         5s, std::bind(&BatteryNode::publishBatteryLevel, this));
 }
 

@@ -95,7 +95,7 @@ TEST_F(CanInterfaceTest, writeFailure)
 {
     EXPECT_CALL(*mock_driver_, sendMessage)
         .WillOnce(
-            []()
+            [](const sockcanpp::CanMessage& msg, bool force_extended)
             {
                 throw sockcanpp::exception();
                 return 1;

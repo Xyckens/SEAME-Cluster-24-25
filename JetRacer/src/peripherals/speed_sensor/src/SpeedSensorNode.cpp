@@ -5,7 +5,7 @@
 SpeedSensorNode::SpeedSensorNode() : rclcpp::Node("speed_sensor")
 {
     client_ = this->create_client<custom_msgs::srv::CanService>("can_service");
-    timer_ = this->create_timer(std::chrono::milliseconds(POLL_FREQ_MS),
+    timer_ = this->create_wall_timer(std::chrono::milliseconds(POLL_FREQ_MS),
                                 [this]() { readSpeed(); });
     speed_publisher_ = this->create_publisher<std_msgs::msg::UInt8>(
         "speed_readings", NODE_QOS);

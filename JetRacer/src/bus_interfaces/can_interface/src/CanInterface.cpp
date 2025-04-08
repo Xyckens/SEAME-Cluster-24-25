@@ -43,7 +43,7 @@ CanInterface::CanInterface(std::shared_ptr<ICanDriver> mock_driver)
         "can_service",
         std::bind(&CanInterface::handleCanRequest, this, std::placeholders::_1,
                   std::placeholders::_2),
-        qos);
+        qos.get_rmw_qos_profile());
 
     RCLCPP_INFO(this->get_logger(), "Starting CAN bus interface");
 }

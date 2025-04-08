@@ -12,20 +12,24 @@ on:
 env:
   QT_BUILD_DIR: JetRacer/src/head_unit/cluster_qt/build
   ROS_BUILD_DIR: JetRacer
+  QT_QPA_PLATFORM: offscreen
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    - name: Install dependencies
+    - name: Install llvm18 toolchain
       run: |
         sudo apt-get update
-        sudo apt-get install -y clang build-essential cmake curl git clang-tidy
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y # Rust for 
-        sudo apt install -y cargo 
+        wget https://apt.llvm.org/llvm.sh
+        chmod +x llvm.sh
+        sudo ./llvm.sh 18
+        sudo apt-get install -y clang build-essential cmake curl git clang-tidy-18 wget
+        sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-18 100
+
 
     - name: Install Qt
       run: |
@@ -34,41 +38,51 @@ jobs:
 
     - name: Install clang-tidy
       run: |
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y # Rust for 
+        sudo apt install -y cargo
         sudo git clone https://github.com/lmapii/run-clang-tidy.git
         cd run-clang-tidy
         cargo build --release --target-dir /tmp/target
         sudo mv /tmp/target/release/run-clang-tidy /usr/local/bin/run-clang-tidy-rust
 
 
-    - name: Install ROS2 jazzy
+    - name: Install ROS 2 humble
       run: |
          sudo apt install -y software-properties-common
          sudo add-apt-repository universe
-         sudo apt install -y curl gnupg2 lsb-release
+         sudo apt update && sudo apt install curl -y
          sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
          sudo apt update && sudo apt install ros-dev-tools
-         sudo apt install -y ros-jazzy-desktop
-         source /opt/ros/jazzy/setup.bash
+         sudo apt install -y ros-humble-desktop
+         source /opt/ros/humble/setup.bash
 
+    - name: Clone CARLA ROS 2 Bridge
+      run: |
+           mkdir -p carla-ros-bridge
+           cd carla-ros-bridge
+           git clone --recurse-submodules https://github.com/carla-simulator/ros-bridge.git src/ros-bridge
+           source /opt/ros/humble/setup.bash
+           sed -i 's/cmake_minimum_required(VERSION [0-9.]\+)/cmake_minimum_required(VERSION 3.16)/' src/ros-bridge/carla_msgs/CMakeLists.txt
+           colcon build --packages-select carla_msgs --symlink-install
+           source install/setup.bash
+           
     - name: Build the project
       run: |
-          source /opt/ros/jazzy/setup.bash
+          source /opt/ros/humble/setup.bash
           cd $ROS_BUILD_DIR
-          # Initialize rosdep
           sudo rosdep init || true
           rosdep update
-          # Install dependencies
           rosdep install --from-paths . --ignore-src -r -y
-          # Build
-          colcon build --symlink-install --packages-skip camera_ros
+          source $GITHUB_WORKSPACE/carla-ros-bridge/install/setup.bash
+          colcon build --symlink-install
 
     - name: Run tests
       run: |
-        source /opt/ros/jazzy/setup.bash
+        source /opt/ros/humble/setup.bash
         cd $ROS_BUILD_DIR
         source ./install/setup.bash
-        colcon test --ctest-args tests --packages-skip camera_ros cluster --executor sequential
+        colcon test --ctest-args tests --packages-skip camera_ros --executor sequential
         colcon test-result --all --verbose
 
     - name: Run clang-tidy

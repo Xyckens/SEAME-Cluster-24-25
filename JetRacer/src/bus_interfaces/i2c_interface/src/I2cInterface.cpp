@@ -28,7 +28,7 @@ I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> mock_driver,
         service_name,
         std::bind(&I2cInterface::handleI2cRequest, this, std::placeholders::_1,
                   std::placeholders::_2),
-        qos);
+        qos.get_rmw_qos_profile());
     init();
 
     RCLCPP_INFO(this->get_logger(), "Starting i2c interface");
