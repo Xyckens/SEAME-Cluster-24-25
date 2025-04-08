@@ -17,5 +17,6 @@ docker run \
   -v /dev/shm:/dev/shm \
   -v /run/udev:/run/udev:ro \
   --group-add video \
-  -e LAUNCH_FILE="JetRacer_manual_launch.py" \
+  -e LAUNCH_FILE="JetRacer_simulation_launch.py" \
   jetracer_image
+
