@@ -3,3 +3,6 @@ CMakeLists.txt.user*
 *build/
 *install/
 *log/
+ECU_code/.pio
+ECU_code/.cache
+ECU_code/compile_commands.json
