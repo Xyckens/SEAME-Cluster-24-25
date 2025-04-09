@@ -14,7 +14,7 @@ Code documentation can be found here:  [JetRacer Documentation](https://xyckens.
 
 - **Jetracer**: ROS2 workspace with the source code running on the raspberryPi
 - **JetRacer_container**: Contain the Dockerfile to build the project in a container as well as launch script to put the container up with access rights to essential hardware components.
-- **ECU_code**: code running on the **Arduino uno**
+- **ECU_code**: code running on the **Arduino Uno**
 
 ---
 
@@ -25,7 +25,7 @@ Code documentation can be found here:  [JetRacer Documentation](https://xyckens.
 - **Arduino uno**: Acts as an Electronic control unit collecting speed sensor data and controlling blinker state
 - **CAN Bus Interface**: MCP2515 for interfacing with the Raspberry Pi 4.
 - **Speed Sensor**: LM393 infrared speed sensor.
-- **Display**: LCD/OLED display for GUI visualization.
+- **Display**: LCD display for GUI visualization.
 
 --- 
 
@@ -33,7 +33,7 @@ Code documentation can be found here:  [JetRacer Documentation](https://xyckens.
 
 ### Main Goal
 
-To develop a functional instrument cluster for the JetRacer car, displaying real-time speed data from a speed sensor via the CAN bus among other sensor system infos.
+To develop a functional instrument cluster for the JetRacer car, displaying real-time speed data from a speed sensor via the CAN bus among other sensor and system infos.
 
 ### Specific Objectives
 

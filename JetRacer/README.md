@@ -54,8 +54,12 @@ sudo systemctl start jetracer@manual
 ```bash
 sudo systemctl start jetracer@auto
 ```
+4. To launch the Jetracer in simulation node (without motors):
+```bash
+sudo systemctl start jetracer@simulation
+```
 
-3. WARNING: To be able to have access to the QT UI, you need to launch the script manually and not via systemctl. You can simply call the script the following way since its your path:
+3. WARNING: To be able to have access to the QT UI, you need to launch the script manually and not via systemctl (THIS WILL NOT WORK VIA SSH). You can simply call the script the following way since its your path:
 ```bash
 jetracer_manual.sh
 ```
