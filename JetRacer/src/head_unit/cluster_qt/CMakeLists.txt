@@ -39,6 +39,7 @@ set(HEADERS
 	includes/Colors.h
     #includes/SettingsWidget.h
     includes/StatsWidget.h
+    includes/ListeningWidget.h
 )
 
 set(SOURCES
@@ -56,6 +57,7 @@ set(SOURCES
 	sources/RosNode.cpp
 	#sources/SettingsWidget.cpp
 	sources/StatsWidget.cpp
+    sources/ListeningWidget.cpp
 )
 
 set(UI_FILES

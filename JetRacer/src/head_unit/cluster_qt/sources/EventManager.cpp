@@ -122,7 +122,7 @@ void EventManager::updateScreen()
     py_battery->setCurrentLevel(node->getBattery());
     py_batspeed->setCurrentLevel(node->getBattery());
     py_batspeed->setCurrentSpeed(node->getSpeed());
-    arrows->changeDirection(node->getWheelAngle(), "forward");
+    //arrows->changeDirection(node->getWheelAngle(), "forward");
     
     updateBlinkers();
     updateArrows();
@@ -183,7 +183,7 @@ void EventManager::updateArrows()
 {
     switch (node->getLaneDetection())
     {
-    case laneDetection::IDLE:
+    case laneDetection::NONE:
         arrows->turnOnLanes(false, false);
         break;
     case laneDetection::RIGHT:
@@ -221,7 +221,7 @@ void EventManager::changeColors()
     fan2->changeColor(color1.counter);
     cpu->changeColor(color1.counter);
     cpu2->changeColor(color1.counter);
-    listening->changeColor(color1.counter);
+    //listening->changeColor(color1.counter);
     main_window->setStyleSheet(color1.background_array[color1.counter]);
 }
 

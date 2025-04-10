@@ -153,4 +153,4 @@ bool Blinkers::getBlinking() { return blinking; }
  *
  * @return A pointer to the QTimer object.
  */
-QTimer* Blinkers::getToggleTimer() { return toggleTimer; }
+QTimer* Blinkers::getToggleTimer() { return toggle_timer; }

@@ -29,6 +29,7 @@ RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | a
     apt-get update && apt-get install -y \
     python3-colcon-common-extensions \
     ros-jazzy-joy \
+    ros-jazzy-desktop \
     && apt-get clean
 
 # Install rosdep
@@ -54,7 +55,7 @@ RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 WORKDIR /workspace
 
 # Copy project files
-COPY . .
+#COPY . .
 
 # Install ROS2 dependencies
 RUN rosdep install --from-paths . --ignore-src -r -y

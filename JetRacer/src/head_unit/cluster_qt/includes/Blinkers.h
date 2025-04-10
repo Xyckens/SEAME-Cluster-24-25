@@ -24,7 +24,7 @@ class Blinkers : public QWidget
         ~Blinkers() override;
 
         void    turnOnBlinkers(bool on_off);
-        bool    get_blinking(void);
+        bool    getBlinking();
         void    changeColor(int array_index);
         QTimer* getToggleTimer(void);
 

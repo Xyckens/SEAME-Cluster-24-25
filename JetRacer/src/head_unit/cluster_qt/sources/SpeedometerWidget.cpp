@@ -230,7 +230,6 @@ void SpeedometerWidget::setCurrentSpeed(int speed)
  *
  * @return The current speed as an integer.
  */
-int SpeedometerWidget::getCurrentSpeed() const { return currentSpeed; }
 
 /**
  * @brief Destroys the SpeedometerWidget.

@@ -49,6 +49,7 @@ class EventManager : public QWidget
         CPUTempWidget* cpu2;
         TopBar* top;
         TopBar* top2;
+        ListeningWidget* listening;
 
         QPointF                                     mouse_position;
         QTimer*                                     update_timer; // Used to check if a key is still being called
@@ -75,7 +76,8 @@ class EventManager : public QWidget
                      FanSpeedWidget* fan, FanSpeedWidget* fan2,
                      CPUTempWidget* cpu, CPUTempWidget* cpu2, TopBar* top,
                      TopBar* top2, QStackedWidget* stacked_widget,
-                     QWidget* main_window, std::shared_ptr<RosNode> ros_node);
+                     QWidget* main_window, ListeningWidget* listening,
+                     std::shared_ptr<RosNode> ros_node);
         ~EventManager() override;
         QStackedWidget* getStackedWidget();
         void            changeColors();
