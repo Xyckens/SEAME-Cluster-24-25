@@ -1,0 +1,102 @@
+\doxysection{Jet\+Racer/src/peripherals/speed\+\_\+sensor/include/\+Speed\+Sensor\+Node.hpp File Reference}
+\hypertarget{SpeedSensorNode_8hpp}{}\label{SpeedSensorNode_8hpp}\index{JetRacer/src/peripherals/speed\_sensor/include/SpeedSensorNode.hpp@{JetRacer/src/peripherals/speed\_sensor/include/SpeedSensorNode.hpp}}
+{\ttfamily \#include "{}custom\+\_\+msgs/msg/can\+\_\+frame.\+hpp"{}}\newline
+{\ttfamily \#include "{}std\+\_\+msgs/msg/u\+\_\+int8.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$custom\+\_\+msgs/srv/can\+\_\+service.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/client.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/publisher.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/rclcpp.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/subscription.\+hpp$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/msg/u\+\_\+int32.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSpeedSensorNode}{Speed\+Sensor\+Node}}
+\begin{DoxyCompactList}\small\item\em Reads speed from the CAN bus and publishes it into speed\+\_\+readings and rpm\+\_\+readings topics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{SpeedSensorNode_8hpp_a60c13f13dc6cc69494c0552620a53113}{SPEED\+\_\+\+SENSOR\+\_\+\+ID}} = 0x300
+\item 
+constexpr int \mbox{\hyperlink{SpeedSensorNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\+\_\+\+QOS}} = 10
+\item 
+constexpr int \mbox{\hyperlink{SpeedSensorNode_8hpp_aa1fd53ad0014378c1b95c593d19f5b93}{ERROR\+\_\+\+OUTPUT\+\_\+\+FREQ}} = 3000
+\item 
+constexpr int \mbox{\hyperlink{SpeedSensorNode_8hpp_aa27669c98d5781474dbe5b9bc79dff2d}{POLL\+\_\+\+FREQ\+\_\+\+MS}} = 100
+\item 
+constexpr int \mbox{\hyperlink{SpeedSensorNode_8hpp_a392efccf3fd20ea6f4c1069f5064cf25}{NB\+\_\+\+HOLES}} = 36
+\item 
+constexpr float \mbox{\hyperlink{SpeedSensorNode_8hpp_ad1a542f49e80835328bcb7df38ca9e52}{WHEELS\+\_\+\+DIAM\+\_\+M}} = 0.\+065
+\item 
+constexpr float \mbox{\hyperlink{SpeedSensorNode_8hpp_aa8ad054ab303a5d944dbdccf5fd2b68a}{WHEELS\+\_\+\+PERIMETER\+\_\+M}} = M\+\_\+\+PI \texorpdfstring{$\ast$}{*} (\mbox{\hyperlink{SpeedSensorNode_8hpp_ad1a542f49e80835328bcb7df38ca9e52}{WHEELS\+\_\+\+DIAM\+\_\+M}})
+\item 
+constexpr int \mbox{\hyperlink{SpeedSensorNode_8hpp_a7b09cddf7797a44a0b9a328351a554e9}{MS\+\_\+\+TO\+\_\+S}} = 1000
+\item 
+constexpr int \mbox{\hyperlink{SpeedSensorNode_8hpp_a7c53ae42165929fd0968e130a706752d}{M\+\_\+\+TO\+\_\+\+DM}} = 10
+\item 
+constexpr int \mbox{\hyperlink{SpeedSensorNode_8hpp_a27c3e780dfcd58bffb4c3dd8ae1c0b00}{SEC\+\_\+\+TO\+\_\+\+MIN}} = 60
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{SpeedSensorNode_8hpp_aa1fd53ad0014378c1b95c593d19f5b93}\label{SpeedSensorNode_8hpp_aa1fd53ad0014378c1b95c593d19f5b93} 
+\index{SpeedSensorNode.hpp@{SpeedSensorNode.hpp}!ERROR\_OUTPUT\_FREQ@{ERROR\_OUTPUT\_FREQ}}
+\index{ERROR\_OUTPUT\_FREQ@{ERROR\_OUTPUT\_FREQ}!SpeedSensorNode.hpp@{SpeedSensorNode.hpp}}
+\doxysubsubsection{\texorpdfstring{ERROR\_OUTPUT\_FREQ}{ERROR\_OUTPUT\_FREQ}}
+{\footnotesize\ttfamily constexpr int ERROR\+\_\+\+OUTPUT\+\_\+\+FREQ = 3000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{SpeedSensorNode_8hpp_a7c53ae42165929fd0968e130a706752d}\label{SpeedSensorNode_8hpp_a7c53ae42165929fd0968e130a706752d} 
+\index{SpeedSensorNode.hpp@{SpeedSensorNode.hpp}!M\_TO\_DM@{M\_TO\_DM}}
+\index{M\_TO\_DM@{M\_TO\_DM}!SpeedSensorNode.hpp@{SpeedSensorNode.hpp}}
+\doxysubsubsection{\texorpdfstring{M\_TO\_DM}{M\_TO\_DM}}
+{\footnotesize\ttfamily constexpr int M\+\_\+\+TO\+\_\+\+DM = 10\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{SpeedSensorNode_8hpp_a7b09cddf7797a44a0b9a328351a554e9}\label{SpeedSensorNode_8hpp_a7b09cddf7797a44a0b9a328351a554e9} 
+\index{SpeedSensorNode.hpp@{SpeedSensorNode.hpp}!MS\_TO\_S@{MS\_TO\_S}}
+\index{MS\_TO\_S@{MS\_TO\_S}!SpeedSensorNode.hpp@{SpeedSensorNode.hpp}}
+\doxysubsubsection{\texorpdfstring{MS\_TO\_S}{MS\_TO\_S}}
+{\footnotesize\ttfamily constexpr int MS\+\_\+\+TO\+\_\+S = 1000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{SpeedSensorNode_8hpp_a392efccf3fd20ea6f4c1069f5064cf25}\label{SpeedSensorNode_8hpp_a392efccf3fd20ea6f4c1069f5064cf25} 
+\index{SpeedSensorNode.hpp@{SpeedSensorNode.hpp}!NB\_HOLES@{NB\_HOLES}}
+\index{NB\_HOLES@{NB\_HOLES}!SpeedSensorNode.hpp@{SpeedSensorNode.hpp}}
+\doxysubsubsection{\texorpdfstring{NB\_HOLES}{NB\_HOLES}}
+{\footnotesize\ttfamily constexpr int NB\+\_\+\+HOLES = 36\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{SpeedSensorNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}\label{SpeedSensorNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d} 
+\index{SpeedSensorNode.hpp@{SpeedSensorNode.hpp}!NODE\_QOS@{NODE\_QOS}}
+\index{NODE\_QOS@{NODE\_QOS}!SpeedSensorNode.hpp@{SpeedSensorNode.hpp}}
+\doxysubsubsection{\texorpdfstring{NODE\_QOS}{NODE\_QOS}}
+{\footnotesize\ttfamily constexpr int NODE\+\_\+\+QOS = 10\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{SpeedSensorNode_8hpp_aa27669c98d5781474dbe5b9bc79dff2d}\label{SpeedSensorNode_8hpp_aa27669c98d5781474dbe5b9bc79dff2d} 
+\index{SpeedSensorNode.hpp@{SpeedSensorNode.hpp}!POLL\_FREQ\_MS@{POLL\_FREQ\_MS}}
+\index{POLL\_FREQ\_MS@{POLL\_FREQ\_MS}!SpeedSensorNode.hpp@{SpeedSensorNode.hpp}}
+\doxysubsubsection{\texorpdfstring{POLL\_FREQ\_MS}{POLL\_FREQ\_MS}}
+{\footnotesize\ttfamily constexpr int POLL\+\_\+\+FREQ\+\_\+\+MS = 100\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{SpeedSensorNode_8hpp_a27c3e780dfcd58bffb4c3dd8ae1c0b00}\label{SpeedSensorNode_8hpp_a27c3e780dfcd58bffb4c3dd8ae1c0b00} 
+\index{SpeedSensorNode.hpp@{SpeedSensorNode.hpp}!SEC\_TO\_MIN@{SEC\_TO\_MIN}}
+\index{SEC\_TO\_MIN@{SEC\_TO\_MIN}!SpeedSensorNode.hpp@{SpeedSensorNode.hpp}}
+\doxysubsubsection{\texorpdfstring{SEC\_TO\_MIN}{SEC\_TO\_MIN}}
+{\footnotesize\ttfamily constexpr int SEC\+\_\+\+TO\+\_\+\+MIN = 60\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{SpeedSensorNode_8hpp_a60c13f13dc6cc69494c0552620a53113}\label{SpeedSensorNode_8hpp_a60c13f13dc6cc69494c0552620a53113} 
+\index{SpeedSensorNode.hpp@{SpeedSensorNode.hpp}!SPEED\_SENSOR\_ID@{SPEED\_SENSOR\_ID}}
+\index{SPEED\_SENSOR\_ID@{SPEED\_SENSOR\_ID}!SpeedSensorNode.hpp@{SpeedSensorNode.hpp}}
+\doxysubsubsection{\texorpdfstring{SPEED\_SENSOR\_ID}{SPEED\_SENSOR\_ID}}
+{\footnotesize\ttfamily constexpr int SPEED\+\_\+\+SENSOR\+\_\+\+ID = 0x300\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{SpeedSensorNode_8hpp_ad1a542f49e80835328bcb7df38ca9e52}\label{SpeedSensorNode_8hpp_ad1a542f49e80835328bcb7df38ca9e52} 
+\index{SpeedSensorNode.hpp@{SpeedSensorNode.hpp}!WHEELS\_DIAM\_M@{WHEELS\_DIAM\_M}}
+\index{WHEELS\_DIAM\_M@{WHEELS\_DIAM\_M}!SpeedSensorNode.hpp@{SpeedSensorNode.hpp}}
+\doxysubsubsection{\texorpdfstring{WHEELS\_DIAM\_M}{WHEELS\_DIAM\_M}}
+{\footnotesize\ttfamily constexpr float WHEELS\+\_\+\+DIAM\+\_\+M = 0.\+065\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{SpeedSensorNode_8hpp_aa8ad054ab303a5d944dbdccf5fd2b68a}\label{SpeedSensorNode_8hpp_aa8ad054ab303a5d944dbdccf5fd2b68a} 
+\index{SpeedSensorNode.hpp@{SpeedSensorNode.hpp}!WHEELS\_PERIMETER\_M@{WHEELS\_PERIMETER\_M}}
+\index{WHEELS\_PERIMETER\_M@{WHEELS\_PERIMETER\_M}!SpeedSensorNode.hpp@{SpeedSensorNode.hpp}}
+\doxysubsubsection{\texorpdfstring{WHEELS\_PERIMETER\_M}{WHEELS\_PERIMETER\_M}}
+{\footnotesize\ttfamily constexpr float WHEELS\+\_\+\+PERIMETER\+\_\+M = M\+\_\+\+PI \texorpdfstring{$\ast$}{*} (\mbox{\hyperlink{SpeedSensorNode_8hpp_ad1a542f49e80835328bcb7df38ca9e52}{WHEELS\+\_\+\+DIAM\+\_\+M}})\hspace{0.3cm}{\ttfamily [constexpr]}}
+

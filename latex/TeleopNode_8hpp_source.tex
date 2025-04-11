@@ -1,0 +1,39 @@
+\doxysection{Teleop\+Node.\+hpp}
+\hypertarget{TeleopNode_8hpp_source}{}\label{TeleopNode_8hpp_source}\index{JetRacer/src/head\_unit/teleop/include/TeleopNode.hpp@{JetRacer/src/head\_unit/teleop/include/TeleopNode.hpp}}
+\mbox{\hyperlink{TeleopNode_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <geometry\_msgs/msg/twist.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sensor\_msgs/msg/joy.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <std\_msgs/msg/u\_int8.hpp>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205d}{BlinkerState}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205daa5daf7f2ebbba4975d61dab1c40188c7}{IDLE}},}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205da6ac21d67c035e028134e3bab5f49f777}{TURN\_LEFT}},}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205dac5167dbd523b326749655acd6d216239}{TURN\_RIGHT}},}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205da96ba7465a912ca5da455230eac6e8e27}{WARNINGS}},}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{TeleopNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\_QOS}}\ =\ 10;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{TeleopNode_8hpp_a26b29565111dd70bf17ffa0539cf884f}{QUEUE\_DEPTH}}\ =\ 20;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTeleopNode}{TeleopNode}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTeleopNode_a1eee91d4f3a8d2aeed73855011f69380}{TeleopNode}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTeleopNode_ac15acd95bba27193a6c0b18b2b2a2278}{\string~TeleopNode}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ rclcpp::Subscription<sensor\_msgs::msg::Joy>::SharedPtr\ \mbox{\hyperlink{classTeleopNode_a5d20f026e310b225144c0fa07b362b44}{joy\_subscriber\_}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ rclcpp::Publisher<geometry\_msgs::msg::Twist>::SharedPtr\ \mbox{\hyperlink{classTeleopNode_ab9962c30f0bab5cb57d3d28c489344cb}{vel\_publisher\_}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ rclcpp::Publisher<std\_msgs::msg::UInt8>::SharedPtr\ \mbox{\hyperlink{classTeleopNode_a69050d772a72762e80dd3e956500bafb}{blinkers\_publisher\_}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTeleopNode_a2538b04dec3b4f330d7cceb9c5408ef2}{joyCallback}}(sensor\_msgs::msg::Joy::SharedPtr\ joy\_msg);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTeleopNode_a2c1d0d511ce0523fa3376d458e466f9e}{publishBlinkerState}}(sensor\_msgs::msg::Joy::SharedPtr\ joy\_msg);}
+\DoxyCodeLine{00041\ \};}
+
+\end{DoxyCode}

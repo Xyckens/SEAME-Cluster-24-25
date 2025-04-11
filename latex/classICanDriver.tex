@@ -1,0 +1,82 @@
+\doxysection{ICan\+Driver Class Reference}
+\hypertarget{classICanDriver}{}\label{classICanDriver}\index{ICanDriver@{ICanDriver}}
+
+
+Abstract interface for Can operations.  
+
+
+
+
+{\ttfamily \#include $<$ICan\+Driver.\+hpp$>$}
+
+Inheritance diagram for ICan\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classICanDriver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICanDriver_a5f5fb1015e91648ba7d35e7da8deeb3d}{\texorpdfstring{$\sim$}{\string~}\+ICan\+Driver}} ()=default
+\item 
+virtual ssize\+\_\+t \mbox{\hyperlink{classICanDriver_a8fa52d96259d941f192f405efb978f0b}{send\+Message}} (const sockcanpp\+::\+Can\+Message \&msg, bool force\+\_\+extended=false)=0
+\item 
+virtual sockcanpp\+::\+Can\+Message \mbox{\hyperlink{classICanDriver_a00c0e9b2c3b24393c0e470c9f1726723}{read\+Message}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classICanDriver_a6f9fb9952df8f281b8f4792bbe46cc1d}{wait\+For\+Messages}} (sockcanpp\+::milliseconds timeout)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface for Can operations. 
+
+This abstract class provides a hardware abstraction layer for can communication, allowing for dependency injection and easier unit testing. By implementing this interface, concrete classes can provide either real hardware communication or mock implementations for testing.
+
+The interface wraps the essential can operations (read, write ..) into virtual methods that can be overridden by concrete implementations. See \doxylink{classRCanDriver}{RCan\+Driver} for more information about its methods. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classICanDriver_a5f5fb1015e91648ba7d35e7da8deeb3d}\label{classICanDriver_a5f5fb1015e91648ba7d35e7da8deeb3d} 
+\index{ICanDriver@{ICanDriver}!````~ICanDriver@{\texorpdfstring{$\sim$}{\string~}ICanDriver}}
+\index{````~ICanDriver@{\texorpdfstring{$\sim$}{\string~}ICanDriver}!ICanDriver@{ICanDriver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ICanDriver()}{\string~ICanDriver()}}
+{\footnotesize\ttfamily virtual ICan\+Driver\+::\texorpdfstring{$\sim$}{\string~}\+ICan\+Driver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classICanDriver_a00c0e9b2c3b24393c0e470c9f1726723}\label{classICanDriver_a00c0e9b2c3b24393c0e470c9f1726723} 
+\index{ICanDriver@{ICanDriver}!readMessage@{readMessage}}
+\index{readMessage@{readMessage}!ICanDriver@{ICanDriver}}
+\doxysubsubsection{\texorpdfstring{readMessage()}{readMessage()}}
+{\footnotesize\ttfamily virtual sockcanpp\+::\+Can\+Message ICan\+Driver\+::read\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classRCanDriver_a2ce7f5833947c1ff1baf21c9b905bf17}{RCan\+Driver}}.
+
+\Hypertarget{classICanDriver_a8fa52d96259d941f192f405efb978f0b}\label{classICanDriver_a8fa52d96259d941f192f405efb978f0b} 
+\index{ICanDriver@{ICanDriver}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!ICanDriver@{ICanDriver}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily virtual ssize\+\_\+t ICan\+Driver\+::send\+Message (\begin{DoxyParamCaption}\item[{const sockcanpp\+::\+Can\+Message \&}]{msg,  }\item[{bool}]{force\+\_\+extended = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classRCanDriver_ad03fdae4fccbf64a3bd601f823233d53}{RCan\+Driver}}.
+
+\Hypertarget{classICanDriver_a6f9fb9952df8f281b8f4792bbe46cc1d}\label{classICanDriver_a6f9fb9952df8f281b8f4792bbe46cc1d} 
+\index{ICanDriver@{ICanDriver}!waitForMessages@{waitForMessages}}
+\index{waitForMessages@{waitForMessages}!ICanDriver@{ICanDriver}}
+\doxysubsubsection{\texorpdfstring{waitForMessages()}{waitForMessages()}}
+{\footnotesize\ttfamily virtual bool ICan\+Driver\+::wait\+For\+Messages (\begin{DoxyParamCaption}\item[{sockcanpp\+::milliseconds}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classRCanDriver_a657b86352740cc39435066510b3f8a91}{RCan\+Driver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/bus\+\_\+interfaces/can\+\_\+interface/include/\mbox{\hyperlink{ICanDriver_8hpp}{ICan\+Driver.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,22 @@
+\doxysection{APCA9685\+Driver.\+hpp}
+\hypertarget{APCA9685Driver_8hpp_source}{}\label{APCA9685Driver_8hpp_source}\index{JetRacer/src/drivers/pca9685\_driver/include/APCA9685Driver.hpp@{JetRacer/src/drivers/pca9685\_driver/include/APCA9685Driver.hpp}}
+\mbox{\hyperlink{APCA9685Driver_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAPCA9685Driver}{APCA9685Driver}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAPCA9685Driver_a360d7b21c86c7b65901e910cb3bf8449}{APCA9685Driver}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classAPCA9685Driver_a4d0450c4e5187f5cac7ee00850a5a5b6}{\string~APCA9685Driver}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAPCA9685Driver_a96c6e30bd3cb259377a9898529d7714a}{setRegister}}(uint8\_t\ reg,\ uint8\_t\ value)\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAPCA9685Driver_af98bf83a31454613c3c4f9464d8a2e94}{setPWMFrequency}}(\textcolor{keywordtype}{float}\ freq\_hz)\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAPCA9685Driver_a4325ee598d55bcf60b529ef7f9dcf5dd}{setPWMDutyCycle}}(uint8\_t\ channel,\ uint16\_t\ on,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ off)\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAPCA9685Driver_ad5cb20c95f2dc7ca2b8b05dc041bc97b}{setGPIO}}(uint8\_t\ channel,\ \textcolor{keywordtype}{bool}\ on)\ =\ 0;}
+\DoxyCodeLine{00029\ \};}
+
+\end{DoxyCode}

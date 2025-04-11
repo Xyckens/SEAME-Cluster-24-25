@@ -1,0 +1,129 @@
+\doxysection{Speed\+Sensor\+Node Class Reference}
+\hypertarget{classSpeedSensorNode}{}\label{classSpeedSensorNode}\index{SpeedSensorNode@{SpeedSensorNode}}
+
+
+Reads speed from the CAN bus and publishes it into speed\+\_\+readings and rpm\+\_\+readings topics.  
+
+
+
+
+{\ttfamily \#include $<$Speed\+Sensor\+Node.\+hpp$>$}
+
+Inheritance diagram for Speed\+Sensor\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSpeedSensorNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSpeedSensorNode_a425bc28f7413f6b9c447726865f7a7bf}{Speed\+Sensor\+Node}} ()
+\item 
+\mbox{\hyperlink{classSpeedSensorNode_a5badad7cff5c574fe5e24d95056241e2}{\texorpdfstring{$\sim$}{\string~}\+Speed\+Sensor\+Node}} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSpeedSensorNode_a4c528996be099377daaea7eb4362535b}{write\+Speed}} (rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service $>$\+::\+Shared\+Future future)
+\begin{DoxyCompactList}\small\item\em function called upon receiving a CAN\+\_\+frame. reads the can\+\_\+raw topic and publishes the speed in a different topic \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpeedSensorNode_a2a80b22767c767a37a5824a3afd731dc}{read\+Speed}} ()
+\begin{DoxyCompactList}\small\item\em request a read operation on the bus \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ custom\+\_\+msgs\+::msg\+::\+Can\+Frame $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classSpeedSensorNode_a4cf7682c5f2a57d0a516cb165a69f29c}{raw\+\_\+can\+\_\+subscriber\+\_\+}}
+\item 
+rclcpp\+::\+Publisher$<$ std\+\_\+msgs\+::msg\+::\+UInt8 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classSpeedSensorNode_ab5fd0b12a6668bfca10b756a305dc540}{speed\+\_\+publisher\+\_\+}}
+\item 
+rclcpp\+::\+Publisher$<$ std\+\_\+msgs\+::msg\+::\+UInt32 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classSpeedSensorNode_a8e06430c5e61c6c1530a79a5e08cc8c8}{rpm\+\_\+publisher\+\_\+}}
+\item 
+rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classSpeedSensorNode_aae14989b0eda63073209e539f4a5f271}{client\+\_\+}}
+\item 
+rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr \mbox{\hyperlink{classSpeedSensorNode_aa8cabaff49bcd3b93dbd4297f9977a46}{timer\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reads speed from the CAN bus and publishes it into speed\+\_\+readings and rpm\+\_\+readings topics. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSpeedSensorNode_a425bc28f7413f6b9c447726865f7a7bf}\label{classSpeedSensorNode_a425bc28f7413f6b9c447726865f7a7bf} 
+\index{SpeedSensorNode@{SpeedSensorNode}!SpeedSensorNode@{SpeedSensorNode}}
+\index{SpeedSensorNode@{SpeedSensorNode}!SpeedSensorNode@{SpeedSensorNode}}
+\doxysubsubsection{\texorpdfstring{SpeedSensorNode()}{SpeedSensorNode()}}
+{\footnotesize\ttfamily Speed\+Sensor\+Node\+::\+Speed\+Sensor\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classSpeedSensorNode_a5badad7cff5c574fe5e24d95056241e2}\label{classSpeedSensorNode_a5badad7cff5c574fe5e24d95056241e2} 
+\index{SpeedSensorNode@{SpeedSensorNode}!````~SpeedSensorNode@{\texorpdfstring{$\sim$}{\string~}SpeedSensorNode}}
+\index{````~SpeedSensorNode@{\texorpdfstring{$\sim$}{\string~}SpeedSensorNode}!SpeedSensorNode@{SpeedSensorNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SpeedSensorNode()}{\string~SpeedSensorNode()}}
+{\footnotesize\ttfamily Speed\+Sensor\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Speed\+Sensor\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSpeedSensorNode_a2a80b22767c767a37a5824a3afd731dc}\label{classSpeedSensorNode_a2a80b22767c767a37a5824a3afd731dc} 
+\index{SpeedSensorNode@{SpeedSensorNode}!readSpeed@{readSpeed}}
+\index{readSpeed@{readSpeed}!SpeedSensorNode@{SpeedSensorNode}}
+\doxysubsubsection{\texorpdfstring{readSpeed()}{readSpeed()}}
+{\footnotesize\ttfamily void Speed\+Sensor\+Node\+::read\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+request a read operation on the bus 
+
+the response should contain the data requested \Hypertarget{classSpeedSensorNode_a4c528996be099377daaea7eb4362535b}\label{classSpeedSensorNode_a4c528996be099377daaea7eb4362535b} 
+\index{SpeedSensorNode@{SpeedSensorNode}!writeSpeed@{writeSpeed}}
+\index{writeSpeed@{writeSpeed}!SpeedSensorNode@{SpeedSensorNode}}
+\doxysubsubsection{\texorpdfstring{writeSpeed()}{writeSpeed()}}
+{\footnotesize\ttfamily void Speed\+Sensor\+Node\+::write\+Speed (\begin{DoxyParamCaption}\item[{rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service $>$\+::\+Shared\+Future}]{future }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+function called upon receiving a CAN\+\_\+frame. reads the can\+\_\+raw topic and publishes the speed in a different topic 
+
+
+\begin{DoxyParams}{Parameters}
+{\em future} & the future containing the response from the service \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSpeedSensorNode_aae14989b0eda63073209e539f4a5f271}\label{classSpeedSensorNode_aae14989b0eda63073209e539f4a5f271} 
+\index{SpeedSensorNode@{SpeedSensorNode}!client\_@{client\_}}
+\index{client\_@{client\_}!SpeedSensorNode@{SpeedSensorNode}}
+\doxysubsubsection{\texorpdfstring{client\_}{client\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Client$<$custom\+\_\+msgs\+::srv\+::\+Can\+Service$>$\+::\+Shared\+Ptr Speed\+Sensor\+Node\+::client\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSpeedSensorNode_a4cf7682c5f2a57d0a516cb165a69f29c}\label{classSpeedSensorNode_a4cf7682c5f2a57d0a516cb165a69f29c} 
+\index{SpeedSensorNode@{SpeedSensorNode}!raw\_can\_subscriber\_@{raw\_can\_subscriber\_}}
+\index{raw\_can\_subscriber\_@{raw\_can\_subscriber\_}!SpeedSensorNode@{SpeedSensorNode}}
+\doxysubsubsection{\texorpdfstring{raw\_can\_subscriber\_}{raw\_can\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$custom\+\_\+msgs\+::msg\+::\+Can\+Frame$>$\+::\+Shared\+Ptr Speed\+Sensor\+Node\+::raw\+\_\+can\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSpeedSensorNode_a8e06430c5e61c6c1530a79a5e08cc8c8}\label{classSpeedSensorNode_a8e06430c5e61c6c1530a79a5e08cc8c8} 
+\index{SpeedSensorNode@{SpeedSensorNode}!rpm\_publisher\_@{rpm\_publisher\_}}
+\index{rpm\_publisher\_@{rpm\_publisher\_}!SpeedSensorNode@{SpeedSensorNode}}
+\doxysubsubsection{\texorpdfstring{rpm\_publisher\_}{rpm\_publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$std\+\_\+msgs\+::msg\+::\+UInt32$>$\+::\+Shared\+Ptr Speed\+Sensor\+Node\+::rpm\+\_\+publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSpeedSensorNode_ab5fd0b12a6668bfca10b756a305dc540}\label{classSpeedSensorNode_ab5fd0b12a6668bfca10b756a305dc540} 
+\index{SpeedSensorNode@{SpeedSensorNode}!speed\_publisher\_@{speed\_publisher\_}}
+\index{speed\_publisher\_@{speed\_publisher\_}!SpeedSensorNode@{SpeedSensorNode}}
+\doxysubsubsection{\texorpdfstring{speed\_publisher\_}{speed\_publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$std\+\_\+msgs\+::msg\+::\+UInt8$>$\+::\+Shared\+Ptr Speed\+Sensor\+Node\+::speed\+\_\+publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSpeedSensorNode_aa8cabaff49bcd3b93dbd4297f9977a46}\label{classSpeedSensorNode_aa8cabaff49bcd3b93dbd4297f9977a46} 
+\index{SpeedSensorNode@{SpeedSensorNode}!timer\_@{timer\_}}
+\index{timer\_@{timer\_}!SpeedSensorNode@{SpeedSensorNode}}
+\doxysubsubsection{\texorpdfstring{timer\_}{timer\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr Speed\+Sensor\+Node\+::timer\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/peripherals/speed\+\_\+sensor/include/\mbox{\hyperlink{SpeedSensorNode_8hpp}{Speed\+Sensor\+Node.\+hpp}}\item 
+Jet\+Racer/src/peripherals/speed\+\_\+sensor/src/\mbox{\hyperlink{SpeedSensorNode_8cpp}{Speed\+Sensor\+Node.\+cpp}}\end{DoxyCompactItemize}

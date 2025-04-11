@@ -1,0 +1,102 @@
+\doxysection{APCA9685\+Driver Class Reference}
+\hypertarget{classAPCA9685Driver}{}\label{classAPCA9685Driver}\index{APCA9685Driver@{APCA9685Driver}}
+
+
+Abstract interface defining interactions with the PCA9685.  
+
+
+
+
+{\ttfamily \#include $<$APCA9685\+Driver.\+hpp$>$}
+
+Inheritance diagram for APCA9685\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAPCA9685Driver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAPCA9685Driver_a360d7b21c86c7b65901e910cb3bf8449}{APCA9685\+Driver}} ()=default
+\item 
+virtual \mbox{\hyperlink{classAPCA9685Driver_a4d0450c4e5187f5cac7ee00850a5a5b6}{\texorpdfstring{$\sim$}{\string~}\+APCA9685\+Driver}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classAPCA9685Driver_a96c6e30bd3cb259377a9898529d7714a}{set\+Register}} (uint8\+\_\+t reg, uint8\+\_\+t value)=0
+\item 
+virtual void \mbox{\hyperlink{classAPCA9685Driver_af98bf83a31454613c3c4f9464d8a2e94}{set\+PWMFrequency}} (float freq\+\_\+hz)=0
+\item 
+virtual void \mbox{\hyperlink{classAPCA9685Driver_a4325ee598d55bcf60b529ef7f9dcf5dd}{set\+PWMDuty\+Cycle}} (uint8\+\_\+t channel, uint16\+\_\+t on, uint16\+\_\+t off)=0
+\item 
+virtual void \mbox{\hyperlink{classAPCA9685Driver_ad5cb20c95f2dc7ca2b8b05dc041bc97b}{set\+GPIO}} (uint8\+\_\+t channel, bool on)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface defining interactions with the PCA9685. 
+
+This abstract class provides a hardware abstraction layer for pca9685 communication, allowing for dependency injection and easier unit testing. By implementing this interface, concrete classes can provide either real hardware communication or mock implementations for testing.
+
+The interface wraps the essential PCA9685 operations into virtual methods that can be overridden by concrete implementations. See \doxylink{classPCA9685Driver}{PCA9685\+Driver} for more information about its methods 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classAPCA9685Driver_a360d7b21c86c7b65901e910cb3bf8449}\label{classAPCA9685Driver_a360d7b21c86c7b65901e910cb3bf8449} 
+\index{APCA9685Driver@{APCA9685Driver}!APCA9685Driver@{APCA9685Driver}}
+\index{APCA9685Driver@{APCA9685Driver}!APCA9685Driver@{APCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{APCA9685Driver()}{APCA9685Driver()}}
+{\footnotesize\ttfamily APCA9685\+Driver\+::\+APCA9685\+Driver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classAPCA9685Driver_a4d0450c4e5187f5cac7ee00850a5a5b6}\label{classAPCA9685Driver_a4d0450c4e5187f5cac7ee00850a5a5b6} 
+\index{APCA9685Driver@{APCA9685Driver}!````~APCA9685Driver@{\texorpdfstring{$\sim$}{\string~}APCA9685Driver}}
+\index{````~APCA9685Driver@{\texorpdfstring{$\sim$}{\string~}APCA9685Driver}!APCA9685Driver@{APCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}APCA9685Driver()}{\string~APCA9685Driver()}}
+{\footnotesize\ttfamily virtual APCA9685\+Driver\+::\texorpdfstring{$\sim$}{\string~}\+APCA9685\+Driver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAPCA9685Driver_ad5cb20c95f2dc7ca2b8b05dc041bc97b}\label{classAPCA9685Driver_ad5cb20c95f2dc7ca2b8b05dc041bc97b} 
+\index{APCA9685Driver@{APCA9685Driver}!setGPIO@{setGPIO}}
+\index{setGPIO@{setGPIO}!APCA9685Driver@{APCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{setGPIO()}{setGPIO()}}
+{\footnotesize\ttfamily virtual void APCA9685\+Driver\+::set\+GPIO (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{bool}]{on }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classPCA9685Driver_ab5b29700d43dfae89f93a191aa882455}{PCA9685\+Driver}}.
+
+\Hypertarget{classAPCA9685Driver_a4325ee598d55bcf60b529ef7f9dcf5dd}\label{classAPCA9685Driver_a4325ee598d55bcf60b529ef7f9dcf5dd} 
+\index{APCA9685Driver@{APCA9685Driver}!setPWMDutyCycle@{setPWMDutyCycle}}
+\index{setPWMDutyCycle@{setPWMDutyCycle}!APCA9685Driver@{APCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{setPWMDutyCycle()}{setPWMDutyCycle()}}
+{\footnotesize\ttfamily virtual void APCA9685\+Driver\+::set\+PWMDuty\+Cycle (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{uint16\+\_\+t}]{on,  }\item[{uint16\+\_\+t}]{off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classPCA9685Driver_adf0e52931778f32dfd8b53b5dbd19c43}{PCA9685\+Driver}}.
+
+\Hypertarget{classAPCA9685Driver_af98bf83a31454613c3c4f9464d8a2e94}\label{classAPCA9685Driver_af98bf83a31454613c3c4f9464d8a2e94} 
+\index{APCA9685Driver@{APCA9685Driver}!setPWMFrequency@{setPWMFrequency}}
+\index{setPWMFrequency@{setPWMFrequency}!APCA9685Driver@{APCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{setPWMFrequency()}{setPWMFrequency()}}
+{\footnotesize\ttfamily virtual void APCA9685\+Driver\+::set\+PWMFrequency (\begin{DoxyParamCaption}\item[{float}]{freq\+\_\+hz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classPCA9685Driver_a4cfa38b52bde77dc5ae8c863cb78b073}{PCA9685\+Driver}}.
+
+\Hypertarget{classAPCA9685Driver_a96c6e30bd3cb259377a9898529d7714a}\label{classAPCA9685Driver_a96c6e30bd3cb259377a9898529d7714a} 
+\index{APCA9685Driver@{APCA9685Driver}!setRegister@{setRegister}}
+\index{setRegister@{setRegister}!APCA9685Driver@{APCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{setRegister()}{setRegister()}}
+{\footnotesize\ttfamily virtual void APCA9685\+Driver\+::set\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classPCA9685Driver_a7f82753c915244305bf42596414f5421}{PCA9685\+Driver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/drivers/pca9685\+\_\+driver/include/\mbox{\hyperlink{APCA9685Driver_8hpp}{APCA9685\+Driver.\+hpp}}\end{DoxyCompactItemize}

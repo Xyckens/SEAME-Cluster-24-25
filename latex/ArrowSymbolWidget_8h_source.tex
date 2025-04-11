@@ -1,0 +1,58 @@
+\doxysection{Arrow\+Symbol\+Widget.\+h}
+\hypertarget{ArrowSymbolWidget_8h_source}{}\label{ArrowSymbolWidget_8h_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/ArrowSymbolWidget.h@{JetRacer/src/head\_unit/cluster\_qt/includes/ArrowSymbolWidget.h}}
+\mbox{\hyperlink{ArrowSymbolWidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ARROWSYMBOLWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ARROWSYMBOLWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QPainterPath>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}\ \ \textcolor{comment}{//\ Include\ for\ key\ events}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Colors_8h}{Colors.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classArrowSymbolWidget}{ArrowSymbolWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArrowSymbolWidget_ad200da124a23a6730ea714ed8a3fe18b}{ArrowSymbolWidget}}(QWidget*\ parent\ =\ \textcolor{keyword}{nullptr},\ std::string\ input\ =\ \textcolor{stringliteral}{"{}none"{}},\ \textcolor{keywordtype}{int}\ x\ =\ 0,\ \textcolor{keywordtype}{int}\ y\ =\ 0,\ \textcolor{keywordtype}{int}\ width\ =\ 0,\ \textcolor{keywordtype}{int}\ height\ =\ 0);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArrowSymbolWidget_aa584d109f10b2ef16ce5ad603cb3c2ce}{\string~ArrowSymbolWidget}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_a93be24dd95aed194eaaa8cedd6472715}{setDrawVerticalArrows}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_ac199f0a51e5341cf62c8261dba0b543d}{setdrawLeftUpperCurve}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_a7db625055b67b69d256fc0cdb03b4c64}{setdrawRightUpperCurve}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_a775cafe2f5e1bfac0ecfcc4e32f2cb0a}{setdrawLeftLowerCurve}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_a4f8d084ed2d57c35612bd2111e57f489}{setdrawRightLowerCurve}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_a886feaf79654bf7f13e50322be67f0dc}{changeColor}}(\textcolor{keywordtype}{int}\ \ array\_index);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_afa29f9cf216ce670a3b0c7048ab22e61}{changeDirection}}(\textcolor{keywordtype}{int}\ movement\_key);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classArrowSymbolWidget_a2c451e3e104da59d84088f823ae9aa2b}{main\_color}};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classArrowSymbolWidget_a8d6b11e56e193c3c96b46a2a2d3ef5c9}{accent\_color}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classArrowSymbolWidget_ae12c492e1c15187568a0be68353d35b5}{alphabet\_color}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArrowSymbolWidget_ad200da124a23a6730ea714ed8a3fe18b}{ArrowSymbolWidget}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_ac66b72baca295a3c4a44f9390f69a6ac}{paintEvent}}(QPaintEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_a80c02146261d5b2787a318b9f577e65c}{drawVerticalArrows}}(QPainter\&\ painter,\ std::string\ color);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_aedaa634a9e86fc612ff6432288238b2c}{drawLeftUpperCurve}}(QPainter\&\ painter,\ std::string\ color);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_a1b4383e81ce183a259cf4848c48aa362}{drawRightUpperCurve}}(QPainter\&\ painter,\ std::string\ color);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_a3393a3d4f850089bff39f782fe784b76}{drawLeftLowerCurve}}(QPainter\&\ painter,\ std::string\ color);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_a2f34a53f95f9a68dd32ffc9e7da761ec}{drawRightLowerCurve}}(QPainter\&\ painter,\ std::string\ color);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArrowSymbolWidget_a7a9624823ac18293da8565dc66d9d630}{drawArrowhead}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{double}\ angle,\ \textcolor{keywordtype}{int}\ size,\ std::string\ color);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classArrowSymbolWidget_a37846d2af564835430f67ee9f764ddd0}{m\_drawVerticalArrows}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classArrowSymbolWidget_a7a1fb78d25e5bcd611604d136ac2baf6}{m\_drawLeftUpperCurve}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classArrowSymbolWidget_aeb643fcd507f7c2a26e3a18a3e2f76a4}{m\_drawRightUpperCurve}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classArrowSymbolWidget_ac175abb66c378c27a435926a1ad5b0f3}{m\_drawLeftLowerCurve}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classArrowSymbolWidget_a776960f7e6ee941912abc65cc9b5f76b}{m\_drawRightLowerCurve}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classArrowSymbolWidget_abefd83951f860c9f69db4b02bbeec59e}{m\_greenLU}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classArrowSymbolWidget_ae2420e53b59847d0d392b0412573588b}{m\_greenRU}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classArrowSymbolWidget_a51422965ff4a54f490489c0999cf5291}{m\_greenLL}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classArrowSymbolWidget_a07b6a43051d4de413e837182859dee0d}{m\_greenRL}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classArrowSymbolWidget_a3f580998a09d0b81567db3e0099e903b}{m\_greenV}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classArrowSymbolWidget_a0c9ccd1a915520926c30df104a1efe80}{color1}};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ARROWSYMBOLWIDGET\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,290 @@
+\doxysection{Arrow\+Symbol\+Widget Class Reference}
+\hypertarget{classArrowSymbolWidget}{}\label{classArrowSymbolWidget}\index{ArrowSymbolWidget@{ArrowSymbolWidget}}
+
+
+{\ttfamily \#include $<$Arrow\+Symbol\+Widget.\+h$>$}
+
+Inheritance diagram for Arrow\+Symbol\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classArrowSymbolWidget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArrowSymbolWidget_a42b261c30b6732943952d7ebbe7e5e46}{Arrow\+Symbol\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, std\+::string input="{}none"{}, int x=0, int y=0, int width=0, int height=0)
+\item 
+\mbox{\hyperlink{classArrowSymbolWidget_aa584d109f10b2ef16ce5ad603cb3c2ce}{\texorpdfstring{$\sim$}{\string~}\+Arrow\+Symbol\+Widget}} () override
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_a93be24dd95aed194eaaa8cedd6472715}{set\+Draw\+Vertical\+Arrows}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_ac199f0a51e5341cf62c8261dba0b543d}{setdraw\+Left\+Upper\+Curve}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_a7db625055b67b69d256fc0cdb03b4c64}{setdraw\+Right\+Upper\+Curve}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_a775cafe2f5e1bfac0ecfcc4e32f2cb0a}{setdraw\+Left\+Lower\+Curve}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_a4f8d084ed2d57c35612bd2111e57f489}{setdraw\+Right\+Lower\+Curve}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_a886feaf79654bf7f13e50322be67f0dc}{change\+Color}} (int array\+\_\+index)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_afa29f9cf216ce670a3b0c7048ab22e61}{change\+Direction}} (int movement\+\_\+key)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{classArrowSymbolWidget_a2c451e3e104da59d84088f823ae9aa2b}{main\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classArrowSymbolWidget_a8d6b11e56e193c3c96b46a2a2d3ef5c9}{accent\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classArrowSymbolWidget_ae12c492e1c15187568a0be68353d35b5}{alphabet\+\_\+color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArrowSymbolWidget_ad200da124a23a6730ea714ed8a3fe18b}{Arrow\+Symbol\+Widget}} ()
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_ac66b72baca295a3c4a44f9390f69a6ac}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_a80c02146261d5b2787a318b9f577e65c}{draw\+Vertical\+Arrows}} (QPainter \&painter, std\+::string color)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_aedaa634a9e86fc612ff6432288238b2c}{draw\+Left\+Upper\+Curve}} (QPainter \&painter, std\+::string color)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_a1b4383e81ce183a259cf4848c48aa362}{draw\+Right\+Upper\+Curve}} (QPainter \&painter, std\+::string color)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_a3393a3d4f850089bff39f782fe784b76}{draw\+Left\+Lower\+Curve}} (QPainter \&painter, std\+::string color)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_a2f34a53f95f9a68dd32ffc9e7da761ec}{draw\+Right\+Lower\+Curve}} (QPainter \&painter, std\+::string color)
+\item 
+void \mbox{\hyperlink{classArrowSymbolWidget_a7a9624823ac18293da8565dc66d9d630}{draw\+Arrowhead}} (QPainter \&painter, int x, int y, double angle, int size, std\+::string color)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classArrowSymbolWidget_a37846d2af564835430f67ee9f764ddd0}{m\+\_\+draw\+Vertical\+Arrows}}
+\item 
+bool \mbox{\hyperlink{classArrowSymbolWidget_a7a1fb78d25e5bcd611604d136ac2baf6}{m\+\_\+draw\+Left\+Upper\+Curve}}
+\item 
+bool \mbox{\hyperlink{classArrowSymbolWidget_aeb643fcd507f7c2a26e3a18a3e2f76a4}{m\+\_\+draw\+Right\+Upper\+Curve}}
+\item 
+bool \mbox{\hyperlink{classArrowSymbolWidget_ac175abb66c378c27a435926a1ad5b0f3}{m\+\_\+draw\+Left\+Lower\+Curve}}
+\item 
+bool \mbox{\hyperlink{classArrowSymbolWidget_a776960f7e6ee941912abc65cc9b5f76b}{m\+\_\+draw\+Right\+Lower\+Curve}}
+\item 
+bool \mbox{\hyperlink{classArrowSymbolWidget_abefd83951f860c9f69db4b02bbeec59e}{m\+\_\+green\+LU}}
+\item 
+bool \mbox{\hyperlink{classArrowSymbolWidget_ae2420e53b59847d0d392b0412573588b}{m\+\_\+green\+RU}}
+\item 
+bool \mbox{\hyperlink{classArrowSymbolWidget_a51422965ff4a54f490489c0999cf5291}{m\+\_\+green\+LL}}
+\item 
+bool \mbox{\hyperlink{classArrowSymbolWidget_a07b6a43051d4de413e837182859dee0d}{m\+\_\+green\+RL}}
+\item 
+bool \mbox{\hyperlink{classArrowSymbolWidget_a3f580998a09d0b81567db3e0099e903b}{m\+\_\+greenV}}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classArrowSymbolWidget_a0c9ccd1a915520926c30df104a1efe80}{color1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classArrowSymbolWidget_a42b261c30b6732943952d7ebbe7e5e46}\label{classArrowSymbolWidget_a42b261c30b6732943952d7ebbe7e5e46} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{ArrowSymbolWidget()}{ArrowSymbolWidget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Arrow\+Symbol\+Widget\+::\+Arrow\+Symbol\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr},  }\item[{std\+::string}]{input = {\ttfamily "{}none"{}},  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{classArrowSymbolWidget_aa584d109f10b2ef16ce5ad603cb3c2ce}\label{classArrowSymbolWidget_aa584d109f10b2ef16ce5ad603cb3c2ce} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!````~ArrowSymbolWidget@{\texorpdfstring{$\sim$}{\string~}ArrowSymbolWidget}}
+\index{````~ArrowSymbolWidget@{\texorpdfstring{$\sim$}{\string~}ArrowSymbolWidget}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ArrowSymbolWidget()}{\string~ArrowSymbolWidget()}}
+{\footnotesize\ttfamily Arrow\+Symbol\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+Arrow\+Symbol\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+\Hypertarget{classArrowSymbolWidget_ad200da124a23a6730ea714ed8a3fe18b}\label{classArrowSymbolWidget_ad200da124a23a6730ea714ed8a3fe18b} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{ArrowSymbolWidget()}{ArrowSymbolWidget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Arrow\+Symbol\+Widget\+::\+Arrow\+Symbol\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classArrowSymbolWidget_a886feaf79654bf7f13e50322be67f0dc}\label{classArrowSymbolWidget_a886feaf79654bf7f13e50322be67f0dc} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::change\+Color (\begin{DoxyParamCaption}\item[{int}]{array\+\_\+index }\end{DoxyParamCaption})}
+
+\Hypertarget{classArrowSymbolWidget_afa29f9cf216ce670a3b0c7048ab22e61}\label{classArrowSymbolWidget_afa29f9cf216ce670a3b0c7048ab22e61} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!changeDirection@{changeDirection}}
+\index{changeDirection@{changeDirection}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{changeDirection()}{changeDirection()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::change\+Direction (\begin{DoxyParamCaption}\item[{int}]{movement\+\_\+key }\end{DoxyParamCaption})}
+
+\Hypertarget{classArrowSymbolWidget_a7a9624823ac18293da8565dc66d9d630}\label{classArrowSymbolWidget_a7a9624823ac18293da8565dc66d9d630} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!drawArrowhead@{drawArrowhead}}
+\index{drawArrowhead@{drawArrowhead}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{drawArrowhead()}{drawArrowhead()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::draw\+Arrowhead (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{angle,  }\item[{int}]{size,  }\item[{std\+::string}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a3393a3d4f850089bff39f782fe784b76}\label{classArrowSymbolWidget_a3393a3d4f850089bff39f782fe784b76} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!drawLeftLowerCurve@{drawLeftLowerCurve}}
+\index{drawLeftLowerCurve@{drawLeftLowerCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{drawLeftLowerCurve()}{drawLeftLowerCurve()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::draw\+Left\+Lower\+Curve (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{std\+::string}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_aedaa634a9e86fc612ff6432288238b2c}\label{classArrowSymbolWidget_aedaa634a9e86fc612ff6432288238b2c} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!drawLeftUpperCurve@{drawLeftUpperCurve}}
+\index{drawLeftUpperCurve@{drawLeftUpperCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{drawLeftUpperCurve()}{drawLeftUpperCurve()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::draw\+Left\+Upper\+Curve (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{std\+::string}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a2f34a53f95f9a68dd32ffc9e7da761ec}\label{classArrowSymbolWidget_a2f34a53f95f9a68dd32ffc9e7da761ec} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!drawRightLowerCurve@{drawRightLowerCurve}}
+\index{drawRightLowerCurve@{drawRightLowerCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{drawRightLowerCurve()}{drawRightLowerCurve()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::draw\+Right\+Lower\+Curve (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{std\+::string}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a1b4383e81ce183a259cf4848c48aa362}\label{classArrowSymbolWidget_a1b4383e81ce183a259cf4848c48aa362} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!drawRightUpperCurve@{drawRightUpperCurve}}
+\index{drawRightUpperCurve@{drawRightUpperCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{drawRightUpperCurve()}{drawRightUpperCurve()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::draw\+Right\+Upper\+Curve (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{std\+::string}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a80c02146261d5b2787a318b9f577e65c}\label{classArrowSymbolWidget_a80c02146261d5b2787a318b9f577e65c} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!drawVerticalArrows@{drawVerticalArrows}}
+\index{drawVerticalArrows@{drawVerticalArrows}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{drawVerticalArrows()}{drawVerticalArrows()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::draw\+Vertical\+Arrows (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{std\+::string}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_ac66b72baca295a3c4a44f9390f69a6ac}\label{classArrowSymbolWidget_ac66b72baca295a3c4a44f9390f69a6ac} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{classArrowSymbolWidget_a775cafe2f5e1bfac0ecfcc4e32f2cb0a}\label{classArrowSymbolWidget_a775cafe2f5e1bfac0ecfcc4e32f2cb0a} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!setdrawLeftLowerCurve@{setdrawLeftLowerCurve}}
+\index{setdrawLeftLowerCurve@{setdrawLeftLowerCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{setdrawLeftLowerCurve()}{setdrawLeftLowerCurve()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::setdraw\+Left\+Lower\+Curve (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+\Hypertarget{classArrowSymbolWidget_ac199f0a51e5341cf62c8261dba0b543d}\label{classArrowSymbolWidget_ac199f0a51e5341cf62c8261dba0b543d} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!setdrawLeftUpperCurve@{setdrawLeftUpperCurve}}
+\index{setdrawLeftUpperCurve@{setdrawLeftUpperCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{setdrawLeftUpperCurve()}{setdrawLeftUpperCurve()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::setdraw\+Left\+Upper\+Curve (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+\Hypertarget{classArrowSymbolWidget_a4f8d084ed2d57c35612bd2111e57f489}\label{classArrowSymbolWidget_a4f8d084ed2d57c35612bd2111e57f489} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!setdrawRightLowerCurve@{setdrawRightLowerCurve}}
+\index{setdrawRightLowerCurve@{setdrawRightLowerCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{setdrawRightLowerCurve()}{setdrawRightLowerCurve()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::setdraw\+Right\+Lower\+Curve (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+\Hypertarget{classArrowSymbolWidget_a7db625055b67b69d256fc0cdb03b4c64}\label{classArrowSymbolWidget_a7db625055b67b69d256fc0cdb03b4c64} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!setdrawRightUpperCurve@{setdrawRightUpperCurve}}
+\index{setdrawRightUpperCurve@{setdrawRightUpperCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{setdrawRightUpperCurve()}{setdrawRightUpperCurve()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::setdraw\+Right\+Upper\+Curve (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+\Hypertarget{classArrowSymbolWidget_a93be24dd95aed194eaaa8cedd6472715}\label{classArrowSymbolWidget_a93be24dd95aed194eaaa8cedd6472715} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!setDrawVerticalArrows@{setDrawVerticalArrows}}
+\index{setDrawVerticalArrows@{setDrawVerticalArrows}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{setDrawVerticalArrows()}{setDrawVerticalArrows()}}
+{\footnotesize\ttfamily void Arrow\+Symbol\+Widget\+::set\+Draw\+Vertical\+Arrows (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classArrowSymbolWidget_a8d6b11e56e193c3c96b46a2a2d3ef5c9}\label{classArrowSymbolWidget_a8d6b11e56e193c3c96b46a2a2d3ef5c9} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!accent\_color@{accent\_color}}
+\index{accent\_color@{accent\_color}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{accent\_color}{accent\_color}}
+{\footnotesize\ttfamily QColor Arrow\+Symbol\+Widget\+::accent\+\_\+color}
+
+\Hypertarget{classArrowSymbolWidget_ae12c492e1c15187568a0be68353d35b5}\label{classArrowSymbolWidget_ae12c492e1c15187568a0be68353d35b5} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!alphabet\_color@{alphabet\_color}}
+\index{alphabet\_color@{alphabet\_color}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{alphabet\_color}{alphabet\_color}}
+{\footnotesize\ttfamily QColor Arrow\+Symbol\+Widget\+::alphabet\+\_\+color}
+
+\Hypertarget{classArrowSymbolWidget_a0c9ccd1a915520926c30df104a1efe80}\label{classArrowSymbolWidget_a0c9ccd1a915520926c30df104a1efe80} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!color1@{color1}}
+\index{color1@{color1}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{color1}{color1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Arrow\+Symbol\+Widget\+::color1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_ac175abb66c378c27a435926a1ad5b0f3}\label{classArrowSymbolWidget_ac175abb66c378c27a435926a1ad5b0f3} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!m\_drawLeftLowerCurve@{m\_drawLeftLowerCurve}}
+\index{m\_drawLeftLowerCurve@{m\_drawLeftLowerCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{m\_drawLeftLowerCurve}{m\_drawLeftLowerCurve}}
+{\footnotesize\ttfamily bool Arrow\+Symbol\+Widget\+::m\+\_\+draw\+Left\+Lower\+Curve\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a7a1fb78d25e5bcd611604d136ac2baf6}\label{classArrowSymbolWidget_a7a1fb78d25e5bcd611604d136ac2baf6} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!m\_drawLeftUpperCurve@{m\_drawLeftUpperCurve}}
+\index{m\_drawLeftUpperCurve@{m\_drawLeftUpperCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{m\_drawLeftUpperCurve}{m\_drawLeftUpperCurve}}
+{\footnotesize\ttfamily bool Arrow\+Symbol\+Widget\+::m\+\_\+draw\+Left\+Upper\+Curve\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a776960f7e6ee941912abc65cc9b5f76b}\label{classArrowSymbolWidget_a776960f7e6ee941912abc65cc9b5f76b} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!m\_drawRightLowerCurve@{m\_drawRightLowerCurve}}
+\index{m\_drawRightLowerCurve@{m\_drawRightLowerCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{m\_drawRightLowerCurve}{m\_drawRightLowerCurve}}
+{\footnotesize\ttfamily bool Arrow\+Symbol\+Widget\+::m\+\_\+draw\+Right\+Lower\+Curve\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_aeb643fcd507f7c2a26e3a18a3e2f76a4}\label{classArrowSymbolWidget_aeb643fcd507f7c2a26e3a18a3e2f76a4} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!m\_drawRightUpperCurve@{m\_drawRightUpperCurve}}
+\index{m\_drawRightUpperCurve@{m\_drawRightUpperCurve}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{m\_drawRightUpperCurve}{m\_drawRightUpperCurve}}
+{\footnotesize\ttfamily bool Arrow\+Symbol\+Widget\+::m\+\_\+draw\+Right\+Upper\+Curve\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a37846d2af564835430f67ee9f764ddd0}\label{classArrowSymbolWidget_a37846d2af564835430f67ee9f764ddd0} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!m\_drawVerticalArrows@{m\_drawVerticalArrows}}
+\index{m\_drawVerticalArrows@{m\_drawVerticalArrows}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{m\_drawVerticalArrows}{m\_drawVerticalArrows}}
+{\footnotesize\ttfamily bool Arrow\+Symbol\+Widget\+::m\+\_\+draw\+Vertical\+Arrows\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a51422965ff4a54f490489c0999cf5291}\label{classArrowSymbolWidget_a51422965ff4a54f490489c0999cf5291} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!m\_greenLL@{m\_greenLL}}
+\index{m\_greenLL@{m\_greenLL}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{m\_greenLL}{m\_greenLL}}
+{\footnotesize\ttfamily bool Arrow\+Symbol\+Widget\+::m\+\_\+green\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_abefd83951f860c9f69db4b02bbeec59e}\label{classArrowSymbolWidget_abefd83951f860c9f69db4b02bbeec59e} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!m\_greenLU@{m\_greenLU}}
+\index{m\_greenLU@{m\_greenLU}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{m\_greenLU}{m\_greenLU}}
+{\footnotesize\ttfamily bool Arrow\+Symbol\+Widget\+::m\+\_\+green\+LU\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a07b6a43051d4de413e837182859dee0d}\label{classArrowSymbolWidget_a07b6a43051d4de413e837182859dee0d} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!m\_greenRL@{m\_greenRL}}
+\index{m\_greenRL@{m\_greenRL}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{m\_greenRL}{m\_greenRL}}
+{\footnotesize\ttfamily bool Arrow\+Symbol\+Widget\+::m\+\_\+green\+RL\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_ae2420e53b59847d0d392b0412573588b}\label{classArrowSymbolWidget_ae2420e53b59847d0d392b0412573588b} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!m\_greenRU@{m\_greenRU}}
+\index{m\_greenRU@{m\_greenRU}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{m\_greenRU}{m\_greenRU}}
+{\footnotesize\ttfamily bool Arrow\+Symbol\+Widget\+::m\+\_\+green\+RU\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a3f580998a09d0b81567db3e0099e903b}\label{classArrowSymbolWidget_a3f580998a09d0b81567db3e0099e903b} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!m\_greenV@{m\_greenV}}
+\index{m\_greenV@{m\_greenV}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{m\_greenV}{m\_greenV}}
+{\footnotesize\ttfamily bool Arrow\+Symbol\+Widget\+::m\+\_\+greenV\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classArrowSymbolWidget_a2c451e3e104da59d84088f823ae9aa2b}\label{classArrowSymbolWidget_a2c451e3e104da59d84088f823ae9aa2b} 
+\index{ArrowSymbolWidget@{ArrowSymbolWidget}!main\_color@{main\_color}}
+\index{main\_color@{main\_color}!ArrowSymbolWidget@{ArrowSymbolWidget}}
+\doxysubsubsection{\texorpdfstring{main\_color}{main\_color}}
+{\footnotesize\ttfamily QColor Arrow\+Symbol\+Widget\+::main\+\_\+color}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{ArrowSymbolWidget_8h}{Arrow\+Symbol\+Widget.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{ArrowSymbolWidget_8cpp}{Arrow\+Symbol\+Widget.\+cpp}}\end{DoxyCompactItemize}

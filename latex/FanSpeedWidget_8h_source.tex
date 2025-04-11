@@ -1,0 +1,43 @@
+\doxysection{Fan\+Speed\+Widget.\+h}
+\hypertarget{FanSpeedWidget_8h_source}{}\label{FanSpeedWidget_8h_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/FanSpeedWidget.h@{JetRacer/src/head\_unit/cluster\_qt/includes/FanSpeedWidget.h}}
+\mbox{\hyperlink{FanSpeedWidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FANSPEEDWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FANSPEEDWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}\ \ \textcolor{comment}{//\ Include\ for\ key\ events}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Colors_8h}{Colors.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFanSpeedWidget}{FanSpeedWidget}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFanSpeedWidget}{FanSpeedWidget}}(QWidget*\ parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ x\ =\ 0,\ \textcolor{keywordtype}{int}\ y\ =\ 0,\ \textcolor{keywordtype}{int}\ width\ =\ 0,\ \textcolor{keywordtype}{int}\ height\ =\ 0);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFanSpeedWidget_a4db8028a2dcb14518d43051ea3644953}{\string~FanSpeedWidget}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFanSpeedWidget_a58e9d90f5e8095c2bb910b08a8853226}{changeColor}}(\textcolor{keywordtype}{int}\ array\_index);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classFanSpeedWidget_a9e7619e8d0a230e6fda0cdf5473b2887}{main\_color}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classFanSpeedWidget_af291a67971a00843a3e64fb33f8a33f6}{accent\_color}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classFanSpeedWidget_a16498a4403c3d75da15298f49abe9522}{alphabet\_color}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFanSpeedWidget_a3d4439d79d8c73f63434a19dc3c95b5a}{paintEvent}}(QPaintEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFanSpeedWidget_a9e7e8d29684c5978cf2a1d29f89ebeca}{keyPressEvent}}(QKeyEvent*\ event)\ \textcolor{keyword}{override};\ \ \textcolor{comment}{//\ Added\ keyPressEvent}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFanSpeedWidget_ac076242595731364613a4713b8d3eba0}{currentSpeed}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classFanSpeedWidget_a14d5160e0c47c0c5d68a2ff76ac09dd5}{color1}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ QPixmap\ \mbox{\hyperlink{classFanSpeedWidget_afa22f84214c9854c3e1c1d3591eea399}{image}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ image}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ QPixmap\ \mbox{\hyperlink{classFanSpeedWidget_a43a34f3ce1c5ce9b728355724f1a0a91}{image\_array}}[4];\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFanSpeedWidget_aa60328958064288ceb30893cfcac1b73}{index}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFanSpeedWidget_a8161b8be7dc4ffcfc5e200d7262a418b}{drawScale}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ center\_x,\ \textcolor{keywordtype}{int}\ center\_y,\ \textcolor{keywordtype}{int}\ radius);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFanSpeedWidget_aace519671ed77e22a9ed87bcc4243d24}{drawNeedle}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ center\_x,\ \textcolor{keywordtype}{int}\ center\_y,\ \textcolor{keywordtype}{int}\ radius);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFanSpeedWidget_a9d20a86248fc71667595af9e959651bf}{drawCentralNumber}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ center\_x,\ \textcolor{keywordtype}{int}\ center\_y);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFanSpeedWidget_a758705db5afac33aabed9ba19e838c30}{updateSpeed}}();}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SPEEDOMETERWIDGET\_H}}
+
+\end{DoxyCode}
