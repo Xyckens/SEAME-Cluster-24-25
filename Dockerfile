@@ -54,15 +54,10 @@ RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 # Create workspace and set working directory
 WORKDIR /workspace
 
-# Copy project files
-#COPY . .
-
-# Install ROS2 dependencies
-RUN rosdep install --from-paths . --ignore-src -r -y
-
-# Build the ROS2 project
-#RUN source /opt/ros/$ROS_DISTRO/setup.bash && \
-#    colcon build --packages-skip camera_ros --symlink-install 
 
 # Default command
-CMD ["bash"]
+CMD ["bash", "-c", "source /opt/ros/$ROS_DISTRO/setup.bash \
+&& cd /workspace \
+&& rosdep install --from-paths . --ignore-src -r -y \
+&& colcon build --packages-skip camera_ros carla_bridge --symlink-install \
+&& source install/setup.bash && ros2 launch $LAUNCH_FILE"]
