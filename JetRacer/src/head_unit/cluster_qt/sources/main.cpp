@@ -63,9 +63,9 @@ int main(int argc, char* argv[])
     mainLayout->addWidget(toolBar);
     mainLayout->addWidget(stacked_widget);
     main_window->setLayout(mainLayout);
-    main_window->resize(850, 700);
+    //main_window->resize(850, 700);
     main_window->setStyleSheet(QString("%1; margin: 0px; padding: 0px;").arg(color.background));
-    main_window->show();
+    main_window->showFullScreen();
 
     int ret = app.exec();
     rclcpp::shutdown();

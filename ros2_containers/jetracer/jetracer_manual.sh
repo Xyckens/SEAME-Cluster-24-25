@@ -1,6 +1,6 @@
 #!/bin/bash
 docker run \
-  --name arrow \
+  --name arrow3 \
   --rm \
   --net=host \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -17,7 +17,8 @@ docker run \
   -v /dev/shm:/dev/shm \
   -v /run/udev:/run/udev:ro \
   --group-add video \
+  -e LAUNCH_PACKAGE="JetRacer" \
+  -e LAUNCH_FILE="JetRacer/launch/JetRacer_manual_launch.py" \
   -v "$(pwd)":/workspace \
   -w /workspace \
-  -e LAUNCH_FILE="JetRacer/launch/JetRacer_manual_launch.py" \
   arrow_image
