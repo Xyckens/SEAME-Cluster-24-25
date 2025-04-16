@@ -39,7 +39,7 @@ void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
     image = image_array[index];
     painter.setRenderHint(QPainter::Antialiasing);
     int centerX = 40;
-    int centerY = height() / 2;
+    int centerY = height() / 4;
     int radius = std::max(width(), height()) / 2 - 20;
 
     int imageWidth = 25;

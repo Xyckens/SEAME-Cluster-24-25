@@ -21,8 +21,8 @@ TopBar::TopBar(QWidget* parent, int x, int y, int width, int height) : QWidget(p
     layout->setContentsMargins(0, 0, 0, 0);
     setGeometry(x, y, width, height);
 
-    Color color = Color();
-    int index = color.counter;
+    color = Color();
+    index = color.counter;
     default_image_paths_array[0] = {
         "/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_p.png",
         "/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_p.png",

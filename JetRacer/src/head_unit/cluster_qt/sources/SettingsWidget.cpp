@@ -27,7 +27,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int 
     closeIcon = new QPushButton(this);
     closeIcon->setFixedSize(50, 50);
     closeIcon->setStyleSheet("border: none; "
-                             "background-image: url('/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/settings.png'); "
+                             "background-image: url('/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/settings.png'); "
                              "background-repeat: no-repeat; " 
                              "background-position: center;");
 
