@@ -20,6 +20,10 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, int x, int y, int 
     alphabet_color = color1.alphabet_color;
     setFocusPolicy(Qt::StrongFocus);
     setGeometry(x, y, width, height);
+    image_array[0] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_p.png");
+    image_array[1] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_r.png");
+    image_array[2] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_i.png");
+    image_array[3] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_g.png");
 }
 
 /**
@@ -32,10 +36,6 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, int x, int y, int 
 void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-    image_array[0] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_p.png");
-    image_array[1] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_r.png");
-    image_array[2] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_i.png");
-    image_array[3] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_g.png");
     image = image_array[index];
     painter.setRenderHint(QPainter::Antialiasing);
     int centerX = 40;

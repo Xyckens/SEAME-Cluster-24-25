@@ -17,6 +17,8 @@ class ArrowSymbolWidget : public QWidget
         void    changeColor(int  array_index);
         void    turnOnLanes(bool left, bool right);
         void    changeDirection(double ang, QString dir);
+        void    proximityAlert(bool prox);
+
 
     protected:
         void    paintEvent(QPaintEvent* event) override;
@@ -31,13 +33,22 @@ class ArrowSymbolWidget : public QWidget
         QColor  alphabet_color;
         QColor  left_color;
         QColor  right_color;
-
         QString direction;
+
+        QPixmap car;
+
+        QPixmap lane_alert;
+        QPixmap obj_prox_alert;
+        QPixmap lane_img[4];
+        QPixmap obj_prox_img[4];
         
         double  angle;
         double  step;
 
-        Color  color1;
+        Color   color1;
+
+        bool    proximity;
+        bool    lane_off;
 };
 
 #endif

@@ -10,6 +10,7 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, int x, int y, int width, i
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
 
+    int counter = color1.counter;
     setFocusPolicy(Qt::StrongFocus);
     setGeometry(x, y, width, height);
     angle = 240;
@@ -18,6 +19,22 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, int x, int y, int width, i
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &ArrowSymbolWidget::variangle);
     timer->start(500); // 200 ms delay
+    
+    car = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/car.png");
+    lane_img[0] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/lane_p.png");
+    lane_img[1] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/lane_r.png");
+    lane_img[2] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/lane_i.png");
+    lane_img[3] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/lane_g.png");
+    lane_alert = lane_img[counter];
+    
+    obj_prox_img[0] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/prox_p.png");
+    obj_prox_img[1] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/prox_r.png");
+    obj_prox_img[2] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/prox_i.png");
+    obj_prox_img[3] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/prox_g.png");
+    obj_prox_alert = obj_prox_img[counter];
+
+    proximity = false;
+    lane_off = false;
 }
 
 ArrowSymbolWidget::~ArrowSymbolWidget() {}
@@ -27,19 +44,29 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.translate(width() / 2 - 50, height() / 2);
-    QPixmap image = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/car.png");
+    painter.translate(width() / 2 - 50, height() / 4);
 
     int imageWidth = 100;
     int imageHeight = 150;
-    int image_x = -imageWidth / 2;
-    int image_y = -imageWidth / 2;
-
-    painter.drawPixmap(0, 0, imageWidth, imageHeight, image);
-    if (direction == "forward")
-        forwardArrows(painter);
+    if (!proximity)
+        painter.drawPixmap(0, 0, imageWidth + 70, imageHeight + 20, obj_prox_alert);
+    else if (!lane_off)
+    {
+        painter.drawPixmap(0, 0, imageWidth, imageHeight, car);
+        if (direction == "forward")
+           forwardArrows(painter);
+        else
+            backwardsArrows(painter);
+    }
     else
-        backwardsArrows(painter);
+    {
+        painter.drawPixmap(0, 0, imageWidth, imageHeight, lane_alert);
+        if (direction == "forward")
+           forwardArrows(painter);
+        else
+            backwardsArrows(painter);
+    }
+
 
 }
 
@@ -134,7 +161,9 @@ void    ArrowSymbolWidget::changeColor(int  array_index)
         right_color = color1.main_color_array[array_index];
     main_color = color1.main_color_array[array_index];
     accent_color = color1.accent_color_array[array_index];
-    alphabet_color = color1.alphabet_color_array[array_index];   
+    alphabet_color = color1.alphabet_color_array[array_index];
+    lane_alert = lane_img[array_index];
+    obj_prox_alert = obj_prox_img[array_index];
     update();
 }
 
@@ -149,4 +178,13 @@ void    ArrowSymbolWidget::turnOnLanes(bool left, bool right)
     else
         right_color = main_color;
     update();
+}
+
+void    ArrowSymbolWidget::proximityAlert(bool prox)
+{
+    if (proximity != prox)
+    {
+        proximity = prox;
+        update();
+    }
 }

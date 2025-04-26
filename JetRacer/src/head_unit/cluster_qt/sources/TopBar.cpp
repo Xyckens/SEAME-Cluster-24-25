@@ -21,8 +21,8 @@ TopBar::TopBar(QWidget* parent, int x, int y, int width, int height) : QWidget(p
     layout->setContentsMargins(0, 0, 0, 0);
     setGeometry(x, y, width, height);
 
-    color = Color();
-    index = color.counter;
+    Color color = Color();
+    int index = color.counter;
     default_image_paths_array[0] = {
         "/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_p.png",
         "/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_p.png",
@@ -81,7 +81,7 @@ TopBar::TopBar(QWidget* parent, int x, int y, int width, int height) : QWidget(p
             default_images_array[j].append(pixmap);
         }
     }
-    default_images = default_images_array[0];
+    default_images = default_images_array[index];
     for (const QString& path : alt_image_paths) {
         QPixmap pixmap(path);
         if (pixmap.isNull()) {
