@@ -38,39 +38,39 @@ void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
     QPainter painter(this);
     image = image_array[index];
     painter.setRenderHint(QPainter::Antialiasing);
-    int centerX = 40;
-    int centerY = height() / 4;
+    int center_x = 40;
+    int center_y = height() / 4;
     int radius = std::max(width(), height()) / 2 - 20;
 
     int imageWidth = 25;
     int imageHeight = 25;
-    int image_x = centerX - 25 - imageWidth / 2;
-    int image_y = centerY + imageWidth / 2;
+    int image_x = center_x - 25 - imageWidth / 2;
+    int image_y = center_y + imageWidth / 2;
 
     painter.drawPixmap(image_x, image_y, imageWidth, imageHeight, image);
 
-    drawCentralNumber(painter, centerX + 100, centerY);
+    drawCentralNumber(painter, center_x + 100, center_y);
     drawBatteryNumber(painter, image_x + 15, image_y + 55);
-    drawScale(painter, centerX, centerY, radius);
+    drawScale(painter, center_x, center_y, radius);
 }
 
 /**
  * @brief Draws the scale on the widget.
  *
  * @param painter The QPainter object used for drawing.
- * @param centerX The x-coordinate of the center of the scale.
- * @param centerY The y-coordinate of the center of the scale.
+ * @param center_x The x-coordinate of the center of the scale.
+ * @param center_y The y-coordinate of the center of the scale.
  * @param radius The radius of the scale.
  */
-void BatteryAndSpeedWidget::drawScale(QPainter& painter, int centerX,
-                                      int centerY, int radius)
+void BatteryAndSpeedWidget::drawScale(QPainter& painter, int center_x,
+                                      int center_y, int radius)
 {
     double startAngle = -40;
     double endAngle = 40;
     QFont font("Arial", 20, QFont::Bold);
     painter.setPen(QPen(alphabet_color, 6));
     painter.setFont(font);
-    drawBars(painter, centerX + 150, centerY + 30, radius * 1.2, startAngle,
+    drawBars(painter, center_x + 150, center_y + 30, radius * 1.2, startAngle,
              endAngle, 100);
 }
 
@@ -78,18 +78,18 @@ void BatteryAndSpeedWidget::drawScale(QPainter& painter, int centerX,
  * @brief Draws the battery or speed bars on the widget.
  *
  * @param painter The QPainter object used for drawing.
- * @param centerX The x-coordinate of the center of the bars.
- * @param centerY The y-coordinate of the center of the bars.
+ * @param center_x The x-coordinate of the center of the bars.
+ * @param center_y The y-coordinate of the center of the bars.
  * @param radius The radius of the bars.
- * @param startAngle The starting angle of the bars.
- * @param endAngle The ending angle of the bars.
- * @param Level The current battery level.
+ * @param start_angle The starting angle of the bars.
+ * @param end_angle The ending angle of the bars.
+ * @param level The current battery level.
  */
-void BatteryAndSpeedWidget::drawBars(QPainter& painter, int centerX,
-                                     int centerY, int radius, double startAngle,
-                                     double endAngle, int Level)
+void BatteryAndSpeedWidget::drawBars(QPainter& painter, int center_x,
+                                     int center_y, int radius, double start_angle,
+                                     double end_angle, int level)
 {
-    int numBars = Level / 2;
+    int numBars = level / 2;
     int barWidth = 6;
     int innerRadius = radius - 80;
     int outerRadius = radius - 70;
@@ -98,13 +98,13 @@ void BatteryAndSpeedWidget::drawBars(QPainter& painter, int centerX,
     for (int i = 0; i <= numBars; ++i)
     {
         double angle =
-            startAngle + (endAngle - startAngle) * (double(i) / numBars);
+            start_angle + (end_angle - start_angle) * (double(i) / numBars);
         double rad = qDegreesToRadians(angle);
 
-        int xOuter = centerX - std::cos(rad) * outerRadius;
-        int yOuter = centerY - std::sin(rad) * outerRadius;
-        int xInner = centerX - std::cos(rad) * innerRadius;
-        int yInner = centerY - std::sin(rad) * innerRadius;
+        int xOuter = center_x - std::cos(rad) * outerRadius;
+        int yOuter = center_y - std::sin(rad) * outerRadius;
+        int xInner = center_x - std::cos(rad) * innerRadius;
+        int yInner = center_y - std::sin(rad) * innerRadius;
 
         QColor barColor = (i * 2 <= activeBars) ? calculateBarColor(i * 2)
                                                 : QColor(50, 50, 50);
@@ -157,11 +157,11 @@ BatteryAndSpeedWidget::~BatteryAndSpeedWidget() {}
  * @brief Draws the central number on the widget.
  *
  * @param painter The QPainter object used for drawing.
- * @param centerX The x-coordinate of the center of the number.
- * @param centerY The y-coordinate of the center of the number.
+ * @param center_x The x-coordinate of the center of the number.
+ * @param center_y The y-coordinate of the center of the number.
  */
 void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter,
-                                            int centerX, int centerY)
+                                            int center_x, int center_y)
 {
     QFont font("Arial", 80, QFont::Bold);
     painter.setFont(font);
@@ -170,8 +170,8 @@ void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter,
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(speedText);
 
-    int x = centerX - textRect.width() / 2;
-    int y = centerY + textRect.height() / 2 - 20;
+    int x = center_x - textRect.width() / 2;
+    int y = center_y + textRect.height() / 2 - 20;
     painter.drawText(x, y, speedText);
 
     QFont smallFont("Arial", 28, QFont::Bold);
@@ -179,7 +179,7 @@ void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter,
 
     QFontMetrics smallMetrics(smallFont);
     int kphWidth = smallMetrics.horizontalAdvance(unit);
-    int kphX = centerX - kphWidth / 2;
+    int kphX = center_x - kphWidth / 2;
     int kphY = y + textRect.height() - 60;
 
     painter.drawText(kphX, kphY, unit);
@@ -189,11 +189,11 @@ void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter,
  * @brief Draws the battery level number on the widget.
  *
  * @param painter The QPainter object used for drawing.
- * @param centerX The x-coordinate of the center of the number.
- * @param centerY The y-coordinate of the center of the number.
+ * @param center_x The x-coordinate of the center of the number.
+ * @param center_y The y-coordinate of the center of the number.
  */
 void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter,
-                                            int centerX, int centerY)
+                                            int center_x, int center_y)
 {
     QFont font("Arial", 10, QFont::Bold);
     painter.setFont(font);
@@ -203,8 +203,8 @@ void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter,
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(speedText);
 
-    int x = centerX - textRect.width() / 2;
-    int y = centerY + textRect.height() / 2 - 20;
+    int x = center_x - textRect.width() / 2;
+    int y = center_y + textRect.height() / 2 - 20;
     painter.drawText(x, y, speedText);
 }
 

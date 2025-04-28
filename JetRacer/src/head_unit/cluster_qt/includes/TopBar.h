@@ -20,7 +20,7 @@ class TopBar : public QWidget
     public:
         TopBar(QWidget* parent = nullptr, int x = 0, int y = 0,
                int width = 0, int height = 0);
-        ~TopBar();
+        ~TopBar() override;
     
         bool             setImageState(int index, bool state);
         void             changeColor(int  array_index);

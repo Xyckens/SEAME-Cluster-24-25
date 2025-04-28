@@ -17,7 +17,7 @@ class BatteryWidget : public QWidget
     public:
         BatteryWidget(QWidget* parent = nullptr, int x = 0, int y = 0,
                      int width = 0, int height = 0);
-        ~BatteryWidget();
+        ~BatteryWidget() override;
 
         void   changeColor(int  array_index);
         QColor main_color;
@@ -33,9 +33,9 @@ class BatteryWidget : public QWidget
         int    current_level;
         Color  color1;
         QColor calculateBarColor(int value);
-        void   drawScale(QPainter& painter, int centerX, int centerY, int radius);
-        void   drawCentralNumber(QPainter& painter, int centerX, int centerY);
-        void   drawBars(QPainter& painter, int centerX, int centerY, int radius,
+        void   drawScale(QPainter& painter, int center_x, int center_y, int radius);
+        void   drawCentralNumber(QPainter& painter, int center_x, int center_y);
+        void   drawBars(QPainter& painter, int center_x, int center_y, int radius,
                         double startAngle, double endAngle, int Level);
 
     private slots:

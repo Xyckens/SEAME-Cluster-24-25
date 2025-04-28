@@ -23,39 +23,39 @@ void CPUTempWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    int centerX = (width() - 50) / 2;
-    int centerY = (height() - 50) / 2;
+    int center_x = (width() - 50) / 2;
+    int center_y = (height() - 50) / 2;
     int radius = std::min((width() - 50), (height() - 50)) / 2 - 20;
 
-    drawScale(painter, centerX, centerY, radius);
+    drawScale(painter, center_x, center_y, radius);
 
-    drawNeedle(painter, centerX, centerY, radius);
-    drawCentralNumber(painter, centerX, centerY);
+    drawNeedle(painter, center_x, center_y, radius);
+    drawCentralNumber(painter, center_x, center_y);
 }
 
-void CPUTempWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
+void CPUTempWidget::drawScale(QPainter& painter, int center_x, int center_y, int radius) {
 
     painter.setPen(QPen(main_color, 8));
-    painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
+    painter.drawEllipse(center_x - radius, center_y - radius, 2 * radius, 2 * radius);
 
 }
 
-void CPUTempWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int radius) {
+void CPUTempWidget::drawNeedle(QPainter& painter, int center_x, int center_y, int radius) {
     double startAngle = -45;
     double endAngle = 225;    
 
     double angle = startAngle + (endAngle - startAngle) * (double(current_speed) / 160);
     double rad = qDegreesToRadians(angle);
-    int xStart = centerX - std::cos(rad) * (radius - 3);
-    int yStart = centerY - std::sin(rad) * (radius - 3);
-    int xEnd = centerX - std::cos(rad) * (radius + 1);
-    int yEnd = centerY - std::sin(rad) * (radius + 1);
+    int xStart = center_x - std::cos(rad) * (radius - 3);
+    int yStart = center_y - std::sin(rad) * (radius - 3);
+    int xEnd = center_x - std::cos(rad) * (radius + 1);
+    int yEnd = center_y - std::sin(rad) * (radius + 1);
     painter.setPen(QPen(accent_color, 5));
 
     painter.drawLine(xStart, yStart, xEnd, yEnd);
 }
 
-void CPUTempWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY) {
+void CPUTempWidget::drawCentralNumber(QPainter& painter, int center_x, int center_y) {
 
     QFont font("Arial", 20, QFont::Bold); 
     painter.setFont(font);
@@ -65,8 +65,8 @@ void CPUTempWidget::drawCentralNumber(QPainter& painter, int centerX, int center
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(speedText);
 
-    int x = centerX - textRect.width() / 2;
-    int y = centerY + textRect.height() / 2 - 10;
+    int x = center_x - textRect.width() / 2;
+    int y = center_y + textRect.height() / 2 - 10;
     painter.drawText(x, y, speedText);
 
     QFont smallFont("Arial", 10, QFont::Bold); 
@@ -74,7 +74,7 @@ void CPUTempWidget::drawCentralNumber(QPainter& painter, int centerX, int center
 
     QFontMetrics smallMetrics(smallFont);
     int kphWidth = smallMetrics.horizontalAdvance(unit);
-    int kphX = centerX - kphWidth / 2;
+    int kphX = center_x - kphWidth / 2;
     int kphY = y + textRect.height() - 20; 
 
     painter.drawText(kphX, kphY, unit);
@@ -82,7 +82,7 @@ void CPUTempWidget::drawCentralNumber(QPainter& painter, int centerX, int center
     if (!image.isNull()) {
         int imgWidth = 25; 
         int imgHeight = 25;
-        int imgX = centerX - imgWidth / 2;
+        int imgX = center_x - imgWidth / 2;
         int imgY = kphY + 20;
         painter.drawPixmap(imgX, imgY, imgWidth, imgHeight, image);
     }

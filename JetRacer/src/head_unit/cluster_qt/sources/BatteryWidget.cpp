@@ -32,22 +32,22 @@ void BatteryWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    int centerX = width() / 2;
-    int centerY = height() / 2;
+    int center_x = width() / 2;
+    int center_y = height() / 2;
     int radius = std::min(width(), height()) / 2 - 20;
-    drawScale(painter, centerX, centerY, radius);
-    drawCentralNumber(painter, centerX, centerY);
+    drawScale(painter, center_x, center_y, radius);
+    drawCentralNumber(painter, center_x, center_y);
 }
 
 /**
  * @brief Draws the scale on the widget.
  *
  * @param painter The QPainter object used for drawing.
- * @param centerX The x-coordinate of the center of the scale.
- * @param centerY The y-coordinate of the center of the scale.
+ * @param center_x The x-coordinate of the center of the scale.
+ * @param center_y The y-coordinate of the center of the scale.
  * @param radius The radius of the scale.
  */
-void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius)
+void BatteryWidget::drawScale(QPainter& painter, int center_x, int center_y, int radius)
 {
     int minLevel = 0, maxLevel = 100, step = 10;
     double startAngle = -45; // Start angle for 0 Level (bottom left)
@@ -59,32 +59,32 @@ void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int r
     {
         double angle = startAngle + (endAngle - startAngle) * (double(Level) / maxLevel);
         double rad = qDegreesToRadians(angle);
-        int xOuter = centerX - std::cos(rad) * radius;
-        int yOuter = centerY - std::sin(rad) * radius;
-        int xInner = centerX - std::cos(rad) * (radius - 6);
-        int yInner = centerY - std::sin(rad) * (radius - 6);
-        int xLabel = centerX - std::cos(rad) * (radius - 55) - 8;
-        int yLabel = centerY - std::sin(rad) * (radius - 55);
+        int xOuter = center_x - std::cos(rad) * radius;
+        int yOuter = center_y - std::sin(rad) * radius;
+        int xInner = center_x - std::cos(rad) * (radius - 6);
+        int yInner = center_y - std::sin(rad) * (radius - 6);
+        int xLabel = center_x - std::cos(rad) * (radius - 55) - 8;
+        int yLabel = center_y - std::sin(rad) * (radius - 55);
     }
-    drawBars(painter, centerX, centerY, radius, startAngle, endAngle, 100);
+    drawBars(painter, center_x, center_y, radius, startAngle, endAngle, 100);
     painter.setPen(QPen(main_color, 15));
-    painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
+    painter.drawEllipse(center_x - radius, center_y - radius, 2 * radius, 2 * radius);
     int smaller_r = radius - 70;
-    painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
+    painter.drawEllipse(center_x - smaller_r, center_y - smaller_r, 2 * smaller_r, 2 * smaller_r);
 }
 
 /**
  * @brief Draws the battery bars on the widget.
  *
  * @param painter The QPainter object used for drawing.
- * @param centerX The x-coordinate of the center of the bars.
- * @param centerY The y-coordinate of the center of the bars.
+ * @param center_x The x-coordinate of the center of the bars.
+ * @param center_y The y-coordinate of the center of the bars.
  * @param radius The radius of the bars.
  * @param startAngle The starting angle of the bars.
  * @param endAngle The ending angle of the bars.
  * @param Level The current battery level.
  */
-void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level)
+void BatteryWidget::drawBars(QPainter& painter, int center_x, int center_y, int radius, double startAngle, double endAngle, int Level)
 {
     int numBars = Level / 2;
     int barWidth = 6; 
@@ -97,10 +97,10 @@ void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int ra
         double angle = startAngle + (endAngle - startAngle) * (double(i) / numBars);
         double rad = qDegreesToRadians(angle);
 
-        int xOuter = centerX - std::cos(rad) * outerRadius;
-        int yOuter = centerY - std::sin(rad) * outerRadius;
-        int xInner = centerX - std::cos(rad) * innerRadius;
-        int yInner = centerY - std::sin(rad) * innerRadius;
+        int xOuter = center_x - std::cos(rad) * outerRadius;
+        int yOuter = center_y - std::sin(rad) * outerRadius;
+        int xInner = center_x - std::cos(rad) * innerRadius;
+        int yInner = center_y - std::sin(rad) * innerRadius;
 
     
         QColor barColor = (i * 2 <= activeBars) ? calculateBarColor(i * 2) : QColor(50, 50, 50);
@@ -141,10 +141,10 @@ QColor BatteryWidget::calculateBarColor(int value)
  * @brief Draws the central number on the widget.
  *
  * @param painter The QPainter object used for drawing.
- * @param centerX The x-coordinate of the center of the number.
- * @param centerY The y-coordinate of the center of the number.
+ * @param center_x The x-coordinate of the center of the number.
+ * @param center_y The y-coordinate of the center of the number.
  */
-void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY)
+void BatteryWidget::drawCentralNumber(QPainter& painter, int center_x, int center_y)
 {
     QFont font("Arial", 30, QFont::Bold);
     painter.setFont(font);
@@ -152,14 +152,14 @@ void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int center
     QString LevelText = QString::number(current_level);
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(LevelText);
-    int x = centerX - textRect.width() / 2;
-    int y = centerY + textRect.height() / 2 - 20;
+    int x = center_x - textRect.width() / 2;
+    int y = center_y + textRect.height() / 2 - 20;
     painter.drawText(x, y, LevelText);
     QFont smallFont("Arial", 14, QFont::Bold); 
     painter.setFont(smallFont);
     QFontMetrics smallMetrics(smallFont);
     int kphWidth = smallMetrics.horizontalAdvance("%");
-    int kphX = centerX - kphWidth / 2;
+    int kphX = center_x - kphWidth / 2;
     int kphY = y + textRect.height() - 20; 
     painter.drawText(kphX, kphY, "%");
 }

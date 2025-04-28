@@ -17,7 +17,7 @@ class BatteryAndSpeedWidget : public QWidget
     public:
         BatteryAndSpeedWidget(QWidget* parent = nullptr, int x = 0, int y = 0,
                               int width = 0, int height = 0);
-        ~BatteryAndSpeedWidget();
+        ~BatteryAndSpeedWidget() override;
 
         void    setCurrentSpeed(int speed);
         void    setCurrentLevel(int battery);
@@ -42,12 +42,12 @@ class BatteryAndSpeedWidget : public QWidget
         QString unit;
         QPixmap image_array[4];
         QPixmap image;
-        void    drawScale(QPainter& painter, int centerX, int centerY, int radius);
-        void    drawCentralNumber(QPainter& painter, int centerX, int centerY);
-        void    drawBatteryNumber(QPainter& painter, int centerX, int centerY);
+        void    drawScale(QPainter& painter, int center_x, int center_y, int radius);
+        void    drawCentralNumber(QPainter& painter, int center_x, int center_y);
+        void    drawBatteryNumber(QPainter& painter, int center_x, int center_y);
         QColor  calculateBarColor(int value);
-        void    drawBars(QPainter& painter, int centerX, int centerY, int radius,
-                      double startAngle, double endAngle, int Level);
+        void    drawBars(QPainter& painter, int center_x, int center_y, int radius,
+                      double start_angle, double end_angle, int level);
 
     private slots:
         void    updateLevel();

@@ -12,7 +12,7 @@ class FanSpeedWidget : public QWidget {
     public:
         FanSpeedWidget(QWidget* parent = nullptr, int x = 0, int y = 0,
                        int width = 0, int height = 0);
-        ~FanSpeedWidget();
+        ~FanSpeedWidget() override;
         void    changeColor(int array_index);
         QColor  main_color;
         QColor  accent_color;
@@ -27,9 +27,9 @@ class FanSpeedWidget : public QWidget {
         QPixmap image;
         QPixmap image_array[4]; 
         int     index;
-        void    drawScale(QPainter& painter, int centerX, int centerY, int radius);
-        void    drawNeedle(QPainter& painter, int centerX, int centerY, int radius);
-        void    drawCentralNumber(QPainter& painter, int centerX, int centerY);
+        void    drawScale(QPainter& painter, int center_x, int center_y, int radius);
+        void    drawNeedle(QPainter& painter, int center_x, int center_y, int radius);
+        void    drawCentralNumber(QPainter& painter, int center_x, int center_y);
 
     private slots:
         void    updateSpeed();

@@ -44,10 +44,10 @@ class SpeedometerWidget : public QWidget
 
         QString unit;
         Color   color1;
-        void    drawScale(QPainter& painter, int centerX, int centerY, int radius);
-        void    drawNeedle(QPainter& painter, int centerX, int centerY,
+        void    drawScale(QPainter& painter, int center_x, int center_y, int radius);
+        void    drawNeedle(QPainter& painter, int center_x, int center_y,
                            int radius);
-        void    drawCentralNumber(QPainter& painter, int centerX, int centerY);
+        void    drawCentralNumber(QPainter& painter, int center_x, int center_y);
 };
 
 #endif

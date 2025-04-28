@@ -37,12 +37,12 @@ void SpeedometerWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    int centerX = width() / 2;
-    int centerY = height() / 2;
+    int center_x = width() / 2;
+    int center_y = height() / 2;
     int radius = std::min(width(), height()) / 2 - 20;
-    drawScale(painter, centerX, centerY, radius);
-    drawNeedle(painter, centerX, centerY, radius);
-    drawCentralNumber(painter, centerX, centerY);
+    drawScale(painter, center_x, center_y, radius);
+    drawNeedle(painter, center_x, center_y, radius);
+    drawCentralNumber(painter, center_x, center_y);
 }
 
 /**
@@ -51,23 +51,23 @@ void SpeedometerWidget::paintEvent(QPaintEvent* event)
  * This method draws the outer circle, tick marks, and labels for the speedometer scale.
  *
  * @param painter The QPainter object used for drawing.
- * @param centerX The x-coordinate of the center of the scale.
- * @param centerY The y-coordinate of the center of the scale.
+ * @param center_x The x-coordinate of the center of the scale.
+ * @param center_y The y-coordinate of the center of the scale.
  * @param radius The radius of the scale.
  */
-void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY,
+void SpeedometerWidget::drawScale(QPainter& painter, int center_x, int center_y,
                                   int radius)
 {
     painter.setPen(QPen(main_color, 15));
-    painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius,
+    painter.drawEllipse(center_x - radius, center_y - radius, 2 * radius,
                         2 * radius);
     painter.setPen(QPen(accent_color, 15));
     int smaller_r = radius - 10;
-    painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r,
+    painter.drawEllipse(center_x - smaller_r, center_y - smaller_r, 2 * smaller_r,
                         2 * smaller_r);
     painter.setPen(QPen(main_color, 15));
     smaller_r -= 80;
-    painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r,
+    painter.drawEllipse(center_x - smaller_r, center_y - smaller_r, 2 * smaller_r,
                         2 * smaller_r);
     int minSpeed = 0, step = 20;
     double startAngle = -45; // Start angle for 0 speed (bottom left)
@@ -80,18 +80,18 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY,
         double angle =
             startAngle + (endAngle - startAngle) * (double(speed) / maxSpeed);
         double rad = qDegreesToRadians(angle);
-        int xOuter = centerX - std::cos(rad) * radius;
-        int yOuter = centerY - std::sin(rad) * radius;
-        int xInner = centerX - std::cos(rad) * (radius - 6);
-        int yInner = centerY - std::sin(rad) * (radius - 6);
+        int xOuter = center_x - std::cos(rad) * radius;
+        int yOuter = center_y - std::sin(rad) * radius;
+        int xInner = center_x - std::cos(rad) * (radius - 6);
+        int yInner = center_y - std::sin(rad) * (radius - 6);
         if (speed == 50 || speed == 70 || speed == 120)
             painter.setPen(QPen(Qt::red, 6));
         else if (speed / 10 % 2 != 0)
             painter.setPen(QPen(Qt::gray, 6));
         painter.drawLine(xOuter, yOuter, xInner, yInner);
         painter.setPen(QPen(alphabet_color, 2));
-        int xLabel = centerX - std::cos(rad) * (radius - 55) - 8;
-        int yLabel = centerY - std::sin(rad) * (radius - 55);
+        int xLabel = center_x - std::cos(rad) * (radius - 55) - 8;
+        int yLabel = center_y - std::sin(rad) * (radius - 55);
         if (speed / 10 % 2 == 0)
             painter.drawText(xLabel - 10, yLabel + 5, QString::number(speed));
     }
@@ -103,11 +103,11 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY,
  * This method draws the needle that indicates the current speed on the speedometer.
  *
  * @param painter The QPainter object used for drawing.
- * @param centerX The x-coordinate of the center of the needle.
- * @param centerY The y-coordinate of the center of the needle.
+ * @param center_x The x-coordinate of the center of the needle.
+ * @param center_y The y-coordinate of the center of the needle.
  * @param radius The radius of the needle's arc.
  */
-void SpeedometerWidget::drawNeedle(QPainter& painter, int centerX, int centerY,
+void SpeedometerWidget::drawNeedle(QPainter& painter, int center_x, int center_y,
                                    int radius)
 {
     double startAngle = -45; // Start angle for 0 speed (bottom left)
@@ -115,10 +115,10 @@ void SpeedometerWidget::drawNeedle(QPainter& painter, int centerX, int centerY,
     double angle =
         startAngle + (endAngle - startAngle) * (double(current_speed) / maxSpeed);
     double rad = qDegreesToRadians(angle);
-    int xStart = centerX - std::cos(rad) * (radius - 80);
-    int yStart = centerY - std::sin(rad) * (radius - 80);
-    int xEnd = centerX - std::cos(rad) * (radius - 5);
-    int yEnd = centerY - std::sin(rad) * (radius - 5);
+    int xStart = center_x - std::cos(rad) * (radius - 80);
+    int yStart = center_y - std::sin(rad) * (radius - 80);
+    int xEnd = center_x - std::cos(rad) * (radius - 5);
+    int yEnd = center_y - std::sin(rad) * (radius - 5);
     painter.setPen(QPen(Qt::red, 4));
     painter.drawLine(xStart, yStart, xEnd, yEnd);
 }
@@ -130,11 +130,11 @@ void SpeedometerWidget::drawNeedle(QPainter& painter, int centerX, int centerY,
  * of the speedometer.
  *
  * @param painter The QPainter object used for drawing.
- * @param centerX The x-coordinate of the center of the number.
- * @param centerY The y-coordinate of the center of the number.
+ * @param center_x The x-coordinate of the center of the number.
+ * @param center_y The y-coordinate of the center of the number.
  */
-void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX,
-                                          int centerY)
+void SpeedometerWidget::drawCentralNumber(QPainter& painter, int center_x,
+                                          int center_y)
 {
 
     QFont font("Arial", 30, QFont::Bold);
@@ -145,8 +145,8 @@ void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX,
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(speedText);
 
-    int x = centerX - textRect.width() / 2;
-    int y = centerY + textRect.height() / 2 - 20;
+    int x = center_x - textRect.width() / 2;
+    int y = center_y + textRect.height() / 2 - 20;
     painter.drawText(x, y, speedText);
 
     QFont smallFont("Arial", 14, QFont::Bold);
@@ -154,7 +154,7 @@ void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX,
 
     QFontMetrics smallMetrics(smallFont);
     int kphWidth = smallMetrics.horizontalAdvance(unit);
-    int kphX = centerX - kphWidth / 2;
+    int kphX = center_x - kphWidth / 2;
     int kphY =
         y + textRect.height() - 30;
 

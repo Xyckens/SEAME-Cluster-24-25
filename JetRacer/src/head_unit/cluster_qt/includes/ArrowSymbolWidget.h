@@ -12,7 +12,7 @@ class ArrowSymbolWidget : public QWidget
 {
     public:
         ArrowSymbolWidget(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
-        ~ArrowSymbolWidget();
+        ~ArrowSymbolWidget() override;
 
         void    changeColor(int  array_index);
         void    turnOnLanes(bool left, bool right);

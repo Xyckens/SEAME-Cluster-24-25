@@ -30,12 +30,12 @@ class Unit
                 {
                     try
                     {
-                        unit = std::stoi(s.substr(pos + 8));
+                        unit = s.substr(pos + 8);
                     }
                     catch (const std::exception& e)
                     {
                         unit = "DPS";
-                       // std::cerr << "Something wrong with file, the result gotten is: " << s.substr(pos + 8) << "\n";
+                       // std::cerr << "Something wrong with file, the result obtained is: " << s.substr(pos + 8) << "\n";
                     } 
                 }
             }
