@@ -106,7 +106,7 @@ void    EventManager::activateButton(int key)
     case Qt::Key_A:
         arrows->proximityAlert();
         break;
-    case Qt::Key_S:
+    case Qt::Key_Q:
         arrows->turnOnLanes(true, false);
         break;
     default:
@@ -131,7 +131,7 @@ void EventManager::updateScreen()
     //arrows->changeDirection(node->getWheelAngle(), "forward");
     
     updateBlinkers();
-    updateArrows();
+    //updateArrows();
     stats->setDistance(STATS_DISTANCE);
     stats->setAverage(STATS_AVERAGE);
     stats->setConsumed(STATS_CONSUMED);

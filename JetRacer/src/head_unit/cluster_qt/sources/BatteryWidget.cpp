@@ -69,7 +69,7 @@ void BatteryWidget::drawScale(QPainter& painter, int center_x, int center_y, int
     drawBars(painter, center_x, center_y, radius, startAngle, endAngle, 100);
     painter.setPen(QPen(main_color, 15));
     painter.drawEllipse(center_x - radius, center_y - radius, 2 * radius, 2 * radius);
-    int smaller_r = radius - 70;
+    int smaller_r = radius - 65;
     painter.drawEllipse(center_x - smaller_r, center_y - smaller_r, 2 * smaller_r, 2 * smaller_r);
 }
 

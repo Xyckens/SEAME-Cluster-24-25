@@ -44,15 +44,15 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.translate(width() / 2 - 50, height() / 4);
+    painter.translate(width() / 2 - 50, height() / 3 + 80);
 
     int imageWidth = 100;
     int imageHeight = 150;
-    if (!proximity)
-        painter.drawPixmap(0, 0, imageWidth + 70, imageHeight + 20, obj_prox_alert);
-    else if (!lane_off)
+    if (proximity)
+        painter.drawPixmap(-30, -10, imageWidth + 70, imageHeight, obj_prox_alert);
+    else if (lane_off)
     {
-        painter.drawPixmap(0, 0, imageWidth, imageHeight, car);
+        painter.drawPixmap(0, 0, imageWidth, imageHeight, lane_alert);
         if (direction == "forward")
            forwardArrows(painter);
         else
@@ -60,7 +60,7 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
     }
     else
     {
-        painter.drawPixmap(0, 0, imageWidth, imageHeight, lane_alert);
+        painter.drawPixmap(0, 0, imageWidth, imageHeight, car);
         if (direction == "forward")
            forwardArrows(painter);
         else
@@ -177,7 +177,10 @@ void    ArrowSymbolWidget::turnOnLanes(bool left, bool right)
         right_color = QColor(Qt::red);
     else
         right_color = main_color;
-    lane_off = true;
+    if (lane_off == true)
+        lane_off = false;
+    else
+        lane_off = true;
     update();
 }
 
