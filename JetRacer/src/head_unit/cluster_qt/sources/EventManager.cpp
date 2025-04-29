@@ -103,6 +103,12 @@ void    EventManager::activateButton(int key)
     case Qt::Key_U:
         changeUnits();
         break;
+    case Qt::Key_A:
+        arrows->proximityAlert();
+        break;
+    case Qt::Key_S:
+        arrows->turnOnLanes(true, false);
+        break;
     default:
         break;
     }

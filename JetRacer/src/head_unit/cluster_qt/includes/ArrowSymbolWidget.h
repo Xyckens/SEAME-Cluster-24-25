@@ -17,7 +17,8 @@ class ArrowSymbolWidget : public QWidget
         void    changeColor(int  array_index);
         void    turnOnLanes(bool left, bool right);
         void    changeDirection(double ang, QString dir);
-        void    proximityAlert(bool prox);
+        //void    proximityAlert(bool prox);
+        void    proximityAlert(void);
 
 
     protected:

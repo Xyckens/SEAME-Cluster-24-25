@@ -177,14 +177,15 @@ void    ArrowSymbolWidget::turnOnLanes(bool left, bool right)
         right_color = QColor(Qt::red);
     else
         right_color = main_color;
+    lane_off = true;
     update();
 }
 
-void    ArrowSymbolWidget::proximityAlert(bool prox)
+void    ArrowSymbolWidget::proximityAlert(void)
 {
-    if (proximity != prox)
-    {
-        proximity = prox;
-        update();
-    }
+    if (proximity == true)
+        proximity = false;
+    else
+        proximity = true;
+    update();
 }
