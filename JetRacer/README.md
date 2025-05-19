@@ -1,37 +1,16 @@
 ## Overview
 
-The JetRacer project is organized into a modular structure, where each package represents a ROS2 node encapsulating a specific aspect of the system. The architecture is divided into three main layers, each with its own responsibility:
+This folder contains the ROS2 workspace and its source code. The codebase is organized into a modular structure, where each package represents a ROS2 node encapsulating a specific aspect of the system. The architecture is divided into three main layers, each with its own responsibility:
 
 - **Bus Interfaces**: Directly interact with hardware via different protocols (CAN, I2C).
 - **Drivers**: Defines device specific operations.
 - **Peripherals**: Communicate with the drivers and manage higher-level device functionality.
 - **Head Unit**: Coordinates the peripherals and handles higher-level logic.
+---
 
-```
-.
-├── bus_interfaces
-│   ├── can_interface
-│   └── i2c_interface
-├── drivers
-│   ├── abstract_driver
-│   ├── custom_msgs
-│   ├── ina219_driver
-│   ├── pca9685_driver
-│   └── ssd1306_driver
-├── head_unit
-│   ├── display_routine
-│   └── teleop
-├── peripherals
-│   ├── battery
-│   ├── camera
-│   ├── dc_motors
-│   ├── oled_display
-│   ├── servo_motor
-│   └── speed_sensor
-└── tests
-    └── i2c_peripheral_stress_test
-```
-## Layered Architecture
+## Software Architecture
+
+![System Diagram](../.github/images/software_architecture.png)
 
 The project structure follows a clear layered architecture that helps isolate responsibilities and ensures modularity. The three main layers are:
 
@@ -56,6 +35,8 @@ The head unit represents the higher-level logic of the system, coordinating the 
 - **Responsibility**: Coordinate and manage the operation of peripherals.
 - **ROS2 Mechanism**: Provide high-level functionalities and user interactions through nodes that communicate with peripheral nodes.
 
+---
+
 ## Launch Instructions
 
 1. Ensure you have all the required files
@@ -65,16 +46,20 @@ ll /usr/local/bin/jetracer_manual.sh
 ll /usr/local/bin/jetracer_auto.sh
 ```
 2. To launch the Jetracer in manual mode (with teleop node):
-    ```bash
-    sudo systemctl start jetracer@manual
-    ```
+```bash
+sudo systemctl start jetracer@manual
+```
 
 3. To Launch the Jetracer in auto mode:
-    ```bash
-    sudo systemctl start jetracer@manual
-    ```
+```bash
+sudo systemctl start jetracer@auto
+```
+4. To launch the Jetracer in simulation node (without motors):
+```bash
+sudo systemctl start jetracer@simulation
+```
 
-3. WARNING: To be able to have access to the QT UI, you need to launch the script manually and not via systemctl. You can simply call the script the following way since its your path:
-    ```bash
-    jetracer_manual.sh
-    ```
+3. WARNING: To be able to have access to the QT UI, you need to launch the script manually and not via systemctl (THIS WILL NOT WORK VIA SSH). You can simply call the script the following way since its your path:
+```bash
+jetracer_manual.sh
+```
