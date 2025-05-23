@@ -14,7 +14,7 @@ Code documentation can be found here:  [JetRacer Documentation](https://xyckens.
 
 ---
 
-## 📁 Repo strucutre
+## 📁 Repo structure
 
 - **Jetracer**: ROS2 workspace with the source code running on the raspberryPi
 - **JetRacer_container**: Contain the Dockerfile to build the project in a container as well as launch script to put the container up with access rights to essential hardware components.

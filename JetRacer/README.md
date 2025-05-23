@@ -1,4 +1,4 @@
-## Overview
+## 📌 Overview
 
 This folder contains the ROS2 workspace and its source code. The codebase is organized into a modular structure, where each package represents a ROS2 node encapsulating a specific aspect of the system. The architecture is divided into three main layers, each with its own responsibility:
 
@@ -8,7 +8,7 @@ This folder contains the ROS2 workspace and its source code. The codebase is org
 - **Head Unit**: Coordinates the peripherals and handles higher-level logic.
 ---
 
-## Software Architecture
+## 🏛️ Software Architecture
 
 ![System Diagram](../.github/images/software_architecture.png)
 
@@ -37,7 +37,7 @@ The head unit represents the higher-level logic of the system, coordinating the 
 
 ---
 
-## Launch Instructions
+## 🚀 Launch Instructions
 
 1. Ensure you have all the required files
 ```bash 
