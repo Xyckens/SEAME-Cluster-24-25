@@ -1,0 +1,38 @@
+name: Clang-Tidy
+
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - completed
+
+env:
+  ROS_BUILD_DIR: JetRacer
+
+jobs:
+  tidy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install clang-tidy
+        run: |
+          sudo apt update
+          sudo apt install -y clang clang-tidy-18 cargo git
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          sudo git clone https://github.com/lmapii/run-clang-tidy.git
+          cd run-clang-tidy
+          cargo build --release --target-dir /tmp/target
+          sudo mv /tmp/target/release/run-clang-tidy /usr/local/bin/run-clang-tidy-rust
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ros-install
+          path: JetRacer/install
+
+      - name: Run Clang-Tidy
+        run: |
+          cd $ROS_BUILD_DIR
+          run-clang-tidy-rust tidy.json -j 4 --suppress-warnings

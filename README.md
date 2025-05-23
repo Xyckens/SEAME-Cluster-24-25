@@ -1,9 +1,7 @@
 # JetPackJoyRide - Instrument Cluster
 
-<!-- ![Car](.github/images/car.jpeg) -->
-
 <div align="center">
-  <img src=".github/images/car.jpeg" width="60%" alt="Jetracer" />
+  <img src=".github/images/car.jpeg" width="50%" alt="Jetracer" />
 </div>
 
 ## Introduction
