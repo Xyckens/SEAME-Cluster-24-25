@@ -1,0 +1,40 @@
+\doxysection{PCA9685\+Driver.\+hpp}
+\hypertarget{PCA9685Driver_8hpp_source}{}\label{PCA9685Driver_8hpp_source}\index{JetRacer/src/drivers/pca9685\_driver/include/PCA9685Driver.hpp@{JetRacer/src/drivers/pca9685\_driver/include/PCA9685Driver.hpp}}
+\mbox{\hyperlink{PCA9685Driver_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{ADriver_8hpp}{ADriver.hpp}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{APCA9685Driver_8hpp}{APCA9685Driver.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DriverException_8hpp}{DriverException.hpp}}>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <custom\_msgs/srv/i2c\_service.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{PCA9685Driver_8hpp_a7a2c4876ea37b1f650b3e7e4351ff67d}{PRESCALE\_REGISTER}}\ =\ 0xFE;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{PCA9685Driver_8hpp_ac962b6cd589fd4df0205186ae99715a6}{MODE1\_REGISTER}}\ =\ 0x00;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{PCA9685Driver_8hpp_a9243576aec98dcb1fea10b4799352998}{CHANNEL\_REGISTER}}\ =\ 0x06;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{PCA9685Driver_8hpp_ab728593c42eb55bebfabdbdf59eb879d}{DEFAULT\_CHANNEL}}\ =\ 0x00;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{PCA9685Driver_8hpp_a9d3e7f620776ff717c9b5a4704c33019}{MAX\_CHANNEL}}\ =\ 15;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{PCA9685Driver_8hpp_a3fbad015069821a5482248277eed3365}{LSB\_MASK}}\ =\ 0xFF;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{PCA9685Driver_8hpp_ab02057bb38d52a27e6caf1f963a5432c}{SLEEP\_MODE}}\ =\ 0x10;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{PCA9685Driver_8hpp_aad49ceb6d0d567d1a333a5155a9d3354}{AUTO\_INCREMENT}}\ =\ 0x80;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{PCA9685Driver_8hpp_a01fc1dd9d49bb4fa3789f5165371b0c7}{CRISTAL\_FREQUENCY}}\ =\ 25000000;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{PCA9685Driver_8hpp_a2a3a47acf9f9dcbccd77f8439c34af1c}{NB\_STEPS}}\ =\ 4096;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPCA9685Driver}{PCA9685Driver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classADriver}{ADriver}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAPCA9685Driver}{APCA9685Driver}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPCA9685Driver}{PCA9685Driver}}(std::shared\_ptr<rclcpp::Node>\ node,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ device\_address);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPCA9685Driver_a9b1840a7d6dcce8285994d1181607515}{\string~PCA9685Driver}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPCA9685Driver_a7f82753c915244305bf42596414f5421}{setRegister}}(uint8\_t\ reg,\ uint8\_t\ value)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPCA9685Driver_a4cfa38b52bde77dc5ae8c863cb78b073}{setPWMFrequency}}(\textcolor{keywordtype}{float}\ freq\_hz)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPCA9685Driver_adf0e52931778f32dfd8b53b5dbd19c43}{setPWMDutyCycle}}(uint8\_t\ channel,\ uint16\_t\ on,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ off)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPCA9685Driver_ab5b29700d43dfae89f93a191aa882455}{setGPIO}}(uint8\_t\ channel,\ \textcolor{keywordtype}{bool}\ on)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ \};}
+
+\end{DoxyCode}

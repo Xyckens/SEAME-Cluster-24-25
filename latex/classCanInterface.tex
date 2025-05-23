@@ -1,0 +1,114 @@
+\doxysection{Can\+Interface Class Reference}
+\hypertarget{classCanInterface}{}\label{classCanInterface}\index{CanInterface@{CanInterface}}
+
+
+Handles read and write operation onto the can bus via the can driver.  
+
+
+
+
+{\ttfamily \#include $<$Can\+Interface.\+hpp$>$}
+
+Inheritance diagram for Can\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCanInterface}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCanInterface_afe4913f537fe24147056772a6080e928}{Can\+Interface}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classICanDriver}{ICan\+Driver}} $>$ mock\+\_\+driver=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new Can Interface object. throw an exception if the can driver fails to initiate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCanInterface_a483d279eac556356d7261bb2a1dae22c}{\texorpdfstring{$\sim$}{\string~}\+Can\+Interface}} () override
+\item 
+void \mbox{\hyperlink{classCanInterface_af4cc2bbdab6b48b3978467fe2fb6f893}{poll\+Can\+Bus}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCanInterface_a7b0f659a77bf4ccfbde943d050036caa}{handle\+Can\+Request}} (std\+::shared\+\_\+ptr$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service\+::\+Request $>$ request, std\+::shared\+\_\+ptr$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service\+::\+Response $>$ response)
+\begin{DoxyCompactList}\small\item\em Function beeing called upon receiving a request to the can service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classICanDriver}{ICan\+Driver}} $>$ \mbox{\hyperlink{classCanInterface_a159e720a9b166d95a9811d0084b1275a}{can\+\_\+driver\+\_\+}}
+\item 
+rclcpp\+::\+Service$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classCanInterface_a9b3d907bc2447d7bf85a9a8e20a9c572}{can\+\_\+service\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles read and write operation onto the can bus via the can driver. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCanInterface_afe4913f537fe24147056772a6080e928}\label{classCanInterface_afe4913f537fe24147056772a6080e928} 
+\index{CanInterface@{CanInterface}!CanInterface@{CanInterface}}
+\index{CanInterface@{CanInterface}!CanInterface@{CanInterface}}
+\doxysubsubsection{\texorpdfstring{CanInterface()}{CanInterface()}}
+{\footnotesize\ttfamily Can\+Interface\+::\+Can\+Interface (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classICanDriver}{ICan\+Driver}} $>$}]{mock\+\_\+driver = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Construct a new Can Interface object. throw an exception if the can driver fails to initiate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mock\+\_\+driver} & if not null, the mock object will be used \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCanInterface_a483d279eac556356d7261bb2a1dae22c}\label{classCanInterface_a483d279eac556356d7261bb2a1dae22c} 
+\index{CanInterface@{CanInterface}!````~CanInterface@{\texorpdfstring{$\sim$}{\string~}CanInterface}}
+\index{````~CanInterface@{\texorpdfstring{$\sim$}{\string~}CanInterface}!CanInterface@{CanInterface}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CanInterface()}{\string~CanInterface()}}
+{\footnotesize\ttfamily Can\+Interface\+::\texorpdfstring{$\sim$}{\string~}\+Can\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCanInterface_a7b0f659a77bf4ccfbde943d050036caa}\label{classCanInterface_a7b0f659a77bf4ccfbde943d050036caa} 
+\index{CanInterface@{CanInterface}!handleCanRequest@{handleCanRequest}}
+\index{handleCanRequest@{handleCanRequest}!CanInterface@{CanInterface}}
+\doxysubsubsection{\texorpdfstring{handleCanRequest()}{handleCanRequest()}}
+{\footnotesize\ttfamily void Can\+Interface\+::handle\+Can\+Request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service\+::\+Request $>$}]{request,  }\item[{std\+::shared\+\_\+ptr$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service\+::\+Response $>$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Function beeing called upon receiving a request to the can service. 
+
+the struct of the can service allows writting and reading operation. To see the service definition do "{}ros2 interface show custom\+\_\+msgs/srv/\+Can\+Service"{} or see Jet\+Racer/src/bus\+\_\+interfaces/custom\+\_\+msgs/srv/\+Can\+Service.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & the request object containing read / write / both request \\
+\hline
+{\em response} & the response object to be filled with the data requested and success mesage to communicate to the client \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCanInterface_af4cc2bbdab6b48b3978467fe2fb6f893}\label{classCanInterface_af4cc2bbdab6b48b3978467fe2fb6f893} 
+\index{CanInterface@{CanInterface}!pollCanBus@{pollCanBus}}
+\index{pollCanBus@{pollCanBus}!CanInterface@{CanInterface}}
+\doxysubsubsection{\texorpdfstring{pollCanBus()}{pollCanBus()}}
+{\footnotesize\ttfamily void Can\+Interface\+::poll\+Can\+Bus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCanInterface_a159e720a9b166d95a9811d0084b1275a}\label{classCanInterface_a159e720a9b166d95a9811d0084b1275a} 
+\index{CanInterface@{CanInterface}!can\_driver\_@{can\_driver\_}}
+\index{can\_driver\_@{can\_driver\_}!CanInterface@{CanInterface}}
+\doxysubsubsection{\texorpdfstring{can\_driver\_}{can\_driver\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classICanDriver}{ICan\+Driver}}$>$ Can\+Interface\+::can\+\_\+driver\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCanInterface_a9b3d907bc2447d7bf85a9a8e20a9c572}\label{classCanInterface_a9b3d907bc2447d7bf85a9a8e20a9c572} 
+\index{CanInterface@{CanInterface}!can\_service\_@{can\_service\_}}
+\index{can\_service\_@{can\_service\_}!CanInterface@{CanInterface}}
+\doxysubsubsection{\texorpdfstring{can\_service\_}{can\_service\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Service$<$custom\+\_\+msgs\+::srv\+::\+Can\+Service$>$\+::\+Shared\+Ptr Can\+Interface\+::can\+\_\+service\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/bus\+\_\+interfaces/can\+\_\+interface/include/\mbox{\hyperlink{CanInterface_8hpp}{Can\+Interface.\+hpp}}\item 
+Jet\+Racer/src/bus\+\_\+interfaces/can\+\_\+interface/src/\mbox{\hyperlink{CanInterface_8cpp}{Can\+Interface.\+cpp}}\end{DoxyCompactItemize}

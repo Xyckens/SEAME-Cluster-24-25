@@ -1,0 +1,110 @@
+\doxysection{Blinkers\+Node Class Reference}
+\hypertarget{classBlinkersNode}{}\label{classBlinkersNode}\index{BlinkersNode@{BlinkersNode}}
+
+
+listens to blinker state topic and request the can interface to update the blinkers .  
+
+
+
+
+{\ttfamily \#include $<$Blinkers\+Node.\+hpp$>$}
+
+Inheritance diagram for Blinkers\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBlinkersNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBlinkersNode_a1f990145cfc4d979e16b9c9bbb1b7da7}{Blinkers\+Node}} ()
+\item 
+\mbox{\hyperlink{classBlinkersNode_a64b2e34345851a0f0134d3bc9f8cfd79}{\texorpdfstring{$\sim$}{\string~}\+Blinkers\+Node}} () override=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBlinkersNode_a2f1a88f48a26910f80ac68e285312271}{write\+Blinkers\+State}} (std\+\_\+msgs\+::msg\+::\+UInt8 msg)
+\begin{DoxyCompactList}\small\item\em Request a write to the can bus upon receiving a new blinker state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlinkersNode_abadbe95d01185de70bf1db1ea7e75d10}{handle\+Can\+Response}} (rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service $>$\+::\+Shared\+Future future)
+\begin{DoxyCompactList}\small\item\em Handle the response from the can service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ std\+\_\+msgs\+::msg\+::\+UInt8 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classBlinkersNode_a15b6b766d7d4dce0340564b85a6383c1}{blinker\+\_\+state\+\_\+subscriber\+\_\+}}
+\item 
+rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classBlinkersNode_ab1bb9d84b90c9df46a5e12c62b07a5bb}{can\+\_\+client\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+listens to blinker state topic and request the can interface to update the blinkers . 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBlinkersNode_a1f990145cfc4d979e16b9c9bbb1b7da7}\label{classBlinkersNode_a1f990145cfc4d979e16b9c9bbb1b7da7} 
+\index{BlinkersNode@{BlinkersNode}!BlinkersNode@{BlinkersNode}}
+\index{BlinkersNode@{BlinkersNode}!BlinkersNode@{BlinkersNode}}
+\doxysubsubsection{\texorpdfstring{BlinkersNode()}{BlinkersNode()}}
+{\footnotesize\ttfamily Blinkers\+Node\+::\+Blinkers\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classBlinkersNode_a64b2e34345851a0f0134d3bc9f8cfd79}\label{classBlinkersNode_a64b2e34345851a0f0134d3bc9f8cfd79} 
+\index{BlinkersNode@{BlinkersNode}!````~BlinkersNode@{\texorpdfstring{$\sim$}{\string~}BlinkersNode}}
+\index{````~BlinkersNode@{\texorpdfstring{$\sim$}{\string~}BlinkersNode}!BlinkersNode@{BlinkersNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BlinkersNode()}{\string~BlinkersNode()}}
+{\footnotesize\ttfamily Blinkers\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Blinkers\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBlinkersNode_abadbe95d01185de70bf1db1ea7e75d10}\label{classBlinkersNode_abadbe95d01185de70bf1db1ea7e75d10} 
+\index{BlinkersNode@{BlinkersNode}!handleCanResponse@{handleCanResponse}}
+\index{handleCanResponse@{handleCanResponse}!BlinkersNode@{BlinkersNode}}
+\doxysubsubsection{\texorpdfstring{handleCanResponse()}{handleCanResponse()}}
+{\footnotesize\ttfamily void Blinkers\+Node\+::handle\+Can\+Response (\begin{DoxyParamCaption}\item[{rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+Can\+Service $>$\+::\+Shared\+Future}]{future }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle the response from the can service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em future} & the future object containing the response from the can service \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBlinkersNode_a2f1a88f48a26910f80ac68e285312271}\label{classBlinkersNode_a2f1a88f48a26910f80ac68e285312271} 
+\index{BlinkersNode@{BlinkersNode}!writeBlinkersState@{writeBlinkersState}}
+\index{writeBlinkersState@{writeBlinkersState}!BlinkersNode@{BlinkersNode}}
+\doxysubsubsection{\texorpdfstring{writeBlinkersState()}{writeBlinkersState()}}
+{\footnotesize\ttfamily void Blinkers\+Node\+::write\+Blinkers\+State (\begin{DoxyParamCaption}\item[{std\+\_\+msgs\+::msg\+::\+UInt8}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Request a write to the can bus upon receiving a new blinker state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & the new blinker state \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBlinkersNode_a15b6b766d7d4dce0340564b85a6383c1}\label{classBlinkersNode_a15b6b766d7d4dce0340564b85a6383c1} 
+\index{BlinkersNode@{BlinkersNode}!blinker\_state\_subscriber\_@{blinker\_state\_subscriber\_}}
+\index{blinker\_state\_subscriber\_@{blinker\_state\_subscriber\_}!BlinkersNode@{BlinkersNode}}
+\doxysubsubsection{\texorpdfstring{blinker\_state\_subscriber\_}{blinker\_state\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$std\+\_\+msgs\+::msg\+::\+UInt8$>$\+::\+Shared\+Ptr Blinkers\+Node\+::blinker\+\_\+state\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBlinkersNode_ab1bb9d84b90c9df46a5e12c62b07a5bb}\label{classBlinkersNode_ab1bb9d84b90c9df46a5e12c62b07a5bb} 
+\index{BlinkersNode@{BlinkersNode}!can\_client\_@{can\_client\_}}
+\index{can\_client\_@{can\_client\_}!BlinkersNode@{BlinkersNode}}
+\doxysubsubsection{\texorpdfstring{can\_client\_}{can\_client\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Client$<$custom\+\_\+msgs\+::srv\+::\+Can\+Service$>$\+::\+Shared\+Ptr Blinkers\+Node\+::can\+\_\+client\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/peripherals/blinkers/include/\mbox{\hyperlink{BlinkersNode_8hpp}{Blinkers\+Node.\+hpp}}\item 
+Jet\+Racer/src/peripherals/blinkers/src/\mbox{\hyperlink{BlinkersNode_8cpp}{Blinkers\+Node.\+cpp}}\end{DoxyCompactItemize}

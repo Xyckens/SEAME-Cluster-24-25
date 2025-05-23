@@ -1,0 +1,115 @@
+\doxysection{Dc\+Motors\+Node Class Reference}
+\hypertarget{classDcMotorsNode}{}\label{classDcMotorsNode}\index{DcMotorsNode@{DcMotorsNode}}
+
+
+Listens to twist message and translate them into PWM signal values that the PCA9685 driver understands.  
+
+
+
+
+{\ttfamily \#include $<$Dc\+Motors\+Node.\+hpp$>$}
+
+Inheritance diagram for Dc\+Motors\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDcMotorsNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDcMotorsNode_ac93436a49fb8848ad97397db724eae02}{Dc\+Motors\+Node}} ()
+\item 
+\mbox{\hyperlink{classDcMotorsNode_a56d9a738c02cd549ce2a7576373b7d3a}{\texorpdfstring{$\sim$}{\string~}\+Dc\+Motors\+Node}} () override
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classDcMotorsNode_a11fac3c9bebdeaf47d23e1b0a5f3c944}{init\+PCA9685}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPCA9685Driver}{APCA9685\+Driver}} $>$ mock\+\_\+driver=nullptr)
+\begin{DoxyCompactList}\small\item\em Initialize the PCA9685 driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDcMotorsNode_a85ef73670b0966f06c74d8a5d277ad22}{write\+Speed}} (geometry\+\_\+msgs\+::msg\+::\+Twist\+::\+Shared\+Ptr twist\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Map the linear velocity to the PCA9685 pulse width and set the motor direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ geometry\+\_\+msgs\+::msg\+::\+Twist $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classDcMotorsNode_a2103d366fdadf052c183c2a30795a6c0}{twist\+\_\+subscriber\+\_\+}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPCA9685Driver}{APCA9685\+Driver}} $>$ \mbox{\hyperlink{classDcMotorsNode_aed3f0fff7d0c67d8237c02bd135b633c}{pca\+\_\+driver\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Listens to twist message and translate them into PWM signal values that the PCA9685 driver understands. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDcMotorsNode_ac93436a49fb8848ad97397db724eae02}\label{classDcMotorsNode_ac93436a49fb8848ad97397db724eae02} 
+\index{DcMotorsNode@{DcMotorsNode}!DcMotorsNode@{DcMotorsNode}}
+\index{DcMotorsNode@{DcMotorsNode}!DcMotorsNode@{DcMotorsNode}}
+\doxysubsubsection{\texorpdfstring{DcMotorsNode()}{DcMotorsNode()}}
+{\footnotesize\ttfamily Dc\+Motors\+Node\+::\+Dc\+Motors\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classDcMotorsNode_a56d9a738c02cd549ce2a7576373b7d3a}\label{classDcMotorsNode_a56d9a738c02cd549ce2a7576373b7d3a} 
+\index{DcMotorsNode@{DcMotorsNode}!````~DcMotorsNode@{\texorpdfstring{$\sim$}{\string~}DcMotorsNode}}
+\index{````~DcMotorsNode@{\texorpdfstring{$\sim$}{\string~}DcMotorsNode}!DcMotorsNode@{DcMotorsNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DcMotorsNode()}{\string~DcMotorsNode()}}
+{\footnotesize\ttfamily Dc\+Motors\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Dc\+Motors\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDcMotorsNode_a11fac3c9bebdeaf47d23e1b0a5f3c944}\label{classDcMotorsNode_a11fac3c9bebdeaf47d23e1b0a5f3c944} 
+\index{DcMotorsNode@{DcMotorsNode}!initPCA9685@{initPCA9685}}
+\index{initPCA9685@{initPCA9685}!DcMotorsNode@{DcMotorsNode}}
+\doxysubsubsection{\texorpdfstring{initPCA9685()}{initPCA9685()}}
+{\footnotesize\ttfamily uint8\+\_\+t Dc\+Motors\+Node\+::init\+PCA9685 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPCA9685Driver}{APCA9685\+Driver}} $>$}]{mock\+\_\+driver = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Initialize the PCA9685 driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mock\+\_\+driver} & if not null, the driver will be mocked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+EXIT\+\_\+\+FAILURE if the driver fails to initialize, EXIT\+\_\+\+SUCCESS otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classDcMotorsNode_a85ef73670b0966f06c74d8a5d277ad22}\label{classDcMotorsNode_a85ef73670b0966f06c74d8a5d277ad22} 
+\index{DcMotorsNode@{DcMotorsNode}!writeSpeed@{writeSpeed}}
+\index{writeSpeed@{writeSpeed}!DcMotorsNode@{DcMotorsNode}}
+\doxysubsubsection{\texorpdfstring{writeSpeed()}{writeSpeed()}}
+{\footnotesize\ttfamily void Dc\+Motors\+Node\+::write\+Speed (\begin{DoxyParamCaption}\item[{geometry\+\_\+msgs\+::msg\+::\+Twist\+::\+Shared\+Ptr}]{twist\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map the linear velocity to the PCA9685 pulse width and set the motor direction. 
+
+freq = 1600; 1 cycle = 1 /1600 = 625us 625/4096 = 0.\+1526us per tick
+
+
+\begin{DoxyParams}{Parameters}
+{\em twist\+\_\+msg-\/} & the message containing the linear velocity. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDcMotorsNode_aed3f0fff7d0c67d8237c02bd135b633c}\label{classDcMotorsNode_aed3f0fff7d0c67d8237c02bd135b633c} 
+\index{DcMotorsNode@{DcMotorsNode}!pca\_driver\_@{pca\_driver\_}}
+\index{pca\_driver\_@{pca\_driver\_}!DcMotorsNode@{DcMotorsNode}}
+\doxysubsubsection{\texorpdfstring{pca\_driver\_}{pca\_driver\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classAPCA9685Driver}{APCA9685\+Driver}}$>$ Dc\+Motors\+Node\+::pca\+\_\+driver\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDcMotorsNode_a2103d366fdadf052c183c2a30795a6c0}\label{classDcMotorsNode_a2103d366fdadf052c183c2a30795a6c0} 
+\index{DcMotorsNode@{DcMotorsNode}!twist\_subscriber\_@{twist\_subscriber\_}}
+\index{twist\_subscriber\_@{twist\_subscriber\_}!DcMotorsNode@{DcMotorsNode}}
+\doxysubsubsection{\texorpdfstring{twist\_subscriber\_}{twist\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$geometry\+\_\+msgs\+::msg\+::\+Twist$>$\+::\+Shared\+Ptr Dc\+Motors\+Node\+::twist\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/peripherals/dc\+\_\+motors/include/\mbox{\hyperlink{DcMotorsNode_8hpp}{Dc\+Motors\+Node.\+hpp}}\item 
+Jet\+Racer/src/peripherals/dc\+\_\+motors/src/\mbox{\hyperlink{DcMotorsNode_8cpp}{Dc\+Motors\+Node.\+cpp}}\end{DoxyCompactItemize}

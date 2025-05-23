@@ -1,0 +1,100 @@
+\doxysection{Battery\+Node Class Reference}
+\hypertarget{classBatteryNode}{}\label{classBatteryNode}\index{BatteryNode@{BatteryNode}}
+
+
+Reads and publishes battery level every 5 seconds via the INA219 driver.  
+
+
+
+
+{\ttfamily \#include $<$Battery\+Node.\+hpp$>$}
+
+Inheritance diagram for Battery\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBatteryNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBatteryNode_af38c33b56176c80ec09e82bcd64355e3}{Battery\+Node}} ()
+\item 
+\mbox{\hyperlink{classBatteryNode_ae81d017d9338c60f2cb4a85d7d3293ec}{\texorpdfstring{$\sim$}{\string~}\+Battery\+Node}} () override=default
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classBatteryNode_a682011189b51853024bccf8b47f5efcd}{init\+INA219}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the INA219 driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryNode_ac31f43a707531f215a8e5b12a2bf81db}{publish\+Battery\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Publishes the battery level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr \mbox{\hyperlink{classBatteryNode_a4ae17394421552142be1f5ee2702e7c2}{timer\+\_\+}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classINA219Driver}{INA219\+Driver}} $>$ \mbox{\hyperlink{classBatteryNode_abe687bc3b63212cb1968934c598ac394}{ina219\+\_\+driver\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reads and publishes battery level every 5 seconds via the INA219 driver. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBatteryNode_af38c33b56176c80ec09e82bcd64355e3}\label{classBatteryNode_af38c33b56176c80ec09e82bcd64355e3} 
+\index{BatteryNode@{BatteryNode}!BatteryNode@{BatteryNode}}
+\index{BatteryNode@{BatteryNode}!BatteryNode@{BatteryNode}}
+\doxysubsubsection{\texorpdfstring{BatteryNode()}{BatteryNode()}}
+{\footnotesize\ttfamily Battery\+Node\+::\+Battery\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classBatteryNode_ae81d017d9338c60f2cb4a85d7d3293ec}\label{classBatteryNode_ae81d017d9338c60f2cb4a85d7d3293ec} 
+\index{BatteryNode@{BatteryNode}!````~BatteryNode@{\texorpdfstring{$\sim$}{\string~}BatteryNode}}
+\index{````~BatteryNode@{\texorpdfstring{$\sim$}{\string~}BatteryNode}!BatteryNode@{BatteryNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BatteryNode()}{\string~BatteryNode()}}
+{\footnotesize\ttfamily Battery\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Battery\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBatteryNode_a682011189b51853024bccf8b47f5efcd}\label{classBatteryNode_a682011189b51853024bccf8b47f5efcd} 
+\index{BatteryNode@{BatteryNode}!initINA219@{initINA219}}
+\index{initINA219@{initINA219}!BatteryNode@{BatteryNode}}
+\doxysubsubsection{\texorpdfstring{initINA219()}{initINA219()}}
+{\footnotesize\ttfamily uint8\+\_\+t Battery\+Node\+::init\+INA219 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the INA219 driver. 
+
+\begin{DoxyReturn}{Returns}
+EXIT\+\_\+\+FAILURE if the driver fails to initialize, EXIT\+\_\+\+SUCCESS otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBatteryNode_ac31f43a707531f215a8e5b12a2bf81db}\label{classBatteryNode_ac31f43a707531f215a8e5b12a2bf81db} 
+\index{BatteryNode@{BatteryNode}!publishBatteryLevel@{publishBatteryLevel}}
+\index{publishBatteryLevel@{publishBatteryLevel}!BatteryNode@{BatteryNode}}
+\doxysubsubsection{\texorpdfstring{publishBatteryLevel()}{publishBatteryLevel()}}
+{\footnotesize\ttfamily void Battery\+Node\+::publish\+Battery\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Publishes the battery level. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBatteryNode_abe687bc3b63212cb1968934c598ac394}\label{classBatteryNode_abe687bc3b63212cb1968934c598ac394} 
+\index{BatteryNode@{BatteryNode}!ina219\_driver\_@{ina219\_driver\_}}
+\index{ina219\_driver\_@{ina219\_driver\_}!BatteryNode@{BatteryNode}}
+\doxysubsubsection{\texorpdfstring{ina219\_driver\_}{ina219\_driver\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classINA219Driver}{INA219\+Driver}}$>$ Battery\+Node\+::ina219\+\_\+driver\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryNode_a4ae17394421552142be1f5ee2702e7c2}\label{classBatteryNode_a4ae17394421552142be1f5ee2702e7c2} 
+\index{BatteryNode@{BatteryNode}!timer\_@{timer\_}}
+\index{timer\_@{timer\_}!BatteryNode@{BatteryNode}}
+\doxysubsubsection{\texorpdfstring{timer\_}{timer\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr Battery\+Node\+::timer\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/peripherals/battery/include/\mbox{\hyperlink{BatteryNode_8hpp}{Battery\+Node.\+hpp}}\item 
+Jet\+Racer/src/peripherals/battery/src/\mbox{\hyperlink{BatteryNode_8cpp}{Battery\+Node.\+cpp}}\end{DoxyCompactItemize}

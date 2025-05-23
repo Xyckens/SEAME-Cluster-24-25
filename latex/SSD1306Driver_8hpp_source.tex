@@ -1,0 +1,32 @@
+\doxysection{SSD1306\+Driver.\+hpp}
+\hypertarget{SSD1306Driver_8hpp_source}{}\label{SSD1306Driver_8hpp_source}\index{JetRacer/src/drivers/ssd1306\_driver/include/SSD1306Driver.hpp@{JetRacer/src/drivers/ssd1306\_driver/include/SSD1306Driver.hpp}}
+\mbox{\hyperlink{SSD1306Driver_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ADriver_8hpp}{ADriver.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <custom\_msgs/msg/display.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <custom\_msgs/srv/i2c\_service.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <std\_msgs/msg/string.hpp>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSSD1306Driver}{SSD1306Driver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classADriver}{ADriver}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSSD1306Driver}{SSD1306Driver}}(std::shared\_ptr<rclcpp::Node>\ node);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSSD1306Driver_a4de95aabc22aed089104d8613c319f98}{\string~SSD1306Driver}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ display\ interface}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSSD1306Driver_a333a5010d20b09734fb60053c09e58fe}{initDisplay}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSSD1306Driver_a867cc4079b521a31b418d7f02425a43a}{setDefaultConfig}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSSD1306Driver_a33948a56ecb34e23c8a78133981bd972}{onOffDisplay}}(uint8\_t\ onoff);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSSD1306Driver_ac2f6993ce68fc39d0ea05b84c3a53965}{setCursor}}(uint8\_t\ x,\ uint8\_t\ y);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSSD1306Driver_aa99c009b6252f63cdde9a6c7fe617022}{clearRow}}(uint8\_t\ row);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSSD1306Driver_a164eda713513d7117444f8630d1743d8}{clearScreen}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSSD1306Driver_a0c5823f4cc6709764d5d67e20e80a78b}{writeString}}(uint8\_t\ size,\ \textcolor{keyword}{const}\ std::string\&\ msg);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSSD1306Driver_a73674fec9c2ccc371631223f9092718b}{flipDisplay}}(uint8\_t\ flip);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSSD1306Driver_a2f418224378443787689dec8f4732d6f}{rotateDisplay}}(uint8\_t\ degree);}
+\DoxyCodeLine{00031\ \};}
+
+\end{DoxyCode}

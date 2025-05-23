@@ -1,0 +1,33 @@
+\doxysection{I2c\+Interface.\+hpp}
+\hypertarget{I2cInterface_8hpp_source}{}\label{I2cInterface_8hpp_source}\index{JetRacer/src/bus\_interfaces/i2c\_interface/include/I2cInterface.hpp@{JetRacer/src/bus\_interfaces/i2c\_interface/include/I2cInterface.hpp}}
+\mbox{\hyperlink{I2cInterface_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{II2cDriver_8hpp}{II2cDriver.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <custom\_msgs/srv/i2c\_service.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <rclcpp/service.hpp>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{I2cInterface_8hpp_a48dc28e33b2de88f19b082b811e73cdb}{QUEUE\_SIZE}}\ =\ 60;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classI2cInterface}{I2cInterface}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classI2cInterface}{I2cInterface}}(std::shared\_ptr<II2cDriver>\ mock\_driver\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ service\_name\ =\ \textcolor{stringliteral}{"{}i2c\_service"{}});}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classI2cInterface_adb27a0e9c409a8b61a0b4ff5a78a10c7}{\string~I2cInterface}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::shared\_ptr<II2cDriver>\ \mbox{\hyperlink{classI2cInterface_a2a001c71eb563228091477a41ddac27a}{i2c\_driver\_}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ rclcpp::Service<custom\_msgs::srv::I2cService>::SharedPtr\ \mbox{\hyperlink{classI2cInterface_a5ce4440f1e1715f00d97b612a3bff206}{i2c\_service\_}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classI2cInterface_ad185f86825a6da230351a47a4e6f23ad}{init}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classI2cInterface_ac22b4641bdeb8bf549944d8c555bc1a0}{handleI2cRequest}}(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<custom\_msgs::srv::I2cService::Request>\ request,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<custom\_msgs::srv::I2cService::Response>\ response);}
+\DoxyCodeLine{00032\ \};}
+
+\end{DoxyCode}

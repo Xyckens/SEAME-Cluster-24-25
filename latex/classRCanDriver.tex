@@ -1,0 +1,154 @@
+\doxysection{RCan\+Driver Class Reference}
+\hypertarget{classRCanDriver}{}\label{classRCanDriver}\index{RCanDriver@{RCanDriver}}
+
+
+Concrete implementation of the \doxylink{classICanDriver}{ICan\+Driver} interface.  
+
+
+
+
+{\ttfamily \#include $<$RCan\+Driver.\+hpp$>$}
+
+Inheritance diagram for RCan\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRCanDriver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRCanDriver_a9e5bad005082b9688a07cacd0946ef91}{RCan\+Driver}} (const std\+::string \&name, int can\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classRCanDriver}{RCan\+Driver} object. \end{DoxyCompactList}\item 
+ssize\+\_\+t \mbox{\hyperlink{classRCanDriver_ad03fdae4fccbf64a3bd601f823233d53}{send\+Message}} (const sockcanpp\+::\+Can\+Message \&msg, bool force\+\_\+extended=false) override
+\begin{DoxyCompactList}\small\item\em Sends a CAN message on the associated CAN bus. \end{DoxyCompactList}\item 
+sockcanpp\+::\+Can\+Message \mbox{\hyperlink{classRCanDriver_a2ce7f5833947c1ff1baf21c9b905bf17}{read\+Message}} () override
+\begin{DoxyCompactList}\small\item\em Reads a CAN message from the associated CAN bus. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRCanDriver_a657b86352740cc39435066510b3f8a91}{wait\+For\+Messages}} (sockcanpp\+::milliseconds timeout) override
+\begin{DoxyCompactList}\small\item\em Waits for incoming CAN messages with a timeout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICanDriver}{ICan\+Driver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICanDriver_a5f5fb1015e91648ba7d35e7da8deeb3d}{\texorpdfstring{$\sim$}{\string~}\+ICan\+Driver}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ sockcanpp\+::\+Can\+Driver $>$ \mbox{\hyperlink{classRCanDriver_a7d9b39f7133fc7207a37f26056a44e81}{driver\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of the \doxylink{classICanDriver}{ICan\+Driver} interface. 
+
+This class essentially wraps the call to sockcancpp\+::\+Can\+Driver methods (adaptor). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRCanDriver_a9e5bad005082b9688a07cacd0946ef91}\label{classRCanDriver_a9e5bad005082b9688a07cacd0946ef91} 
+\index{RCanDriver@{RCanDriver}!RCanDriver@{RCanDriver}}
+\index{RCanDriver@{RCanDriver}!RCanDriver@{RCanDriver}}
+\doxysubsubsection{\texorpdfstring{RCanDriver()}{RCanDriver()}}
+{\footnotesize\ttfamily RCan\+Driver\+::\+RCan\+Driver (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{int}]{can\+\_\+mode }\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{classRCanDriver}{RCan\+Driver} object. 
+
+Initializes the \doxylink{classRCanDriver}{RCan\+Driver} by creating a {\ttfamily sockcanpp\+::\+Can\+Driver} instance with the specified interface name and CAN mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the CAN interface (e.\+g., "{}can0"{}). \\
+\hline
+{\em can\+\_\+mode} & The CAN operating mode to be used. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRCanDriver_a2ce7f5833947c1ff1baf21c9b905bf17}\label{classRCanDriver_a2ce7f5833947c1ff1baf21c9b905bf17} 
+\index{RCanDriver@{RCanDriver}!readMessage@{readMessage}}
+\index{readMessage@{readMessage}!RCanDriver@{RCanDriver}}
+\doxysubsubsection{\texorpdfstring{readMessage()}{readMessage()}}
+{\footnotesize\ttfamily sockcanpp\+::\+Can\+Message RCan\+Driver\+::read\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads a CAN message from the associated CAN bus. 
+
+Uses the underlying {\ttfamily sockcanpp\+::\+Can\+Driver} to retrieve a message from the CAN bus.
+
+\begin{DoxyReturn}{Returns}
+sockcanpp\+::\+Can\+Message The CAN message read from the bus. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICanDriver_a00c0e9b2c3b24393c0e470c9f1726723}{ICan\+Driver}}.
+
+\Hypertarget{classRCanDriver_ad03fdae4fccbf64a3bd601f823233d53}\label{classRCanDriver_ad03fdae4fccbf64a3bd601f823233d53} 
+\index{RCanDriver@{RCanDriver}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!RCanDriver@{RCanDriver}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily ssize\+\_\+t RCan\+Driver\+::send\+Message (\begin{DoxyParamCaption}\item[{const sockcanpp\+::\+Can\+Message \&}]{msg,  }\item[{bool}]{force\+\_\+extended = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sends a CAN message on the associated CAN bus. 
+
+Transmits the given {\ttfamily sockcanpp\+::\+Can\+Message} using the underlying {\ttfamily sockcanpp\+::\+Can\+Driver}. An extended CAN ID can be forced if required.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The CAN message to send. \\
+\hline
+{\em force\+\_\+extended} & Whether to force the use of an extended CAN ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ssize\+\_\+t The number of bytes written to the CAN bus, or a negative value if the operation fails. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICanDriver_a8fa52d96259d941f192f405efb978f0b}{ICan\+Driver}}.
+
+\Hypertarget{classRCanDriver_a657b86352740cc39435066510b3f8a91}\label{classRCanDriver_a657b86352740cc39435066510b3f8a91} 
+\index{RCanDriver@{RCanDriver}!waitForMessages@{waitForMessages}}
+\index{waitForMessages@{waitForMessages}!RCanDriver@{RCanDriver}}
+\doxysubsubsection{\texorpdfstring{waitForMessages()}{waitForMessages()}}
+{\footnotesize\ttfamily bool RCan\+Driver\+::wait\+For\+Messages (\begin{DoxyParamCaption}\item[{sockcanpp\+::milliseconds}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Waits for incoming CAN messages with a timeout. 
+
+Blocks until at least one CAN message is available on the bus or until the specified timeout elapses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & The maximum time (in milliseconds) to wait for messages. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If one or more messages are available before the timeout. 
+
+false If the timeout elapses without any messages being available. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICanDriver_a6f9fb9952df8f281b8f4792bbe46cc1d}{ICan\+Driver}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classRCanDriver_a7d9b39f7133fc7207a37f26056a44e81}\label{classRCanDriver_a7d9b39f7133fc7207a37f26056a44e81} 
+\index{RCanDriver@{RCanDriver}!driver\_@{driver\_}}
+\index{driver\_@{driver\_}!RCanDriver@{RCanDriver}}
+\doxysubsubsection{\texorpdfstring{driver\_}{driver\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$sockcanpp\+::\+Can\+Driver$>$ RCan\+Driver\+::driver\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/bus\+\_\+interfaces/can\+\_\+interface/include/\mbox{\hyperlink{RCanDriver_8hpp}{RCan\+Driver.\+hpp}}\item 
+Jet\+Racer/src/bus\+\_\+interfaces/can\+\_\+interface/src/\mbox{\hyperlink{RCanDriver_8cpp}{RCan\+Driver.\+cpp}}\end{DoxyCompactItemize}

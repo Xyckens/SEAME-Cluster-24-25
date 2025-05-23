@@ -1,0 +1,231 @@
+\doxysection{INA219\+Driver Class Reference}
+\hypertarget{classINA219Driver}{}\label{classINA219Driver}\index{INA219Driver@{INA219Driver}}
+
+
+Driver to interact with the INA219 (Battery voltage)  
+
+
+
+
+{\ttfamily \#include $<$INA219\+Driver.\+hpp$>$}
+
+Inheritance diagram for INA219\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classINA219Driver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classINA219Driver_aab779522ee80a37a5bb896e95456a7e1}{INA219\+Driver}} (std\+::shared\+\_\+ptr$<$ rclcpp\+::\+Node $>$ node, uint8\+\_\+t device\+\_\+address)
+\item 
+\mbox{\hyperlink{classINA219Driver_a0540e9de0e993a09a20e1fa35d1e197c}{\texorpdfstring{$\sim$}{\string~}\+INA219\+Driver}} () override=default
+\item 
+void \mbox{\hyperlink{classINA219Driver_ac237aaba833f0af181f8c7677a1854c1}{publish\+Bus\+Voltage}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classADriver}{ADriver}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classADriver_a759c7a45993757787469d578b1ae26dc}{ADriver}} (rclcpp\+::\+Node\+::\+Shared\+Ptr node, uint8\+\_\+t device\+\_\+address)
+\item 
+virtual \mbox{\hyperlink{classADriver_adbd111235337f52ee4382190eb6ff93f}{\texorpdfstring{$\sim$}{\string~}\+ADriver}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classINA219Driver_ae1e07a4d39e8755afcb9254a483320e2}{Read\+Callback}} = std\+::function$<$ void(std\+::vector$<$ uint8\+\_\+t $>$)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classINA219Driver_ab99086f017149bcb4ce14d29fbc18a4f}{set\+Calibration32\+V1A}} ()
+\begin{DoxyCompactList}\small\item\em set callibration value according to the range of voltage expected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classINA219Driver_ac7ddbc1e25b885333e26c5ccbea3d2f9}{write\+Register}} (uint8\+\_\+t reg, uint16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Write a 16-\/bit value to a specified register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classINA219Driver_ac113e89cc7c31810805756374aab6144}{read\+Register}} (uint8\+\_\+t reg, uint8\+\_\+t length, \mbox{\hyperlink{classINA219Driver_ae1e07a4d39e8755afcb9254a483320e2}{Read\+Callback}} callback)
+\begin{DoxyCompactList}\small\item\em Read data from a specific register of the INA219. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classINA219Driver_ac71929725b7d9b912e83ca89b244434b}{handle\+I2c\+Read\+Response}} (rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Future response, uint8\+\_\+t reg)
+\begin{DoxyCompactList}\small\item\em Handle the asynchronous response of a read request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Publisher$<$ std\+\_\+msgs\+::msg\+::\+Float64 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classINA219Driver_abee0f96e0580017bd94d418a9d38eb8d}{publisher\+\_\+voltage\+\_\+}}
+\item 
+rclcpp\+::\+Publisher$<$ std\+\_\+msgs\+::msg\+::\+Float64 $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classINA219Driver_ae067d07fa926506a1bb8b51bbe7d1a40}{publisher\+\_\+perc\+\_\+}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classINA219Driver_a0fe03274a2c1e5e8faea3165b1bde6c7}{current\+\_\+divider\+\_\+m\+A\+\_\+}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classINA219Driver_acb2ffeb97389b6959d952f7465102180}{calibration\+\_\+value\+\_\+}}
+\item 
+float \mbox{\hyperlink{classINA219Driver_a96a028daa01ffb13ead8090fec2f2ad7}{power\+\_\+multiplier\+\_\+m\+W\+\_\+}}
+\item 
+std\+::unordered\+\_\+map$<$ uint8\+\_\+t, \mbox{\hyperlink{classINA219Driver_ae1e07a4d39e8755afcb9254a483320e2}{Read\+Callback}} $>$ \mbox{\hyperlink{classINA219Driver_adf7bbcbe1083d5a3a27751d7f50a2809}{read\+\_\+callbacks\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classADriver}{ADriver}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classADriver_a7c8b6b179b64b604c29362e0dbdbffd9}{ping}} ()
+\begin{DoxyCompactList}\small\item\em ping the device and wait for a response. throw a driver exception if the device is not found on the bus. Nodes depending on drivers should call this function before spinning to make sure the actual hardware is present \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classADriver_a57d37e3a461292d2fdea1b084f85a40c}{handle\+I2c\+Response}} (rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Future response)
+\begin{DoxyCompactList}\small\item\em handle the response from the i2c service \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classADriver}{ADriver}}}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Node\+::\+Shared\+Ptr \mbox{\hyperlink{classADriver_affbae288b7155acb8a8c9d7ccea899c6}{node\+\_\+}}
+\item 
+rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classADriver_a69160e2270d20f647de3dfc1c9cc5d5c}{i2c\+\_\+client\+\_\+}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classADriver_adb73686aba67a783e9fd1e25d4c507b3}{device\+\_\+address\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver to interact with the INA219 (Battery voltage) 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classINA219Driver_ae1e07a4d39e8755afcb9254a483320e2}\label{classINA219Driver_ae1e07a4d39e8755afcb9254a483320e2} 
+\index{INA219Driver@{INA219Driver}!ReadCallback@{ReadCallback}}
+\index{ReadCallback@{ReadCallback}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{ReadCallback}{ReadCallback}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classINA219Driver_ae1e07a4d39e8755afcb9254a483320e2}{INA219\+Driver\+::\+Read\+Callback}} =  std\+::function$<$void(std\+::vector$<$uint8\+\_\+t$>$)$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classINA219Driver_aab779522ee80a37a5bb896e95456a7e1}\label{classINA219Driver_aab779522ee80a37a5bb896e95456a7e1} 
+\index{INA219Driver@{INA219Driver}!INA219Driver@{INA219Driver}}
+\index{INA219Driver@{INA219Driver}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{INA219Driver()}{INA219Driver()}}
+{\footnotesize\ttfamily INA219\+Driver\+::\+INA219\+Driver (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ rclcpp\+::\+Node $>$}]{node,  }\item[{uint8\+\_\+t}]{device\+\_\+address }\end{DoxyParamCaption})}
+
+\Hypertarget{classINA219Driver_a0540e9de0e993a09a20e1fa35d1e197c}\label{classINA219Driver_a0540e9de0e993a09a20e1fa35d1e197c} 
+\index{INA219Driver@{INA219Driver}!````~INA219Driver@{\texorpdfstring{$\sim$}{\string~}INA219Driver}}
+\index{````~INA219Driver@{\texorpdfstring{$\sim$}{\string~}INA219Driver}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}INA219Driver()}{\string~INA219Driver()}}
+{\footnotesize\ttfamily INA219\+Driver\+::\texorpdfstring{$\sim$}{\string~}\+INA219\+Driver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classINA219Driver_ac71929725b7d9b912e83ca89b244434b}\label{classINA219Driver_ac71929725b7d9b912e83ca89b244434b} 
+\index{INA219Driver@{INA219Driver}!handleI2cReadResponse@{handleI2cReadResponse}}
+\index{handleI2cReadResponse@{handleI2cReadResponse}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{handleI2cReadResponse()}{handleI2cReadResponse()}}
+{\footnotesize\ttfamily void INA219\+Driver\+::handle\+I2c\+Read\+Response (\begin{DoxyParamCaption}\item[{rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Future}]{response,  }\item[{uint8\+\_\+t}]{reg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle the asynchronous response of a read request. 
+
+This function retrieves the callback associated with the register that was read, using the callback registry. If a callback is found, it is invoked with the retrieved data and removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & Future object containing the result of the I2C read request. \\
+\hline
+{\em reg} & The register address that was read, used to find the associated callback. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classINA219Driver_ac237aaba833f0af181f8c7677a1854c1}\label{classINA219Driver_ac237aaba833f0af181f8c7677a1854c1} 
+\index{INA219Driver@{INA219Driver}!publishBusVoltage@{publishBusVoltage}}
+\index{publishBusVoltage@{publishBusVoltage}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{publishBusVoltage()}{publishBusVoltage()}}
+{\footnotesize\ttfamily void INA219\+Driver\+::publish\+Bus\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classINA219Driver_ac113e89cc7c31810805756374aab6144}\label{classINA219Driver_ac113e89cc7c31810805756374aab6144} 
+\index{INA219Driver@{INA219Driver}!readRegister@{readRegister}}
+\index{readRegister@{readRegister}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{readRegister()}{readRegister()}}
+{\footnotesize\ttfamily void INA219\+Driver\+::read\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t}]{length,  }\item[{\mbox{\hyperlink{classINA219Driver_ae1e07a4d39e8755afcb9254a483320e2}{Read\+Callback}}}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Read data from a specific register of the INA219. 
+
+This function sends an asynchronous I2C read request to the device. The response is handled via a callback. A "{}callback registry"{} pattern is used, where callbacks associated with specific registers are stored in a map. Upon receiving the response, the corresponding callback is invoked to process the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Register address to read from. \\
+\hline
+{\em length} & Number of bytes to read. \\
+\hline
+{\em callback} & Function to call with the retrieved data once the read operation completes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classINA219Driver_ab99086f017149bcb4ce14d29fbc18a4f}\label{classINA219Driver_ab99086f017149bcb4ce14d29fbc18a4f} 
+\index{INA219Driver@{INA219Driver}!setCalibration32V1A@{setCalibration32V1A}}
+\index{setCalibration32V1A@{setCalibration32V1A}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{setCalibration32V1A()}{setCalibration32V1A()}}
+{\footnotesize\ttfamily void INA219\+Driver\+::set\+Calibration32\+V1A (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set callibration value according to the range of voltage expected. 
+
+To see more about how the value is obtained, refer to\+: \href{https://github.com/adafruit/Adafruit_INA219/blob/master/Adafruit_INA219.cpp}{\texttt{ https\+://github.\+com/adafruit/\+Adafruit\+\_\+\+INA219/blob/master/\+Adafruit\+\_\+\+INA219.\+cpp}} \Hypertarget{classINA219Driver_ac7ddbc1e25b885333e26c5ccbea3d2f9}\label{classINA219Driver_ac7ddbc1e25b885333e26c5ccbea3d2f9} 
+\index{INA219Driver@{INA219Driver}!writeRegister@{writeRegister}}
+\index{writeRegister@{writeRegister}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{writeRegister()}{writeRegister()}}
+{\footnotesize\ttfamily void INA219\+Driver\+::write\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Write a 16-\/bit value to a specified register. 
+
+The 16-\/bit value is split into two 8-\/bit values because the I2C service processes data as arrays of bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Register address to write to. \\
+\hline
+{\em value} & 16-\/bit value to write to the register. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classINA219Driver_acb2ffeb97389b6959d952f7465102180}\label{classINA219Driver_acb2ffeb97389b6959d952f7465102180} 
+\index{INA219Driver@{INA219Driver}!calibration\_value\_@{calibration\_value\_}}
+\index{calibration\_value\_@{calibration\_value\_}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{calibration\_value\_}{calibration\_value\_}}
+{\footnotesize\ttfamily uint32\+\_\+t INA219\+Driver\+::calibration\+\_\+value\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classINA219Driver_a0fe03274a2c1e5e8faea3165b1bde6c7}\label{classINA219Driver_a0fe03274a2c1e5e8faea3165b1bde6c7} 
+\index{INA219Driver@{INA219Driver}!current\_divider\_mA\_@{current\_divider\_mA\_}}
+\index{current\_divider\_mA\_@{current\_divider\_mA\_}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{current\_divider\_mA\_}{current\_divider\_mA\_}}
+{\footnotesize\ttfamily uint32\+\_\+t INA219\+Driver\+::current\+\_\+divider\+\_\+m\+A\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classINA219Driver_a96a028daa01ffb13ead8090fec2f2ad7}\label{classINA219Driver_a96a028daa01ffb13ead8090fec2f2ad7} 
+\index{INA219Driver@{INA219Driver}!power\_multiplier\_mW\_@{power\_multiplier\_mW\_}}
+\index{power\_multiplier\_mW\_@{power\_multiplier\_mW\_}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{power\_multiplier\_mW\_}{power\_multiplier\_mW\_}}
+{\footnotesize\ttfamily float INA219\+Driver\+::power\+\_\+multiplier\+\_\+m\+W\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classINA219Driver_ae067d07fa926506a1bb8b51bbe7d1a40}\label{classINA219Driver_ae067d07fa926506a1bb8b51bbe7d1a40} 
+\index{INA219Driver@{INA219Driver}!publisher\_perc\_@{publisher\_perc\_}}
+\index{publisher\_perc\_@{publisher\_perc\_}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{publisher\_perc\_}{publisher\_perc\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$std\+\_\+msgs\+::msg\+::\+Float64$>$\+::\+Shared\+Ptr INA219\+Driver\+::publisher\+\_\+perc\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classINA219Driver_abee0f96e0580017bd94d418a9d38eb8d}\label{classINA219Driver_abee0f96e0580017bd94d418a9d38eb8d} 
+\index{INA219Driver@{INA219Driver}!publisher\_voltage\_@{publisher\_voltage\_}}
+\index{publisher\_voltage\_@{publisher\_voltage\_}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{publisher\_voltage\_}{publisher\_voltage\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$std\+\_\+msgs\+::msg\+::\+Float64$>$\+::\+Shared\+Ptr INA219\+Driver\+::publisher\+\_\+voltage\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classINA219Driver_adf7bbcbe1083d5a3a27751d7f50a2809}\label{classINA219Driver_adf7bbcbe1083d5a3a27751d7f50a2809} 
+\index{INA219Driver@{INA219Driver}!read\_callbacks\_@{read\_callbacks\_}}
+\index{read\_callbacks\_@{read\_callbacks\_}!INA219Driver@{INA219Driver}}
+\doxysubsubsection{\texorpdfstring{read\_callbacks\_}{read\_callbacks\_}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$uint8\+\_\+t, \mbox{\hyperlink{classINA219Driver_ae1e07a4d39e8755afcb9254a483320e2}{Read\+Callback}}$>$ INA219\+Driver\+::read\+\_\+callbacks\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/drivers/ina219\+\_\+driver/include/\mbox{\hyperlink{INA219Driver_8hpp}{INA219\+Driver.\+hpp}}\item 
+Jet\+Racer/src/drivers/ina219\+\_\+driver/src/\mbox{\hyperlink{INA219Driver_8cpp}{INA219\+Driver.\+cpp}}\end{DoxyCompactItemize}

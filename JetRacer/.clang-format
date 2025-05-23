@@ -1,9 +1,0 @@
-BasedOnStyle: LLVM
-IndentWidth: 4
-UseTab: Never
-TabWidth: 4
-BreakBeforeBraces: Allman
-IndentAccessModifiers: true
-AccessModifierOffset: 0
-PointerAlignment: Left
-

@@ -1,0 +1,155 @@
+\doxysection{I2c\+Driver Class Reference}
+\hypertarget{classI2cDriver}{}\label{classI2cDriver}\index{I2cDriver@{I2cDriver}}
+
+
+Concrete implementation of the \doxylink{classII2cDriver}{II2c\+Driver} interface.  
+
+
+
+
+{\ttfamily \#include $<$I2c\+Driver.\+hpp$>$}
+
+Inheritance diagram for I2c\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classI2cDriver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classI2cDriver_a66e637fdbfe15a706d68c3fa7c5e0f69}{I2c\+Driver}} (uint8\+\_\+t device)
+\item 
+\mbox{\hyperlink{classI2cDriver_ab29ff192edac670ec73c4217d48bbecf}{\texorpdfstring{$\sim$}{\string~}\+I2c\+Driver}} () override
+\item 
+int \mbox{\hyperlink{classI2cDriver_a9d0954b5cbf077b5f93f09dbe15edd98}{open}} () override
+\begin{DoxyCompactList}\small\item\em Opens the I2C device file for communication. \end{DoxyCompactList}\item 
+ssize\+\_\+t \mbox{\hyperlink{classI2cDriver_a7769e6fcc8c87bd64f2ea49257de9705}{read}} (std\+::vector$<$ uint8\+\_\+t $>$ \&buff) override
+\begin{DoxyCompactList}\small\item\em Reads data from the I2C device. \end{DoxyCompactList}\item 
+ssize\+\_\+t \mbox{\hyperlink{classI2cDriver_ac176551d3f7fffa20333d927697b0fb9}{write}} (std\+::vector$<$ uint8\+\_\+t $>$ \&buff) override
+\item 
+int \mbox{\hyperlink{classI2cDriver_a9d5c1b9dcba1aa0963bff617575f86b8}{set\+Address}} (uint8\+\_\+t address) override
+\begin{DoxyCompactList}\small\item\em Sets the address of the I2C slave device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classII2cDriver}{II2c\+Driver}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classII2cDriver_a5ade9cf36d217cded22db18de403e90c}{II2c\+Driver}} (uint8\+\_\+t device)
+\item 
+virtual \mbox{\hyperlink{classII2cDriver_ab7827a64d3c17858d68f96e771d59b2a}{\texorpdfstring{$\sim$}{\string~}\+II2c\+Driver}} ()=default
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classII2cDriver_afc7a7a17ad1c1dcb68f1b70430eca736}{get\+Device\+Nb}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classII2cDriver}{II2c\+Driver}}}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classII2cDriver_ac48d8f6059d49ea1aa09aaee8c66d1ee}{device\+\_\+}}
+\item 
+int \mbox{\hyperlink{classII2cDriver_a1305853f14024945daefb958b5873ad4}{i2c\+\_\+fd\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of the \doxylink{classII2cDriver}{II2c\+Driver} interface. 
+
+Handles low level interaction with the i2c device. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classI2cDriver_a66e637fdbfe15a706d68c3fa7c5e0f69}\label{classI2cDriver_a66e637fdbfe15a706d68c3fa7c5e0f69} 
+\index{I2cDriver@{I2cDriver}!I2cDriver@{I2cDriver}}
+\index{I2cDriver@{I2cDriver}!I2cDriver@{I2cDriver}}
+\doxysubsubsection{\texorpdfstring{I2cDriver()}{I2cDriver()}}
+{\footnotesize\ttfamily I2c\+Driver\+::\+I2c\+Driver (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{device }\end{DoxyParamCaption})}
+
+\Hypertarget{classI2cDriver_ab29ff192edac670ec73c4217d48bbecf}\label{classI2cDriver_ab29ff192edac670ec73c4217d48bbecf} 
+\index{I2cDriver@{I2cDriver}!````~I2cDriver@{\texorpdfstring{$\sim$}{\string~}I2cDriver}}
+\index{````~I2cDriver@{\texorpdfstring{$\sim$}{\string~}I2cDriver}!I2cDriver@{I2cDriver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}I2cDriver()}{\string~I2cDriver()}}
+{\footnotesize\ttfamily I2c\+Driver\+::\texorpdfstring{$\sim$}{\string~}\+I2c\+Driver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classI2cDriver_a9d0954b5cbf077b5f93f09dbe15edd98}\label{classI2cDriver_a9d0954b5cbf077b5f93f09dbe15edd98} 
+\index{I2cDriver@{I2cDriver}!open@{open}}
+\index{open@{open}!I2cDriver@{I2cDriver}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily int I2c\+Driver\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Opens the I2C device file for communication. 
+
+Constructs the device file path based on the device ID and opens it in read/write mode.
+
+\begin{DoxyReturn}{Returns}
+The file descriptor of the opened I2C device, or a negative value if the operation fails. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classII2cDriver_a413d8f0a5b13a4dccaf106ef60d7cd0c}{II2c\+Driver}}.
+
+\Hypertarget{classI2cDriver_a7769e6fcc8c87bd64f2ea49257de9705}\label{classI2cDriver_a7769e6fcc8c87bd64f2ea49257de9705} 
+\index{I2cDriver@{I2cDriver}!read@{read}}
+\index{read@{read}!I2cDriver@{I2cDriver}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily ssize\+\_\+t I2c\+Driver\+::read (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads data from the I2C device. 
+
+Attempts to read a specified number of bytes from the I2C device into the provided buffer. Retries the operation up to MAX\+\_\+\+RETRY times if necessary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & A reference to the buffer where the read data will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total number of bytes read, or a negative value if the operation fails. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classII2cDriver_a1cebc51178a01d5eaeecc3b40ed1e4d7}{II2c\+Driver}}.
+
+\Hypertarget{classI2cDriver_a9d5c1b9dcba1aa0963bff617575f86b8}\label{classI2cDriver_a9d5c1b9dcba1aa0963bff617575f86b8} 
+\index{I2cDriver@{I2cDriver}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!I2cDriver@{I2cDriver}}
+\doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}}
+{\footnotesize\ttfamily int I2c\+Driver\+::set\+Address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the address of the I2C slave device. 
+
+Configures the I2C device to communicate with a specific slave device by setting the address.
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & The address of the I2C slave device. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative value if the operation fails. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classII2cDriver_a505e09a803d205168719dc2e35bbf80d}{II2c\+Driver}}.
+
+\Hypertarget{classI2cDriver_ac176551d3f7fffa20333d927697b0fb9}\label{classI2cDriver_ac176551d3f7fffa20333d927697b0fb9} 
+\index{I2cDriver@{I2cDriver}!write@{write}}
+\index{write@{write}!I2cDriver@{I2cDriver}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily ssize\+\_\+t I2c\+Driver\+::write (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classII2cDriver_a2a3e363deec1d1627c5fdefcf7368d59}{II2c\+Driver}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/bus\+\_\+interfaces/i2c\+\_\+interface/include/\mbox{\hyperlink{I2cDriver_8hpp}{I2c\+Driver.\+hpp}}\item 
+Jet\+Racer/src/bus\+\_\+interfaces/i2c\+\_\+interface/src/\mbox{\hyperlink{I2cDriver_8cpp}{I2c\+Driver.\+cpp}}\end{DoxyCompactItemize}

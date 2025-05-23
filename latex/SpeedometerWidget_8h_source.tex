@@ -1,0 +1,51 @@
+\doxysection{Speedometer\+Widget.\+h}
+\hypertarget{SpeedometerWidget_8h_source}{}\label{SpeedometerWidget_8h_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/SpeedometerWidget.h@{JetRacer/src/head\_unit/cluster\_qt/includes/SpeedometerWidget.h}}
+\mbox{\hyperlink{SpeedometerWidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SPEEDOMETERWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SPEEDOMETERWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Colors_8h}{Colors.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSpeedometerWidget}{SpeedometerWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSpeedometerWidget}{SpeedometerWidget}}(QWidget*\ parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ x\ =\ 0,\ \textcolor{keywordtype}{int}\ y\ =\ 0,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ 0,\ \textcolor{keywordtype}{int}\ height\ =\ 0);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_a2321e71498f63469073490ba7cea94b6}{\string~SpeedometerWidget}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ void\ accelerate(int\ forward\_key);}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_a216391747b443f5105cd2556e81ca728}{setCurrentSpeed}}(\textcolor{keywordtype}{int}\ speed);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_a2a19492d1fd6927c80225d4927cc20b2}{getCurrentSpeed}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_ad782623794e163d3d11afb947d82c4d5}{changeColor}}(\textcolor{keywordtype}{int}\ \ array\_index);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_adf44697e3a7864207b368b8b7cdd29cc}{changeUnits}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{classSpeedometerWidget_a215b063bb6e2de98bb3c817d50cc52f6}{getUnit}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classSpeedometerWidget_aa446e4ee46426c2890687b8c4d66bf84}{main\_color}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classSpeedometerWidget_a44805f55938edac877f0de446a0d7cd5}{accent\_color}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classSpeedometerWidget_a15d8d68e0af800703872ecaa03c9a07a}{alphabet\_color}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_a6d316d682d70d41ffba0fc8d63a62419}{paintEvent}}(QPaintEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_a4bc98f9602513f9e540d37ec17eee18e}{currentSpeed}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_ad0a46516050374144a6bfe5de94b95f4}{maxSpeed}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{classSpeedometerWidget_afc0e57e7ac42c56dcdada479c728db55}{unit}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \ \ \mbox{\hyperlink{classSpeedometerWidget_ab081cec72bb246f72043fbcddff6a2dd}{color1}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_a6926c1f350535309a30734a0c4752bf9}{drawScale}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ center\_x,\ \textcolor{keywordtype}{int}\ center\_y,\ \textcolor{keywordtype}{int}\ radius);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_ab365bb0795c346f5e3cb1f02521864bf}{drawNeedle}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ center\_x,\ \textcolor{keywordtype}{int}\ center\_y,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ radius);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classSpeedometerWidget_a87af95634187759e57def6677460a49c}{drawCentralNumber}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ center\_x,\ \textcolor{keywordtype}{int}\ center\_y);}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SPEEDOMETERWIDGET\_H}}
+
+\end{DoxyCode}

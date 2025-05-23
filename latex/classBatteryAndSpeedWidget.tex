@@ -1,0 +1,413 @@
+\doxysection{Battery\+And\+Speed\+Widget Class Reference}
+\hypertarget{classBatteryAndSpeedWidget}{}\label{classBatteryAndSpeedWidget}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+
+
+This class is a custom QWidget that displays battery level and speed information.  
+
+
+
+
+{\ttfamily \#include $<$Battery\+And\+Speed\+Widget.\+h$>$}
+
+Inheritance diagram for Battery\+And\+Speed\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBatteryAndSpeedWidget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBatteryAndSpeedWidget_a505c68a52a9c31dc93455099261b039c}{Battery\+And\+Speed\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, int x=0, int y=0, int width=0, int height=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classBatteryAndSpeedWidget}{Battery\+And\+Speed\+Widget} with optional position and size parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBatteryAndSpeedWidget_a0600ff9f217797d4dbcac38a987d12bc}{\texorpdfstring{$\sim$}{\string~}\+Battery\+And\+Speed\+Widget}} () override
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classBatteryAndSpeedWidget}{Battery\+And\+Speed\+Widget}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a390d6831c7c65a36da504cb47a2770a7}{set\+Current\+Speed}} (int speed)
+\begin{DoxyCompactList}\small\item\em A setter for the current speed to be displayed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a63b92f9679050d19cb2ccfa6f308da2d}{set\+Current\+Level}} (int battery)
+\begin{DoxyCompactList}\small\item\em A setter for the current battery level to be displayed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a1f84cda3aa2909bcfde4eacd8811afe3}{accelerate}} (int forward\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Simulates acceleration based on the forward key input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a8d451b83f1da8ffcbaf0804b994fe41a}{change\+Color}} (int array\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Changes the color scheme of the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a9b2e74a993893069451e3e2314ab5503}{change\+Units}} (void)
+\begin{DoxyCompactList}\small\item\em Toggles between different units. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{classBatteryAndSpeedWidget_a9c536b1b3c2c768ff229d9df6a01491f}{main\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classBatteryAndSpeedWidget_a422f467ed7ae6a4ed9289ed31b3b2f24}{accent\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classBatteryAndSpeedWidget_a8e5cf4dfb06995d95cfc1ff64b3e0976}{alphabet\+\_\+color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a2729834a955825b1e2fe5c1bce7d07a7}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles the painting of the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a8e46b48dea9a4235edacf82d8245f36e}{update\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Updates the battery level displayed on the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_ae72c3383338f564d7f7a619bda6ca463}{draw\+Scale}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y, int radius)
+\begin{DoxyCompactList}\small\item\em Draws the scale on the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_afbe81b4fa8fcea0421c239d1187879d6}{draw\+Central\+Number}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Draws the central number on the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a7f55f390f5e55d9d8a707a8b5b15f695}{draw\+Battery\+Number}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Draws the battery level number on the widget. \end{DoxyCompactList}\item 
+QColor \mbox{\hyperlink{classBatteryAndSpeedWidget_a4f2515ad6286654f348d346071fd1049}{calculate\+Bar\+Color}} (int value)
+\begin{DoxyCompactList}\small\item\em Calculates the color of the battery or speed bars based on the current value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_ab04c84d0501c1a4059eab9d6ff6f6603}{draw\+Bars}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y, int radius, double start\+\_\+angle, double end\+\_\+angle, int level)
+\begin{DoxyCompactList}\small\item\em Draws the battery or speed bars on the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classBatteryAndSpeedWidget_ad1d2d5b5daf8306b47055833301105b0}{current\+Level}}
+\item 
+int \mbox{\hyperlink{classBatteryAndSpeedWidget_a450c4696d009a0f66eaf14294d8207dc}{current\+Speed}}
+\item 
+int \mbox{\hyperlink{classBatteryAndSpeedWidget_a8fa55276c5e4c057d25fc83553a0d5d7}{imageX}}
+\item 
+int \mbox{\hyperlink{classBatteryAndSpeedWidget_ac51608f4b56a59b49373061b9e179c42}{imageY}}
+\item 
+int \mbox{\hyperlink{classBatteryAndSpeedWidget_ac40624fcffd6c956b50b177d34b11cef}{index}} = 0
+\item 
+QString \mbox{\hyperlink{classBatteryAndSpeedWidget_afbc74881bd6d02e5f2fa1dbe8031c711}{unit}}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classBatteryAndSpeedWidget_a91b9ca9d8c91a483ade1a3bbeb613b6a}{color1}}
+\item 
+QPixmap \mbox{\hyperlink{classBatteryAndSpeedWidget_af7d03d07833bc146b67ac095dcb14889}{image\+\_\+array}} \mbox{[}4\mbox{]}
+\item 
+QPixmap \mbox{\hyperlink{classBatteryAndSpeedWidget_a7c91840d0ebae13c81efbbe8ebddaae4}{image}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is a custom QWidget that displays battery level and speed information. 
+
+The widget provides a graphical representation of the current battery level and speed. It supports customization of colors, units, and display styles. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBatteryAndSpeedWidget_a505c68a52a9c31dc93455099261b039c}\label{classBatteryAndSpeedWidget_a505c68a52a9c31dc93455099261b039c} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{BatteryAndSpeedWidget()}{BatteryAndSpeedWidget()}}
+{\footnotesize\ttfamily Battery\+And\+Speed\+Widget\+::\+Battery\+And\+Speed\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr},  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classBatteryAndSpeedWidget}{Battery\+And\+Speed\+Widget} with optional position and size parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+{\em x} & The x-\/coordinate of the widget\textquotesingle{}s position (default is 0). \\
+\hline
+{\em y} & The y-\/coordinate of the widget\textquotesingle{}s position (default is 0). \\
+\hline
+{\em width} & The width of the widget (default is 0). \\
+\hline
+{\em height} & The height of the widget (default is 0). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryAndSpeedWidget_a0600ff9f217797d4dbcac38a987d12bc}\label{classBatteryAndSpeedWidget_a0600ff9f217797d4dbcac38a987d12bc} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!````~BatteryAndSpeedWidget@{\texorpdfstring{$\sim$}{\string~}BatteryAndSpeedWidget}}
+\index{````~BatteryAndSpeedWidget@{\texorpdfstring{$\sim$}{\string~}BatteryAndSpeedWidget}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BatteryAndSpeedWidget()}{\string~BatteryAndSpeedWidget()}}
+{\footnotesize\ttfamily Battery\+And\+Speed\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+Battery\+And\+Speed\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destroys the \doxylink{classBatteryAndSpeedWidget}{Battery\+And\+Speed\+Widget}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBatteryAndSpeedWidget_a1f84cda3aa2909bcfde4eacd8811afe3}\label{classBatteryAndSpeedWidget_a1f84cda3aa2909bcfde4eacd8811afe3} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!accelerate@{accelerate}}
+\index{accelerate@{accelerate}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{accelerate()}{accelerate()}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::accelerate (\begin{DoxyParamCaption}\item[{int}]{forward\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Simulates acceleration based on the forward key input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em forward\+\_\+key} & The key input representing acceleration. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryAndSpeedWidget_a4f2515ad6286654f348d346071fd1049}\label{classBatteryAndSpeedWidget_a4f2515ad6286654f348d346071fd1049} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!calculateBarColor@{calculateBarColor}}
+\index{calculateBarColor@{calculateBarColor}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{calculateBarColor()}{calculateBarColor()}}
+{\footnotesize\ttfamily QColor Battery\+And\+Speed\+Widget\+::calculate\+Bar\+Color (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the color of the battery or speed bars based on the current value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The current value (e.\+g., speed or battery level). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The QColor representing the bar color. 
+\end{DoxyReturn}
+\Hypertarget{classBatteryAndSpeedWidget_a8d451b83f1da8ffcbaf0804b994fe41a}\label{classBatteryAndSpeedWidget_a8d451b83f1da8ffcbaf0804b994fe41a} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::change\+Color (\begin{DoxyParamCaption}\item[{int}]{array\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Changes the color scheme of the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+\_\+index} & The index of the color scheme in the {\ttfamily image\+\_\+array}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryAndSpeedWidget_a9b2e74a993893069451e3e2314ab5503}\label{classBatteryAndSpeedWidget_a9b2e74a993893069451e3e2314ab5503} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!changeUnits@{changeUnits}}
+\index{changeUnits@{changeUnits}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{changeUnits()}{changeUnits()}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::change\+Units (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Toggles between different units. 
+
+\Hypertarget{classBatteryAndSpeedWidget_ab04c84d0501c1a4059eab9d6ff6f6603}\label{classBatteryAndSpeedWidget_ab04c84d0501c1a4059eab9d6ff6f6603} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!drawBars@{drawBars}}
+\index{drawBars@{drawBars}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawBars()}{drawBars()}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::draw\+Bars (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{centerX,  }\item[{int}]{centerY,  }\item[{int}]{radius,  }\item[{double}]{start\+Angle,  }\item[{double}]{end\+Angle,  }\item[{int}]{Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the battery or speed bars on the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The QPainter object used for drawing. \\
+\hline
+{\em centerX} & The x-\/coordinate of the center of the bars. \\
+\hline
+{\em centerY} & The y-\/coordinate of the center of the bars. \\
+\hline
+{\em radius} & The radius of the bars. \\
+\hline
+{\em start\+Angle} & The starting angle of the bars. \\
+\hline
+{\em end\+Angle} & The ending angle of the bars. \\
+\hline
+{\em Level} & The current battery level. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryAndSpeedWidget_a7f55f390f5e55d9d8a707a8b5b15f695}\label{classBatteryAndSpeedWidget_a7f55f390f5e55d9d8a707a8b5b15f695} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!drawBatteryNumber@{drawBatteryNumber}}
+\index{drawBatteryNumber@{drawBatteryNumber}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawBatteryNumber()}{drawBatteryNumber()}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::draw\+Battery\+Number (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{centerX,  }\item[{int}]{centerY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the battery level number on the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The QPainter object used for drawing. \\
+\hline
+{\em centerX} & The x-\/coordinate of the center of the number. \\
+\hline
+{\em centerY} & The y-\/coordinate of the center of the number. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryAndSpeedWidget_afbe81b4fa8fcea0421c239d1187879d6}\label{classBatteryAndSpeedWidget_afbe81b4fa8fcea0421c239d1187879d6} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!drawCentralNumber@{drawCentralNumber}}
+\index{drawCentralNumber@{drawCentralNumber}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawCentralNumber()}{drawCentralNumber()}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::draw\+Central\+Number (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{centerX,  }\item[{int}]{centerY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the central number on the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The QPainter object used for drawing. \\
+\hline
+{\em centerX} & The x-\/coordinate of the center of the number. \\
+\hline
+{\em centerY} & The y-\/coordinate of the center of the number. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryAndSpeedWidget_ae72c3383338f564d7f7a619bda6ca463}\label{classBatteryAndSpeedWidget_ae72c3383338f564d7f7a619bda6ca463} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!drawScale@{drawScale}}
+\index{drawScale@{drawScale}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawScale()}{drawScale()}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::draw\+Scale (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{centerX,  }\item[{int}]{centerY,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the scale on the widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The QPainter object used for drawing. \\
+\hline
+{\em centerX} & The x-\/coordinate of the center of the scale. \\
+\hline
+{\em centerY} & The y-\/coordinate of the center of the scale. \\
+\hline
+{\em radius} & The radius of the scale. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryAndSpeedWidget_a2729834a955825b1e2fe5c1bce7d07a7}\label{classBatteryAndSpeedWidget_a2729834a955825b1e2fe5c1bce7d07a7} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles the painting of the widget. 
+
+This method is overridden from QWidget and is called whenever the widget needs to be redrawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The paint event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryAndSpeedWidget_a63b92f9679050d19cb2ccfa6f308da2d}\label{classBatteryAndSpeedWidget_a63b92f9679050d19cb2ccfa6f308da2d} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!setCurrentLevel@{setCurrentLevel}}
+\index{setCurrentLevel@{setCurrentLevel}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{setCurrentLevel()}{setCurrentLevel()}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::set\+Current\+Level (\begin{DoxyParamCaption}\item[{int}]{battery }\end{DoxyParamCaption})}
+
+
+
+A setter for the current battery level to be displayed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em battery} & The battery level value to display (0-\/100). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryAndSpeedWidget_a390d6831c7c65a36da504cb47a2770a7}\label{classBatteryAndSpeedWidget_a390d6831c7c65a36da504cb47a2770a7} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!setCurrentSpeed@{setCurrentSpeed}}
+\index{setCurrentSpeed@{setCurrentSpeed}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{setCurrentSpeed()}{setCurrentSpeed()}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::set\+Current\+Speed (\begin{DoxyParamCaption}\item[{int}]{speed }\end{DoxyParamCaption})}
+
+
+
+A setter for the current speed to be displayed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & The speed value to display. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBatteryAndSpeedWidget_a8e46b48dea9a4235edacf82d8245f36e}\label{classBatteryAndSpeedWidget_a8e46b48dea9a4235edacf82d8245f36e} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!updateLevel@{updateLevel}}
+\index{updateLevel@{updateLevel}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{updateLevel}{updateLevel}}
+{\footnotesize\ttfamily void Battery\+And\+Speed\+Widget\+::update\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Updates the battery level displayed on the widget. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBatteryAndSpeedWidget_a422f467ed7ae6a4ed9289ed31b3b2f24}\label{classBatteryAndSpeedWidget_a422f467ed7ae6a4ed9289ed31b3b2f24} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!accent\_color@{accent\_color}}
+\index{accent\_color@{accent\_color}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{accent\_color}{accent\_color}}
+{\footnotesize\ttfamily QColor Battery\+And\+Speed\+Widget\+::accent\+\_\+color}
+
+\Hypertarget{classBatteryAndSpeedWidget_a8e5cf4dfb06995d95cfc1ff64b3e0976}\label{classBatteryAndSpeedWidget_a8e5cf4dfb06995d95cfc1ff64b3e0976} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!alphabet\_color@{alphabet\_color}}
+\index{alphabet\_color@{alphabet\_color}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{alphabet\_color}{alphabet\_color}}
+{\footnotesize\ttfamily QColor Battery\+And\+Speed\+Widget\+::alphabet\+\_\+color}
+
+\Hypertarget{classBatteryAndSpeedWidget_a91b9ca9d8c91a483ade1a3bbeb613b6a}\label{classBatteryAndSpeedWidget_a91b9ca9d8c91a483ade1a3bbeb613b6a} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!color1@{color1}}
+\index{color1@{color1}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{color1}{color1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Battery\+And\+Speed\+Widget\+::color1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_ad1d2d5b5daf8306b47055833301105b0}\label{classBatteryAndSpeedWidget_ad1d2d5b5daf8306b47055833301105b0} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!currentLevel@{currentLevel}}
+\index{currentLevel@{currentLevel}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{currentLevel}{currentLevel}}
+{\footnotesize\ttfamily int Battery\+And\+Speed\+Widget\+::current\+Level\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a450c4696d009a0f66eaf14294d8207dc}\label{classBatteryAndSpeedWidget_a450c4696d009a0f66eaf14294d8207dc} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!currentSpeed@{currentSpeed}}
+\index{currentSpeed@{currentSpeed}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{currentSpeed}{currentSpeed}}
+{\footnotesize\ttfamily int Battery\+And\+Speed\+Widget\+::current\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a7c91840d0ebae13c81efbbe8ebddaae4}\label{classBatteryAndSpeedWidget_a7c91840d0ebae13c81efbbe8ebddaae4} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!image@{image}}
+\index{image@{image}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily QPixmap Battery\+And\+Speed\+Widget\+::image\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_af7d03d07833bc146b67ac095dcb14889}\label{classBatteryAndSpeedWidget_af7d03d07833bc146b67ac095dcb14889} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!image\_array@{image\_array}}
+\index{image\_array@{image\_array}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{image\_array}{image\_array}}
+{\footnotesize\ttfamily QPixmap Battery\+And\+Speed\+Widget\+::image\+\_\+array\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a8fa55276c5e4c057d25fc83553a0d5d7}\label{classBatteryAndSpeedWidget_a8fa55276c5e4c057d25fc83553a0d5d7} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!imageX@{imageX}}
+\index{imageX@{imageX}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{imageX}{imageX}}
+{\footnotesize\ttfamily int Battery\+And\+Speed\+Widget\+::imageX\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_ac51608f4b56a59b49373061b9e179c42}\label{classBatteryAndSpeedWidget_ac51608f4b56a59b49373061b9e179c42} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!imageY@{imageY}}
+\index{imageY@{imageY}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{imageY}{imageY}}
+{\footnotesize\ttfamily int Battery\+And\+Speed\+Widget\+::imageY\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_ac40624fcffd6c956b50b177d34b11cef}\label{classBatteryAndSpeedWidget_ac40624fcffd6c956b50b177d34b11cef} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!index@{index}}
+\index{index@{index}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily int Battery\+And\+Speed\+Widget\+::index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a9c536b1b3c2c768ff229d9df6a01491f}\label{classBatteryAndSpeedWidget_a9c536b1b3c2c768ff229d9df6a01491f} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!main\_color@{main\_color}}
+\index{main\_color@{main\_color}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{main\_color}{main\_color}}
+{\footnotesize\ttfamily QColor Battery\+And\+Speed\+Widget\+::main\+\_\+color}
+
+\Hypertarget{classBatteryAndSpeedWidget_afbc74881bd6d02e5f2fa1dbe8031c711}\label{classBatteryAndSpeedWidget_afbc74881bd6d02e5f2fa1dbe8031c711} 
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!unit@{unit}}
+\index{unit@{unit}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{unit}{unit}}
+{\footnotesize\ttfamily QString Battery\+And\+Speed\+Widget\+::unit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{BatteryAndSpeedWidget_8h}{Battery\+And\+Speed\+Widget.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{BatteryAndSpeedWidget_8cpp}{Battery\+And\+Speed\+Widget.\+cpp}}\end{DoxyCompactItemize}

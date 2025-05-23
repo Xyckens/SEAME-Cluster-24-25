@@ -1,0 +1,46 @@
+\chapter{Jet\+Pack\+Joy\+Ride -\/ Instrument Cluster}
+\hypertarget{index}{}\label{index}\index{JetPackJoyRide -\/ Instrument Cluster@{JetPackJoyRide -\/ Instrument Cluster}}
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+   \hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{📌 About}{📌 About}}\label{index_autotoc_md1}
+The Instrument Cluster project aims to design a viable system for a \href{https://www.waveshare.com/wiki/JetRacer_AI_Kit}{\texttt{ Jetracer}} car and create a real-\/time infotainment system for it. The application(s) will run on a Raspberry Pi 4 and use the Controller Area Network (CAN) protocol to receive speed data from a speed sensor, and the I2c protocol as the communication protocol used to control the motors of the car. This project provides hands-\/on experience in software engineering, including embedded systems, communication protocols, and GUI development with Qt, a framework widely used in the automotive industry.
+
+The project showcase our ability to design and implement real-\/world software solutions and effectively communicate results.
+
+Code documentation can be found here\+: \href{https://xyckens.github.io/SEAME-Cluster-24-25/}{\texttt{ Jet\+Racer Documentation}}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{📁 Repo structure}{📁 Repo structure}}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{Jetracer}}\+: ROS2 workspace with the source code running on the raspberry\+Pi
+\item {\bfseries{Jet\+Racer\+\_\+container}}\+: Contain the Dockerfile to build the project in a container as well as launch script to put the container up with access rights to essential hardware components.
+\item {\bfseries{ECU\+\_\+code}}\+: code running on the {\bfseries{Arduino Uno}}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{🔧 Hardware}{🔧 Hardware}}\label{index_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\bfseries{Raspberry Pi 4}}\+: Ideal for handling the computational requirements of real-\/time GUI and CAN data processing.
+\item {\bfseries{Jetson nano}}\+: Ideal for handling image processing / machine learning (GPU accelerated computation)
+\item {\bfseries{Arduino uno}}\+: Acts as an Electronic control unit collecting speed sensor data and controlling blinker state
+\item {\bfseries{CAN Bus Interface}}\+: MCP2515 for interfacing with the Raspberry Pi 4.
+\item {\bfseries{Speed Sensor}}\+: LM393 infrared speed sensor.
+\item {\bfseries{Display}}\+: LCD display for GUI visualization.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{🎯 Goals and Objectives}{🎯 Goals and Objectives}}\label{index_autotoc_md7}
+\hypertarget{index_autotoc_md8}{}\doxysubsection{\texorpdfstring{Main Goal}{Main Goal}}\label{index_autotoc_md8}
+To develop a functional instrument cluster for the Jet\+Racer car, displaying real-\/time speed data from a speed sensor via the CAN bus among other sensor and system infos.\hypertarget{index_autotoc_md9}{}\doxysubsection{\texorpdfstring{Specific Objectives}{Specific Objectives}}\label{index_autotoc_md9}
+
+\begin{DoxyItemize}
+\item Design and implement a Qt-\/based graphical user interface (GUI).
+\item Integrate a speed sensor system with the Raspberry Pi 4 using the CAN bus protocol.
+\item Display real-\/time speed data on the instrument cluster GUI.
+\item Test functionality using realistic driving scenarios.
+\item Document the project, including system architecture, design, and implementation.
+\end{DoxyItemize}
+
+{\bfseries{Bonus Objective\+:}} Display battery level on the instrument cluster. 

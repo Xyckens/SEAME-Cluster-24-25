@@ -1,0 +1,129 @@
+\doxysection{Servo\+Node Class Reference}
+\hypertarget{classServoNode}{}\label{classServoNode}\index{ServoNode@{ServoNode}}
+
+
+Listens to twist message and translate them into PWM signal values that the pca driver understands.  
+
+
+
+
+{\ttfamily \#include $<$Servo\+Node.\+hpp$>$}
+
+Inheritance diagram for Servo\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classServoNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServoNode_a682ac10746c48de6e77bcc7e7b53d978}{Servo\+Node}} ()
+\item 
+\mbox{\hyperlink{classServoNode_a77e32a9dd0719b322792fce594cabf79}{\texorpdfstring{$\sim$}{\string~}\+Servo\+Node}} () override
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classServoNode_ab31e1771719caecc5b2be38c28240526}{init\+PCA9685}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPCA9685Driver}{APCA9685\+Driver}} $>$ mock\+\_\+pca\+\_\+driver=nullptr)
+\begin{DoxyCompactList}\small\item\em Initialize the PCA9685 driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classServoNode_a6477bb6a6e9ce7b682e2ba1624a40fb8}{write\+Angle}} (geometry\+\_\+msgs\+::msg\+::\+Twist\+::\+Shared\+Ptr twist)
+\begin{DoxyCompactList}\small\item\em Handles incoming direction messages and maps the angle to PCA9685 PWM counts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ geometry\+\_\+msgs\+::msg\+::\+Twist $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classServoNode_aa548a11605a08a51a4fa38809e2bafa6}{direction\+\_\+subscriber\+\_\+}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPCA9685Driver}{APCA9685\+Driver}} $>$ \mbox{\hyperlink{classServoNode_a5a4b5cf43505ee9bd33c5d2dbe2c03a3}{pca\+\_\+driver\+\_\+}}
+\item 
+const float\+\_\+t \mbox{\hyperlink{classServoNode_a60b9f59505df4974849a3cfc7f8c4096}{MAX\+\_\+\+ANGULAR\+\_\+\+VEL}} = 1.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Listens to twist message and translate them into PWM signal values that the pca driver understands. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classServoNode_a682ac10746c48de6e77bcc7e7b53d978}\label{classServoNode_a682ac10746c48de6e77bcc7e7b53d978} 
+\index{ServoNode@{ServoNode}!ServoNode@{ServoNode}}
+\index{ServoNode@{ServoNode}!ServoNode@{ServoNode}}
+\doxysubsubsection{\texorpdfstring{ServoNode()}{ServoNode()}}
+{\footnotesize\ttfamily Servo\+Node\+::\+Servo\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classServoNode_a77e32a9dd0719b322792fce594cabf79}\label{classServoNode_a77e32a9dd0719b322792fce594cabf79} 
+\index{ServoNode@{ServoNode}!````~ServoNode@{\texorpdfstring{$\sim$}{\string~}ServoNode}}
+\index{````~ServoNode@{\texorpdfstring{$\sim$}{\string~}ServoNode}!ServoNode@{ServoNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ServoNode()}{\string~ServoNode()}}
+{\footnotesize\ttfamily Servo\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Servo\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classServoNode_ab31e1771719caecc5b2be38c28240526}\label{classServoNode_ab31e1771719caecc5b2be38c28240526} 
+\index{ServoNode@{ServoNode}!initPCA9685@{initPCA9685}}
+\index{initPCA9685@{initPCA9685}!ServoNode@{ServoNode}}
+\doxysubsubsection{\texorpdfstring{initPCA9685()}{initPCA9685()}}
+{\footnotesize\ttfamily uint8\+\_\+t Servo\+Node\+::init\+PCA9685 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPCA9685Driver}{APCA9685\+Driver}} $>$}]{mock\+\_\+driver = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Initialize the PCA9685 driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mock\+\_\+driver} & if not null, the driver will be mocked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+EXIT\+\_\+\+FAILURE if the driver fails to initialize, EXIT\+\_\+\+SUCCESS otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classServoNode_a6477bb6a6e9ce7b682e2ba1624a40fb8}\label{classServoNode_a6477bb6a6e9ce7b682e2ba1624a40fb8} 
+\index{ServoNode@{ServoNode}!writeAngle@{writeAngle}}
+\index{writeAngle@{writeAngle}!ServoNode@{ServoNode}}
+\doxysubsubsection{\texorpdfstring{writeAngle()}{writeAngle()}}
+{\footnotesize\ttfamily void Servo\+Node\+::write\+Angle (\begin{DoxyParamCaption}\item[{geometry\+\_\+msgs\+::msg\+::\+Twist\+::\+Shared\+Ptr}]{twist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles incoming direction messages and maps the angle to PCA9685 PWM counts. 
+
+This function subscribes to a topic providing direction as an angle (0 to 180 degrees). It validates the input and calculates the corresponding pulse width for a servo motor. The PCA9685 divides the 20 ms (50 Hz) PWM period into 4096 discrete counts, where each count corresponds to approximately 4.\+88 microseconds. Servo motors typically require pulse widths between 1 ms (0°) and 2 ms (180°), which map to 102 and 510 counts, respectively. The pulse width is linearly interpolated using the formula\+: pulse\+Width = MIN\+\_\+\+COUNT + (angle \texorpdfstring{$\ast$}{*} (MAX\+\_\+\+COUNT -\/ MIN\+\_\+\+COUNT)) / 180 For example\+:
+\begin{DoxyItemize}
+\item At 0 degrees\+: pulse\+Width = 102 counts (HIGH for \texorpdfstring{$\sim$}{\string~}1 ms).
+\item At 180 degrees\+: pulse\+Width = 510 counts (HIGH for \texorpdfstring{$\sim$}{\string~}2 ms). The {\ttfamily set\+PWM} function configures the PCA9685 as follows\+:
+\item on\+Time = 0 (signal starts HIGH at the beginning of the period).
+\item off\+Time = pulse\+Width (signal goes LOW after {\ttfamily pulse\+Width} counts).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em twist} & The incoming direction message. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classServoNode_aa548a11605a08a51a4fa38809e2bafa6}\label{classServoNode_aa548a11605a08a51a4fa38809e2bafa6} 
+\index{ServoNode@{ServoNode}!direction\_subscriber\_@{direction\_subscriber\_}}
+\index{direction\_subscriber\_@{direction\_subscriber\_}!ServoNode@{ServoNode}}
+\doxysubsubsection{\texorpdfstring{direction\_subscriber\_}{direction\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$geometry\+\_\+msgs\+::msg\+::\+Twist$>$\+::\+Shared\+Ptr Servo\+Node\+::direction\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classServoNode_a60b9f59505df4974849a3cfc7f8c4096}\label{classServoNode_a60b9f59505df4974849a3cfc7f8c4096} 
+\index{ServoNode@{ServoNode}!MAX\_ANGULAR\_VEL@{MAX\_ANGULAR\_VEL}}
+\index{MAX\_ANGULAR\_VEL@{MAX\_ANGULAR\_VEL}!ServoNode@{ServoNode}}
+\doxysubsubsection{\texorpdfstring{MAX\_ANGULAR\_VEL}{MAX\_ANGULAR\_VEL}}
+{\footnotesize\ttfamily const float\+\_\+t Servo\+Node\+::\+MAX\+\_\+\+ANGULAR\+\_\+\+VEL = 1.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classServoNode_a5a4b5cf43505ee9bd33c5d2dbe2c03a3}\label{classServoNode_a5a4b5cf43505ee9bd33c5d2dbe2c03a3} 
+\index{ServoNode@{ServoNode}!pca\_driver\_@{pca\_driver\_}}
+\index{pca\_driver\_@{pca\_driver\_}!ServoNode@{ServoNode}}
+\doxysubsubsection{\texorpdfstring{pca\_driver\_}{pca\_driver\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classAPCA9685Driver}{APCA9685\+Driver}}$>$ Servo\+Node\+::pca\+\_\+driver\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/peripherals/servo\+\_\+motor/include/\mbox{\hyperlink{ServoNode_8hpp}{Servo\+Node.\+hpp}}\item 
+Jet\+Racer/src/peripherals/servo\+\_\+motor/src/\mbox{\hyperlink{ServoNode_8cpp}{Servo\+Node.\+cpp}}\end{DoxyCompactItemize}

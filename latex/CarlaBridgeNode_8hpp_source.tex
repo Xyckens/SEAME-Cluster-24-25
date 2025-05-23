@@ -1,0 +1,24 @@
+\doxysection{Carla\+Bridge\+Node.\+hpp}
+\hypertarget{CarlaBridgeNode_8hpp_source}{}\label{CarlaBridgeNode_8hpp_source}\index{JetRacer/src/head\_unit/carla\_bridge/include/CarlaBridgeNode.hpp@{JetRacer/src/head\_unit/carla\_bridge/include/CarlaBridgeNode.hpp}}
+\mbox{\hyperlink{CarlaBridgeNode_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <geometry\_msgs/msg/twist.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <carla\_msgs/msg/carla\_ego\_vehicle\_control.hpp>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCarlaBridgeNode}{CarlaBridgeNode}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classCarlaBridgeNode_aaec7b3b8ac62f2bd233dddaabc106eeb}{CarlaBridgeNode}}();}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCarlaBridgeNode_ac94c96c4b94f6a5355a2a015ea73c4cd}{twistCallback}}(geometry\_msgs::msg::Twist::SharedPtr\ twist\_msg);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ rclcpp::Subscription<geometry\_msgs::msg::Twist>::SharedPtr\ \mbox{\hyperlink{classCarlaBridgeNode_a7b2831752d42d08a7ccf58ac1b1fdba4}{twist\_subscriber\_}};}
+\DoxyCodeLine{00017\ \ \ \ \ rclcpp::Publisher<carla\_msgs::msg::CarlaEgoVehicleControl>::SharedPtr\ \mbox{\hyperlink{classCarlaBridgeNode_a25a8878adc9a00f2b6a586448a6fac86}{carla\_control\_publisher\_}};}
+\DoxyCodeLine{00018\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,106 @@
+\doxysection{Camera\+Widget Class Reference}
+\hypertarget{classCameraWidget}{}\label{classCameraWidget}\index{CameraWidget@{CameraWidget}}
+
+
+The \doxylink{classCameraWidget}{Camera\+Widget} class is a custom QWidget that displays a live camera feed.  
+
+
+
+
+{\ttfamily \#include $<$Camera\+Widget.\+h$>$}
+
+Inheritance diagram for Camera\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCameraWidget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCameraWidget_a936368c9e2be6a4e073225a19e92d5a3}{Camera\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, int x=0, int y=0, int width=0, int height=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classCameraWidget}{Camera\+Widget} with the specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCameraWidget_ae4d0598a82e7675d289186ad2c27bde8}{\texorpdfstring{$\sim$}{\string~}\+Camera\+Widget}} () override
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classCameraWidget}{Camera\+Widget}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QCamera \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCameraWidget_a01e068c504e4b506f86fa869a1e1b774}{camera}}
+\item 
+QMedia\+Capture\+Session \mbox{\hyperlink{classCameraWidget_ad01ec406fc6fc175451b5b8bbb478316}{capture\+Session}}
+\item 
+QVideo\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCameraWidget_af178211b17979e4edc041840ad1eeb93}{video\+Widget}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classCameraWidget}{Camera\+Widget} class is a custom QWidget that displays a live camera feed. 
+
+This widget encapsulates a QCamera, QMedia\+Capture\+Session, and QVideo\+Widget to provide a simple interface for displaying a camera feed in a Qt application. It supports customization of position and size. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCameraWidget_a936368c9e2be6a4e073225a19e92d5a3}\label{classCameraWidget_a936368c9e2be6a4e073225a19e92d5a3} 
+\index{CameraWidget@{CameraWidget}!CameraWidget@{CameraWidget}}
+\index{CameraWidget@{CameraWidget}!CameraWidget@{CameraWidget}}
+\doxysubsubsection{\texorpdfstring{CameraWidget()}{CameraWidget()}}
+{\footnotesize\ttfamily Camera\+Widget\+::\+Camera\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr},  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classCameraWidget}{Camera\+Widget} with the specified parameters. 
+
+This constructor initializes the \doxylink{classCameraWidget}{Camera\+Widget}, sets up the camera and video widget, and configures the layout to display the camera feed. The widget is positioned and sized according to the provided parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+{\em x} & The x-\/coordinate of the widget\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the widget\textquotesingle{}s position. \\
+\hline
+{\em width} & The width of the widget. \\
+\hline
+{\em height} & The height of the widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The camera feed is displayed using a QVideo\+Widget, which is added to the widget\textquotesingle{}s layout. 
+\end{DoxyNote}
+\Hypertarget{classCameraWidget_ae4d0598a82e7675d289186ad2c27bde8}\label{classCameraWidget_ae4d0598a82e7675d289186ad2c27bde8} 
+\index{CameraWidget@{CameraWidget}!````~CameraWidget@{\texorpdfstring{$\sim$}{\string~}CameraWidget}}
+\index{````~CameraWidget@{\texorpdfstring{$\sim$}{\string~}CameraWidget}!CameraWidget@{CameraWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CameraWidget()}{\string~CameraWidget()}}
+{\footnotesize\ttfamily Camera\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+Camera\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destroys the \doxylink{classCameraWidget}{Camera\+Widget}. 
+
+This destructor cleans up dynamically allocated resources. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCameraWidget_a01e068c504e4b506f86fa869a1e1b774}\label{classCameraWidget_a01e068c504e4b506f86fa869a1e1b774} 
+\index{CameraWidget@{CameraWidget}!camera@{camera}}
+\index{camera@{camera}!CameraWidget@{CameraWidget}}
+\doxysubsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily QCamera\texorpdfstring{$\ast$}{*} Camera\+Widget\+::camera\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCameraWidget_ad01ec406fc6fc175451b5b8bbb478316}\label{classCameraWidget_ad01ec406fc6fc175451b5b8bbb478316} 
+\index{CameraWidget@{CameraWidget}!captureSession@{captureSession}}
+\index{captureSession@{captureSession}!CameraWidget@{CameraWidget}}
+\doxysubsubsection{\texorpdfstring{captureSession}{captureSession}}
+{\footnotesize\ttfamily QMedia\+Capture\+Session Camera\+Widget\+::capture\+Session\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCameraWidget_af178211b17979e4edc041840ad1eeb93}\label{classCameraWidget_af178211b17979e4edc041840ad1eeb93} 
+\index{CameraWidget@{CameraWidget}!videoWidget@{videoWidget}}
+\index{videoWidget@{videoWidget}!CameraWidget@{CameraWidget}}
+\doxysubsubsection{\texorpdfstring{videoWidget}{videoWidget}}
+{\footnotesize\ttfamily QVideo\+Widget\texorpdfstring{$\ast$}{*} Camera\+Widget\+::video\+Widget\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{CameraWidget_8h}{Camera\+Widget.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{CameraWidget_8cpp}{Camera\+Widget.\+cpp}}\end{DoxyCompactItemize}

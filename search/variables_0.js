@@ -1,0 +1,13 @@
+var searchData=
+[
+  ['accent_5fcolor_0',['accent_color',['../classBatteryAndSpeedWidget.html#a422f467ed7ae6a4ed9289ed31b3b2f24',1,'BatteryAndSpeedWidget::accent_color'],['../classBatteryWidget.html#af8f64611dd3e658583c529da754f3bdf',1,'BatteryWidget::accent_color'],['../classColor.html#a39e73e04ef1ffef494d70e1448098c58',1,'Color::accent_color'],['../classCPUTempWidget.html#a2251588ad3cd569b634317548637b1d7',1,'CPUTempWidget::accent_color'],['../classFanSpeedWidget.html#af291a67971a00843a3e64fb33f8a33f6',1,'FanSpeedWidget::accent_color'],['../classSpeedometerWidget.html#a44805f55938edac877f0de446a0d7cd5',1,'SpeedometerWidget::accent_color'],['../classStatsWidget.html#ab650b4543f4bb8e64b2f6268fd12c719',1,'StatsWidget::accent_color'],['../classArrowSymbolWidget.html#a8d6b11e56e193c3c96b46a2a2d3ef5c9',1,'ArrowSymbolWidget::accent_color']]],
+  ['accent_5fcolor_5farray_1',['accent_color_array',['../classColor.html#adc99bd4188d5381db98bd9d59dd51bd2',1,'Color']]],
+  ['alphabet_5fcolor_2',['alphabet_color',['../classColor.html#ae4928e1176b4884bed811328b06bf83e',1,'Color::alphabet_color'],['../classStatsWidget.html#afc6a0ded09bdeab2ca5831ef1f9587f0',1,'StatsWidget::alphabet_color'],['../classSpeedometerWidget.html#a15d8d68e0af800703872ecaa03c9a07a',1,'SpeedometerWidget::alphabet_color'],['../classFanSpeedWidget.html#a16498a4403c3d75da15298f49abe9522',1,'FanSpeedWidget::alphabet_color'],['../classCPUTempWidget.html#a60cac8d5e0716742158f028074fdfcc3',1,'CPUTempWidget::alphabet_color'],['../classBatteryWidget.html#a57a0ed5cbfbb56eac2e8af8aad368a24',1,'BatteryWidget::alphabet_color'],['../classBatteryAndSpeedWidget.html#a8e5cf4dfb06995d95cfc1ff64b3e0976',1,'BatteryAndSpeedWidget::alphabet_color'],['../classArrowSymbolWidget.html#ae12c492e1c15187568a0be68353d35b5',1,'ArrowSymbolWidget::alphabet_color']]],
+  ['alphabet_5fcolor_5farray_3',['alphabet_color_array',['../classColor.html#a5a1a0b3796e51e07ed6b92d25d12d757',1,'Color']]],
+  ['altimagepaths_4',['altImagePaths',['../classTopBar.html#aa76f0b060038cd441033481e9a0d21ef',1,'TopBar']]],
+  ['altimages_5',['altImages',['../classTopBar.html#a20aa9ebc8d6c110227243f1dd72bb851',1,'TopBar']]],
+  ['arrows_6',['arrows',['../classEventManager.html#afa97e3e1132d0fdf07918d1a146ad1d7',1,'EventManager']]],
+  ['auto_5fincrement_7',['AUTO_INCREMENT',['../PCA9685Driver_8hpp.html#aad49ceb6d0d567d1a333a5155a9d3354',1,'PCA9685Driver.hpp']]],
+  ['average_8',['average',['../classStatsWidget.html#af205d07d63d9910d3e8ae4236b5154ef',1,'StatsWidget']]],
+  ['average_5fint_9',['average_int',['../classStatsWidget.html#a6f453051f9847984e33b9a01e05f08bf',1,'StatsWidget']]]
+];

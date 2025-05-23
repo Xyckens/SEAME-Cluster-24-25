@@ -1,0 +1,230 @@
+\doxysection{Blinkers Class Reference}
+\hypertarget{classBlinkers}{}\label{classBlinkers}\index{Blinkers@{Blinkers}}
+
+
+The class represents a widget that simulates blinking indicators.  
+
+
+
+
+{\ttfamily \#include $<$Blinkers.\+h$>$}
+
+Inheritance diagram for Blinkers\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBlinkers}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBlinkers_a1598640394fec681a533e275660e34d6}{Blinkers}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, std\+::string dir="{}left"{}, std\+::string mode="{}off"{}, int x=0, int y=0, int width=0, int height=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classBlinkers}{Blinkers} widget with the specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlinkers_a241ae0e761f2cd1df5a920568f0162cf}{\texorpdfstring{$\sim$}{\string~}\+Blinkers}} () override
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classBlinkers}{Blinkers} widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlinkers_a76a45cbee7f357479cf29a1f80401a71}{turn\+On\+Blinkers}} (bool on\+\_\+off)
+\begin{DoxyCompactList}\small\item\em Turns the blinkers on or off. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBlinkers_ade0115bfa30b61d24096d29091d1b774}{get\+Blinking}} (void)
+\begin{DoxyCompactList}\small\item\em A Getter that returns the current blinking state of the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlinkers_a42b6613a3e2c553440706159622ffef3}{change\+Color}} (int array\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Changes the color of the displayed image. \end{DoxyCompactList}\item 
+QTimer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classBlinkers_aaa0c9450fc511733d10474b916517771}{get\+Toggle\+Timer}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the QTimer used for toggling the images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBlinkers_aeaaff48f7beafba0a338999f9d5a1deb}{toggle\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Toggles between the two images to create a blinking effect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QLabel \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classBlinkers_a28ac46d79cf7d4cb23224ff94b9ef081}{image\+Label}}
+\item 
+QPixmap \mbox{\hyperlink{classBlinkers_a7979abbe25c4bb7025034f38ac3ce917}{image1}}
+\item 
+QPixmap \mbox{\hyperlink{classBlinkers_a3b407c23a5d8c869580e785cd4938c18}{image1\+\_\+array}} \mbox{[}4\mbox{]}
+\item 
+QPixmap \mbox{\hyperlink{classBlinkers_ac9dc1605d341736ea56a352b38329159}{image2}}
+\item 
+QTimer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classBlinkers_a3ffa95076459238594963f0c108c7f28}{toggle\+Timer}}
+\item 
+bool \mbox{\hyperlink{classBlinkers_ac3adb83fbaab064fc2b1dc865d92e8fd}{is\+Image1\+Visible}}
+\item 
+bool \mbox{\hyperlink{classBlinkers_a845de51833067208e7bbfc9048657670}{blinking}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class represents a widget that simulates blinking indicators. 
+
+It uses a QTimer to toggle between two images, creating a blinking effect. The class supports turning the blinkers on/off and changing the color of the images. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBlinkers_a1598640394fec681a533e275660e34d6}\label{classBlinkers_a1598640394fec681a533e275660e34d6} 
+\index{Blinkers@{Blinkers}!Blinkers@{Blinkers}}
+\index{Blinkers@{Blinkers}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{Blinkers()}{Blinkers()}}
+{\footnotesize\ttfamily Blinkers\+::\+Blinkers (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr},  }\item[{std\+::string}]{dir = {\ttfamily "{}left"{}},  }\item[{std\+::string}]{mode = {\ttfamily "{}off"{}},  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classBlinkers}{Blinkers} widget with the specified parameters. 
+
+This constructor initializes the \doxylink{classBlinkers}{Blinkers} widget, loads the appropriate images based on the direction (dir), and sets up the layout and initial state of the widget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+{\em dir} & The direction of the blinkers (left or right). \\
+\hline
+{\em mode} & The initial mode of the blinkers. \\
+\hline
+{\em x} & The x-\/coordinate of the widget\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the widget\textquotesingle{}s position. \\
+\hline
+{\em width} & The width of the widget. \\
+\hline
+{\em height} & The height of the widget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the images fail to load, a warning message will be logged. 
+\end{DoxyNote}
+\Hypertarget{classBlinkers_a241ae0e761f2cd1df5a920568f0162cf}\label{classBlinkers_a241ae0e761f2cd1df5a920568f0162cf} 
+\index{Blinkers@{Blinkers}!````~Blinkers@{\texorpdfstring{$\sim$}{\string~}Blinkers}}
+\index{````~Blinkers@{\texorpdfstring{$\sim$}{\string~}Blinkers}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Blinkers()}{\string~Blinkers()}}
+{\footnotesize\ttfamily Blinkers\+::\texorpdfstring{$\sim$}{\string~}\+Blinkers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destroys the \doxylink{classBlinkers}{Blinkers} widget. 
+
+This destructor cleans up dynamically allocated resources. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBlinkers_a42b6613a3e2c553440706159622ffef3}\label{classBlinkers_a42b6613a3e2c553440706159622ffef3} 
+\index{Blinkers@{Blinkers}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Blinkers\+::change\+Color (\begin{DoxyParamCaption}\item[{int}]{array\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Changes the color of the displayed image. 
+
+This method updates the image1 to the image corresponding to the provided array\+\_\+index in the image1\+\_\+array. The image\+Label is then updated to display the new image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+\_\+index} & The index of the image in the image1\+\_\+array. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBlinkers_ade0115bfa30b61d24096d29091d1b774}\label{classBlinkers_ade0115bfa30b61d24096d29091d1b774} 
+\index{Blinkers@{Blinkers}!getBlinking@{getBlinking}}
+\index{getBlinking@{getBlinking}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{getBlinking()}{getBlinking()}}
+{\footnotesize\ttfamily bool Blinkers\+::get\+Blinking (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+A Getter that returns the current blinking state of the widget. 
+
+\begin{DoxyReturn}{Returns}
+true if the blinkers are currently blinking, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBlinkers_aaa0c9450fc511733d10474b916517771}\label{classBlinkers_aaa0c9450fc511733d10474b916517771} 
+\index{Blinkers@{Blinkers}!getToggleTimer@{getToggleTimer}}
+\index{getToggleTimer@{getToggleTimer}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{getToggleTimer()}{getToggleTimer()}}
+{\footnotesize\ttfamily QTimer \texorpdfstring{$\ast$}{*} Blinkers\+::get\+Toggle\+Timer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the QTimer used for toggling the images. 
+
+This method provides access to the toggle\+Timer, which controls the blinking interval.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the QTimer object. 
+\end{DoxyReturn}
+\Hypertarget{classBlinkers_aeaaff48f7beafba0a338999f9d5a1deb}\label{classBlinkers_aeaaff48f7beafba0a338999f9d5a1deb} 
+\index{Blinkers@{Blinkers}!toggleImage@{toggleImage}}
+\index{toggleImage@{toggleImage}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{toggleImage}{toggleImage}}
+{\footnotesize\ttfamily void Blinkers\+::toggle\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Toggles between the two images to create a blinking effect. 
+
+This method switches the displayed image and updates the image\+Label. It is called periodically by the toggle\+Timer to create the blinking animation. \Hypertarget{classBlinkers_a76a45cbee7f357479cf29a1f80401a71}\label{classBlinkers_a76a45cbee7f357479cf29a1f80401a71} 
+\index{Blinkers@{Blinkers}!turnOnBlinkers@{turnOnBlinkers}}
+\index{turnOnBlinkers@{turnOnBlinkers}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{turnOnBlinkers()}{turnOnBlinkers()}}
+{\footnotesize\ttfamily void Blinkers\+::turn\+On\+Blinkers (\begin{DoxyParamCaption}\item[{bool}]{on\+\_\+off }\end{DoxyParamCaption})}
+
+
+
+Turns the blinkers on or off. 
+
+This method starts or stops the blinking effect by controlling the toggle\+Timer. If on\+\_\+off is true, the timer is started, and the images toggle every 500 milliseconds. If on\+\_\+off is false, the timer is stopped, and the widget displays the default image .
+
+
+\begin{DoxyParams}{Parameters}
+{\em on\+\_\+off} & If true, the blinkers are turned on; if false, they are turned off. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBlinkers_a845de51833067208e7bbfc9048657670}\label{classBlinkers_a845de51833067208e7bbfc9048657670} 
+\index{Blinkers@{Blinkers}!blinking@{blinking}}
+\index{blinking@{blinking}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{blinking}{blinking}}
+{\footnotesize\ttfamily bool Blinkers\+::blinking\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBlinkers_a7979abbe25c4bb7025034f38ac3ce917}\label{classBlinkers_a7979abbe25c4bb7025034f38ac3ce917} 
+\index{Blinkers@{Blinkers}!image1@{image1}}
+\index{image1@{image1}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{image1}{image1}}
+{\footnotesize\ttfamily QPixmap Blinkers\+::image1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBlinkers_a3b407c23a5d8c869580e785cd4938c18}\label{classBlinkers_a3b407c23a5d8c869580e785cd4938c18} 
+\index{Blinkers@{Blinkers}!image1\_array@{image1\_array}}
+\index{image1\_array@{image1\_array}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{image1\_array}{image1\_array}}
+{\footnotesize\ttfamily QPixmap Blinkers\+::image1\+\_\+array\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBlinkers_ac9dc1605d341736ea56a352b38329159}\label{classBlinkers_ac9dc1605d341736ea56a352b38329159} 
+\index{Blinkers@{Blinkers}!image2@{image2}}
+\index{image2@{image2}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{image2}{image2}}
+{\footnotesize\ttfamily QPixmap Blinkers\+::image2\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBlinkers_a28ac46d79cf7d4cb23224ff94b9ef081}\label{classBlinkers_a28ac46d79cf7d4cb23224ff94b9ef081} 
+\index{Blinkers@{Blinkers}!imageLabel@{imageLabel}}
+\index{imageLabel@{imageLabel}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{imageLabel}{imageLabel}}
+{\footnotesize\ttfamily QLabel\texorpdfstring{$\ast$}{*} Blinkers\+::image\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBlinkers_ac3adb83fbaab064fc2b1dc865d92e8fd}\label{classBlinkers_ac3adb83fbaab064fc2b1dc865d92e8fd} 
+\index{Blinkers@{Blinkers}!isImage1Visible@{isImage1Visible}}
+\index{isImage1Visible@{isImage1Visible}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{isImage1Visible}{isImage1Visible}}
+{\footnotesize\ttfamily bool Blinkers\+::is\+Image1\+Visible\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBlinkers_a3ffa95076459238594963f0c108c7f28}\label{classBlinkers_a3ffa95076459238594963f0c108c7f28} 
+\index{Blinkers@{Blinkers}!toggleTimer@{toggleTimer}}
+\index{toggleTimer@{toggleTimer}!Blinkers@{Blinkers}}
+\doxysubsubsection{\texorpdfstring{toggleTimer}{toggleTimer}}
+{\footnotesize\ttfamily QTimer\texorpdfstring{$\ast$}{*} Blinkers\+::toggle\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{Blinkers_8h}{Blinkers.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{Blinkers_8cpp}{Blinkers.\+cpp}}\end{DoxyCompactItemize}

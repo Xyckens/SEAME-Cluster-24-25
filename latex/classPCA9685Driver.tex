@@ -1,0 +1,191 @@
+\doxysection{PCA9685\+Driver Class Reference}
+\hypertarget{classPCA9685Driver}{}\label{classPCA9685Driver}\index{PCA9685Driver@{PCA9685Driver}}
+
+
+Driver to interact with the PCA9685 (motor control)  
+
+
+
+
+{\ttfamily \#include $<$PCA9685\+Driver.\+hpp$>$}
+
+Inheritance diagram for PCA9685\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPCA9685Driver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPCA9685Driver_a3b4ba9785e5d33d143ed5bca9c8eebaa}{PCA9685\+Driver}} (std\+::shared\+\_\+ptr$<$ rclcpp\+::\+Node $>$ node, uint8\+\_\+t device\+\_\+address)
+\item 
+\mbox{\hyperlink{classPCA9685Driver_a9b1840a7d6dcce8285994d1181607515}{\texorpdfstring{$\sim$}{\string~}\+PCA9685\+Driver}} () override=default
+\item 
+void \mbox{\hyperlink{classPCA9685Driver_a7f82753c915244305bf42596414f5421}{set\+Register}} (uint8\+\_\+t reg, uint8\+\_\+t value) override
+\begin{DoxyCompactList}\small\item\em Writes a value to a specific register on the PCA9685 device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685Driver_a4cfa38b52bde77dc5ae8c863cb78b073}{set\+PWMFrequency}} (float freq\+\_\+hz) override
+\begin{DoxyCompactList}\small\item\em Sets the PWM frequency of the PCA9685 device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685Driver_adf0e52931778f32dfd8b53b5dbd19c43}{set\+PWMDuty\+Cycle}} (uint8\+\_\+t channel, uint16\+\_\+t on, uint16\+\_\+t off) override
+\begin{DoxyCompactList}\small\item\em Sets the duty cycle for a specified PWM channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685Driver_ab5b29700d43dfae89f93a191aa882455}{set\+GPIO}} (uint8\+\_\+t channel, bool on) override
+\begin{DoxyCompactList}\small\item\em set a gpio of the PCA9685 high or low \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classADriver}{ADriver}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classADriver_a759c7a45993757787469d578b1ae26dc}{ADriver}} (rclcpp\+::\+Node\+::\+Shared\+Ptr node, uint8\+\_\+t device\+\_\+address)
+\item 
+virtual \mbox{\hyperlink{classADriver_adbd111235337f52ee4382190eb6ff93f}{\texorpdfstring{$\sim$}{\string~}\+ADriver}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAPCA9685Driver}{APCA9685\+Driver}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAPCA9685Driver_a360d7b21c86c7b65901e910cb3bf8449}{APCA9685\+Driver}} ()=default
+\item 
+virtual \mbox{\hyperlink{classAPCA9685Driver_a4d0450c4e5187f5cac7ee00850a5a5b6}{\texorpdfstring{$\sim$}{\string~}\+APCA9685\+Driver}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classADriver}{ADriver}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classADriver_a7c8b6b179b64b604c29362e0dbdbffd9}{ping}} ()
+\begin{DoxyCompactList}\small\item\em ping the device and wait for a response. throw a driver exception if the device is not found on the bus. Nodes depending on drivers should call this function before spinning to make sure the actual hardware is present \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classADriver_a57d37e3a461292d2fdea1b084f85a40c}{handle\+I2c\+Response}} (rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Future response)
+\begin{DoxyCompactList}\small\item\em handle the response from the i2c service \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classADriver}{ADriver}}}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Node\+::\+Shared\+Ptr \mbox{\hyperlink{classADriver_affbae288b7155acb8a8c9d7ccea899c6}{node\+\_\+}}
+\item 
+rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classADriver_a69160e2270d20f647de3dfc1c9cc5d5c}{i2c\+\_\+client\+\_\+}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classADriver_adb73686aba67a783e9fd1e25d4c507b3}{device\+\_\+address\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver to interact with the PCA9685 (motor control) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPCA9685Driver_a3b4ba9785e5d33d143ed5bca9c8eebaa}\label{classPCA9685Driver_a3b4ba9785e5d33d143ed5bca9c8eebaa} 
+\index{PCA9685Driver@{PCA9685Driver}!PCA9685Driver@{PCA9685Driver}}
+\index{PCA9685Driver@{PCA9685Driver}!PCA9685Driver@{PCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{PCA9685Driver()}{PCA9685Driver()}}
+{\footnotesize\ttfamily PCA9685\+Driver\+::\+PCA9685\+Driver (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ rclcpp\+::\+Node $>$}]{node,  }\item[{uint8\+\_\+t}]{device\+\_\+address }\end{DoxyParamCaption})}
+
+\Hypertarget{classPCA9685Driver_a9b1840a7d6dcce8285994d1181607515}\label{classPCA9685Driver_a9b1840a7d6dcce8285994d1181607515} 
+\index{PCA9685Driver@{PCA9685Driver}!````~PCA9685Driver@{\texorpdfstring{$\sim$}{\string~}PCA9685Driver}}
+\index{````~PCA9685Driver@{\texorpdfstring{$\sim$}{\string~}PCA9685Driver}!PCA9685Driver@{PCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}PCA9685Driver()}{\string~PCA9685Driver()}}
+{\footnotesize\ttfamily PCA9685\+Driver\+::\texorpdfstring{$\sim$}{\string~}\+PCA9685\+Driver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPCA9685Driver_ab5b29700d43dfae89f93a191aa882455}\label{classPCA9685Driver_ab5b29700d43dfae89f93a191aa882455} 
+\index{PCA9685Driver@{PCA9685Driver}!setGPIO@{setGPIO}}
+\index{setGPIO@{setGPIO}!PCA9685Driver@{PCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{setGPIO()}{setGPIO()}}
+{\footnotesize\ttfamily void PCA9685\+Driver\+::set\+GPIO (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{bool}]{on }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+set a gpio of the PCA9685 high or low 
+
+Set ON to 0x1000 and OFF to 0x0000 to make the output HIGH. Set ON to 0x0000 and OFF to 0x1000 to make the output LOW.
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The PWM channel to control (0-\/15). \\
+\hline
+{\em on} & true for high, false for low. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAPCA9685Driver_ad5cb20c95f2dc7ca2b8b05dc041bc97b}{APCA9685\+Driver}}.
+
+\Hypertarget{classPCA9685Driver_adf0e52931778f32dfd8b53b5dbd19c43}\label{classPCA9685Driver_adf0e52931778f32dfd8b53b5dbd19c43} 
+\index{PCA9685Driver@{PCA9685Driver}!setPWMDutyCycle@{setPWMDutyCycle}}
+\index{setPWMDutyCycle@{setPWMDutyCycle}!PCA9685Driver@{PCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{setPWMDutyCycle()}{setPWMDutyCycle()}}
+{\footnotesize\ttfamily void PCA9685\+Driver\+::set\+PWMDuty\+Cycle (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{uint16\+\_\+t}]{on,  }\item[{uint16\+\_\+t}]{off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the duty cycle for a specified PWM channel. 
+
+The PCA9685 uses a 12-\/bit resolution (0-\/4095) to encode the duty cycle. The "{}on"{} and "{}off"{} parameters specify the start and end of the PWM signal within this 12-\/bit range. For example\+:
+\begin{DoxyItemize}
+\item on = 0, off = 2048 sets a 50\% duty cycle\+: duty cycle (\%) = ((off -\/ on) / 4096) \texorpdfstring{$\ast$}{*} 100 = 50\%
+\end{DoxyItemize}
+
+Since the 12-\/bit values must be written across two 8-\/bit registers, the values are split into\+:
+\begin{DoxyItemize}
+\item Low byte (first 8 bits)
+\item High byte (last 4 bits)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The PWM channel to control (0-\/15). \\
+\hline
+{\em on} & The 12-\/bit start time of the signal (0-\/4095). \\
+\hline
+{\em off} & The 12-\/bit end time of the signal (0-\/4095). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAPCA9685Driver_a4325ee598d55bcf60b529ef7f9dcf5dd}{APCA9685\+Driver}}.
+
+\Hypertarget{classPCA9685Driver_a4cfa38b52bde77dc5ae8c863cb78b073}\label{classPCA9685Driver_a4cfa38b52bde77dc5ae8c863cb78b073} 
+\index{PCA9685Driver@{PCA9685Driver}!setPWMFrequency@{setPWMFrequency}}
+\index{setPWMFrequency@{setPWMFrequency}!PCA9685Driver@{PCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{setPWMFrequency()}{setPWMFrequency()}}
+{\footnotesize\ttfamily void PCA9685\+Driver\+::set\+PWMFrequency (\begin{DoxyParamCaption}\item[{float}]{freq\+\_\+hz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the PWM frequency of the PCA9685 device. 
+
+The PWM frequency determines the speed at which PWM pulses are generated. This function calculates the prescale value based on the desired frequency and sets it on the device. The prescale value is derived from the formula\+: prescale = round((25MHz / (4096 \texorpdfstring{$\ast$}{*} freq\+\_\+\+Hz)) -\/ 1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq\+\_\+\+Hz} & The desired PWM frequency in hertz. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAPCA9685Driver_af98bf83a31454613c3c4f9464d8a2e94}{APCA9685\+Driver}}.
+
+\Hypertarget{classPCA9685Driver_a7f82753c915244305bf42596414f5421}\label{classPCA9685Driver_a7f82753c915244305bf42596414f5421} 
+\index{PCA9685Driver@{PCA9685Driver}!setRegister@{setRegister}}
+\index{setRegister@{setRegister}!PCA9685Driver@{PCA9685Driver}}
+\doxysubsubsection{\texorpdfstring{setRegister()}{setRegister()}}
+{\footnotesize\ttfamily void PCA9685\+Driver\+::set\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Writes a value to a specific register on the PCA9685 device. 
+
+This function sends a write request to the I2C bus, specifying the target register and the value to be written. It uses an asynchronous service call to handle the I2C communication.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & The register address to write to. \\
+\hline
+{\em value} & The value to write to the register. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAPCA9685Driver_a96c6e30bd3cb259377a9898529d7714a}{APCA9685\+Driver}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/drivers/pca9685\+\_\+driver/include/\mbox{\hyperlink{PCA9685Driver_8hpp}{PCA9685\+Driver.\+hpp}}\item 
+Jet\+Racer/src/drivers/pca9685\+\_\+driver/src/\mbox{\hyperlink{PCA9685Driver_8cpp}{PCA9685\+Driver.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,197 @@
+\doxysection{CPUTemp\+Widget Class Reference}
+\hypertarget{classCPUTempWidget}{}\label{classCPUTempWidget}\index{CPUTempWidget@{CPUTempWidget}}
+
+
+{\ttfamily \#include $<$CPUTemp\+Widget.\+h$>$}
+
+Inheritance diagram for CPUTemp\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCPUTempWidget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCPUTempWidget_a7b00c8dc4d354d15ae184d6aa568f841}{CPUTemp\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, int x=0, int y=0, int width=0, int height=0)
+\item 
+\mbox{\hyperlink{classCPUTempWidget_a00ef34c5969b5560c3b0ee25905ab22e}{\texorpdfstring{$\sim$}{\string~}\+CPUTemp\+Widget}} () override
+\item 
+void \mbox{\hyperlink{classCPUTempWidget_a67bde29708c71dd1ed2f0a0d46d5206c}{change\+Color}} (int array\+\_\+index)
+\item 
+void \mbox{\hyperlink{classCPUTempWidget_a2473f894d9a463886ab51d533552ab3a}{change\+Units}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{classCPUTempWidget_a49d2a7b3f6054eaa4446ac12a69cd391}{main\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classCPUTempWidget_a2251588ad3cd569b634317548637b1d7}{accent\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classCPUTempWidget_a60cac8d5e0716742158f028074fdfcc3}{alphabet\+\_\+color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCPUTempWidget_a7348a4810316225f1fbe5f307fe3ccd2}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{classCPUTempWidget_ab600de10e9859e03b07d3da3dc7949ea}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCPUTempWidget_a6486243406170a8f50c93dada32fb03f}{update\+Speed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCPUTempWidget_afc2f7f37464b47eafbd652f3720fce12}{draw\+Scale}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y, int radius)
+\item 
+void \mbox{\hyperlink{classCPUTempWidget_a1fde6e089dc7b9fdbe60680d8c629d31}{draw\+Needle}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y, int radius)
+\item 
+void \mbox{\hyperlink{classCPUTempWidget_a0a93efdc3c744f46b2c8ce4361b2cf3c}{draw\+Central\+Number}} (QPainter \&painter, int center\+\_\+x, int center\+\_\+y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classCPUTempWidget_a0a93825db90f1035358b2551a8a720ff}{current\+Speed}}
+\item 
+int \mbox{\hyperlink{classCPUTempWidget_a20fec0cc69464dd77360b3634ae6b6bf}{index}}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classCPUTempWidget_adddd00516e05acd85075594bd9bacf22}{color1}}
+\item 
+QString \mbox{\hyperlink{classCPUTempWidget_a99db93db9242e2b02fa310a203aaf45c}{unit}}
+\item 
+QPixmap \mbox{\hyperlink{classCPUTempWidget_aaf72b6878f7cbff4bc0822abb55a7785}{image}}
+\item 
+QPixmap \mbox{\hyperlink{classCPUTempWidget_a28bf0d707da2a1b9d65ced000db2a060}{image\+\_\+array}} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCPUTempWidget_a7b00c8dc4d354d15ae184d6aa568f841}\label{classCPUTempWidget_a7b00c8dc4d354d15ae184d6aa568f841} 
+\index{CPUTempWidget@{CPUTempWidget}!CPUTempWidget@{CPUTempWidget}}
+\index{CPUTempWidget@{CPUTempWidget}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{CPUTempWidget()}{CPUTempWidget()}}
+{\footnotesize\ttfamily CPUTemp\+Widget\+::\+CPUTemp\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr},  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{classCPUTempWidget_a00ef34c5969b5560c3b0ee25905ab22e}\label{classCPUTempWidget_a00ef34c5969b5560c3b0ee25905ab22e} 
+\index{CPUTempWidget@{CPUTempWidget}!````~CPUTempWidget@{\texorpdfstring{$\sim$}{\string~}CPUTempWidget}}
+\index{````~CPUTempWidget@{\texorpdfstring{$\sim$}{\string~}CPUTempWidget}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CPUTempWidget()}{\string~CPUTempWidget()}}
+{\footnotesize\ttfamily CPUTemp\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+CPUTemp\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCPUTempWidget_a67bde29708c71dd1ed2f0a0d46d5206c}\label{classCPUTempWidget_a67bde29708c71dd1ed2f0a0d46d5206c} 
+\index{CPUTempWidget@{CPUTempWidget}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void CPUTemp\+Widget\+::change\+Color (\begin{DoxyParamCaption}\item[{int}]{array\+\_\+index }\end{DoxyParamCaption})}
+
+\Hypertarget{classCPUTempWidget_a2473f894d9a463886ab51d533552ab3a}\label{classCPUTempWidget_a2473f894d9a463886ab51d533552ab3a} 
+\index{CPUTempWidget@{CPUTempWidget}!changeUnits@{changeUnits}}
+\index{changeUnits@{changeUnits}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{changeUnits()}{changeUnits()}}
+{\footnotesize\ttfamily void CPUTemp\+Widget\+::change\+Units (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCPUTempWidget_a0a93efdc3c744f46b2c8ce4361b2cf3c}\label{classCPUTempWidget_a0a93efdc3c744f46b2c8ce4361b2cf3c} 
+\index{CPUTempWidget@{CPUTempWidget}!drawCentralNumber@{drawCentralNumber}}
+\index{drawCentralNumber@{drawCentralNumber}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{drawCentralNumber()}{drawCentralNumber()}}
+{\footnotesize\ttfamily void CPUTemp\+Widget\+::draw\+Central\+Number (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{center\+\_\+x,  }\item[{int}]{center\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCPUTempWidget_a1fde6e089dc7b9fdbe60680d8c629d31}\label{classCPUTempWidget_a1fde6e089dc7b9fdbe60680d8c629d31} 
+\index{CPUTempWidget@{CPUTempWidget}!drawNeedle@{drawNeedle}}
+\index{drawNeedle@{drawNeedle}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{drawNeedle()}{drawNeedle()}}
+{\footnotesize\ttfamily void CPUTemp\+Widget\+::draw\+Needle (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{center\+\_\+x,  }\item[{int}]{center\+\_\+y,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCPUTempWidget_afc2f7f37464b47eafbd652f3720fce12}\label{classCPUTempWidget_afc2f7f37464b47eafbd652f3720fce12} 
+\index{CPUTempWidget@{CPUTempWidget}!drawScale@{drawScale}}
+\index{drawScale@{drawScale}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{drawScale()}{drawScale()}}
+{\footnotesize\ttfamily void CPUTemp\+Widget\+::draw\+Scale (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter,  }\item[{int}]{center\+\_\+x,  }\item[{int}]{center\+\_\+y,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCPUTempWidget_ab600de10e9859e03b07d3da3dc7949ea}\label{classCPUTempWidget_ab600de10e9859e03b07d3da3dc7949ea} 
+\index{CPUTempWidget@{CPUTempWidget}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void CPUTemp\+Widget\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{classCPUTempWidget_a7348a4810316225f1fbe5f307fe3ccd2}\label{classCPUTempWidget_a7348a4810316225f1fbe5f307fe3ccd2} 
+\index{CPUTempWidget@{CPUTempWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void CPUTemp\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{classCPUTempWidget_a6486243406170a8f50c93dada32fb03f}\label{classCPUTempWidget_a6486243406170a8f50c93dada32fb03f} 
+\index{CPUTempWidget@{CPUTempWidget}!updateSpeed@{updateSpeed}}
+\index{updateSpeed@{updateSpeed}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{updateSpeed}{updateSpeed}}
+{\footnotesize\ttfamily void CPUTemp\+Widget\+::update\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCPUTempWidget_a2251588ad3cd569b634317548637b1d7}\label{classCPUTempWidget_a2251588ad3cd569b634317548637b1d7} 
+\index{CPUTempWidget@{CPUTempWidget}!accent\_color@{accent\_color}}
+\index{accent\_color@{accent\_color}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{accent\_color}{accent\_color}}
+{\footnotesize\ttfamily QColor CPUTemp\+Widget\+::accent\+\_\+color}
+
+\Hypertarget{classCPUTempWidget_a60cac8d5e0716742158f028074fdfcc3}\label{classCPUTempWidget_a60cac8d5e0716742158f028074fdfcc3} 
+\index{CPUTempWidget@{CPUTempWidget}!alphabet\_color@{alphabet\_color}}
+\index{alphabet\_color@{alphabet\_color}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{alphabet\_color}{alphabet\_color}}
+{\footnotesize\ttfamily QColor CPUTemp\+Widget\+::alphabet\+\_\+color}
+
+\Hypertarget{classCPUTempWidget_adddd00516e05acd85075594bd9bacf22}\label{classCPUTempWidget_adddd00516e05acd85075594bd9bacf22} 
+\index{CPUTempWidget@{CPUTempWidget}!color1@{color1}}
+\index{color1@{color1}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{color1}{color1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} CPUTemp\+Widget\+::color1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCPUTempWidget_a0a93825db90f1035358b2551a8a720ff}\label{classCPUTempWidget_a0a93825db90f1035358b2551a8a720ff} 
+\index{CPUTempWidget@{CPUTempWidget}!currentSpeed@{currentSpeed}}
+\index{currentSpeed@{currentSpeed}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{currentSpeed}{currentSpeed}}
+{\footnotesize\ttfamily int CPUTemp\+Widget\+::current\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCPUTempWidget_aaf72b6878f7cbff4bc0822abb55a7785}\label{classCPUTempWidget_aaf72b6878f7cbff4bc0822abb55a7785} 
+\index{CPUTempWidget@{CPUTempWidget}!image@{image}}
+\index{image@{image}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily QPixmap CPUTemp\+Widget\+::image\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCPUTempWidget_a28bf0d707da2a1b9d65ced000db2a060}\label{classCPUTempWidget_a28bf0d707da2a1b9d65ced000db2a060} 
+\index{CPUTempWidget@{CPUTempWidget}!image\_array@{image\_array}}
+\index{image\_array@{image\_array}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{image\_array}{image\_array}}
+{\footnotesize\ttfamily QPixmap CPUTemp\+Widget\+::image\+\_\+array\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCPUTempWidget_a20fec0cc69464dd77360b3634ae6b6bf}\label{classCPUTempWidget_a20fec0cc69464dd77360b3634ae6b6bf} 
+\index{CPUTempWidget@{CPUTempWidget}!index@{index}}
+\index{index@{index}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily int CPUTemp\+Widget\+::index\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCPUTempWidget_a49d2a7b3f6054eaa4446ac12a69cd391}\label{classCPUTempWidget_a49d2a7b3f6054eaa4446ac12a69cd391} 
+\index{CPUTempWidget@{CPUTempWidget}!main\_color@{main\_color}}
+\index{main\_color@{main\_color}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{main\_color}{main\_color}}
+{\footnotesize\ttfamily QColor CPUTemp\+Widget\+::main\+\_\+color}
+
+\Hypertarget{classCPUTempWidget_a99db93db9242e2b02fa310a203aaf45c}\label{classCPUTempWidget_a99db93db9242e2b02fa310a203aaf45c} 
+\index{CPUTempWidget@{CPUTempWidget}!unit@{unit}}
+\index{unit@{unit}!CPUTempWidget@{CPUTempWidget}}
+\doxysubsubsection{\texorpdfstring{unit}{unit}}
+{\footnotesize\ttfamily QString CPUTemp\+Widget\+::unit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{CPUTempWidget_8h}{CPUTemp\+Widget.\+h}}\item 
+Jet\+Racer/src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{CPUTempWidget_8cpp}{CPUTemp\+Widget.\+cpp}}\end{DoxyCompactItemize}

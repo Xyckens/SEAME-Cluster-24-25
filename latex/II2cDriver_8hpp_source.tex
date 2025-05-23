@@ -1,0 +1,31 @@
+\doxysection{II2c\+Driver.\+hpp}
+\hypertarget{II2cDriver_8hpp_source}{}\label{II2cDriver_8hpp_source}\index{JetRacer/src/bus\_interfaces/i2c\_interface/include/II2cDriver.hpp@{JetRacer/src/bus\_interfaces/i2c\_interface/include/II2cDriver.hpp}}
+\mbox{\hyperlink{II2cDriver_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classII2cDriver}{II2cDriver}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classII2cDriver_a5ade9cf36d217cded22db18de403e90c}{II2cDriver}}(uint8\_t\ device)\ :\ \mbox{\hyperlink{classII2cDriver_ac48d8f6059d49ea1aa09aaee8c66d1ee}{device\_}}(device)\{\};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classII2cDriver_ab7827a64d3c17858d68f96e771d59b2a}{\string~II2cDriver}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classII2cDriver_a413d8f0a5b13a4dccaf106ef60d7cd0c}{open}}()\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ ssize\_t\ \mbox{\hyperlink{classII2cDriver_a1cebc51178a01d5eaeecc3b40ed1e4d7}{read}}(std::vector<uint8\_t>\&\ buff)\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ ssize\_t\ \mbox{\hyperlink{classII2cDriver_a2a3e363deec1d1627c5fdefcf7368d59}{write}}(std::vector<uint8\_t>\&\ buff)\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classII2cDriver_a505e09a803d205168719dc2e35bbf80d}{setAddress}}(uint8\_t\ address)\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classII2cDriver_afc7a7a17ad1c1dcb68f1b70430eca736}{getDeviceNb}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classII2cDriver_ac48d8f6059d49ea1aa09aaee8c66d1ee}{device\_}};\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classII2cDriver_ac48d8f6059d49ea1aa09aaee8c66d1ee}{device\_}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classII2cDriver_a1305853f14024945daefb958b5873ad4}{i2c\_fd\_}};}
+\DoxyCodeLine{00038\ \};}
+
+\end{DoxyCode}

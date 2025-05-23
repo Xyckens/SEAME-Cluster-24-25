@@ -1,0 +1,22 @@
+\doxysection{RCan\+Driver.\+hpp}
+\hypertarget{RCanDriver_8hpp_source}{}\label{RCanDriver_8hpp_source}\index{JetRacer/src/bus\_interfaces/can\_interface/include/RCanDriver.hpp@{JetRacer/src/bus\_interfaces/can\_interface/include/RCanDriver.hpp}}
+\mbox{\hyperlink{RCanDriver_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}CanDriver.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICanDriver_8hpp}{ICanDriver.hpp}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRCanDriver}{RCanDriver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICanDriver}{ICanDriver}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::unique\_ptr<sockcanpp::CanDriver>\ \mbox{\hyperlink{classRCanDriver_a7d9b39f7133fc7207a37f26056a44e81}{driver\_}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRCanDriver}{RCanDriver}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}\ can\_mode);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ ssize\_t\ \mbox{\hyperlink{classRCanDriver_ad03fdae4fccbf64a3bd601f823233d53}{sendMessage}}(\textcolor{keyword}{const}\ sockcanpp::CanMessage\&\ msg,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ force\_extended\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ sockcanpp::CanMessage\ \mbox{\hyperlink{classRCanDriver_a2ce7f5833947c1ff1baf21c9b905bf17}{readMessage}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRCanDriver_a657b86352740cc39435066510b3f8a91}{waitForMessages}}(sockcanpp::milliseconds\ timeout)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \};}
+
+\end{DoxyCode}

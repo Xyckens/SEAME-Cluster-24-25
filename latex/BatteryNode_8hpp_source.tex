@@ -1,0 +1,28 @@
+\doxysection{Battery\+Node.\+hpp}
+\hypertarget{BatteryNode_8hpp_source}{}\label{BatteryNode_8hpp_source}\index{JetRacer/src/peripherals/battery/include/BatteryNode.hpp@{JetRacer/src/peripherals/battery/include/BatteryNode.hpp}}
+\mbox{\hyperlink{BatteryNode_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{INA219Driver_8hpp}{INA219Driver.hpp}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{INA219def_8hpp}{INA219def.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <rclcpp/client.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <rclcpp/subscription.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <std\_msgs/msg/u\_int8.hpp>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBatteryNode}{BatteryNode}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBatteryNode_af38c33b56176c80ec09e82bcd64355e3}{BatteryNode}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBatteryNode_ae81d017d9338c60f2cb4a85d7d3293ec}{\string~BatteryNode}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classBatteryNode_a682011189b51853024bccf8b47f5efcd}{initINA219}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryNode_ac31f43a707531f215a8e5b12a2bf81db}{publishBatteryLevel}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ rclcpp::TimerBase::SharedPtr\ \mbox{\hyperlink{classBatteryNode_a4ae17394421552142be1f5ee2702e7c2}{timer\_}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::shared\_ptr<INA219Driver>\ \mbox{\hyperlink{classBatteryNode_abe687bc3b63212cb1968934c598ac394}{ina219\_driver\_}};}
+\DoxyCodeLine{00027\ \};}
+
+\end{DoxyCode}

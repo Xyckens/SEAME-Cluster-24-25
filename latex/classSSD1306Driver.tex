@@ -1,0 +1,147 @@
+\doxysection{SSD1306\+Driver Class Reference}
+\hypertarget{classSSD1306Driver}{}\label{classSSD1306Driver}\index{SSD1306Driver@{SSD1306Driver}}
+
+
+Driver to interact with the SSD1306 (Oled screen)  
+
+
+
+
+{\ttfamily \#include $<$SSD1306\+Driver.\+hpp$>$}
+
+Inheritance diagram for SSD1306\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSSD1306Driver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSSD1306Driver_a0fef81f3cd9c759427bfe95b9d02f4ed}{SSD1306\+Driver}} (std\+::shared\+\_\+ptr$<$ rclcpp\+::\+Node $>$ node)
+\item 
+\mbox{\hyperlink{classSSD1306Driver_a4de95aabc22aed089104d8613c319f98}{\texorpdfstring{$\sim$}{\string~}\+SSD1306\+Driver}} () override
+\item 
+void \mbox{\hyperlink{classSSD1306Driver_a333a5010d20b09734fb60053c09e58fe}{init\+Display}} ()
+\item 
+void \mbox{\hyperlink{classSSD1306Driver_a867cc4079b521a31b418d7f02425a43a}{set\+Default\+Config}} ()
+\item 
+void \mbox{\hyperlink{classSSD1306Driver_a33948a56ecb34e23c8a78133981bd972}{on\+Off\+Display}} (uint8\+\_\+t onoff)
+\item 
+void \mbox{\hyperlink{classSSD1306Driver_ac2f6993ce68fc39d0ea05b84c3a53965}{set\+Cursor}} (uint8\+\_\+t x, uint8\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classSSD1306Driver_aa99c009b6252f63cdde9a6c7fe617022}{clear\+Row}} (uint8\+\_\+t row)
+\item 
+void \mbox{\hyperlink{classSSD1306Driver_a164eda713513d7117444f8630d1743d8}{clear\+Screen}} ()
+\item 
+void \mbox{\hyperlink{classSSD1306Driver_a0c5823f4cc6709764d5d67e20e80a78b}{write\+String}} (uint8\+\_\+t size, const std\+::string \&msg)
+\item 
+void \mbox{\hyperlink{classSSD1306Driver_a73674fec9c2ccc371631223f9092718b}{flip\+Display}} (uint8\+\_\+t flip)
+\item 
+void \mbox{\hyperlink{classSSD1306Driver_a2f418224378443787689dec8f4732d6f}{rotate\+Display}} (uint8\+\_\+t degree)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classADriver}{ADriver}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classADriver_a759c7a45993757787469d578b1ae26dc}{ADriver}} (rclcpp\+::\+Node\+::\+Shared\+Ptr node, uint8\+\_\+t device\+\_\+address)
+\item 
+virtual \mbox{\hyperlink{classADriver_adbd111235337f52ee4382190eb6ff93f}{\texorpdfstring{$\sim$}{\string~}\+ADriver}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classADriver}{ADriver}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classADriver_a7c8b6b179b64b604c29362e0dbdbffd9}{ping}} ()
+\begin{DoxyCompactList}\small\item\em ping the device and wait for a response. throw a driver exception if the device is not found on the bus. Nodes depending on drivers should call this function before spinning to make sure the actual hardware is present \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classADriver_a57d37e3a461292d2fdea1b084f85a40c}{handle\+I2c\+Response}} (rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Future response)
+\begin{DoxyCompactList}\small\item\em handle the response from the i2c service \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classADriver}{ADriver}}}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Node\+::\+Shared\+Ptr \mbox{\hyperlink{classADriver_affbae288b7155acb8a8c9d7ccea899c6}{node\+\_\+}}
+\item 
+rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classADriver_a69160e2270d20f647de3dfc1c9cc5d5c}{i2c\+\_\+client\+\_\+}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classADriver_adb73686aba67a783e9fd1e25d4c507b3}{device\+\_\+address\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver to interact with the SSD1306 (Oled screen) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSSD1306Driver_a0fef81f3cd9c759427bfe95b9d02f4ed}\label{classSSD1306Driver_a0fef81f3cd9c759427bfe95b9d02f4ed} 
+\index{SSD1306Driver@{SSD1306Driver}!SSD1306Driver@{SSD1306Driver}}
+\index{SSD1306Driver@{SSD1306Driver}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{SSD1306Driver()}{SSD1306Driver()}}
+{\footnotesize\ttfamily SSD1306\+Driver\+::\+SSD1306\+Driver (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ rclcpp\+::\+Node $>$}]{node }\end{DoxyParamCaption})}
+
+\Hypertarget{classSSD1306Driver_a4de95aabc22aed089104d8613c319f98}\label{classSSD1306Driver_a4de95aabc22aed089104d8613c319f98} 
+\index{SSD1306Driver@{SSD1306Driver}!````~SSD1306Driver@{\texorpdfstring{$\sim$}{\string~}SSD1306Driver}}
+\index{````~SSD1306Driver@{\texorpdfstring{$\sim$}{\string~}SSD1306Driver}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SSD1306Driver()}{\string~SSD1306Driver()}}
+{\footnotesize\ttfamily SSD1306\+Driver\+::\texorpdfstring{$\sim$}{\string~}\+SSD1306\+Driver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSSD1306Driver_aa99c009b6252f63cdde9a6c7fe617022}\label{classSSD1306Driver_aa99c009b6252f63cdde9a6c7fe617022} 
+\index{SSD1306Driver@{SSD1306Driver}!clearRow@{clearRow}}
+\index{clearRow@{clearRow}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{clearRow()}{clearRow()}}
+{\footnotesize\ttfamily void SSD1306\+Driver\+::clear\+Row (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{row }\end{DoxyParamCaption})}
+
+\Hypertarget{classSSD1306Driver_a164eda713513d7117444f8630d1743d8}\label{classSSD1306Driver_a164eda713513d7117444f8630d1743d8} 
+\index{SSD1306Driver@{SSD1306Driver}!clearScreen@{clearScreen}}
+\index{clearScreen@{clearScreen}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{clearScreen()}{clearScreen()}}
+{\footnotesize\ttfamily void SSD1306\+Driver\+::clear\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classSSD1306Driver_a73674fec9c2ccc371631223f9092718b}\label{classSSD1306Driver_a73674fec9c2ccc371631223f9092718b} 
+\index{SSD1306Driver@{SSD1306Driver}!flipDisplay@{flipDisplay}}
+\index{flipDisplay@{flipDisplay}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{flipDisplay()}{flipDisplay()}}
+{\footnotesize\ttfamily void SSD1306\+Driver\+::flip\+Display (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{flip }\end{DoxyParamCaption})}
+
+\Hypertarget{classSSD1306Driver_a333a5010d20b09734fb60053c09e58fe}\label{classSSD1306Driver_a333a5010d20b09734fb60053c09e58fe} 
+\index{SSD1306Driver@{SSD1306Driver}!initDisplay@{initDisplay}}
+\index{initDisplay@{initDisplay}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{initDisplay()}{initDisplay()}}
+{\footnotesize\ttfamily void SSD1306\+Driver\+::init\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classSSD1306Driver_a33948a56ecb34e23c8a78133981bd972}\label{classSSD1306Driver_a33948a56ecb34e23c8a78133981bd972} 
+\index{SSD1306Driver@{SSD1306Driver}!onOffDisplay@{onOffDisplay}}
+\index{onOffDisplay@{onOffDisplay}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{onOffDisplay()}{onOffDisplay()}}
+{\footnotesize\ttfamily void SSD1306\+Driver\+::on\+Off\+Display (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{onoff }\end{DoxyParamCaption})}
+
+\Hypertarget{classSSD1306Driver_a2f418224378443787689dec8f4732d6f}\label{classSSD1306Driver_a2f418224378443787689dec8f4732d6f} 
+\index{SSD1306Driver@{SSD1306Driver}!rotateDisplay@{rotateDisplay}}
+\index{rotateDisplay@{rotateDisplay}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{rotateDisplay()}{rotateDisplay()}}
+{\footnotesize\ttfamily void SSD1306\+Driver\+::rotate\+Display (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{degree }\end{DoxyParamCaption})}
+
+\Hypertarget{classSSD1306Driver_ac2f6993ce68fc39d0ea05b84c3a53965}\label{classSSD1306Driver_ac2f6993ce68fc39d0ea05b84c3a53965} 
+\index{SSD1306Driver@{SSD1306Driver}!setCursor@{setCursor}}
+\index{setCursor@{setCursor}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{setCursor()}{setCursor()}}
+{\footnotesize\ttfamily void SSD1306\+Driver\+::set\+Cursor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+\Hypertarget{classSSD1306Driver_a867cc4079b521a31b418d7f02425a43a}\label{classSSD1306Driver_a867cc4079b521a31b418d7f02425a43a} 
+\index{SSD1306Driver@{SSD1306Driver}!setDefaultConfig@{setDefaultConfig}}
+\index{setDefaultConfig@{setDefaultConfig}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{setDefaultConfig()}{setDefaultConfig()}}
+{\footnotesize\ttfamily void SSD1306\+Driver\+::set\+Default\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classSSD1306Driver_a0c5823f4cc6709764d5d67e20e80a78b}\label{classSSD1306Driver_a0c5823f4cc6709764d5d67e20e80a78b} 
+\index{SSD1306Driver@{SSD1306Driver}!writeString@{writeString}}
+\index{writeString@{writeString}!SSD1306Driver@{SSD1306Driver}}
+\doxysubsubsection{\texorpdfstring{writeString()}{writeString()}}
+{\footnotesize\ttfamily void SSD1306\+Driver\+::write\+String (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{size,  }\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/drivers/ssd1306\+\_\+driver/include/\mbox{\hyperlink{SSD1306Driver_8hpp}{SSD1306\+Driver.\+hpp}}\item 
+Jet\+Racer/src/drivers/ssd1306\+\_\+driver/src/\mbox{\hyperlink{SSD1306Driver_8cpp}{SSD1306\+Driver.\+cpp}}\end{DoxyCompactItemize}

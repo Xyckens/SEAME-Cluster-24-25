@@ -1,0 +1,54 @@
+\doxysection{Stats\+Widget.\+h}
+\hypertarget{StatsWidget_8h_source}{}\label{StatsWidget_8h_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/StatsWidget.h@{JetRacer/src/head\_unit/cluster\_qt/includes/StatsWidget.h}}
+\mbox{\hyperlink{StatsWidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STATSWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STATSWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Colors_8h}{Colors.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QHBoxLayout>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classStatsWidget}{StatsWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classStatsWidget}{StatsWidget}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ x\ =\ 0,\ \textcolor{keywordtype}{int}\ y\ =\ 0,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classStatsWidget_a34bad46756b5c56d7478e08bb6f2fbce}{width}}\ =\ 0,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classStatsWidget_a52e350cd507de98567ff16b623dcf0d3}{height}}\ =\ 0);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classStatsWidget_aabd90eef7bf3394782395439bb19471f}{changeColor}}(\textcolor{keywordtype}{int}\ \ array\_index);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classStatsWidget_a5c2084da62c01eadf43c91a7569c8005}{changeUnits}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classStatsWidget_ad235ac30fdf21cb3264abcf6d5c08baa}{setDistance}}(\textcolor{keywordtype}{int}\ dist);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classStatsWidget_a5367098c07290b8bd6282c4d3c58310b}{setAverage}}(\textcolor{keywordtype}{int}\ avg);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classStatsWidget_ac2b0857742075a780dd763b2cedd7d7e}{setConsumed}}(\textcolor{keywordtype}{int}\ con);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classStatsWidget_a2d355374b57932093421e32968a6edd8}{setObstacles}}(\textcolor{keywordtype}{int}\ obs);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ QColor\ \mbox{\hyperlink{classStatsWidget_ab5dedc5f19ad7ad82ea6bdf8902a1609}{main\_color}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ QColor\ \mbox{\hyperlink{classStatsWidget_ab650b4543f4bb8e64b2f6268fd12c719}{accent\_color}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ QColor\ \mbox{\hyperlink{classStatsWidget_afc6a0ded09bdeab2ca5831ef1f9587f0}{alphabet\_color}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classStatsWidget_a34bad46756b5c56d7478e08bb6f2fbce}{width}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classStatsWidget_a52e350cd507de98567ff16b623dcf0d3}{height}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStatsWidget_a1bfa4e5783b35c26c2b6889ee4ca4674}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ QStringList\ \mbox{\hyperlink{classStatsWidget_ae1c81b0029c0e6a0075baf467ec4d751}{names}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ QStringList\ \mbox{\hyperlink{classStatsWidget_a8198b8c23dc5b61bd7f1358f5a34c9d5}{values}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{classStatsWidget_a4c4193ec30a8bd6d4417ae0a1e95c84e}{distance}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{classStatsWidget_af205d07d63d9910d3e8ae4236b5154ef}{average}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{classStatsWidget_ac61c95a8475837ad5170a2bd608ea45a}{consumed}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{classStatsWidget_a3e5ea029cc22afa41cae4d8e158f99c2}{obstacles}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classStatsWidget_a352dcf817f0b31241e059a12927b8715}{distance\_int}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classStatsWidget_a6f453051f9847984e33b9a01e05f08bf}{average\_int}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{classStatsWidget_a92b1be6015898dec0444ef7290250198}{unit}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classStatsWidget_a5b07e38ffec59c73baf52da9effc292e}{color1}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ STATSWIDGET\_H}}
+
+\end{DoxyCode}

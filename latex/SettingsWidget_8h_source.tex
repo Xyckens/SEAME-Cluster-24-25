@@ -1,0 +1,51 @@
+\doxysection{Settings\+Widget.\+h}
+\hypertarget{SettingsWidget_8h_source}{}\label{SettingsWidget_8h_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/SettingsWidget.h@{JetRacer/src/head\_unit/cluster\_qt/includes/SettingsWidget.h}}
+\mbox{\hyperlink{SettingsWidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SETTINGSWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SETTINGSWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QStackedWidget>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QMouseEvent>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QStyle>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../includes/EventManager.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classStatsWidget}{StatsWidget}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSettingsWidget}{SettingsWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classSettingsWidget}{SettingsWidget}}(QWidget\ *parent,\ \mbox{\hyperlink{classEventManager}{EventManager}}\ \&\mbox{\hyperlink{classSettingsWidget_a34d734e87b0dee23f38878504c08466b}{event}},\ \textcolor{keywordtype}{int}\ x\ =\ 0,\ \textcolor{keywordtype}{int}\ y\ =\ 0,\ \textcolor{keywordtype}{int}\ width\ =\ 0,\ \textcolor{keywordtype}{int}\ height\ =\ 0);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSettingsWidget_a797d26492101e2e5882501ca71772790}{mousePressEvent}}(QMouseEvent\ *\mbox{\hyperlink{classSettingsWidget_a34d734e87b0dee23f38878504c08466b}{event}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSettingsWidget_a043aae05ab80912f11c277b873909657}{toggleExpand}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSettingsWidget_a689bac5a5c5609f443401adc08f09299}{expanded}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ QStackedWidget\ *\mbox{\hyperlink{classSettingsWidget_a8e2ad787a15af78f648a924c829c734a}{stackedWidget}};}
+\DoxyCodeLine{00038\ \ \ \ \ QWidget\ *\mbox{\hyperlink{classSettingsWidget_acd62a46b7338e2b22aed2aaf450eda2a}{collapsedWidget}};}
+\DoxyCodeLine{00039\ \ \ \ \ QWidget\ *\mbox{\hyperlink{classSettingsWidget_aa9255c3f846636d6b6654ccced5a3e29}{expandedWidget}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ QPushButton\ *\mbox{\hyperlink{classSettingsWidget_af2a0b603b6eb75571b67f04d05ea6283}{mainIcon}};}
+\DoxyCodeLine{00042\ \ \ \ \ QPushButton\ *\mbox{\hyperlink{classSettingsWidget_a08518b953074541f5ccb229ba37a9a85}{closeIcon}};}
+\DoxyCodeLine{00043\ \ \ \ \ QPushButton\ *\mbox{\hyperlink{classSettingsWidget_a804c9d5b13fe886db925a6208643cd8e}{themesIcon}};}
+\DoxyCodeLine{00044\ \ \ \ \ QPushButton\ *\mbox{\hyperlink{classSettingsWidget_a1d5a3d64627d6b58c505644a3353c6a8}{changeUnitIcon}};}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classEventManager}{EventManager}}\ \&\mbox{\hyperlink{classSettingsWidget_a34d734e87b0dee23f38878504c08466b}{event}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ bool\ setButtonIcon(QPushButton\ *button,\ const\ QString\ \&imagePath);}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSettingsWidget_aa7e213059fcc4c950aab7bef88a60228}{setExpanded}}(\textcolor{keywordtype}{bool}\ expand);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSettingsWidget_a52975fe338fcc0aeb3e5dcc141e7a904}{isClickOutside}}(\textcolor{keyword}{const}\ QPoint\ \&pos)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

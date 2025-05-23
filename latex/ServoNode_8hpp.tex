@@ -1,0 +1,91 @@
+\doxysection{Jet\+Racer/src/peripherals/servo\+\_\+motor/include/\+Servo\+Node.hpp File Reference}
+\hypertarget{ServoNode_8hpp}{}\label{ServoNode_8hpp}\index{JetRacer/src/peripherals/servo\_motor/include/ServoNode.hpp@{JetRacer/src/peripherals/servo\_motor/include/ServoNode.hpp}}
+{\ttfamily \#include "{}APCA9685\+Driver.\+hpp"{}}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/msg/twist.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/client.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/rclcpp.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/subscription.\+hpp$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/msg/u\+\_\+int8.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classServoNode}{Servo\+Node}}
+\begin{DoxyCompactList}\small\item\em Listens to twist message and translate them into PWM signal values that the pca driver understands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{ServoNode_8hpp_ae27ee7fa6a939b824e099a54115a70d3}{MIN\+\_\+\+COUNT}} = 102
+\item 
+constexpr int \mbox{\hyperlink{ServoNode_8hpp_af5ad4584f72e1c30bc4495c2f0d37824}{MAX\+\_\+\+COUNT}} = 510
+\item 
+constexpr int \mbox{\hyperlink{ServoNode_8hpp_a35c102d53397783e8ca3826ff3834f88}{PCA\+\_\+\+SERVO\+\_\+\+ADDRESS}} = 0x40
+\item 
+constexpr int \mbox{\hyperlink{ServoNode_8hpp_add298e575b30bfba3ad893a85d33a1a5}{SERVO\+\_\+\+FREQ\+\_\+\+HZ}} = 50
+\item 
+constexpr int \mbox{\hyperlink{ServoNode_8hpp_af47668900eb5949cb6f1472d6152c198}{CENTER\+\_\+\+ANGLE}} = 90
+\item 
+constexpr int \mbox{\hyperlink{ServoNode_8hpp_a0d1fb46a85a0e58e91cafd22644bf7c6}{MAX\+\_\+\+ANGLE}} = 180
+\item 
+constexpr int \mbox{\hyperlink{ServoNode_8hpp_a51b9b694e6a26c438f75c714dfc5060e}{MIN\+\_\+\+REST\+\_\+\+ANGLE}} = 10
+\item 
+constexpr int \mbox{\hyperlink{ServoNode_8hpp_ac65619b0a37bd0e56a598b0ca762c50c}{MAX\+\_\+\+REST\+\_\+\+ANGLE}} = 170
+\item 
+constexpr int \mbox{\hyperlink{ServoNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\+\_\+\+QOS}} = 10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ServoNode_8hpp_af47668900eb5949cb6f1472d6152c198}\label{ServoNode_8hpp_af47668900eb5949cb6f1472d6152c198} 
+\index{ServoNode.hpp@{ServoNode.hpp}!CENTER\_ANGLE@{CENTER\_ANGLE}}
+\index{CENTER\_ANGLE@{CENTER\_ANGLE}!ServoNode.hpp@{ServoNode.hpp}}
+\doxysubsubsection{\texorpdfstring{CENTER\_ANGLE}{CENTER\_ANGLE}}
+{\footnotesize\ttfamily constexpr int CENTER\+\_\+\+ANGLE = 90\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{ServoNode_8hpp_a0d1fb46a85a0e58e91cafd22644bf7c6}\label{ServoNode_8hpp_a0d1fb46a85a0e58e91cafd22644bf7c6} 
+\index{ServoNode.hpp@{ServoNode.hpp}!MAX\_ANGLE@{MAX\_ANGLE}}
+\index{MAX\_ANGLE@{MAX\_ANGLE}!ServoNode.hpp@{ServoNode.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_ANGLE}{MAX\_ANGLE}}
+{\footnotesize\ttfamily constexpr int MAX\+\_\+\+ANGLE = 180\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{ServoNode_8hpp_af5ad4584f72e1c30bc4495c2f0d37824}\label{ServoNode_8hpp_af5ad4584f72e1c30bc4495c2f0d37824} 
+\index{ServoNode.hpp@{ServoNode.hpp}!MAX\_COUNT@{MAX\_COUNT}}
+\index{MAX\_COUNT@{MAX\_COUNT}!ServoNode.hpp@{ServoNode.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_COUNT}{MAX\_COUNT}}
+{\footnotesize\ttfamily constexpr int MAX\+\_\+\+COUNT = 510\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{ServoNode_8hpp_ac65619b0a37bd0e56a598b0ca762c50c}\label{ServoNode_8hpp_ac65619b0a37bd0e56a598b0ca762c50c} 
+\index{ServoNode.hpp@{ServoNode.hpp}!MAX\_REST\_ANGLE@{MAX\_REST\_ANGLE}}
+\index{MAX\_REST\_ANGLE@{MAX\_REST\_ANGLE}!ServoNode.hpp@{ServoNode.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_REST\_ANGLE}{MAX\_REST\_ANGLE}}
+{\footnotesize\ttfamily constexpr int MAX\+\_\+\+REST\+\_\+\+ANGLE = 170\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{ServoNode_8hpp_ae27ee7fa6a939b824e099a54115a70d3}\label{ServoNode_8hpp_ae27ee7fa6a939b824e099a54115a70d3} 
+\index{ServoNode.hpp@{ServoNode.hpp}!MIN\_COUNT@{MIN\_COUNT}}
+\index{MIN\_COUNT@{MIN\_COUNT}!ServoNode.hpp@{ServoNode.hpp}}
+\doxysubsubsection{\texorpdfstring{MIN\_COUNT}{MIN\_COUNT}}
+{\footnotesize\ttfamily constexpr int MIN\+\_\+\+COUNT = 102\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{ServoNode_8hpp_a51b9b694e6a26c438f75c714dfc5060e}\label{ServoNode_8hpp_a51b9b694e6a26c438f75c714dfc5060e} 
+\index{ServoNode.hpp@{ServoNode.hpp}!MIN\_REST\_ANGLE@{MIN\_REST\_ANGLE}}
+\index{MIN\_REST\_ANGLE@{MIN\_REST\_ANGLE}!ServoNode.hpp@{ServoNode.hpp}}
+\doxysubsubsection{\texorpdfstring{MIN\_REST\_ANGLE}{MIN\_REST\_ANGLE}}
+{\footnotesize\ttfamily constexpr int MIN\+\_\+\+REST\+\_\+\+ANGLE = 10\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{ServoNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}\label{ServoNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d} 
+\index{ServoNode.hpp@{ServoNode.hpp}!NODE\_QOS@{NODE\_QOS}}
+\index{NODE\_QOS@{NODE\_QOS}!ServoNode.hpp@{ServoNode.hpp}}
+\doxysubsubsection{\texorpdfstring{NODE\_QOS}{NODE\_QOS}}
+{\footnotesize\ttfamily constexpr int NODE\+\_\+\+QOS = 10\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{ServoNode_8hpp_a35c102d53397783e8ca3826ff3834f88}\label{ServoNode_8hpp_a35c102d53397783e8ca3826ff3834f88} 
+\index{ServoNode.hpp@{ServoNode.hpp}!PCA\_SERVO\_ADDRESS@{PCA\_SERVO\_ADDRESS}}
+\index{PCA\_SERVO\_ADDRESS@{PCA\_SERVO\_ADDRESS}!ServoNode.hpp@{ServoNode.hpp}}
+\doxysubsubsection{\texorpdfstring{PCA\_SERVO\_ADDRESS}{PCA\_SERVO\_ADDRESS}}
+{\footnotesize\ttfamily constexpr int PCA\+\_\+\+SERVO\+\_\+\+ADDRESS = 0x40\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{ServoNode_8hpp_add298e575b30bfba3ad893a85d33a1a5}\label{ServoNode_8hpp_add298e575b30bfba3ad893a85d33a1a5} 
+\index{ServoNode.hpp@{ServoNode.hpp}!SERVO\_FREQ\_HZ@{SERVO\_FREQ\_HZ}}
+\index{SERVO\_FREQ\_HZ@{SERVO\_FREQ\_HZ}!ServoNode.hpp@{ServoNode.hpp}}
+\doxysubsubsection{\texorpdfstring{SERVO\_FREQ\_HZ}{SERVO\_FREQ\_HZ}}
+{\footnotesize\ttfamily constexpr int SERVO\+\_\+\+FREQ\+\_\+\+HZ = 50\hspace{0.3cm}{\ttfamily [constexpr]}}
+

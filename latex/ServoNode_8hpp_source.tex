@@ -1,0 +1,47 @@
+\doxysection{Servo\+Node.\+hpp}
+\hypertarget{ServoNode_8hpp_source}{}\label{ServoNode_8hpp_source}\index{JetRacer/src/peripherals/servo\_motor/include/ServoNode.hpp@{JetRacer/src/peripherals/servo\_motor/include/ServoNode.hpp}}
+\mbox{\hyperlink{ServoNode_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{APCA9685Driver_8hpp}{APCA9685Driver.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <geometry\_msgs/msg/twist.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <rclcpp/client.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <rclcpp/subscription.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <std\_msgs/msg/u\_int8.hpp>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ServoNode_8hpp_ae27ee7fa6a939b824e099a54115a70d3}{MIN\_COUNT}}\ =\ 102;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ServoNode_8hpp_af5ad4584f72e1c30bc4495c2f0d37824}{MAX\_COUNT}}\ =\ 510;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ServoNode_8hpp_a35c102d53397783e8ca3826ff3834f88}{PCA\_SERVO\_ADDRESS}}\ =\ 0x40;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ServoNode_8hpp_add298e575b30bfba3ad893a85d33a1a5}{SERVO\_FREQ\_HZ}}\ =\ 50;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ServoNode_8hpp_af47668900eb5949cb6f1472d6152c198}{CENTER\_ANGLE}}\ =\ 90;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ServoNode_8hpp_a0d1fb46a85a0e58e91cafd22644bf7c6}{MAX\_ANGLE}}\ =\ 180;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ RETSRAINED\ ANGLES}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ServoNode_8hpp_a51b9b694e6a26c438f75c714dfc5060e}{MIN\_REST\_ANGLE}}\ =\ 10;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ServoNode_8hpp_ac65619b0a37bd0e56a598b0ca762c50c}{MAX\_REST\_ANGLE}}\ =\ 170;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ServoNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\_QOS}}\ =\ 10;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServoNode}{ServoNode}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classServoNode_a682ac10746c48de6e77bcc7e7b53d978}{ServoNode}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classServoNode_a77e32a9dd0719b322792fce594cabf79}{\string~ServoNode}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ uint8\_t}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classServoNode_ab31e1771719caecc5b2be38c28240526}{initPCA9685}}(std::shared\_ptr<APCA9685Driver>\ mock\_pca\_driver\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ rclcpp::Subscription<geometry\_msgs::msg::Twist>::SharedPtr}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classServoNode_aa548a11605a08a51a4fa38809e2bafa6}{direction\_subscriber\_}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::shared\_ptr<APCA9685Driver>\ \mbox{\hyperlink{classServoNode_a5a4b5cf43505ee9bd33c5d2dbe2c03a3}{pca\_driver\_}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServoNode_a6477bb6a6e9ce7b682e2ba1624a40fb8}{writeAngle}}(geometry\_msgs::msg::Twist::SharedPtr\ twist);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ float\_t\ \mbox{\hyperlink{classServoNode_a60b9f59505df4974849a3cfc7f8c4096}{MAX\_ANGULAR\_VEL}}\ =\ 1.0;}
+\DoxyCodeLine{00046\ \};}
+
+\end{DoxyCode}

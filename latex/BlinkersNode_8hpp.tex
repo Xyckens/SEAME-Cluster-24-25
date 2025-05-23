@@ -1,0 +1,35 @@
+\doxysection{Jet\+Racer/src/peripherals/blinkers/include/\+Blinkers\+Node.hpp File Reference}
+\hypertarget{BlinkersNode_8hpp}{}\label{BlinkersNode_8hpp}\index{JetRacer/src/peripherals/blinkers/include/BlinkersNode.hpp@{JetRacer/src/peripherals/blinkers/include/BlinkersNode.hpp}}
+{\ttfamily \#include "{}std\+\_\+msgs/msg/u\+\_\+int8.\+hpp"{}}\newline
+{\ttfamily \#include $<$custom\+\_\+msgs/srv/can\+\_\+service.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/client.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/publisher.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/rclcpp.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/subscription.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBlinkersNode}{Blinkers\+Node}}
+\begin{DoxyCompactList}\small\item\em listens to blinker state topic and request the can interface to update the blinkers . \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{BlinkersNode_8hpp_a86d08455e15ce52af2aca4578f85c50e}{BLINKERS\+\_\+\+STATE\+\_\+\+ID}} = 0x100
+\item 
+constexpr int \mbox{\hyperlink{BlinkersNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\+\_\+\+QOS}} = 10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{BlinkersNode_8hpp_a86d08455e15ce52af2aca4578f85c50e}\label{BlinkersNode_8hpp_a86d08455e15ce52af2aca4578f85c50e} 
+\index{BlinkersNode.hpp@{BlinkersNode.hpp}!BLINKERS\_STATE\_ID@{BLINKERS\_STATE\_ID}}
+\index{BLINKERS\_STATE\_ID@{BLINKERS\_STATE\_ID}!BlinkersNode.hpp@{BlinkersNode.hpp}}
+\doxysubsubsection{\texorpdfstring{BLINKERS\_STATE\_ID}{BLINKERS\_STATE\_ID}}
+{\footnotesize\ttfamily constexpr int BLINKERS\+\_\+\+STATE\+\_\+\+ID = 0x100\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{BlinkersNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}\label{BlinkersNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d} 
+\index{BlinkersNode.hpp@{BlinkersNode.hpp}!NODE\_QOS@{NODE\_QOS}}
+\index{NODE\_QOS@{NODE\_QOS}!BlinkersNode.hpp@{BlinkersNode.hpp}}
+\doxysubsubsection{\texorpdfstring{NODE\_QOS}{NODE\_QOS}}
+{\footnotesize\ttfamily constexpr int NODE\+\_\+\+QOS = 10\hspace{0.3cm}{\ttfamily [constexpr]}}
+

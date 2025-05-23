@@ -1,0 +1,69 @@
+\doxysection{Jet\+Racer/src/head\+\_\+unit/teleop/include/\+Teleop\+Node.hpp File Reference}
+\hypertarget{TeleopNode_8hpp}{}\label{TeleopNode_8hpp}\index{JetRacer/src/head\_unit/teleop/include/TeleopNode.hpp@{JetRacer/src/head\_unit/teleop/include/TeleopNode.hpp}}
+{\ttfamily \#include $<$geometry\+\_\+msgs/msg/twist.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/rclcpp.\+hpp$>$}\newline
+{\ttfamily \#include $<$sensor\+\_\+msgs/msg/joy.\+hpp$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/msg/u\+\_\+int8.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTeleopNode}{Teleop\+Node}}
+\begin{DoxyCompactList}\small\item\em Subscribes to the joystick topic, convert it and publishes it into cmd\+\_\+vel topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205d}{Blinker\+State}} \{ \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205daa5daf7f2ebbba4975d61dab1c40188c7}{IDLE}}
+, \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205da6ac21d67c035e028134e3bab5f49f777}{TURN\+\_\+\+LEFT}}
+, \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205dac5167dbd523b326749655acd6d216239}{TURN\+\_\+\+RIGHT}}
+, \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205da96ba7465a912ca5da455230eac6e8e27}{WARNINGS}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{TeleopNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}{NODE\+\_\+\+QOS}} = 10
+\item 
+constexpr int \mbox{\hyperlink{TeleopNode_8hpp_a26b29565111dd70bf17ffa0539cf884f}{QUEUE\+\_\+\+DEPTH}} = 20
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205d}\label{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205d} 
+\index{TeleopNode.hpp@{TeleopNode.hpp}!BlinkerState@{BlinkerState}}
+\index{BlinkerState@{BlinkerState}!TeleopNode.hpp@{TeleopNode.hpp}}
+\doxysubsubsection{\texorpdfstring{BlinkerState}{BlinkerState}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205d}{Blinker\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDLE@{IDLE}!TeleopNode.hpp@{TeleopNode.hpp}}\index{TeleopNode.hpp@{TeleopNode.hpp}!IDLE@{IDLE}}}\Hypertarget{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205daa5daf7f2ebbba4975d61dab1c40188c7}\label{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205daa5daf7f2ebbba4975d61dab1c40188c7} 
+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_LEFT@{TURN\_LEFT}!TeleopNode.hpp@{TeleopNode.hpp}}\index{TeleopNode.hpp@{TeleopNode.hpp}!TURN\_LEFT@{TURN\_LEFT}}}\Hypertarget{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205da6ac21d67c035e028134e3bab5f49f777}\label{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205da6ac21d67c035e028134e3bab5f49f777} 
+TURN\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_RIGHT@{TURN\_RIGHT}!TeleopNode.hpp@{TeleopNode.hpp}}\index{TeleopNode.hpp@{TeleopNode.hpp}!TURN\_RIGHT@{TURN\_RIGHT}}}\Hypertarget{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205dac5167dbd523b326749655acd6d216239}\label{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205dac5167dbd523b326749655acd6d216239} 
+TURN\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARNINGS@{WARNINGS}!TeleopNode.hpp@{TeleopNode.hpp}}\index{TeleopNode.hpp@{TeleopNode.hpp}!WARNINGS@{WARNINGS}}}\Hypertarget{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205da96ba7465a912ca5da455230eac6e8e27}\label{TeleopNode_8hpp_a5fd1afe6d59040ec5f5c8cf11bda205da96ba7465a912ca5da455230eac6e8e27} 
+WARNINGS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{TeleopNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d}\label{TeleopNode_8hpp_a9a492a8e24ac899ab0b1a41dc014803d} 
+\index{TeleopNode.hpp@{TeleopNode.hpp}!NODE\_QOS@{NODE\_QOS}}
+\index{NODE\_QOS@{NODE\_QOS}!TeleopNode.hpp@{TeleopNode.hpp}}
+\doxysubsubsection{\texorpdfstring{NODE\_QOS}{NODE\_QOS}}
+{\footnotesize\ttfamily constexpr int NODE\+\_\+\+QOS = 10\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{TeleopNode_8hpp_a26b29565111dd70bf17ffa0539cf884f}\label{TeleopNode_8hpp_a26b29565111dd70bf17ffa0539cf884f} 
+\index{TeleopNode.hpp@{TeleopNode.hpp}!QUEUE\_DEPTH@{QUEUE\_DEPTH}}
+\index{QUEUE\_DEPTH@{QUEUE\_DEPTH}!TeleopNode.hpp@{TeleopNode.hpp}}
+\doxysubsubsection{\texorpdfstring{QUEUE\_DEPTH}{QUEUE\_DEPTH}}
+{\footnotesize\ttfamily constexpr int QUEUE\+\_\+\+DEPTH = 20\hspace{0.3cm}{\ttfamily [constexpr]}}
+

@@ -1,0 +1,47 @@
+\doxysection{CPUTemp\+Widget.\+h}
+\hypertarget{CPUTempWidget_8h_source}{}\label{CPUTempWidget_8h_source}\index{JetRacer/src/head\_unit/cluster\_qt/includes/CPUTempWidget.h@{JetRacer/src/head\_unit/cluster\_qt/includes/CPUTempWidget.h}}
+\mbox{\hyperlink{CPUTempWidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPUTTEMPWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPUTTEMPWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}\ \ \textcolor{comment}{//\ Include\ for\ key\ events}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Colors_8h}{Colors.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCPUTempWidget}{CPUTempWidget}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCPUTempWidget}{CPUTempWidget}}(QWidget*\ parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ x\ =\ 0,\ \textcolor{keywordtype}{int}\ y\ =\ 0,\ \textcolor{keywordtype}{int}\ width\ =\ 0,\ \textcolor{keywordtype}{int}\ height\ =\ 0);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCPUTempWidget_a00ef34c5969b5560c3b0ee25905ab22e}{\string~CPUTempWidget}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCPUTempWidget_a67bde29708c71dd1ed2f0a0d46d5206c}{changeColor}}(\textcolor{keywordtype}{int}\ array\_index);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCPUTempWidget_a2473f894d9a463886ab51d533552ab3a}{changeUnits}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classCPUTempWidget_a49d2a7b3f6054eaa4446ac12a69cd391}{main\_color}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classCPUTempWidget_a2251588ad3cd569b634317548637b1d7}{accent\_color}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ QColor\ \ \mbox{\hyperlink{classCPUTempWidget_a60cac8d5e0716742158f028074fdfcc3}{alphabet\_color}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCPUTempWidget_a7348a4810316225f1fbe5f307fe3ccd2}{paintEvent}}(QPaintEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCPUTempWidget_ab600de10e9859e03b07d3da3dc7949ea}{keyPressEvent}}(QKeyEvent*\ event)\ \textcolor{keyword}{override};\ \ \textcolor{comment}{//\ Added\ keyPressEvent}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCPUTempWidget_a0a93825db90f1035358b2551a8a720ff}{currentSpeed}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCPUTempWidget_a20fec0cc69464dd77360b3634ae6b6bf}{index}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classCPUTempWidget_adddd00516e05acd85075594bd9bacf22}{color1}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{classCPUTempWidget_a99db93db9242e2b02fa310a203aaf45c}{unit}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ QPixmap\ \mbox{\hyperlink{classCPUTempWidget_aaf72b6878f7cbff4bc0822abb55a7785}{image}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ image}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ QPixmap\ \mbox{\hyperlink{classCPUTempWidget_a28bf0d707da2a1b9d65ced000db2a060}{image\_array}}[4];}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCPUTempWidget_afc2f7f37464b47eafbd652f3720fce12}{drawScale}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ center\_x,\ \textcolor{keywordtype}{int}\ center\_y,\ \textcolor{keywordtype}{int}\ radius);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCPUTempWidget_a1fde6e089dc7b9fdbe60680d8c629d31}{drawNeedle}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ center\_x,\ \textcolor{keywordtype}{int}\ center\_y,\ \textcolor{keywordtype}{int}\ radius);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCPUTempWidget_a0a93efdc3c744f46b2c8ce4361b2cf3c}{drawCentralNumber}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ center\_x,\ \textcolor{keywordtype}{int}\ center\_y);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCPUTempWidget_a6486243406170a8f50c93dada32fb03f}{updateSpeed}}();}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CPUTempWidget\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,113 @@
+\doxysection{ADriver Class Reference}
+\hypertarget{classADriver}{}\label{classADriver}\index{ADriver@{ADriver}}
+
+
+Abstract interface defining a contract for drivers using i2c bus.  
+
+
+
+
+{\ttfamily \#include $<$ADriver.\+hpp$>$}
+
+Inheritance diagram for ADriver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classADriver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classADriver_a759c7a45993757787469d578b1ae26dc}{ADriver}} (rclcpp\+::\+Node\+::\+Shared\+Ptr node, uint8\+\_\+t device\+\_\+address)
+\item 
+virtual \mbox{\hyperlink{classADriver_adbd111235337f52ee4382190eb6ff93f}{\texorpdfstring{$\sim$}{\string~}\+ADriver}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classADriver_a7c8b6b179b64b604c29362e0dbdbffd9}{ping}} ()
+\begin{DoxyCompactList}\small\item\em ping the device and wait for a response. throw a driver exception if the device is not found on the bus. Nodes depending on drivers should call this function before spinning to make sure the actual hardware is present \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classADriver_a57d37e3a461292d2fdea1b084f85a40c}{handle\+I2c\+Response}} (rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Future response)
+\begin{DoxyCompactList}\small\item\em handle the response from the i2c service \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Node\+::\+Shared\+Ptr \mbox{\hyperlink{classADriver_affbae288b7155acb8a8c9d7ccea899c6}{node\+\_\+}}
+\item 
+rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classADriver_a69160e2270d20f647de3dfc1c9cc5d5c}{i2c\+\_\+client\+\_\+}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classADriver_adb73686aba67a783e9fd1e25d4c507b3}{device\+\_\+address\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface defining a contract for drivers using i2c bus. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classADriver_a759c7a45993757787469d578b1ae26dc}\label{classADriver_a759c7a45993757787469d578b1ae26dc} 
+\index{ADriver@{ADriver}!ADriver@{ADriver}}
+\index{ADriver@{ADriver}!ADriver@{ADriver}}
+\doxysubsubsection{\texorpdfstring{ADriver()}{ADriver()}}
+{\footnotesize\ttfamily ADriver\+::\+ADriver (\begin{DoxyParamCaption}\item[{rclcpp\+::\+Node\+::\+Shared\+Ptr}]{node,  }\item[{uint8\+\_\+t}]{device\+\_\+address }\end{DoxyParamCaption})}
+
+\Hypertarget{classADriver_adbd111235337f52ee4382190eb6ff93f}\label{classADriver_adbd111235337f52ee4382190eb6ff93f} 
+\index{ADriver@{ADriver}!````~ADriver@{\texorpdfstring{$\sim$}{\string~}ADriver}}
+\index{````~ADriver@{\texorpdfstring{$\sim$}{\string~}ADriver}!ADriver@{ADriver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ADriver()}{\string~ADriver()}}
+{\footnotesize\ttfamily ADriver\+::\texorpdfstring{$\sim$}{\string~}\+ADriver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classADriver_a57d37e3a461292d2fdea1b084f85a40c}\label{classADriver_a57d37e3a461292d2fdea1b084f85a40c} 
+\index{ADriver@{ADriver}!handleI2cResponse@{handleI2cResponse}}
+\index{handleI2cResponse@{handleI2cResponse}!ADriver@{ADriver}}
+\doxysubsubsection{\texorpdfstring{handleI2cResponse()}{handleI2cResponse()}}
+{\footnotesize\ttfamily void ADriver\+::handle\+I2c\+Response (\begin{DoxyParamCaption}\item[{rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Future}]{future }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+handle the response from the i2c service 
+
+
+\begin{DoxyParams}{Parameters}
+{\em future} & the future object containing the response from the i2c service \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classADriver_a7c8b6b179b64b604c29362e0dbdbffd9}\label{classADriver_a7c8b6b179b64b604c29362e0dbdbffd9} 
+\index{ADriver@{ADriver}!ping@{ping}}
+\index{ping@{ping}!ADriver@{ADriver}}
+\doxysubsubsection{\texorpdfstring{ping()}{ping()}}
+{\footnotesize\ttfamily void ADriver\+::ping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+ping the device and wait for a response. throw a driver exception if the device is not found on the bus. Nodes depending on drivers should call this function before spinning to make sure the actual hardware is present 
+
+This method uses spin\+\_\+until\+\_\+future\+\_\+complete() which will spin the node while waiting for the response. Hence this function can not be called after the node has been spinned by the main executor (a node can be handle by only one executor at a time) 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classADriver_adb73686aba67a783e9fd1e25d4c507b3}\label{classADriver_adb73686aba67a783e9fd1e25d4c507b3} 
+\index{ADriver@{ADriver}!device\_address\_@{device\_address\_}}
+\index{device\_address\_@{device\_address\_}!ADriver@{ADriver}}
+\doxysubsubsection{\texorpdfstring{device\_address\_}{device\_address\_}}
+{\footnotesize\ttfamily uint8\+\_\+t ADriver\+::device\+\_\+address\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classADriver_a69160e2270d20f647de3dfc1c9cc5d5c}\label{classADriver_a69160e2270d20f647de3dfc1c9cc5d5c} 
+\index{ADriver@{ADriver}!i2c\_client\_@{i2c\_client\_}}
+\index{i2c\_client\_@{i2c\_client\_}!ADriver@{ADriver}}
+\doxysubsubsection{\texorpdfstring{i2c\_client\_}{i2c\_client\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Client$<$custom\+\_\+msgs\+::srv\+::\+I2c\+Service$>$\+::\+Shared\+Ptr ADriver\+::i2c\+\_\+client\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classADriver_affbae288b7155acb8a8c9d7ccea899c6}\label{classADriver_affbae288b7155acb8a8c9d7ccea899c6} 
+\index{ADriver@{ADriver}!node\_@{node\_}}
+\index{node\_@{node\_}!ADriver@{ADriver}}
+\doxysubsubsection{\texorpdfstring{node\_}{node\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Node\+::\+Shared\+Ptr ADriver\+::node\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Jet\+Racer/src/drivers/abstract\+\_\+driver/include/\mbox{\hyperlink{ADriver_8hpp}{ADriver.\+hpp}}\item 
+Jet\+Racer/src/drivers/abstract\+\_\+driver/src/\mbox{\hyperlink{ADriver_8cpp}{ADriver.\+cpp}}\end{DoxyCompactItemize}
