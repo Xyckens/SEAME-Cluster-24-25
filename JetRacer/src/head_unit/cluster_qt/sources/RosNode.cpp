@@ -29,11 +29,9 @@ RosNode::RosNode() : rclcpp::Node("ros_node"), battery_level_(0), speed_(0)
         "cmd_lane", 10,
         std::bind(&RosNode::setLaneDetection, this, std::placeholders::_1));
 
-    /*wheel_angle_sub_ = this->create_subscription<std_msgs::msg::Float64>(
-        "cmd_vel", 90,
-        [this](const std_msgs::msg::Float64::SharedPtr msg) {
-            wheel_angle_ = static_cast<float>(msg->data);
-        });*/
+    wheel_angle_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
+        "cmd_vel", 10, [this](geometry_msgs::msg::Twist twist)
+        { wheel_angle_ = static_cast<int>(twist.angular.z); });
 }
 
 
@@ -50,6 +48,13 @@ int RosNode::getSpeed() const { return speed_; }
  * @return The current battery level as an integer (0-100).
  */
 int RosNode::getBattery() const { return battery_level_; }
+
+/**
+ * @brief A Getter that returns the current wheel angle of the vehicle.
+ *
+ * @return The current wheel angle as an integer (?-?).
+ */
+ int RosNode::getWheelAngle() const { return wheel_angle_; }
 
 /**
  * @brief A Getter that returns the current RPM of the vehicle.

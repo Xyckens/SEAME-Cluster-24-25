@@ -4,6 +4,7 @@
 #include <std_msgs/msg/float64.hpp>
 #include <std_msgs/msg/u_int32.hpp>
 #include <std_msgs/msg/u_int8.hpp>
+#include <geometry_msgs/msg/twist.hpp>
 
 enum class blinkerState
 {
@@ -36,6 +37,7 @@ class RosNode : public rclcpp::Node
         int             getSpeed() const;
         int             getBattery() const;
         int             getRpm() const;
+        int             getWheelAngle() const;
         blinkerState    getBlinkerState() const;
         laneDetection   getLaneDetection() const;
 
@@ -45,6 +47,7 @@ class RosNode : public rclcpp::Node
         rclcpp::Subscription<std_msgs::msg::UInt32>::SharedPtr  rpm_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   blinker_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   lane_sub_;
+        rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr wheel_angle_sub_;
 
         void            setBlinkerState(std_msgs::msg::UInt8 msg);
         void            setLaneDetection(std_msgs::msg::UInt8 msg);
@@ -52,6 +55,7 @@ class RosNode : public rclcpp::Node
         int             battery_level_{0};
         int             speed_{0};
         int             rpm_{0};
+        int             wheel_angle__{0};
         blinkerState    blinker_state_{blinkerState::IDLE};
         laneDetection   lane_state_{laneDetection::NONE};
 };
