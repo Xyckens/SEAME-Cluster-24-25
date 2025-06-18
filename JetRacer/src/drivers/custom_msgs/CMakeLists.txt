@@ -11,6 +11,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/CanFrame.msg"
+  "msg/PolyfitCoefs.msg"
   "msg/Display.msg"
   "srv/I2cService.srv"
   "srv/CanService.srv"
