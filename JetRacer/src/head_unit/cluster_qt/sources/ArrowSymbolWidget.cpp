@@ -16,9 +16,9 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, int x, int y, int width, i
     angle = 240;
     step = 5;
     direction = "forward";
-    QTimer *timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &ArrowSymbolWidget::variangle);
-    timer->start(500); // 200 ms delay
+    //QTimer *timer = new QTimer(this);
+    //connect(timer, &QTimer::timeout, this, &ArrowSymbolWidget::variangle);
+    //timer->start(500); // 200 ms delay
     
     car = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/car.png");
     lane_img[0] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/lane_p.png");
@@ -66,8 +66,6 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
         else
             backwardsArrows(painter);
     }
-
-
 }
 
 void ArrowSymbolWidget::forwardArrows(QPainter& painter)
@@ -85,13 +83,13 @@ void ArrowSymbolWidget::forwardArrows(QPainter& painter)
     else
         angle_y_offset_left = 0;
 
-    QPainterPath path;
-    path.moveTo(0, 0);
+    QPainterPath leftPath;
+    leftPath.moveTo(0, 0);
 
     QRectF controlRect(-radius, -radius, 2 * radius, 2 * radius);
-    path.quadTo(QPointF(0, -smaller - angle_y_offset_left), QPointF(final_x, final_y - angle_y_offset_left));
+    leftPath.quadTo(QPointF(0, -smaller - angle_y_offset_left), QPointF(final_x, final_y - angle_y_offset_left));
     painter.setPen(QPen(left_color, 8));
-    painter.drawPath(path);
+    painter.drawPath(leftPath);
 
     QPainterPath rightPath;
     rightPath.moveTo(offset, 0);

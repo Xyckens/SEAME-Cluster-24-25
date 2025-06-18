@@ -13,7 +13,7 @@ extern struct can_frame frame;
 void setup()
 {
     Serial.begin(115200);
-    Log.begin(LOG_LEVEL_WARNING, &Serial);
+    Log.begin(LOG_LEVEL_VERBOSE, &Serial);
 
     pinMode(LEFT_BLINKER_PIN, OUTPUT);
     pinMode(RIGHT_BLINKER_PIN, OUTPUT);
