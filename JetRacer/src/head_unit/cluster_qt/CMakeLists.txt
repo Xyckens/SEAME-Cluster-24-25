@@ -20,7 +20,9 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets Test)
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 find_package(custom_msgs REQUIRED)
+
 
 # Define source and header files separately
 set(HEADERS
@@ -58,6 +60,16 @@ set(SOURCES
 	#sources/SettingsWidget.cpp
 	sources/StatsWidget.cpp
     sources/ListeningWidget.cpp
+)
+
+add_executable(${exec_name} ${SOURCES})
+
+ament_target_dependencies(${exec_name} 
+    rclcpp
+    geometry_msgs
+    carla_msgs
+    std_msgs
+    custom_msgs
 )
 
 set(UI_FILES
